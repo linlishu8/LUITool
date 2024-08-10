@@ -1,22 +1,22 @@
 {
   "name": "LUITool",
   "version": "0.1.0",
-  "summary": "A short description of LUITool.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Your Name/LUITool",
+  "summary": "基础工具库",
+  "description": "* 主题，自定义tabbar，简化tableView，collectionView，自定义alertView，actionSheetView",
+  "homepage": "https://github.com/linlishu8/LUITool",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Your Name": "you@example.com"
+    "linlishu8": "linlishu8@163.com"
   },
   "source": {
-    "git": "https://github.com/Your Name/LUITool.git",
+    "git": "https://github.com/linlishu8/LUITool.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "9.0"
   },
   "source_files": "LUITool/Classes/**/*"
 }

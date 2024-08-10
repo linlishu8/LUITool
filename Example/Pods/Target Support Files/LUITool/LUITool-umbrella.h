@@ -10,6 +10,11 @@
 #endif
 #endif
 
+#import "LUITool.h"
+#import "LUIThemeCenter.h"
+#import "LUIThemeElementProtocol.h"
+#import "LUIThemePickerProtocol.h"
+#import "NSObject+LUITheme.h"
 
 FOUNDATION_EXPORT double LUIToolVersionNumber;
 FOUNDATION_EXPORT const unsigned char LUIToolVersionString[];
