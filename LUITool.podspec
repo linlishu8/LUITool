@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   # 本地测试pod库：pod lib lint --allow-warnings --verbose --no-clean
   # 远程验证:pod spec lint --allow-warnings --verbose --no-clean
   # 推送到xxx私有源：pod repo push xxxspecs MKUI.podspec --allow-warnings --verbose
-  # 推到官方源：pod trunk push MKUI.podspec --allow-warnings --verbose
+  # 推到官方源：pod trunk push LUITool.podspec --allow-warnings --verbose
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
