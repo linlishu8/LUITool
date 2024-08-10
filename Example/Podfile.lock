@@ -1,0 +1,16 @@
+PODS:
+  - LUITool (0.1.0)
+
+DEPENDENCIES:
+  - LUITool (from `../`)
+
+EXTERNAL SOURCES:
+  LUITool:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LUITool: 085ba35bd36c1a89af0dc74535731a13a821d4c0
+
+PODFILE CHECKSUM: da79e8f58de606ff94815704d8adac2483d62b9b
+
+COCOAPODS: 1.15.2
