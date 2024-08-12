@@ -2,21 +2,21 @@
 //  LUIModel.h
 //  LUITool
 //
-//  Created by 六月 on 2024/8/11.
+//  Created by 六月 on 2023/8/11.
 //
 
-#import "LUIModelBase.h"
-#import "LUICellModel.h"
-#import "LUISectionModel.h"
+#import "LUICollectionModelObjectBase.h"
+#import "LUICollectionCellModel.h"
+#import "LUICollectionSectionModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LUICellModel, LUISectionModel;
+@class LUICollectionCellModel, LUICollectionSectionModel;
 
-@interface LUIModel : LUIModelBase
+@interface LUICollectionModel : LUICollectionModelObjectBase
 
-@property (nonatomic, strong, nullable) NSArray<__kindof LUISectionModel *> *sectionModels;//分组
-@property (nonatomic, readonly, nullable) NSArray<__kindof LUICellModel *> *allCellModels;//返回所有的单元格数据
+@property (nonatomic, strong, nullable) NSArray<__kindof LUICollectionSectionModel *> *sectionModels;//分组
+@property (nonatomic, readonly, nullable) NSArray<__kindof LUICollectionCellModel *> *allCellModels;//返回所有的单元格数据
 @property (nonatomic, strong, nullable) id userInfo;//自定義的擴展對象
 @property (nonatomic, readonly) NSInteger numberOfSections;//分组数量
 @property (nonatomic, readonly) NSInteger numberOfCells;//所有单元格的数量
@@ -26,35 +26,35 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL allowsFocus;//default YES
 
 @property (nonatomic, readonly, nullable) NSIndexPath *indexPathOfLastCellModel;//返回最后一个单元格数据的位置
-@property (nonatomic, readonly, nullable) NSMutableArray<__kindof LUISectionModel *> *mutableSectionModels;//可编辑的分组列表数据
+@property (nonatomic, readonly, nullable) NSMutableArray<__kindof LUICollectionSectionModel *> *mutableSectionModels;//可编辑的分组列表数据
 
 /**
  *  产生一个空的分组
  *
  *  @return 分组对象
  */
-- (__kindof LUISectionModel *)createEmptySectionModel;
+- (__kindof LUICollectionSectionModel *)createEmptySectionModel;
 
 /**
  *  快速加到单元格到最後一個分组中
  *
  *  @param cellModel 单元格数据
  */
-- (void)addCellModel:(LUICellModel *)cellModel;
+- (void)addCellModel:(LUICollectionCellModel *)cellModel;
 
 /**
  *  快速加到单元格到第一個分组的第一个位置上
  *
  *  @param cellModel 单元格数据
  */
-- (void)addCellModelToFirst:(LUICellModel *)cellModel;
+- (void)addCellModelToFirst:(LUICollectionCellModel *)cellModel;
 
 /**
  *  快速添加多个单元格到最后一个分组中,如果分组不存在,会创建分组
  *
  *  @param cellModels @[LUICellModel]
  */
-- (void)addCellModels:(NSArray<LUICellModel *> *)cellModels;
+- (void)addCellModels:(NSArray<LUICollectionCellModel *> *)cellModels;
 
 /**
  *  插入某个单元格到指定的位置
@@ -62,26 +62,26 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param cellModel 单元格
  *  @param indexPath 指定的位置
  */
-- (void)insertCellModel:(LUICellModel *)cellModel atIndexPath:(NSIndexPath *)indexPath;
-- (void)insertCellModels:(NSArray<LUICellModel *> *)cellModels afterIndexPath:(NSIndexPath *)indexPath;
-- (void)insertCellModels:(NSArray<LUICellModel *> *)cellModels beforeIndexPath:(NSIndexPath *)indexPath;
+- (void)insertCellModel:(LUICollectionCellModel *)cellModel atIndexPath:(NSIndexPath *)indexPath;
+- (void)insertCellModels:(NSArray<LUICollectionCellModel *> *)cellModels afterIndexPath:(NSIndexPath *)indexPath;
+- (void)insertCellModels:(NSArray<LUICollectionCellModel *> *)cellModels beforeIndexPath:(NSIndexPath *)indexPath;
 
-- (void)insertCellModelsToBottom:(NSArray<LUICellModel *> *)cellModels;//添加单元格到底部
-- (void)insertCellModelsToTop:(NSArray<LUICellModel *> *)cellModels;//添加单元格到顶部
+- (void)insertCellModelsToBottom:(NSArray<LUICollectionCellModel *> *)cellModels;//添加单元格到底部
+- (void)insertCellModelsToTop:(NSArray<LUICollectionCellModel *> *)cellModels;//添加单元格到顶部
 
 /**
  *  將cell從所有的分组中移除
  *
  *  @param cellModel 单元格對象
  */
-- (void)removeCellModel:(LUICellModel *)cellModel;
+- (void)removeCellModel:(LUICollectionCellModel *)cellModel;
 
 /**
  *  将多个cell从所有的分组中移除
  *
  *  @param cellModels @[LUICellModel]
  */
-- (void)removeCellModels:(NSArray<LUICellModel *> *)cellModels;
+- (void)removeCellModels:(NSArray<LUICollectionCellModel *> *)cellModels;
 
 /**
  *    将多个cell从所有的分组中移除
@@ -102,16 +102,16 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param sectionModel 分组模型数据
  */
-- (void)addSectionModel:(LUISectionModel *)sectionModel;
-- (void)insertSectionModel:(LUISectionModel *)sectionModel atIndex:(NSInteger)index;
-- (void)addSectionModels:(NSArray<LUISectionModel *> *)sectionModels;
+- (void)addSectionModel:(LUICollectionSectionModel *)sectionModel;
+- (void)insertSectionModel:(LUICollectionSectionModel *)sectionModel atIndex:(NSInteger)index;
+- (void)addSectionModels:(NSArray<LUICollectionSectionModel *> *)sectionModels;
 
 /**
  *  移除掉分组模型数据
  *
  *  @param sectionModel 分组模型数据
  */
-- (void)removeSectionModel:(LUISectionModel *)sectionModel;
+- (void)removeSectionModel:(LUICollectionSectionModel *)sectionModel;
 
 /**
  *  移除掉分组模型数据
@@ -157,7 +157,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return indexpath對象
  */
-- (nullable NSIndexPath *)indexPathOfCellModel:(LUICellModel *)cellModel;
+- (nullable NSIndexPath *)indexPathOfCellModel:(LUICollectionCellModel *)cellModel;
 
 /**
  *  获取多个指定单元格的位置
@@ -166,7 +166,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return @[NSIndexPath]
  */
-- (nullable NSArray<NSIndexPath *> *)indexPathsOfCellModels:(NSArray<LUICellModel *> *)cellModels;
+- (nullable NSArray<NSIndexPath *> *)indexPathsOfCellModels:(NSArray<LUICollectionCellModel *> *)cellModels;
 
 /**
  *  获取指定分组的索引值
@@ -175,8 +175,8 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return 索引
  */
-- (NSInteger)indexOfSectionModel:(LUISectionModel *)sectionModel;
-- (nullable NSIndexSet *)indexSetOfSectionModel:(LUISectionModel *)sectionModel;
+- (NSInteger)indexOfSectionModel:(LUICollectionSectionModel *)sectionModel;
+- (nullable NSIndexSet *)indexSetOfSectionModel:(LUICollectionSectionModel *)sectionModel;
 
 /**
  *  返回indexpath指定的单元格数据
@@ -185,8 +185,8 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return LUICellModel数据
  */
-- (nullable __kindof LUICellModel *)cellModelAtIndexPath:(NSIndexPath *)indexpath;
-- (nullable NSArray<__kindof LUICellModel *> *)cellModelsAtIndexPaths:(NSArray<NSIndexPath *> *)indexpaths;
+- (nullable __kindof LUICollectionCellModel *)cellModelAtIndexPath:(NSIndexPath *)indexpath;
+- (nullable NSArray<__kindof LUICollectionCellModel *> *)cellModelsAtIndexPaths:(NSArray<NSIndexPath *> *)indexpaths;
 /**
  *  返回index指定的分组
  *
@@ -194,7 +194,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return 分组数据
  */
-- (nullable __kindof LUISectionModel *)sectionModelAtIndex:(NSInteger)index;
+- (nullable __kindof LUICollectionSectionModel *)sectionModelAtIndex:(NSInteger)index;
 
 /**
  *  移除掉没有单元格的空分组
@@ -206,7 +206,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return @[LUISectionMdel]
  */
-- (nullable NSArray<__kindof LUISectionModel *> *)emptySectionModels;
+- (nullable NSArray<__kindof LUICollectionSectionModel *> *)emptySectionModels;
 
 /**
  *  移动单元格
@@ -220,20 +220,28 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - selection
 - (void)selectCellModelAtIndexPath:(nullable NSIndexPath *)indexPath;
 - (void)selectCellModelsAtIndexPaths:(nullable NSArray<NSIndexPath *> *)indexPaths;
-- (void)selectCellModel:(nullable LUICellModel *)cellModel;
-- (void)selectCellModels:(nullable NSArray<LUICellModel *> *)cellModels;
+- (void)selectCellModel:(nullable LUICollectionCellModel *)cellModel;
+- (void)selectCellModels:(nullable NSArray<LUICollectionCellModel *> *)cellModels;
 - (void)selectAllCellModels;
 
 - (void)deselectCellModelAtIndexPath:(nullable NSIndexPath *)indexPath;
-- (void)deselectCellModel:(nullable LUICellModel *)cellModel;
-- (void)deselectCellModels:(nullable NSArray<LUICellModel *> *)cellModels;
+- (void)deselectCellModel:(nullable LUICollectionCellModel *)cellModel;
+- (void)deselectCellModels:(nullable NSArray<LUICollectionCellModel *> *)cellModels;
 - (void)deselectAllCellModels;
 
 - (nullable NSIndexPath *)indexPathForSelectedCellModel;
-- (nullable __kindof LUICellModel *)cellModelForSelectedCellModel;
+- (nullable __kindof LUICollectionCellModel *)cellModelForSelectedCellModel;
 - (nullable NSArray<NSIndexPath *> *)indexPathsForSelectedCellModels;
-- (nullable NSArray<__kindof LUICellModel *> *)cellModelsForSelectedCellModels;
+- (nullable NSArray<__kindof LUICollectionCellModel *> *)cellModelsForSelectedCellModels;
 
+@end
+
+@interface LUICollectionModel(Focused)
+@property(nonatomic,readonly,nullable) NSIndexPath *indexPathForFocusedCellModel;
+@property(nonatomic,readonly,nullable) __kindof LUICollectionCellModel *cellModelForFocusedCellModel;
+- (void)focusCellModelAtIndexPath:(nullable NSIndexPath *)indexpath focused:(BOOL)focused;
+- (void)focusCellModel:(nullable LUICollectionCellModel *)cellModel focused:(BOOL)focused;
+- (void)focusNone;
 @end
 
 NS_ASSUME_NONNULL_END

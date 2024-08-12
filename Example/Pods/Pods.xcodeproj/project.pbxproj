@@ -9,51 +9,58 @@
 /* Begin PBXBuildFile section */
 		1C0EB7885E6180AED7D7C69B348D3FB9 /* NSObject+LUITheme.h in Headers */ = {isa = PBXBuildFile; fileRef = A41B079072559F8B37F5D59D2CFDBA23 /* NSObject+LUITheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADCA2C685F6600170B35 /* LUICGRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADC92C685F6600170B35 /* LUICGRect.m */; };
-		1FCBADCB2C685F6600170B35 /* LUICGRect.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADC82C685F6600170B35 /* LUICGRect.h */; };
+		1FCBADCB2C685F6600170B35 /* LUICGRect.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADC82C685F6600170B35 /* LUICGRect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADCF2C688EB400170B35 /* UIButton+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADCE2C688EB400170B35 /* UIButton+LUI.m */; };
-		1FCBADD02C688EB400170B35 /* UIButton+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADCD2C688EB400170B35 /* UIButton+LUI.h */; };
+		1FCBADD02C688EB400170B35 /* UIButton+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADCD2C688EB400170B35 /* UIButton+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADD32C68928100170B35 /* UIImage+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADD22C68928100170B35 /* UIImage+LUI.m */; };
-		1FCBADD42C68928100170B35 /* UIImage+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADD12C68928100170B35 /* UIImage+LUI.h */; };
+		1FCBADD42C68928100170B35 /* UIImage+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADD12C68928100170B35 /* UIImage+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADD72C6894DB00170B35 /* UIImageView+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADD62C6894DB00170B35 /* UIImageView+LUI.m */; };
-		1FCBADD82C6894DB00170B35 /* UIImageView+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADD52C6894DB00170B35 /* UIImageView+LUI.h */; };
+		1FCBADD82C6894DB00170B35 /* UIImageView+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADD52C6894DB00170B35 /* UIImageView+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADDB2C68955A00170B35 /* UIScrollView+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADDA2C68955A00170B35 /* UIScrollView+LUI.m */; };
-		1FCBADDC2C68955A00170B35 /* UIScrollView+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADD92C68955A00170B35 /* UIScrollView+LUI.h */; };
+		1FCBADDC2C68955A00170B35 /* UIScrollView+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADD92C68955A00170B35 /* UIScrollView+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADDF2C68961800170B35 /* UITableView+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADDE2C68961800170B35 /* UITableView+LUI.m */; };
-		1FCBADE02C68961800170B35 /* UITableView+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADDD2C68961800170B35 /* UITableView+LUI.h */; };
+		1FCBADE02C68961800170B35 /* UITableView+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADDD2C68961800170B35 /* UITableView+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADE32C68969B00170B35 /* UITableViewCell+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADE22C68969B00170B35 /* UITableViewCell+LUI.m */; };
-		1FCBADE42C68969B00170B35 /* UITableViewCell+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADE12C68969B00170B35 /* UITableViewCell+LUI.h */; };
+		1FCBADE42C68969B00170B35 /* UITableViewCell+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADE12C68969B00170B35 /* UITableViewCell+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADE72C6897FD00170B35 /* UICollectionViewFlowLayout+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADE62C6897FD00170B35 /* UICollectionViewFlowLayout+LUI.m */; };
-		1FCBADE82C6897FD00170B35 /* UICollectionViewFlowLayout+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADE52C6897FD00170B35 /* UICollectionViewFlowLayout+LUI.h */; };
+		1FCBADE82C6897FD00170B35 /* UICollectionViewFlowLayout+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADE52C6897FD00170B35 /* UICollectionViewFlowLayout+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADEB2C689B3200170B35 /* UIView+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADEA2C689B3200170B35 /* UIView+LUI.m */; };
-		1FCBADEC2C689B3200170B35 /* UIView+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADE92C689B3200170B35 /* UIView+LUI.h */; };
+		1FCBADEC2C689B3200170B35 /* UIView+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADE92C689B3200170B35 /* UIView+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADEF2C689D6000170B35 /* UIColor+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADEE2C689D6000170B35 /* UIColor+LUI.m */; };
-		1FCBADF02C689D6000170B35 /* UIColor+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADED2C689D6000170B35 /* UIColor+LUI.h */; };
+		1FCBADF02C689D6000170B35 /* UIColor+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADED2C689D6000170B35 /* UIColor+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADF32C68A13000170B35 /* NSObject+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADF22C68A13000170B35 /* NSObject+LUI.m */; };
-		1FCBADF42C68A13000170B35 /* NSObject+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADF12C68A13000170B35 /* NSObject+LUI.h */; };
+		1FCBADF42C68A13000170B35 /* NSObject+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADF12C68A13000170B35 /* NSObject+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADF72C68E66E00170B35 /* UITraitCollection+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADF62C68E66E00170B35 /* UITraitCollection+LUI.m */; };
-		1FCBADF82C68E66E00170B35 /* UITraitCollection+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADF52C68E66E00170B35 /* UITraitCollection+LUI.h */; };
+		1FCBADF82C68E66E00170B35 /* UITraitCollection+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADF52C68E66E00170B35 /* UITraitCollection+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADFB2C68E6BB00170B35 /* NSString+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADFA2C68E6BB00170B35 /* NSString+LUI.m */; };
-		1FCBADFC2C68E6BB00170B35 /* NSString+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADF92C68E6BB00170B35 /* NSString+LUI.h */; };
+		1FCBADFC2C68E6BB00170B35 /* NSString+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADF92C68E6BB00170B35 /* NSString+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADFF2C68E75300170B35 /* NSArray+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADFE2C68E75300170B35 /* NSArray+LUI.m */; };
-		1FCBAE002C68E75300170B35 /* NSArray+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADFD2C68E75300170B35 /* NSArray+LUI.h */; };
+		1FCBAE002C68E75300170B35 /* NSArray+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADFD2C68E75300170B35 /* NSArray+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBAE032C68E7F000170B35 /* UIGestureRecognizer+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE022C68E7F000170B35 /* UIGestureRecognizer+LUI.m */; };
-		1FCBAE042C68E7F000170B35 /* UIGestureRecognizer+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE012C68E7F000170B35 /* UIGestureRecognizer+LUI.h */; };
+		1FCBAE042C68E7F000170B35 /* UIGestureRecognizer+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE012C68E7F000170B35 /* UIGestureRecognizer+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBAE072C68E8FC00170B35 /* LUITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE062C68E8FC00170B35 /* LUITableView.m */; };
-		1FCBAE082C68E8FC00170B35 /* LUITableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE052C68E8FC00170B35 /* LUITableView.h */; };
-		1FCBAE0C2C68EAA900170B35 /* LUIModelBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE0B2C68EAA900170B35 /* LUIModelBase.m */; };
-		1FCBAE0D2C68EAA900170B35 /* LUIModelBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE0A2C68EAA900170B35 /* LUIModelBase.h */; };
-		1FCBAE102C68EB5000170B35 /* LUIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE0F2C68EB5000170B35 /* LUIModel.m */; };
-		1FCBAE112C68EB5000170B35 /* LUIModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE0E2C68EB5000170B35 /* LUIModel.h */; };
-		1FCBAE142C68EC8B00170B35 /* LUICellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE132C68EC8B00170B35 /* LUICellModel.m */; };
-		1FCBAE152C68EC8B00170B35 /* LUICellModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE122C68EC8B00170B35 /* LUICellModel.h */; };
-		1FCBAE182C68EC9E00170B35 /* LUISectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE172C68EC9E00170B35 /* LUISectionModel.m */; };
-		1FCBAE192C68EC9E00170B35 /* LUISectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE162C68EC9E00170B35 /* LUISectionModel.h */; };
+		1FCBAE082C68E8FC00170B35 /* LUITableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE052C68E8FC00170B35 /* LUITableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FCBAE0C2C68EAA900170B35 /* LUICollectionModelObjectBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE0B2C68EAA900170B35 /* LUICollectionModelObjectBase.m */; };
+		1FCBAE0D2C68EAA900170B35 /* LUICollectionModelObjectBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE0A2C68EAA900170B35 /* LUICollectionModelObjectBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FCBAE102C68EB5000170B35 /* LUICollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE0F2C68EB5000170B35 /* LUICollectionModel.m */; };
+		1FCBAE112C68EB5000170B35 /* LUICollectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE0E2C68EB5000170B35 /* LUICollectionModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FCBAE142C68EC8B00170B35 /* LUICollectionCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE132C68EC8B00170B35 /* LUICollectionCellModel.m */; };
+		1FCBAE152C68EC8B00170B35 /* LUICollectionCellModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE122C68EC8B00170B35 /* LUICollectionCellModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FCBAE182C68EC9E00170B35 /* LUICollectionSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE172C68EC9E00170B35 /* LUICollectionSectionModel.m */; };
+		1FCBAE192C68EC9E00170B35 /* LUICollectionSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE162C68EC9E00170B35 /* LUICollectionSectionModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBAE212C68EFF200170B35 /* LUITableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE202C68EFF200170B35 /* LUITableViewModel.m */; };
-		1FCBAE222C68EFF200170B35 /* LUITableViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE1F2C68EFF200170B35 /* LUITableViewModel.h */; };
+		1FCBAE222C68EFF200170B35 /* LUITableViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE1F2C68EFF200170B35 /* LUITableViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBAE252C68F0A000170B35 /* LUITableViewSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE242C68F0A000170B35 /* LUITableViewSectionModel.m */; };
-		1FCBAE262C68F0A000170B35 /* LUITableViewSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE232C68F0A000170B35 /* LUITableViewSectionModel.h */; };
+		1FCBAE262C68F0A000170B35 /* LUITableViewSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE232C68F0A000170B35 /* LUITableViewSectionModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBAE292C68F14600170B35 /* LUITableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE282C68F14600170B35 /* LUITableViewCellModel.m */; };
-		1FCBAE2A2C68F14600170B35 /* LUITableViewCellModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE272C68F14600170B35 /* LUITableViewCellModel.h */; };
+		1FCBAE2A2C68F14600170B35 /* LUITableViewCellModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE272C68F14600170B35 /* LUITableViewCellModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FCBAE2E2C6A2EB600170B35 /* LUIMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE2D2C6A2EB600170B35 /* LUIMacro.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FCBAE302C6A3E8100170B35 /* LUITableViewCellProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE2F2C6A3E8100170B35 /* LUITableViewCellProtocol.h */; };
+		1FCBAE322C6A426200170B35 /* LUITableViewSectionViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE312C6A426200170B35 /* LUITableViewSectionViewProtocol.h */; };
+		1FCBAE352C6A46F000170B35 /* LUITableViewCellSwipeAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE342C6A46F000170B35 /* LUITableViewCellSwipeAction.m */; };
+		1FCBAE362C6A46F000170B35 /* LUITableViewCellSwipeAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE332C6A46F000170B35 /* LUITableViewCellSwipeAction.h */; };
+		1FCBAE392C6A487400170B35 /* UITableViewCell+LUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE382C6A487400170B35 /* UITableViewCell+LUITableViewCell.m */; };
+		1FCBAE3A2C6A487400170B35 /* UITableViewCell+LUITableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE372C6A487400170B35 /* UITableViewCell+LUITableViewCell.h */; };
 		398FF6863DC5414099306253ADFC471D /* LUIThemeCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEE0DAD92FA395408A2488DEAC87D83 /* LUIThemeCenter.m */; };
 		3F05F689B03836519FDBF1140D1EBB6D /* LUITool.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E3D36B1F54495A630B693164B709F8D /* LUITool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48186C81363CE03126BF9D56CC5E8F1A /* Pods-LUITool_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A62B01616DB6039CBD59B731DCEFE545 /* Pods-LUITool_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -128,27 +135,34 @@
 		1FCBAE022C68E7F000170B35 /* UIGestureRecognizer+LUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+LUI.m"; sourceTree = "<group>"; };
 		1FCBAE052C68E8FC00170B35 /* LUITableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITableView.h; sourceTree = "<group>"; };
 		1FCBAE062C68E8FC00170B35 /* LUITableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITableView.m; sourceTree = "<group>"; };
-		1FCBAE0A2C68EAA900170B35 /* LUIModelBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIModelBase.h; sourceTree = "<group>"; };
-		1FCBAE0B2C68EAA900170B35 /* LUIModelBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIModelBase.m; sourceTree = "<group>"; };
-		1FCBAE0E2C68EB5000170B35 /* LUIModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIModel.h; sourceTree = "<group>"; };
-		1FCBAE0F2C68EB5000170B35 /* LUIModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIModel.m; sourceTree = "<group>"; };
-		1FCBAE122C68EC8B00170B35 /* LUICellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUICellModel.h; sourceTree = "<group>"; };
-		1FCBAE132C68EC8B00170B35 /* LUICellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUICellModel.m; sourceTree = "<group>"; };
-		1FCBAE162C68EC9E00170B35 /* LUISectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUISectionModel.h; sourceTree = "<group>"; };
-		1FCBAE172C68EC9E00170B35 /* LUISectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUISectionModel.m; sourceTree = "<group>"; };
+		1FCBAE0A2C68EAA900170B35 /* LUICollectionModelObjectBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUICollectionModelObjectBase.h; sourceTree = "<group>"; };
+		1FCBAE0B2C68EAA900170B35 /* LUICollectionModelObjectBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUICollectionModelObjectBase.m; sourceTree = "<group>"; };
+		1FCBAE0E2C68EB5000170B35 /* LUICollectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUICollectionModel.h; sourceTree = "<group>"; };
+		1FCBAE0F2C68EB5000170B35 /* LUICollectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUICollectionModel.m; sourceTree = "<group>"; };
+		1FCBAE122C68EC8B00170B35 /* LUICollectionCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUICollectionCellModel.h; sourceTree = "<group>"; };
+		1FCBAE132C68EC8B00170B35 /* LUICollectionCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUICollectionCellModel.m; sourceTree = "<group>"; };
+		1FCBAE162C68EC9E00170B35 /* LUICollectionSectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUICollectionSectionModel.h; sourceTree = "<group>"; };
+		1FCBAE172C68EC9E00170B35 /* LUICollectionSectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUICollectionSectionModel.m; sourceTree = "<group>"; };
 		1FCBAE1F2C68EFF200170B35 /* LUITableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITableViewModel.h; sourceTree = "<group>"; };
 		1FCBAE202C68EFF200170B35 /* LUITableViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITableViewModel.m; sourceTree = "<group>"; };
 		1FCBAE232C68F0A000170B35 /* LUITableViewSectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITableViewSectionModel.h; sourceTree = "<group>"; };
 		1FCBAE242C68F0A000170B35 /* LUITableViewSectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITableViewSectionModel.m; sourceTree = "<group>"; };
 		1FCBAE272C68F14600170B35 /* LUITableViewCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITableViewCellModel.h; sourceTree = "<group>"; };
 		1FCBAE282C68F14600170B35 /* LUITableViewCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITableViewCellModel.m; sourceTree = "<group>"; };
+		1FCBAE2D2C6A2EB600170B35 /* LUIMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIMacro.h; sourceTree = "<group>"; };
+		1FCBAE2F2C6A3E8100170B35 /* LUITableViewCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITableViewCellProtocol.h; sourceTree = "<group>"; };
+		1FCBAE312C6A426200170B35 /* LUITableViewSectionViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITableViewSectionViewProtocol.h; sourceTree = "<group>"; };
+		1FCBAE332C6A46F000170B35 /* LUITableViewCellSwipeAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITableViewCellSwipeAction.h; sourceTree = "<group>"; };
+		1FCBAE342C6A46F000170B35 /* LUITableViewCellSwipeAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITableViewCellSwipeAction.m; sourceTree = "<group>"; };
+		1FCBAE372C6A487400170B35 /* UITableViewCell+LUITableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+LUITableViewCell.h"; sourceTree = "<group>"; };
+		1FCBAE382C6A487400170B35 /* UITableViewCell+LUITableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+LUITableViewCell.m"; sourceTree = "<group>"; };
 		2FCD8E35081971AA27252991830F8BB2 /* Pods-LUITool_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LUITool_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		36804D367D9D2F48B79FBAE5E712527E /* Pods-LUITool_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LUITool_Example-Info.plist"; sourceTree = "<group>"; };
 		39E89CA8E59FAD25D7A335732CEF6DFE /* NSObject+LUITheme.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LUITheme.m"; sourceTree = "<group>"; };
 		4FC6422F97350C26511C529CBB93503E /* LUITool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LUITool.debug.xcconfig; sourceTree = "<group>"; };
 		578CEA9B87F6D9D6E8B2E8AA066AE2F3 /* Pods-LUITool_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LUITool_Tests"; path = Pods_LUITool_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5909BF5508F7E04C29EACCD6439D123F /* LUITool-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LUITool-dummy.m"; sourceTree = "<group>"; };
-		5A8599B6D12A18DB116EFB9733A5A695 /* LUITool */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LUITool; path = LUITool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A8599B6D12A18DB116EFB9733A5A695 /* LUITool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LUITool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E35EF794C52E58C398F7ADDF62FA58 /* LUIThemeElementProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LUIThemeElementProtocol.h; sourceTree = "<group>"; };
 		675BE883F6EC0E60C8F4D1899D343315 /* Pods-LUITool_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LUITool_Example-frameworks.sh"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -207,6 +221,10 @@
 		1FCBADC22C685EE300170B35 /* LUITableView */ = {
 			isa = PBXGroup;
 			children = (
+				1FCBAE2F2C6A3E8100170B35 /* LUITableViewCellProtocol.h */,
+				1FCBAE312C6A426200170B35 /* LUITableViewSectionViewProtocol.h */,
+				1FCBAE372C6A487400170B35 /* UITableViewCell+LUITableViewCell.h */,
+				1FCBAE382C6A487400170B35 /* UITableViewCell+LUITableViewCell.m */,
 				1FCBAE052C68E8FC00170B35 /* LUITableView.h */,
 				1FCBAE062C68E8FC00170B35 /* LUITableView.m */,
 				1FCBAE1F2C68EFF200170B35 /* LUITableViewModel.h */,
@@ -215,6 +233,8 @@
 				1FCBAE282C68F14600170B35 /* LUITableViewCellModel.m */,
 				1FCBAE232C68F0A000170B35 /* LUITableViewSectionModel.h */,
 				1FCBAE242C68F0A000170B35 /* LUITableViewSectionModel.m */,
+				1FCBAE332C6A46F000170B35 /* LUITableViewCellSwipeAction.h */,
+				1FCBAE342C6A46F000170B35 /* LUITableViewCellSwipeAction.m */,
 			);
 			name = LUITableView;
 			path = LUITool/Classes/LUITableView;
@@ -223,6 +243,7 @@
 		1FCBADC32C685F0400170B35 /* LUICore */ = {
 			isa = PBXGroup;
 			children = (
+				1FCBAE2D2C6A2EB600170B35 /* LUIMacro.h */,
 				1FCBADC82C685F6600170B35 /* LUICGRect.h */,
 				1FCBADC92C685F6600170B35 /* LUICGRect.m */,
 			);
@@ -269,14 +290,14 @@
 		1FCBAE092C68EA9500170B35 /* LUIModelBase */ = {
 			isa = PBXGroup;
 			children = (
-				1FCBAE0A2C68EAA900170B35 /* LUIModelBase.h */,
-				1FCBAE0B2C68EAA900170B35 /* LUIModelBase.m */,
-				1FCBAE0E2C68EB5000170B35 /* LUIModel.h */,
-				1FCBAE0F2C68EB5000170B35 /* LUIModel.m */,
-				1FCBAE122C68EC8B00170B35 /* LUICellModel.h */,
-				1FCBAE132C68EC8B00170B35 /* LUICellModel.m */,
-				1FCBAE162C68EC9E00170B35 /* LUISectionModel.h */,
-				1FCBAE172C68EC9E00170B35 /* LUISectionModel.m */,
+				1FCBAE0A2C68EAA900170B35 /* LUICollectionModelObjectBase.h */,
+				1FCBAE0B2C68EAA900170B35 /* LUICollectionModelObjectBase.m */,
+				1FCBAE0E2C68EB5000170B35 /* LUICollectionModel.h */,
+				1FCBAE0F2C68EB5000170B35 /* LUICollectionModel.m */,
+				1FCBAE122C68EC8B00170B35 /* LUICollectionCellModel.h */,
+				1FCBAE132C68EC8B00170B35 /* LUICollectionCellModel.m */,
+				1FCBAE162C68EC9E00170B35 /* LUICollectionSectionModel.h */,
+				1FCBAE172C68EC9E00170B35 /* LUICollectionSectionModel.m */,
 			);
 			name = LUIModelBase;
 			path = LUITool/Classes/LUIModelBase;
@@ -358,7 +379,7 @@
 		AD8EB7A128BB7168FFBEB5555E862ACA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5A8599B6D12A18DB116EFB9733A5A695 /* LUITool */,
+				5A8599B6D12A18DB116EFB9733A5A695 /* LUITool.framework */,
 				01388624C1AF60B56A275453729C0881 /* Pods-LUITool_Example */,
 				578CEA9B87F6D9D6E8B2E8AA066AE2F3 /* Pods-LUITool_Tests */,
 			);
@@ -430,35 +451,40 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FCBADF82C68E66E00170B35 /* UITraitCollection+LUI.h in Headers */,
-				1FCBADD42C68928100170B35 /* UIImage+LUI.h in Headers */,
-				1FCBAE0D2C68EAA900170B35 /* LUIModelBase.h in Headers */,
 				C251E1DAC4DC33AF3B8269D91FC9B836 /* LUIThemeCenter.h in Headers */,
+				1FCBADF82C68E66E00170B35 /* UITraitCollection+LUI.h in Headers */,
+				1FCBAE362C6A46F000170B35 /* LUITableViewCellSwipeAction.h in Headers */,
+				1FCBADD42C68928100170B35 /* UIImage+LUI.h in Headers */,
+				1FCBAE0D2C68EAA900170B35 /* LUICollectionModelObjectBase.h in Headers */,
 				1FCBAE042C68E7F000170B35 /* UIGestureRecognizer+LUI.h in Headers */,
+				1FCBAE2E2C6A2EB600170B35 /* LUIMacro.h in Headers */,
 				1FCBADD82C6894DB00170B35 /* UIImageView+LUI.h in Headers */,
 				1FCBAE2A2C68F14600170B35 /* LUITableViewCellModel.h in Headers */,
-				5E721EB3A9759115349374AAA85256D2 /* LUIThemeElementProtocol.h in Headers */,
 				1FCBADCB2C685F6600170B35 /* LUICGRect.h in Headers */,
 				1FCBADF02C689D6000170B35 /* UIColor+LUI.h in Headers */,
 				1FCBADFC2C68E6BB00170B35 /* NSString+LUI.h in Headers */,
 				1FCBADE02C68961800170B35 /* UITableView+LUI.h in Headers */,
 				1FCBAE262C68F0A000170B35 /* LUITableViewSectionModel.h in Headers */,
-				1FCBAE112C68EB5000170B35 /* LUIModel.h in Headers */,
+				1FCBAE112C68EB5000170B35 /* LUICollectionModel.h in Headers */,
+				1FCBAE302C6A3E8100170B35 /* LUITableViewCellProtocol.h in Headers */,
 				1FCBADD02C688EB400170B35 /* UIButton+LUI.h in Headers */,
-				D70A465CE739E6F0C6905A4C207163B7 /* LUIThemePickerProtocol.h in Headers */,
-				3F05F689B03836519FDBF1140D1EBB6D /* LUITool.h in Headers */,
+				1FCBAE3A2C6A487400170B35 /* UITableViewCell+LUITableViewCell.h in Headers */,
 				1FCBAE222C68EFF200170B35 /* LUITableViewModel.h in Headers */,
-				BD1D2051C902197C50C02F5502BBD729 /* LUITool-umbrella.h in Headers */,
 				1FCBADE82C6897FD00170B35 /* UICollectionViewFlowLayout+LUI.h in Headers */,
-				1FCBAE152C68EC8B00170B35 /* LUICellModel.h in Headers */,
+				1FCBAE322C6A426200170B35 /* LUITableViewSectionViewProtocol.h in Headers */,
+				1FCBAE152C68EC8B00170B35 /* LUICollectionCellModel.h in Headers */,
 				1FCBADE42C68969B00170B35 /* UITableViewCell+LUI.h in Headers */,
-				1FCBAE192C68EC9E00170B35 /* LUISectionModel.h in Headers */,
+				1FCBAE192C68EC9E00170B35 /* LUICollectionSectionModel.h in Headers */,
 				1FCBADEC2C689B3200170B35 /* UIView+LUI.h in Headers */,
 				1FCBAE082C68E8FC00170B35 /* LUITableView.h in Headers */,
 				1FCBAE002C68E75300170B35 /* NSArray+LUI.h in Headers */,
-				1C0EB7885E6180AED7D7C69B348D3FB9 /* NSObject+LUITheme.h in Headers */,
 				1FCBADF42C68A13000170B35 /* NSObject+LUI.h in Headers */,
 				1FCBADDC2C68955A00170B35 /* UIScrollView+LUI.h in Headers */,
+				5E721EB3A9759115349374AAA85256D2 /* LUIThemeElementProtocol.h in Headers */,
+				D70A465CE739E6F0C6905A4C207163B7 /* LUIThemePickerProtocol.h in Headers */,
+				3F05F689B03836519FDBF1140D1EBB6D /* LUITool.h in Headers */,
+				BD1D2051C902197C50C02F5502BBD729 /* LUITool-umbrella.h in Headers */,
+				1C0EB7885E6180AED7D7C69B348D3FB9 /* NSObject+LUITheme.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,7 +541,7 @@
 			);
 			name = LUITool;
 			productName = LUITool;
-			productReference = 5A8599B6D12A18DB116EFB9733A5A695 /* LUITool */;
+			productReference = 5A8599B6D12A18DB116EFB9733A5A695 /* LUITool.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FFDC1DD31267A5FB784ABE6F669937A8 /* Pods-LUITool_Example */ = {
@@ -615,28 +641,30 @@
 				1FCBADEB2C689B3200170B35 /* UIView+LUI.m in Sources */,
 				1FCBAE252C68F0A000170B35 /* LUITableViewSectionModel.m in Sources */,
 				1FCBADCF2C688EB400170B35 /* UIButton+LUI.m in Sources */,
-				1FCBAE0C2C68EAA900170B35 /* LUIModelBase.m in Sources */,
+				1FCBAE0C2C68EAA900170B35 /* LUICollectionModelObjectBase.m in Sources */,
 				1FCBADF72C68E66E00170B35 /* UITraitCollection+LUI.m in Sources */,
 				1FCBADDB2C68955A00170B35 /* UIScrollView+LUI.m in Sources */,
 				1FCBADCA2C685F6600170B35 /* LUICGRect.m in Sources */,
 				1FCBADFB2C68E6BB00170B35 /* NSString+LUI.m in Sources */,
-				1FCBAE142C68EC8B00170B35 /* LUICellModel.m in Sources */,
+				1FCBAE142C68EC8B00170B35 /* LUICollectionCellModel.m in Sources */,
 				398FF6863DC5414099306253ADFC471D /* LUIThemeCenter.m in Sources */,
 				1FCBADE72C6897FD00170B35 /* UICollectionViewFlowLayout+LUI.m in Sources */,
 				1FCBADFF2C68E75300170B35 /* NSArray+LUI.m in Sources */,
 				1FCBAE212C68EFF200170B35 /* LUITableViewModel.m in Sources */,
+				1FCBAE392C6A487400170B35 /* UITableViewCell+LUITableViewCell.m in Sources */,
+				1FCBAE352C6A46F000170B35 /* LUITableViewCellSwipeAction.m in Sources */,
 				1FCBADDF2C68961800170B35 /* UITableView+LUI.m in Sources */,
 				1FCBADF32C68A13000170B35 /* NSObject+LUI.m in Sources */,
 				1FCBAE032C68E7F000170B35 /* UIGestureRecognizer+LUI.m in Sources */,
 				1FCBADE32C68969B00170B35 /* UITableViewCell+LUI.m in Sources */,
-				1FCBAE102C68EB5000170B35 /* LUIModel.m in Sources */,
+				1FCBAE102C68EB5000170B35 /* LUICollectionModel.m in Sources */,
 				6F1E3225E22EE9A691A57CA31199E549 /* LUITool-dummy.m in Sources */,
 				1FCBAE072C68E8FC00170B35 /* LUITableView.m in Sources */,
 				1FCBADEF2C689D6000170B35 /* UIColor+LUI.m in Sources */,
 				66F0439AA87536E2E590C798619D75A5 /* NSObject+LUITheme.m in Sources */,
 				1FCBADD72C6894DB00170B35 /* UIImageView+LUI.m in Sources */,
 				1FCBAE292C68F14600170B35 /* LUITableViewCellModel.m in Sources */,
-				1FCBAE182C68EC9E00170B35 /* LUISectionModel.m in Sources */,
+				1FCBAE182C68EC9E00170B35 /* LUICollectionSectionModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

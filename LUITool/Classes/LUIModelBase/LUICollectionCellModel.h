@@ -2,21 +2,21 @@
 //  LUICellModel.h
 //  LUITool
 //
-//  Created by 六月 on 2024/8/11.
+//  Created by 六月 on 2023/8/11.
 //
 
-#import "LUIModelBase.h"
+#import "LUICollectionModelObjectBase.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LUISectionModel, LUIModel;
+@class LUICollectionSectionModel, LUICollectionModel;
 
-@interface LUICellModel : LUIModelBase {
+@interface LUICollectionCellModel : LUICollectionModelObjectBase {
     @protected
-    __weak LUISectionModel *_sectionModel;
+    __weak LUICollectionSectionModel *_sectionModel;
 }
 
-@property (nonatomic, readonly, nullable) __kindof LUIModel *lModel;//集合模型对象
+@property (nonatomic, readonly, nullable) __kindof LUICollectionModel *lModel;//集合模型对象
 @property (nonatomic, strong, nullable) id userInfo;//自定义的扩展对象
 @property (nonatomic, assign) BOOL selected;
 @property (nonatomic, assign) BOOL focused;//是否获取焦点
@@ -29,10 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 //是否是整个model中最后一个元素
 @property (nonatomic, readonly) BOOL isLastInAllCellModels;
 //弱引用上層的分组對象
-- (void)setSectionModel:(nullable LUISectionModel *)sectionModel;
-- (nullable __kindof LUISectionModel *)sectionModel;
+- (void)setSectionModel:(nullable LUICollectionSectionModel *)sectionModel;
+- (nullable __kindof LUICollectionSectionModel *)sectionModel;
 
-- (NSComparisonResult)compare:(LUICellModel *)otherObject;
+- (NSComparisonResult)compare:(LUICollectionCellModel *)otherObject;
 
 @end
 

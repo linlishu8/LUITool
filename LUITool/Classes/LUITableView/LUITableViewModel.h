@@ -2,17 +2,19 @@
 //  LUITableViewModel.h
 //  LUITool
 //
-//  Created by 六月 on 2024/8/11.
+//  Created by 六月 on 2023/8/11.
 //
 
-#import "LUIModel.h"
+#import "LUICollectionModel.h"
 #import "LUITableViewSectionModel.h"
 #import "LUITableViewCellModel.h"
-#import "LUICellModel.h"
+#import "LUICollectionCellModel.h"
+
+#define LUITableViewDefaultSectionIndexTitle @"#"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LUITableViewModel : LUIModel <UITableViewDataSource,UITableViewDelegate> {
+@interface LUITableViewModel : LUICollectionModel <UITableViewDataSource, UITableViewDelegate> {
 @protected
     LUITableViewSectionModel *_defaultIndexTitleSectionModel;    //存儲section的indexTitle沒有值的情況
 }
@@ -104,7 +106,7 @@ typedef void(^LUITableViewModelC)(LUITableViewModel *model);
 - (void)insertSectionModel:(LUITableViewSectionModel *)sectionModel atIndex:(NSInteger)index animated:(BOOL)animated;//动画添加分组
 - (void)removeSectionModel:(LUITableViewSectionModel *)sectionModel animated:(BOOL)animated;//动画移除分组
 
-- (void)deselectCellModels:(NSArray<LUICellModel *> *)cellModels animated:(BOOL)animated;
+- (void)deselectCellModels:(NSArray<LUICollectionCellModel *> *)cellModels animated:(BOOL)animated;
 - (void)deselectAllCellModelsWithAnimated:(BOOL)animated;
 
 - (void)selectCellModels:(NSArray<LUITableViewCellModel *> *)cellModels animated:(BOOL)animated;

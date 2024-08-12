@@ -2,14 +2,14 @@
 //  LUIModelBase.h
 //  LUITool
 //
-//  Created by 六月 on 2024/8/11.
+//  Created by 六月 on 2023/8/11.
 //
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LUIModelBase : NSObject<NSCopying>
+@interface LUICollectionModelObjectBase : NSObject<NSCopying>
 
 @property(nonatomic,strong,nullable) id modelValue;
 
@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface LUIModelBase(LUI_ValueForKeyPath)
+@interface LUICollectionModelObjectBase(LUI_ValueForKeyPath)
 
 - (nullable id)l_valueForKeyPath:(NSString *)path otherwise:(nullable id)other;
 

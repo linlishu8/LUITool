@@ -16,6 +16,8 @@ FOUNDATION_EXPORT const unsigned char MKUIVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <MKUI/PublicHeader.h>
 
+#import "LUIMacro.h"
+
 #pragma mark - Theme(主题化)
 #import "LUIThemeCenter.h"
 #import "LUIThemeElementProtocol.h"
