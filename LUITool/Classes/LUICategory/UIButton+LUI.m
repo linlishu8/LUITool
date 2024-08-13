@@ -10,18 +10,10 @@
 
 @implementation UIButton (LUI)
 
-//- (void)l_setBackgroundColor:(UIColor *)color forState:(UIControlState)state {
-//    UIImage *image = [UIImage l_imageWithUIColor:color];
-//    [self setBackgroundImage:image forState:state];
-//}
-//- (void)l_setBackgroundColorForNormalAndHighlightedState:(UIColor *)color {
-//    UIColor *normalColor = color;
-//    UIColor *highlightedColor = color.mk_halfColor;
-//    [self l_setBackgroundColor:normalColor forState:UIControlStateNormal];
-//    if(highlightedColor){
-//        [self l_setBackgroundColor:highlightedColor forState:UIControlStateHighlighted];
-//    }
-//}
+- (void)l_setBackgroundColor:(UIColor *)color forState:(UIControlState)state {
+    UIImage *image = [UIImage l_imageWithUIColor:color];
+    [self setBackgroundImage:image forState:state];
+}
 
 @end
 

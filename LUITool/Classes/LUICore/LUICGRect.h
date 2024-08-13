@@ -77,4 +77,31 @@ typedef LUICGRect * __nonnull (^LUICGRectE)(CGRect,CGFloat);//边与rect的paddi
 
 @end
 
+@interface LUICGRect(Scale)
+
+/**
+ *  如果originSize的尺寸超过maxSize，则等比例缩放originSize直到宽高都不超过maxSize
+ *
+ *  @param originSize 原始的尺寸
+ *  @param maxSize    最大尺寸
+ *
+ *  @return 等比例缩放后的尺寸
+ */
++ (CGSize)scaleSize:(CGSize)originSize aspectFitToMaxSize:(CGSize)maxSize;
+
+/// 将originSize，等比例缩放到maxSize（某一边值与maxSize一致）
+/// @param originSize 原始的尺寸
+/// @param maxSize 最大尺寸
++ (CGSize)scaleSize:(CGSize)originSize aspectFitToSize:(CGSize)maxSize;
+
+/**
+ 根据contentMode属性,计算从fromRect缩放平移到toRect的仿射变换矩阵
+
+ @param fromRect 源区域
+ @param toRect 目标区域
+ @param contentMode contentMode值,contentMode中的Top定义为CGRectGetMinY,Left定义为CGRectGetMinX.即为UIKit坐标系下CGRect中关于Top,Left的定义
+ @return 变换矩阵
+ */
++ (CGAffineTransform)transformRect:(CGRect)fromRect scaleTo:(CGRect)toRect contentMode:(UIViewContentMode)contentMode;
+@end
 NS_ASSUME_NONNULL_END

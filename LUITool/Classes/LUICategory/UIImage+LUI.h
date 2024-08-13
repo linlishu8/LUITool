@@ -217,7 +217,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *)l_checkmarkImageWithColor:(UIColor *)color;//返回17x17，线宽为2的图片
 @end
 
-@interface UIImage(UIViewTransform)//视图的仿照映射
+@interface UIImage (UIViewTransform)//视图的仿照映射
 /**
  *  根据ContentMode属性,获取图片的仿射矩阵,该矩阵的作用是将图片缩放到视图范围内.
     图片进行缩放时,坐标系为UIView的视图坐标系,图片从(0,0,self.size.width*self.scale,self.size.heigt*self.scale)变换到最终的显示效果

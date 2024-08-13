@@ -18,13 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)l_setBackgroundColor:(nullable UIColor *)color forState:(UIControlState)state;
 
-/**
- *  设置按钮的背景颜色,其中normal状态下的颜色为color,highlighted状态下的颜色为color的各个分量颜色值的一半
- *
- *  @param color 颜色
- */
-- (void)l_setBackgroundColorForNormalAndHighlightedState:(nullable UIColor *)color;
-
 @end
 
 @interface UIButton (LUI_ActionBlock)

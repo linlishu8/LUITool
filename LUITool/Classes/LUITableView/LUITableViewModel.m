@@ -8,7 +8,6 @@
 #import "LUITableViewModel.h"
 #import "UIScrollView+LUI.h"
 #import <objc/runtime.h>
-#import "LUIMacro.h"
 #import "LUITableViewCellProtocol.h"
 #import "LUITableViewSectionViewProtocol.h"
 #import "UITableViewCell+LUITableViewCell.h"

@@ -61,6 +61,13 @@
 		1FCBAE362C6A46F000170B35 /* LUITableViewCellSwipeAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE332C6A46F000170B35 /* LUITableViewCellSwipeAction.h */; };
 		1FCBAE392C6A487400170B35 /* UITableViewCell+LUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE382C6A487400170B35 /* UITableViewCell+LUITableViewCell.m */; };
 		1FCBAE3A2C6A487400170B35 /* UITableViewCell+LUITableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE372C6A487400170B35 /* UITableViewCell+LUITableViewCell.h */; };
+		1FCBAE3D2C6B86B300170B35 /* LUITableViewSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE3C2C6B86B300170B35 /* LUITableViewSectionView.m */; };
+		1FCBAE3E2C6B86B300170B35 /* LUITableViewSectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE3B2C6B86B300170B35 /* LUITableViewSectionView.h */; };
+		1FCBAE412C6B8BF200170B35 /* LUITableViewCellBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE402C6B8BF200170B35 /* LUITableViewCellBase.m */; };
+		1FCBAE422C6B8BF200170B35 /* LUITableViewCellBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE3F2C6B8BF200170B35 /* LUITableViewCellBase.h */; };
+		1FCBAE452C6B8ED200170B35 /* LUITableViewSectionAdjustsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE442C6B8ED200170B35 /* LUITableViewSectionAdjustsView.m */; };
+		1FCBAE462C6B8ED200170B35 /* LUITableViewSectionAdjustsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE432C6B8ED200170B35 /* LUITableViewSectionAdjustsView.h */; };
+		1FCBAE522C6B9FCC00170B35 /* CGGeometry+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE512C6B9FCC00170B35 /* CGGeometry+LUI.h */; };
 		398FF6863DC5414099306253ADFC471D /* LUIThemeCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEE0DAD92FA395408A2488DEAC87D83 /* LUIThemeCenter.m */; };
 		3F05F689B03836519FDBF1140D1EBB6D /* LUITool.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E3D36B1F54495A630B693164B709F8D /* LUITool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48186C81363CE03126BF9D56CC5E8F1A /* Pods-LUITool_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A62B01616DB6039CBD59B731DCEFE545 /* Pods-LUITool_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -156,6 +163,13 @@
 		1FCBAE342C6A46F000170B35 /* LUITableViewCellSwipeAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITableViewCellSwipeAction.m; sourceTree = "<group>"; };
 		1FCBAE372C6A487400170B35 /* UITableViewCell+LUITableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+LUITableViewCell.h"; sourceTree = "<group>"; };
 		1FCBAE382C6A487400170B35 /* UITableViewCell+LUITableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+LUITableViewCell.m"; sourceTree = "<group>"; };
+		1FCBAE3B2C6B86B300170B35 /* LUITableViewSectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITableViewSectionView.h; sourceTree = "<group>"; };
+		1FCBAE3C2C6B86B300170B35 /* LUITableViewSectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITableViewSectionView.m; sourceTree = "<group>"; };
+		1FCBAE3F2C6B8BF200170B35 /* LUITableViewCellBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITableViewCellBase.h; sourceTree = "<group>"; };
+		1FCBAE402C6B8BF200170B35 /* LUITableViewCellBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITableViewCellBase.m; sourceTree = "<group>"; };
+		1FCBAE432C6B8ED200170B35 /* LUITableViewSectionAdjustsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITableViewSectionAdjustsView.h; sourceTree = "<group>"; };
+		1FCBAE442C6B8ED200170B35 /* LUITableViewSectionAdjustsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITableViewSectionAdjustsView.m; sourceTree = "<group>"; };
+		1FCBAE512C6B9FCC00170B35 /* CGGeometry+LUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+LUI.h"; sourceTree = "<group>"; };
 		2FCD8E35081971AA27252991830F8BB2 /* Pods-LUITool_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LUITool_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		36804D367D9D2F48B79FBAE5E712527E /* Pods-LUITool_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LUITool_Example-Info.plist"; sourceTree = "<group>"; };
 		39E89CA8E59FAD25D7A335732CEF6DFE /* NSObject+LUITheme.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LUITheme.m"; sourceTree = "<group>"; };
@@ -235,6 +249,12 @@
 				1FCBAE242C68F0A000170B35 /* LUITableViewSectionModel.m */,
 				1FCBAE332C6A46F000170B35 /* LUITableViewCellSwipeAction.h */,
 				1FCBAE342C6A46F000170B35 /* LUITableViewCellSwipeAction.m */,
+				1FCBAE3B2C6B86B300170B35 /* LUITableViewSectionView.h */,
+				1FCBAE3C2C6B86B300170B35 /* LUITableViewSectionView.m */,
+				1FCBAE3F2C6B8BF200170B35 /* LUITableViewCellBase.h */,
+				1FCBAE402C6B8BF200170B35 /* LUITableViewCellBase.m */,
+				1FCBAE432C6B8ED200170B35 /* LUITableViewSectionAdjustsView.h */,
+				1FCBAE442C6B8ED200170B35 /* LUITableViewSectionAdjustsView.m */,
 			);
 			name = LUITableView;
 			path = LUITool/Classes/LUITableView;
@@ -246,6 +266,7 @@
 				1FCBAE2D2C6A2EB600170B35 /* LUIMacro.h */,
 				1FCBADC82C685F6600170B35 /* LUICGRect.h */,
 				1FCBADC92C685F6600170B35 /* LUICGRect.m */,
+				1FCBAE512C6B9FCC00170B35 /* CGGeometry+LUI.h */,
 			);
 			name = LUICore;
 			path = LUITool/Classes/LUICore;
@@ -462,11 +483,15 @@
 				1FCBAE2A2C68F14600170B35 /* LUITableViewCellModel.h in Headers */,
 				1FCBADCB2C685F6600170B35 /* LUICGRect.h in Headers */,
 				1FCBADF02C689D6000170B35 /* UIColor+LUI.h in Headers */,
+				1FCBAE3E2C6B86B300170B35 /* LUITableViewSectionView.h in Headers */,
+				1FCBAE422C6B8BF200170B35 /* LUITableViewCellBase.h in Headers */,
 				1FCBADFC2C68E6BB00170B35 /* NSString+LUI.h in Headers */,
 				1FCBADE02C68961800170B35 /* UITableView+LUI.h in Headers */,
 				1FCBAE262C68F0A000170B35 /* LUITableViewSectionModel.h in Headers */,
 				1FCBAE112C68EB5000170B35 /* LUICollectionModel.h in Headers */,
+				1FCBAE462C6B8ED200170B35 /* LUITableViewSectionAdjustsView.h in Headers */,
 				1FCBAE302C6A3E8100170B35 /* LUITableViewCellProtocol.h in Headers */,
+				1FCBAE522C6B9FCC00170B35 /* CGGeometry+LUI.h in Headers */,
 				1FCBADD02C688EB400170B35 /* UIButton+LUI.h in Headers */,
 				1FCBAE3A2C6A487400170B35 /* UITableViewCell+LUITableViewCell.h in Headers */,
 				1FCBAE222C68EFF200170B35 /* LUITableViewModel.h in Headers */,
@@ -646,15 +671,18 @@
 				1FCBADDB2C68955A00170B35 /* UIScrollView+LUI.m in Sources */,
 				1FCBADCA2C685F6600170B35 /* LUICGRect.m in Sources */,
 				1FCBADFB2C68E6BB00170B35 /* NSString+LUI.m in Sources */,
+				1FCBAE452C6B8ED200170B35 /* LUITableViewSectionAdjustsView.m in Sources */,
 				1FCBAE142C68EC8B00170B35 /* LUICollectionCellModel.m in Sources */,
 				398FF6863DC5414099306253ADFC471D /* LUIThemeCenter.m in Sources */,
 				1FCBADE72C6897FD00170B35 /* UICollectionViewFlowLayout+LUI.m in Sources */,
+				1FCBAE3D2C6B86B300170B35 /* LUITableViewSectionView.m in Sources */,
 				1FCBADFF2C68E75300170B35 /* NSArray+LUI.m in Sources */,
 				1FCBAE212C68EFF200170B35 /* LUITableViewModel.m in Sources */,
 				1FCBAE392C6A487400170B35 /* UITableViewCell+LUITableViewCell.m in Sources */,
 				1FCBAE352C6A46F000170B35 /* LUITableViewCellSwipeAction.m in Sources */,
 				1FCBADDF2C68961800170B35 /* UITableView+LUI.m in Sources */,
 				1FCBADF32C68A13000170B35 /* NSObject+LUI.m in Sources */,
+				1FCBAE412C6B8BF200170B35 /* LUITableViewCellBase.m in Sources */,
 				1FCBAE032C68E7F000170B35 /* UIGestureRecognizer+LUI.m in Sources */,
 				1FCBADE32C68969B00170B35 /* UITableViewCell+LUI.m in Sources */,
 				1FCBAE102C68EB5000170B35 /* LUICollectionModel.m in Sources */,
