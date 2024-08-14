@@ -169,7 +169,7 @@
     }
     return value;
 }
-NSString *const kMKDateFormatNormal = @"yyyy-MM-dd HH:mm:ss";//"yyyy-MM-dd HH:mm:ss"
+NSString *const kLUIDateFormatNormal = @"yyyy-MM-dd HH:mm:ss";//"yyyy-MM-dd HH:mm:ss"
 - (nullable NSDate *)l_dateSinceReferenceDateForKeyPath:(NSString *)path dateFormat:(nullable NSString *)dateFormat {
     return [self l_dateSinceReferenceDateForKeyPath:path dateFormat:dateFormat otherwise:nil];
 }
@@ -263,7 +263,7 @@ NSString *const kMKDateFormatNormal = @"yyyy-MM-dd HH:mm:ss";//"yyyy-MM-dd HH:mm
     return value;
 }
 @end
-@implementation NSDictionary(MKUI_ValueForKeyPathOtherwise)
+@implementation NSDictionary(LUI_ValueForKeyPath)
 - (nullable id)l_valueForKeyPath:(NSString *)path {
     return [self l_valueForKeyPath:path otherwise:nil];
 }
@@ -280,7 +280,7 @@ NSString *const kMKDateFormatNormal = @"yyyy-MM-dd HH:mm:ss";//"yyyy-MM-dd HH:mm
 }
 @end
 
-@implementation NSObject(MKUI_Address)
+@implementation NSObject(LUI_Address)
 - (NSString *)l_objectAddress {
     return [NSString stringWithFormat:@"%@:%p",NSStringFromClass(self.class),self];
 }
@@ -288,31 +288,31 @@ NSString *const kMKDateFormatNormal = @"yyyy-MM-dd HH:mm:ss";//"yyyy-MM-dd HH:mm
 
 
 NS_ASSUME_NONNULL_BEGIN
-typedef void(^__MKKVOProxyBlock)(NSString *keyPath,id object, NSDictionary<NSKeyValueChangeKey,id> *change,void * context);
-@interface __MKKVOProxy : NSObject
+typedef void(^__LUIKVOProxyBlock)(NSString *keyPath,id object, NSDictionary<NSKeyValueChangeKey,id> *change,void * context);
+@interface __LUIKVOProxy : NSObject
 @property(nonatomic,strong) NSString *objectKey;
 @property(nonatomic,strong) NSString *keyPath;
 @property(nonatomic,assign) NSKeyValueObservingOptions options;
 @property(nonatomic,assign) void * context;
-@property(nonatomic,strong) NSArray<__MKKVOProxyBlock> *blocks;
-- (void)addObserveValueBlock:(__MKKVOProxyBlock)block;
-- (void)setObserveValueBlock:(__MKKVOProxyBlock)block;
+@property(nonatomic,strong) NSArray<__LUIKVOProxyBlock> *blocks;
+- (void)addObserveValueBlock:(__LUIKVOProxyBlock)block;
+- (void)setObserveValueBlock:(__LUIKVOProxyBlock)block;
 @end
 
-typedef void(^__MKKVOGetProxyBlock)(__MKKVOProxy * _Nullable proxy);
-typedef void(^__MKKVOGetProxysBlock)(NSArray<__MKKVOProxy *> * proxys);
-@interface __MKKVOProxyManager : NSObject
+typedef void(^__LUIKVOGetProxyBlock)(__LUIKVOProxy * _Nullable proxy);
+typedef void(^__LUIKVOGetProxysBlock)(NSArray<__LUIKVOProxy *> * proxys);
+@interface __LUIKVOProxyManager : NSObject
 @property(nonatomic,strong) NSRecursiveLock *lock;
 + (id)sharedInstance;
-@property(nonatomic,strong) NSMutableDictionary<NSString *,NSMutableArray<__MKKVOProxy *> *> *objectProxyList;
-- (void)getProxyForObject:(id)object keyPath:(NSString *)keyPath context:(nullable void *)context completion:(nullable __MKKVOGetProxyBlock)completion;
-- (void)getProxysForObject:(id)object completion:(nullable __MKKVOGetProxysBlock)completion;
-- (void)addProxy:(__MKKVOProxy *)proxy forObject:(NSObject *)object;
-- (void)removeProxy:(__MKKVOProxy *)proxy;
+@property(nonatomic,strong) NSMutableDictionary<NSString *,NSMutableArray<__LUIKVOProxy *> *> *objectProxyList;
+- (void)getProxyForObject:(id)object keyPath:(NSString *)keyPath context:(nullable void *)context completion:(nullable __LUIKVOGetProxyBlock)completion;
+- (void)getProxysForObject:(id)object completion:(nullable __LUIKVOGetProxysBlock)completion;
+- (void)addProxy:(__LUIKVOProxy *)proxy forObject:(NSObject *)object;
+- (void)removeProxy:(__LUIKVOProxy *)proxy;
 @end
 NS_ASSUME_NONNULL_END
 
-@implementation __MKKVOProxyManager
+@implementation __LUIKVOProxyManager
 + (id)sharedInstance {
     static dispatch_once_t once;
     static id __singleton__;
@@ -329,10 +329,10 @@ NS_ASSUME_NONNULL_END
 - (NSString *)__objectListKeyForObject:(id)object {
     return [NSString stringWithFormat:@"%p",object];
 }
-- (nullable __MKKVOProxy *)proxyForObject:(id)object keyPath:(NSString *)keyPath context:(nullable void *)context {
-    __MKKVOProxy *proxy = nil;
-    NSArray<__MKKVOProxy *> *proxyList = [self proxysForObject:object];
-    for (__MKKVOProxy *p in proxyList) {
+- (nullable __LUIKVOProxy *)proxyForObject:(id)object keyPath:(NSString *)keyPath context:(nullable void *)context {
+    __LUIKVOProxy *proxy = nil;
+    NSArray<__LUIKVOProxy *> *proxyList = [self proxysForObject:object];
+    for (__LUIKVOProxy *p in proxyList) {
         if ([p.keyPath isEqualToString:keyPath] && p.context==context) {
             proxy = p;
             break;
@@ -340,11 +340,11 @@ NS_ASSUME_NONNULL_END
     }
     return proxy;
 }
-- (void)getProxyForObject:(id)object keyPath:(NSString *)keyPath context:(nullable void *)context completion:(nullable __MKKVOGetProxyBlock)completion {
+- (void)getProxyForObject:(id)object keyPath:(NSString *)keyPath context:(nullable void *)context completion:(nullable __LUIKVOGetProxyBlock)completion {
     [self.lock lock];
-    __MKKVOProxy *proxy = nil;
-    NSArray<__MKKVOProxy *> *proxyList = [self proxysForObject:object];
-    for (__MKKVOProxy *p in proxyList) {
+    __LUIKVOProxy *proxy = nil;
+    NSArray<__LUIKVOProxy *> *proxyList = [self proxysForObject:object];
+    for (__LUIKVOProxy *p in proxyList) {
         if ([p.keyPath isEqualToString:keyPath] && p.context==context) {
             proxy = p;
             break;
@@ -355,11 +355,11 @@ NS_ASSUME_NONNULL_END
     }
     [self.lock unlock];
 }
-- (NSArray<__MKKVOProxy *> *)proxysForObject:(id)object {
+- (NSArray<__LUIKVOProxy *> *)proxysForObject:(id)object {
     NSArray *list = [self.objectProxyList[[self __objectListKeyForObject:object]] copy];
     return list;
 }
-- (void)getProxysForObject:(id)object completion:(nullable __MKKVOGetProxysBlock)completion {
+- (void)getProxysForObject:(id)object completion:(nullable __LUIKVOGetProxysBlock)completion {
     [self.lock lock];
     NSArray *list = [self.objectProxyList[[self __objectListKeyForObject:object]] copy];
     if (completion) {
@@ -367,7 +367,7 @@ NS_ASSUME_NONNULL_END
     }
     [self.lock unlock];
 }
-- (void)addProxy:(__MKKVOProxy *)proxy forObject:(NSObject *)object {
+- (void)addProxy:(__LUIKVOProxy *)proxy forObject:(NSObject *)object {
     [self.lock lock];
     NSString *k = [self __objectListKeyForObject:object];
     proxy.objectKey = k;
@@ -381,7 +381,7 @@ NS_ASSUME_NONNULL_END
     }
     [self.lock unlock];
 }
-- (void)removeProxy:(__MKKVOProxy *)proxy {
+- (void)removeProxy:(__LUIKVOProxy *)proxy {
     [self.lock lock];
     NSString *k = proxy.objectKey;
     NSMutableArray *list = self.objectProxyList[k];
@@ -392,7 +392,7 @@ NS_ASSUME_NONNULL_END
     [self.lock unlock];
 }
 @end
-@implementation __MKKVOProxy
+@implementation __LUIKVOProxy
 - (id)init {
     if (self=[super init]) {
     }
@@ -400,83 +400,83 @@ NS_ASSUME_NONNULL_END
 }
 #ifdef DEBUG
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<__MKKVOProxy:%p,objectKey:%@,keyPath:%@,options:%@,context:%@,blocks:%@>",self,self.objectKey,self.keyPath,@(self.options),self.context,self.blocks];
+    return [NSString stringWithFormat:@"<__LUIKVOProxy:%p,objectKey:%@,keyPath:%@,options:%@,context:%@,blocks:%@>",self,self.objectKey,self.keyPath,@(self.options),self.context,self.blocks];
 }
 #endif
 - (void)dealloc {
 
 }
-- (void)addObserveValueBlock:(__MKKVOProxyBlock)block {
+- (void)addObserveValueBlock:(__LUIKVOProxyBlock)block {
     NSMutableArray *blocks = [[NSMutableArray alloc] initWithArray:self.blocks];
     [blocks addObject:block];
     self.blocks = blocks;
 }
-- (void)setObserveValueBlock:(__MKKVOProxyBlock)block {
+- (void)setObserveValueBlock:(__LUIKVOProxyBlock)block {
     self.blocks = @[block];
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    for (__MKKVOProxyBlock block in self.blocks) {
+    for (__LUIKVOProxyBlock block in self.blocks) {
         block(keyPath,object,change,context);
     }
 }
 @end
 @implementation NSObject(l_KVO)
 - (void)l_addObserverForKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(nullable void *)context block:(void(^)(NSString *keyPath,id object, NSDictionary<NSKeyValueChangeKey,id> *change,void * context))block {
-    [[__MKKVOProxyManager sharedInstance] getProxyForObject:self keyPath:keyPath context:context completion:^(__MKKVOProxy * _Nullable proxy) {
+    [[__LUIKVOProxyManager sharedInstance] getProxyForObject:self keyPath:keyPath context:context completion:^(__LUIKVOProxy * _Nullable proxy) {
         if (proxy) {//已经注册过了，添加回调
             [proxy addObserveValueBlock:block];
         } else {
-            proxy = [[__MKKVOProxy alloc] init];
+            proxy = [[__LUIKVOProxy alloc] init];
             proxy.keyPath = keyPath;
             proxy.options = options;
             proxy.context = context;
             [proxy addObserveValueBlock:block];
-            [[__MKKVOProxyManager sharedInstance] addProxy:proxy forObject:self];
+            [[__LUIKVOProxyManager sharedInstance] addProxy:proxy forObject:self];
             [self addObserver:proxy forKeyPath:keyPath options:options context:context];
         }
     }];
 }
 
 - (void)l_setObserverForKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(nullable void *)context block:(void(^)(NSString *keyPath,id object, NSDictionary<NSKeyValueChangeKey,id> *change,void * context))block {
-    [[__MKKVOProxyManager sharedInstance] getProxyForObject:self keyPath:keyPath context:context completion:^(__MKKVOProxy * _Nullable proxy) {
+    [[__LUIKVOProxyManager sharedInstance] getProxyForObject:self keyPath:keyPath context:context completion:^(__LUIKVOProxy * _Nullable proxy) {
         if (proxy) {//已经注册过了，修改回调
             [proxy setObserveValueBlock:block];
         } else {
-            proxy = [[__MKKVOProxy alloc] init];
+            proxy = [[__LUIKVOProxy alloc] init];
             proxy.keyPath = keyPath;
             proxy.options = options;
             proxy.context = context;
             [proxy addObserveValueBlock:block];
-            [[__MKKVOProxyManager sharedInstance] addProxy:proxy forObject:self];
+            [[__LUIKVOProxyManager sharedInstance] addProxy:proxy forObject:self];
             [self addObserver:proxy forKeyPath:keyPath options:options context:context];
         }
     }];
 }
 - (void)l_removeObserverForKeyPath:(NSString *)keyPath context:(nullable void *)context {
-    [[__MKKVOProxyManager sharedInstance] getProxysForObject:self completion:^(NSArray<__MKKVOProxy *> * _Nonnull proxys) {
-        for (__MKKVOProxy *proxy in proxys) {
+    [[__LUIKVOProxyManager sharedInstance] getProxysForObject:self completion:^(NSArray<__LUIKVOProxy *> * _Nonnull proxys) {
+        for (__LUIKVOProxy *proxy in proxys) {
             if ([proxy.keyPath isEqualToString:keyPath] && (proxy.context==context)) {
                 [self removeObserver:proxy forKeyPath:keyPath context:context];
-                [[__MKKVOProxyManager sharedInstance] removeProxy:proxy];
+                [[__LUIKVOProxyManager sharedInstance] removeProxy:proxy];
             }
         }
     }];
 }
 - (void)l_removeObserverForKeyPath:(NSString *)keyPath {
-    [[__MKKVOProxyManager sharedInstance] getProxysForObject:self completion:^(NSArray<__MKKVOProxy *> * _Nonnull proxys) {
-        for (__MKKVOProxy *proxy in proxys) {
+    [[__LUIKVOProxyManager sharedInstance] getProxysForObject:self completion:^(NSArray<__LUIKVOProxy *> * _Nonnull proxys) {
+        for (__LUIKVOProxy *proxy in proxys) {
             if ([proxy.keyPath isEqualToString:keyPath]) {
                 [self removeObserver:proxy forKeyPath:keyPath];
-                [[__MKKVOProxyManager sharedInstance] removeProxy:proxy];
+                [[__LUIKVOProxyManager sharedInstance] removeProxy:proxy];
             }
         }
     }];
 }
 - (void)l_removeObserver {
-    [[__MKKVOProxyManager sharedInstance] getProxysForObject:self completion:^(NSArray<__MKKVOProxy *> * _Nonnull proxys) {
-        for (__MKKVOProxy *proxy in proxys) {
+    [[__LUIKVOProxyManager sharedInstance] getProxysForObject:self completion:^(NSArray<__LUIKVOProxy *> * _Nonnull proxys) {
+        for (__LUIKVOProxy *proxy in proxys) {
             [self removeObserver:proxy forKeyPath:proxy.keyPath];
-            [[__MKKVOProxyManager sharedInstance] removeProxy:proxy];
+            [[__LUIKVOProxyManager sharedInstance] removeProxy:proxy];
         }
     }];
 }

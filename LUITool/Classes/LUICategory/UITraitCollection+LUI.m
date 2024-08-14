@@ -21,8 +21,8 @@ NSString *const kLUIUserInterfaceStyleChangeNotification=@"kLUIUserInterfaceStyl
 }
 @end
 
-@implementation UIScreen(MKUITheme)
-+ (void)load{
+@implementation UIScreen(LUITheme)
++ (void)load {
     Method originMethod = class_getInstanceMethod([UIScreen class], @selector(traitCollectionDidChange:));
     Method swizzledMethod = class_getInstanceMethod([UIScreen class], @selector(luitheme_traitCollectionDidChange:));
     method_exchangeImplementations(originMethod, swizzledMethod);

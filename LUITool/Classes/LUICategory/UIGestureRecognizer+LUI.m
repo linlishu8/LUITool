@@ -89,7 +89,7 @@
 @implementation UIGestureRecognizer (LUI)
 
 - (LUIGestureRecognizerMoveAction *)l_moveAction {
-    const void * key = "mk_moveAction";
+    const void * key = "l_moveAction";
     LUIGestureRecognizerMoveAction *obj = objc_getAssociatedObject(self, key);
     if (!obj) {
         obj = [[LUIGestureRecognizerMoveAction alloc] init];
