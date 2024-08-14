@@ -9,7 +9,7 @@
 #import <objc/runtime.h>
 
 @implementation UITableViewCell (LUITableViewCell)
-#pragma mark - deleagte:MKUITableViewCellProtocol
+#pragma mark - deleagte:LUITableViewCellProtocol
 - (LUITableViewCellModel *)cellModel{
     LUITableViewCellModel *cellModel = objc_getAssociatedObject( self, "UITableViewCell.LUITableViewCell.cellModel");
     return cellModel;

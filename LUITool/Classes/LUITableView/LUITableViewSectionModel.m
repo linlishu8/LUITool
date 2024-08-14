@@ -130,6 +130,6 @@
     return [NSString stringWithFormat:@"%@:[indexTitle:%@,showHeadView:%d,headTitle:%@,headViewHeight:%f,showFootView:%d,footTitle:%@,footViewHeight:%f,cells:%@,userInfo:%@]",NSStringFromClass(self.class),self.indexTitle,self.showHeadView,self.headTitle,self.headViewHeight,self.showFootView,self.footTitle,self.footViewHeight,self.cellModels,self.userInfo];
 }
 - (void)dealloc {
-//    NSLog(@"deallocMKUITableViewSectionModel:%@", self);
+//    NSLog(@"deallocLUITableViewSectionModel:%@", self);
 }
 @end

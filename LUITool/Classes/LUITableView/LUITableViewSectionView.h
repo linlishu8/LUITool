@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LUITableViewSectionViewProtocol.h"
-#define kMKUITableViewSectionViewDefaultHeight 22
+#define kLUITableViewSectionViewDefaultHeight 22
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LUITableViewSectionView : UIView <LUITableViewSectionViewProtocol>

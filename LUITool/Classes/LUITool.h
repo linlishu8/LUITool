@@ -8,13 +8,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-//! Project version number for MKUI.
-FOUNDATION_EXPORT double MKUIVersionNumber;
+//! Project version number for LUI.
+FOUNDATION_EXPORT double LUIVersionNumber;
 
-//! Project version string for MKUI.
-FOUNDATION_EXPORT const unsigned char MKUIVersionString[];
+//! Project version string for LUI.
+FOUNDATION_EXPORT const unsigned char LUIVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <MKUI/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <LUI/PublicHeader.h>
 
 #import "LUIMacro.h"
 

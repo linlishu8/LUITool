@@ -50,7 +50,7 @@
 @end
 
 #import <objc/runtime.h>
-@implementation UIButton (MKUI_ActionBlock)
+@implementation UIButton (LUI_ActionBlock)
 - (NSMutableArray<__LUIButtonActionBlockObject *> *)__LUIButtonActionBlockObjectList {
     NSMutableArray<__LUIButtonActionBlockObject *> *list = objc_getAssociatedObject(self, @"__LUIButtonActionBlockObjectList");
     if(!list){
@@ -59,7 +59,7 @@
     }
     return list;
 }
-- (void)mk_addClickActionBlock:(LUIButtonActionBlock)block context:(id)context{
+- (void)l_addClickActionBlock:(LUIButtonActionBlock)block context:(id)context {
     __LUIButtonActionBlockObject *action = [[__LUIButtonActionBlockObject alloc] initWithActionBlock:block context:context];
     [[self __LUIButtonActionBlockObjectList] addObject:action];
     [self addTarget:action action:@selector(doAction) forControlEvents:UIControlEventTouchUpInside];

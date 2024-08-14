@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (LUI)
+
 /**
  *  返回视图的截屏图片,图片的 size=视图的 size,图片的 scale=屏幕 scale
  *
@@ -77,7 +78,7 @@ NS_ASSUME_NONNULL_END
 
 
 NS_ASSUME_NONNULL_BEGIN
-@interface UIResponder (LUI)
+@interface UIResponder (LUIResponder)
 /**
  *  根据UIView.nextResponder,来递归地查找出离view最近的UIViewController
  *
@@ -95,7 +96,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface UIView (LUI)
+@interface UIView (LUIResponder)
 /**
  *  根据super.view,递归查找出第一个UITableView
  *

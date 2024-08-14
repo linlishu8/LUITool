@@ -52,9 +52,9 @@
     self.textLabel.frame = f1;
 }
 - (CGSize)sizeThatFits:(CGSize)size {
-    return CGSizeMake(size.width, kMKUITableViewSectionViewDefaultHeight);
+    return CGSizeMake(size.width, kLUITableViewSectionViewDefaultHeight);
 }
-#pragma mark - delegate:MKUITableViewSectionViewProtocol
+#pragma mark - delegate:LUITableViewSectionViewProtocol
 + (CGFloat)heightWithTableView:(UITableView *)tableView sectionModel:(LUITableViewSectionModel *)sectionModel kind:(LUITableViewSectionViewKind)kind {
     CGFloat height = UITableViewAutomaticDimension;
     return height;

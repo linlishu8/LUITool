@@ -280,14 +280,14 @@ UIKIT_STATIC_INLINE CGFloat LUICGRangeGetMax(LUICGRange r) {
     return r.end;
 }
 UIKIT_STATIC_INLINE CGFloat LUICGRangeGetMid(LUICGRange r) {
-    return r.begin+(r.end-r.begin)*0.5;
+    return r.begin + (r.end - r.begin) * 0.5;
 }
 UIKIT_STATIC_INLINE CGFloat LUICGRangeGetLength(LUICGRange r) {
-    return r.end-r.begin;
+    return r.end - r.begin;
 }
 
 UIKIT_STATIC_INLINE NSComparisonResult LUICGRangeCompareWithValue(LUICGRange r, CGFloat value) {
-    return LUICGRangeContainsValue(r, value)?NSOrderedSame:(r.end<value?NSOrderedAscending:NSOrderedDescending);
+    return LUICGRangeContainsValue(r, value) ? NSOrderedSame : (r.end < value ? NSOrderedAscending:NSOrderedDescending);
 }
 UIKIT_STATIC_INLINE NSComparisonResult LUICGRangeCompareWithRange(LUICGRange r1, LUICGRange r2) {
     return LUICGRangeIntersectsRange(r1, r2)?NSOrderedSame:(r1.end<r2.begin?NSOrderedAscending:NSOrderedDescending);
