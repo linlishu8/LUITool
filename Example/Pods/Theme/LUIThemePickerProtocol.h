@@ -2,7 +2,7 @@
 //  LUIThemePickerProtocol.h
 //  LUITool
 //  将控件属性、与主题元素绑定在一起，提供使用主题元素更新控件属性的方法
-//  Created by 六月 on 2024/8/8.
+//  Created by 六月 on 2021/8/8.
 //
 
 #import <Foundation/Foundation.h>

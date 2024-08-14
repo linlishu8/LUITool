@@ -68,6 +68,11 @@
 		1FCBAE452C6B8ED200170B35 /* LUITableViewSectionAdjustsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE442C6B8ED200170B35 /* LUITableViewSectionAdjustsView.m */; };
 		1FCBAE462C6B8ED200170B35 /* LUITableViewSectionAdjustsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE432C6B8ED200170B35 /* LUITableViewSectionAdjustsView.h */; };
 		1FCBAE522C6B9FCC00170B35 /* CGGeometry+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE512C6B9FCC00170B35 /* CGGeometry+LUI.h */; };
+		1FCBAE562C6CE38C00170B35 /* LUILayoutConstraintItemAttributeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE552C6CE38C00170B35 /* LUILayoutConstraintItemAttributeBase.m */; };
+		1FCBAE572C6CE38C00170B35 /* LUILayoutConstraintItemAttributeBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE542C6CE38C00170B35 /* LUILayoutConstraintItemAttributeBase.h */; };
+		1FCBAE5A2C6CE64200170B35 /* LUILayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBAE592C6CE64200170B35 /* LUILayoutConstraint.m */; };
+		1FCBAE5B2C6CE64200170B35 /* LUILayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE582C6CE64200170B35 /* LUILayoutConstraint.h */; };
+		1FCBAE612C6CEF0000170B35 /* LUIDefine_EnumUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBAE602C6CEF0000170B35 /* LUIDefine_EnumUtil.h */; };
 		398FF6863DC5414099306253ADFC471D /* LUIThemeCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEE0DAD92FA395408A2488DEAC87D83 /* LUIThemeCenter.m */; };
 		3F05F689B03836519FDBF1140D1EBB6D /* LUITool.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E3D36B1F54495A630B693164B709F8D /* LUITool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48186C81363CE03126BF9D56CC5E8F1A /* Pods-LUITool_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A62B01616DB6039CBD59B731DCEFE545 /* Pods-LUITool_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -170,6 +175,11 @@
 		1FCBAE432C6B8ED200170B35 /* LUITableViewSectionAdjustsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITableViewSectionAdjustsView.h; sourceTree = "<group>"; };
 		1FCBAE442C6B8ED200170B35 /* LUITableViewSectionAdjustsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITableViewSectionAdjustsView.m; sourceTree = "<group>"; };
 		1FCBAE512C6B9FCC00170B35 /* CGGeometry+LUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+LUI.h"; sourceTree = "<group>"; };
+		1FCBAE542C6CE38C00170B35 /* LUILayoutConstraintItemAttributeBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUILayoutConstraintItemAttributeBase.h; sourceTree = "<group>"; };
+		1FCBAE552C6CE38C00170B35 /* LUILayoutConstraintItemAttributeBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUILayoutConstraintItemAttributeBase.m; sourceTree = "<group>"; };
+		1FCBAE582C6CE64200170B35 /* LUILayoutConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUILayoutConstraint.h; sourceTree = "<group>"; };
+		1FCBAE592C6CE64200170B35 /* LUILayoutConstraint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUILayoutConstraint.m; sourceTree = "<group>"; };
+		1FCBAE602C6CEF0000170B35 /* LUIDefine_EnumUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIDefine_EnumUtil.h; sourceTree = "<group>"; };
 		2FCD8E35081971AA27252991830F8BB2 /* Pods-LUITool_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LUITool_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		36804D367D9D2F48B79FBAE5E712527E /* Pods-LUITool_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LUITool_Example-Info.plist"; sourceTree = "<group>"; };
 		39E89CA8E59FAD25D7A335732CEF6DFE /* NSObject+LUITheme.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LUITheme.m"; sourceTree = "<group>"; };
@@ -267,6 +277,7 @@
 				1FCBADC82C685F6600170B35 /* LUICGRect.h */,
 				1FCBADC92C685F6600170B35 /* LUICGRect.m */,
 				1FCBAE512C6B9FCC00170B35 /* CGGeometry+LUI.h */,
+				1FCBAE602C6CEF0000170B35 /* LUIDefine_EnumUtil.h */,
 			);
 			name = LUICore;
 			path = LUITool/Classes/LUICore;
@@ -322,6 +333,18 @@
 			);
 			name = LUIModelBase;
 			path = LUITool/Classes/LUIModelBase;
+			sourceTree = "<group>";
+		};
+		1FCBAE532C6CE35800170B35 /* Constraint */ = {
+			isa = PBXGroup;
+			children = (
+				1FCBAE582C6CE64200170B35 /* LUILayoutConstraint.h */,
+				1FCBAE592C6CE64200170B35 /* LUILayoutConstraint.m */,
+				1FCBAE542C6CE38C00170B35 /* LUILayoutConstraintItemAttributeBase.h */,
+				1FCBAE552C6CE38C00170B35 /* LUILayoutConstraintItemAttributeBase.m */,
+			);
+			name = Constraint;
+			path = LUITool/Classes/Constraint;
 			sourceTree = "<group>";
 		};
 		394BA01E1505DDB3F4FE9C7C1A186279 /* Support Files */ = {
@@ -444,8 +467,9 @@
 			isa = PBXGroup;
 			children = (
 				0E3D36B1F54495A630B693164B709F8D /* LUITool.h */,
-				1FCBAE092C68EA9500170B35 /* LUIModelBase */,
 				1FCBADC32C685F0400170B35 /* LUICore */,
+				1FCBAE532C6CE35800170B35 /* Constraint */,
+				1FCBAE092C68EA9500170B35 /* LUIModelBase */,
 				1FCBADC22C685EE300170B35 /* LUITableView */,
 				1FCBADCC2C688E3A00170B35 /* LUICategory */,
 				E5A5D2D0120BDE156460693B30339ECC /* Pod */,
@@ -473,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C251E1DAC4DC33AF3B8269D91FC9B836 /* LUIThemeCenter.h in Headers */,
+				1FCBAE612C6CEF0000170B35 /* LUIDefine_EnumUtil.h in Headers */,
 				1FCBADF82C68E66E00170B35 /* UITraitCollection+LUI.h in Headers */,
 				1FCBAE362C6A46F000170B35 /* LUITableViewCellSwipeAction.h in Headers */,
 				1FCBADD42C68928100170B35 /* UIImage+LUI.h in Headers */,
@@ -488,6 +513,7 @@
 				1FCBADFC2C68E6BB00170B35 /* NSString+LUI.h in Headers */,
 				1FCBADE02C68961800170B35 /* UITableView+LUI.h in Headers */,
 				1FCBAE262C68F0A000170B35 /* LUITableViewSectionModel.h in Headers */,
+				1FCBAE5B2C6CE64200170B35 /* LUILayoutConstraint.h in Headers */,
 				1FCBAE112C68EB5000170B35 /* LUICollectionModel.h in Headers */,
 				1FCBAE462C6B8ED200170B35 /* LUITableViewSectionAdjustsView.h in Headers */,
 				1FCBAE302C6A3E8100170B35 /* LUITableViewCellProtocol.h in Headers */,
@@ -507,6 +533,7 @@
 				1FCBADDC2C68955A00170B35 /* UIScrollView+LUI.h in Headers */,
 				5E721EB3A9759115349374AAA85256D2 /* LUIThemeElementProtocol.h in Headers */,
 				D70A465CE739E6F0C6905A4C207163B7 /* LUIThemePickerProtocol.h in Headers */,
+				1FCBAE572C6CE38C00170B35 /* LUILayoutConstraintItemAttributeBase.h in Headers */,
 				3F05F689B03836519FDBF1140D1EBB6D /* LUITool.h in Headers */,
 				BD1D2051C902197C50C02F5502BBD729 /* LUITool-umbrella.h in Headers */,
 				1C0EB7885E6180AED7D7C69B348D3FB9 /* NSObject+LUITheme.h in Headers */,
@@ -672,8 +699,10 @@
 				1FCBADCA2C685F6600170B35 /* LUICGRect.m in Sources */,
 				1FCBADFB2C68E6BB00170B35 /* NSString+LUI.m in Sources */,
 				1FCBAE452C6B8ED200170B35 /* LUITableViewSectionAdjustsView.m in Sources */,
+				1FCBAE5A2C6CE64200170B35 /* LUILayoutConstraint.m in Sources */,
 				1FCBAE142C68EC8B00170B35 /* LUICollectionCellModel.m in Sources */,
 				398FF6863DC5414099306253ADFC471D /* LUIThemeCenter.m in Sources */,
+				1FCBAE562C6CE38C00170B35 /* LUILayoutConstraintItemAttributeBase.m in Sources */,
 				1FCBADE72C6897FD00170B35 /* UICollectionViewFlowLayout+LUI.m in Sources */,
 				1FCBAE3D2C6B86B300170B35 /* LUITableViewSectionView.m in Sources */,
 				1FCBADFF2C68E75300170B35 /* NSArray+LUI.m in Sources */,

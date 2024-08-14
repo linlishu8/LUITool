@@ -2,7 +2,7 @@
 //  LUITableViewSectionAdjustsView.m
 //  LUITool
 //
-//  Created by 六月 on 2024/8/13.
+//  Created by 六月 on 2021/8/13.
 //
 
 #import "LUITableViewSectionAdjustsView.h"

@@ -2,7 +2,7 @@
 //  LUITableViewCellProtocol.h
 //  LUITool
 //  LUITableViewCellModel对应的UITableViewCell视图要实现的delegate
-//  Created by 六月 on 2024/8/12.
+//  Created by 六月 on 2022/5/14.
 //
 
 #import <Foundation/Foundation.h>
