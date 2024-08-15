@@ -22,8 +22,27 @@
     return __singleton__; \
 }
 
-#undef lui_weakify
-#define lui_weakify( x )     __weak __typeof__(x) __weak_##x##__ = x;
+/**
+ *  对于block外部与内部间的变量传递,定义block外的weak弱引用与block内的strong强引用,防止因block而引起的循环引用内存泄露
+ *    范例:
+ - (void)test{
+    NSObject *obj;
+    @LUI_WEAKIFY(self);
+    @LUI_WEAKIFY(obj);
+    void(^testBlock)() = ^(){
+        @LUI_NORMALIZE(self);
+        @LUI_NORMALIZE(obj);
+        ...
+    };
+ }
+ *  @param objc_arc 对象
+ *
+ */
+//由于以前的weakify,normalize,normalizeAndNoNil会有命名冲突问题,因此修改这些宏,添加LUI前缀,并大写化
+#undef LUI_WEAKIFY
+#define LUI_WEAKIFY( x )    autoreleasepool{} __weak __typeof__(x) __weak_##x##__ = x;
 
-#undef    lui_strongify
-#define lui_strongify( x )     __strong __typeof__(x) x = __weak_##x##__;
+#undef    LUI_NORMALIZE
+#define LUI_NORMALIZE( x )    try{} @finally{} __typeof__(x) x = __weak_##x##__;
+#undef    LUI_NORMALIZEANDNOTNIL
+#define LUI_NORMALIZEANDNOTNIL( x )    try{} @finally{} __typeof__(x) x = __weak_##x##__;if(x==nil)return;

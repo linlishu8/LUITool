@@ -31,9 +31,11 @@
     return action;
 }
 - (UIContextualAction *)contextualActionWithCellModel:(LUITableViewCellModel *)cellModel {
-    lui_weakify(self)
+    @LUI_WEAKIFY(self);
+    @LUI_WEAKIFY(cellModel);
     UIContextualAction *rowAction = [UIContextualAction contextualActionWithStyle:self.style == LUITableViewCellSwipeActionStyleDestructive ? UIContextualActionStyleDestructive : UIContextualActionStyleNormal title:self.title handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
-        lui_strongify(self)
+        @LUI_NORMALIZE(self);
+        @LUI_NORMALIZE(cellModel);
         if (self.handler) {
             self.handler(self, cellModel);
             if (self.autoCompletion) {

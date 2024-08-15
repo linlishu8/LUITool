@@ -117,9 +117,9 @@
     return sectionModel;
 }
 - (void)sort {
-    lui_weakify(self);
+    @LUI_WEAKIFY(self);
     [self.mutableSectionModels sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        lui_strongify(self);
+        @LUI_NORMALIZE(self);
         NSString *t1 = [(LUITableViewSectionModel *)obj1 indexTitle];
         NSString *t2 = [(LUITableViewSectionModel *)obj2 indexTitle];
         NSComparisonResult r = [t1 compare:t2];
@@ -144,9 +144,9 @@
     }
     [self.tableView reloadData];//reladData时,tableView会清掉旧的行选中状态
     if (self.allowsSelection) {
-        lui_weakify(self);
+        @LUI_WEAKIFY(self);
         dispatch_async(dispatch_get_main_queue(), ^{
-            lui_strongify(self);
+            @LUI_NORMALIZEANDNOTNIL(self);
             if (self.allowsMultipleSelection) {
                 NSArray *indexpaths = [self indexPathsForSelectedCellModels];
                 for (NSIndexPath *indexpath in indexpaths) {
