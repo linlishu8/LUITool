@@ -11,6 +11,7 @@
 #import "LUITableViewCellProtocol.h"
 #import "LUITableViewSectionViewProtocol.h"
 #import "UITableViewCell+LUITableViewCell.h"
+#import "LUIMacro.h"
 
 @implementation LUITableViewModel
 

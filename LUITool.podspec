@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'LUITool/Classes/**/*'
-  
+  s.frameworks = 'UIKit'
   # s.resource_bundles = {
   #   'LUITool' => ['LUITool/Assets/*.png']
   # }

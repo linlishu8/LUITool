@@ -7,6 +7,7 @@
 
 #import "LUITableViewCellSwipeAction.h"
 #import "LUITableViewCellModel.h"
+#import "LUIMacro.h"
 
 @interface LUITableViewCellSwipeAction ()
 @property (nonatomic, assign) LUITableViewCellSwipeActionStyle style;
@@ -48,9 +49,11 @@
     return rowAction;
 }
 - (UITableViewRowAction *)tableViewRowActionWithCellModel:(LUITableViewCellModel *)cellModel {
-    lui_weakify(self)
+    @LUI_WEAKIFY(self);
+    @LUI_WEAKIFY(cellModel);
     UITableViewRowAction *rowAction = [UITableViewRowAction rowActionWithStyle:self.style == LUITableViewCellSwipeActionStyleDestructive ? UITableViewRowActionStyleDestructive : UITableViewRowActionStyleNormal title:self.title handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-        lui_strongify(self)
+        @LUI_NORMALIZE(self);
+        @LUI_NORMALIZE(cellModel);
         if (self.handler) {
             self.handler(self, cellModel);
             if (self.autoCompletion) {
