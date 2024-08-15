@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
     __weak LUICollectionSectionModel *_sectionModel;
 }
 
-@property (nonatomic, readonly, nullable) __kindof LUICollectionModel *lModel;//集合模型对象
+@property (nonatomic, readonly, nullable) __kindof LUICollectionModel *collectionModel;//集合模型对象
 @property (nonatomic, strong, nullable) id userInfo;//自定义的扩展对象
 @property (nonatomic, assign) BOOL selected;
 @property (nonatomic, assign) BOOL focused;//是否获取焦点

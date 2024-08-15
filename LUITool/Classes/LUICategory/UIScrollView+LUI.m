@@ -191,7 +191,7 @@
     CGRect bounds = self.bounds;
     //存在浮点误差，因此添加一个容错值
     CGFloat delta = 0.0000001;
-    BOOL bounces = contentSize.width+contentInset.left+contentInset.right>bounds.size.width+delta||contentSize.height+contentInset.top+contentInset.bottom>bounds.size.height+delta;
+    BOOL bounces = contentSize.width+contentInset.left+contentInset.right>bounds.size.width+delta || contentSize.height+contentInset.top+contentInset.bottom>bounds.size.height+delta;
     self.bounces = bounces;
 }
 

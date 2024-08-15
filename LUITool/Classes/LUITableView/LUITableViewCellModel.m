@@ -54,7 +54,7 @@
     return self.tableViewModel.tableView;
 }
 - (LUITableViewModel *)tableViewModel {
-    LUICollectionModel *lModel = [super lModel];
+    LUICollectionModel *lModel = [super collectionModel];
     if ([lModel isKindOfClass:[LUITableViewModel class]]) {
         return (LUITableViewModel *)lModel;
     }
@@ -70,8 +70,8 @@
 - (void)displayCell:(UITableViewCell<LUITableViewCellProtocol> *)cell {
     BOOL isCellModelChanged =
        self.needReloadCell
-    || cell.cellModel!=self
-    || self.tableViewCell!=cell
+     ||  cell.cellModel!=self
+     ||  self.tableViewCell!=cell
     ;
     cell.cellModel = self;
     self.tableViewCell = cell;

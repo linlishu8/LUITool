@@ -61,7 +61,7 @@
 }
 
 - (id)l_jsonValue {
-    if (self.length==0)return nil;
+    if (self.length==0) return nil;
     NSError *error = nil;
     id obj =[NSJSONSerialization JSONObjectWithData:[self dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
     if (obj==nil && error!=nil)  {

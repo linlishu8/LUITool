@@ -40,7 +40,7 @@
     NSInteger count = items.count;
     if (count==0) return nil;
     BOOL needRevert = (self.layoutDirection==LUILayoutConstraintDirectionHorizontal&&self.layoutHorizontalAlignment==LUILayoutConstraintHorizontalAlignmentRight)
-    ||(self.layoutDirection==LUILayoutConstraintDirectionVertical&&self.layoutVerticalAlignment==LUILayoutConstraintVerticalAlignmentBottom)
+     || (self.layoutDirection==LUILayoutConstraintDirectionVertical&&self.layoutVerticalAlignment==LUILayoutConstraintVerticalAlignmentBottom)
     ;
     if (needRevert) {
         NSMutableArray *tmp = [[NSMutableArray alloc] init];

@@ -55,7 +55,7 @@
 }
 - (UIImage *)l_screenshotsImageWithScale:(CGFloat)scale opaque:(BOOL)opaque {
     CGRect bounds = self.bounds;
-    if (bounds.size.width<=0||bounds.size.height<=0)return nil;
+    if (bounds.size.width<=0 || bounds.size.height<=0) return nil;
     UIGraphicsBeginImageContextWithOptions(bounds.size, opaque, scale);
     //    UIGraphicsBeginImageContext(bounds.size);
     CGContextRef context = UIGraphicsGetCurrentContext();

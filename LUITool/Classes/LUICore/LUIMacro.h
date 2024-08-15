@@ -45,4 +45,4 @@
 #undef    LUI_NORMALIZE
 #define LUI_NORMALIZE( x )    try{} @finally{} __typeof__(x) x = __weak_##x##__;
 #undef    LUI_NORMALIZEANDNOTNIL
-#define LUI_NORMALIZEANDNOTNIL( x )    try{} @finally{} __typeof__(x) x = __weak_##x##__;if(x==nil)return;
+#define LUI_NORMALIZEANDNOTNIL( x )    try{} @finally{} __typeof__(x) x = __weak_##x##__;if(x==nil) return;

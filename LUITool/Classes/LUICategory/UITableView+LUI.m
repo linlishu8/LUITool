@@ -197,11 +197,11 @@ LUIDEF_SINGLETON(__LUI_UITableViewDefaultGroupFootSectionView)
             if (self.style == UITableViewStylePlain) {
                 CGFloat fixHeight = 28;//使用系统自带的头/尾，固定尺寸为28（没有title也占用同样的尺寸）
                 if (isHeader) {
-                    if ([self.dataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)]||[self.delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
+                    if ([self.dataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)] || [self.delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
                         sectionHeight = fixHeight;//有实现这个方法，就会显示view
                     }
                 } else {
-                    if ([self.dataSource respondsToSelector:@selector(tableView:titleForFooterInSection:)]||[self.delegate respondsToSelector:@selector(tableView:viewForFooterInSection:)]) {
+                    if ([self.dataSource respondsToSelector:@selector(tableView:titleForFooterInSection:)] || [self.delegate respondsToSelector:@selector(tableView:viewForFooterInSection:)]) {
                         sectionHeight = fixHeight;//有实现这个方法，就会显示view
                     }
                 }

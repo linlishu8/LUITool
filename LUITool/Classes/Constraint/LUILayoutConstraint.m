@@ -179,7 +179,7 @@ LUIDEF_EnumTypeCategories(LUILayoutConstraintDirection,
 
 @implementation UICollectionViewLayoutAttributes (LUILayoutConstraintItemProtocol)
 - (void)setLayoutFrame:(CGRect)frame {
-    if (!CGAffineTransformIsIdentity(self.transform) || !CATransform3DIsIdentity(self.transform3D)) {
+    if (!CGAffineTransformIsIdentity(self.transform)  ||  !CATransform3DIsIdentity(self.transform3D)) {
         self.size = frame.size;
         self.center = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
     } else {
@@ -188,7 +188,7 @@ LUIDEF_EnumTypeCategories(LUILayoutConstraintDirection,
 }
 - (CGRect)layoutFrame {
     CGRect f = self.frame;
-    if (!CGAffineTransformIsIdentity(self.transform) || !CATransform3DIsIdentity(self.transform3D)) {
+    if (!CGAffineTransformIsIdentity(self.transform)  ||  !CATransform3DIsIdentity(self.transform3D)) {
         f.size = self.size;
         f.origin.x = self.center.x-self.size.width/2;
         f.origin.y = self.center.y-self.size.height/2;

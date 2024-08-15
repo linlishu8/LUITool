@@ -177,7 +177,7 @@
     [self reloadTableViewBackgroundView];
 }
 - (void)insertCellModel:(LUITableViewCellModel *)cellModel atIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated {
-    if(!cellModel||!indexPath)return;
+    if(!cellModel || !indexPath) return;
     cellModel.needReloadCell = YES;
     UITableView *tableView = self.tableView;
     LUICollectionSectionModel *sectionModel = [self sectionModelAtIndex:indexPath.section];
@@ -196,7 +196,7 @@
     [self insertCellModels:@[cellModel] afterIndexPath:indexPath animated:animated];
 }
 - (void)insertCellModels:(NSArray *)cellModels afterIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated {
-    if (cellModels.count == 0 || indexPath == nil) return;
+    if (cellModels.count == 0  ||  indexPath == nil) return;
     UITableView *tableView = self.tableView;
     for (LUITableViewCellModel *cm in cellModels) {
         cm.needReloadCell = YES;
@@ -217,7 +217,7 @@
     [self insertCellModels:@[cellModel] beforeIndexPath:indexPath animated:animated];
 }
 - (void)insertCellModels:(NSArray *)cellModels beforeIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated {
-    if (cellModels.count == 0 || indexPath == nil) return;
+    if (cellModels.count == 0  ||  indexPath == nil) return;
     for (LUITableViewCellModel *cm in cellModels) {
         cm.needReloadCell = YES;
     }
@@ -409,7 +409,7 @@
     }
 }
 - (void)hideSectionHeadFootView {
-    BOOL change = !_hiddenSectionHeadView || !_hiddenSectionHeadView;
+    BOOL change = !_hiddenSectionHeadView  ||  !_hiddenSectionHeadView;
     _hiddenSectionHeadView = YES;
     _hiddenSectionFootView = YES;
     if (change) {

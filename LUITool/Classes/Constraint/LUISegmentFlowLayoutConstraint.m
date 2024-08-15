@@ -118,7 +118,7 @@
     bounds.size = size;
     bounds = UIEdgeInsetsInsetRect(bounds, insets);
     CGFloat space = self.interitemSpacing;
-    if (self.beforeItemsFlowlayout.layoutedItems.count==0||self.afterItemsFlowlayout.layoutedItems.count==0) {
+    if (self.beforeItemsFlowlayout.layoutedItems.count==0 || self.afterItemsFlowlayout.layoutedItems.count==0) {
         space = 0;
     }
     CGRect f1 = bounds;
@@ -209,7 +209,7 @@
     UIEdgeInsets insets = self.contentInsets;
     CGRect bounds = UIEdgeInsetsInsetRect(self.bounds, insets);
     CGFloat space = self.interitemSpacing;
-    if (self.beforeItemsFlowlayout.layoutedItems.count==0||self.afterItemsFlowlayout.layoutedItems.count==0) {
+    if (self.beforeItemsFlowlayout.layoutedItems.count==0 || self.afterItemsFlowlayout.layoutedItems.count==0) {
         space = 0;
     }
     CGRect f1 = bounds;

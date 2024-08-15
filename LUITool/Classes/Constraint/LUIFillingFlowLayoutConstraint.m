@@ -64,7 +64,7 @@
 - (void)layoutItemsWithResizeItems:(BOOL)resizeItems {
     NSArray<id<LUILayoutConstraintItemProtocol>> *items = self.layoutedItems;
     NSInteger count = items.count;
-    if (count == 0)return;
+    if (count == 0) return;
     UIEdgeInsets contentInsets = self.contentInsets;
     CGRect bounds = UIEdgeInsetsInsetRect(self.bounds, contentInsets);
     CGSize limitSize = bounds.size;

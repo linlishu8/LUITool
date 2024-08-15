@@ -114,14 +114,14 @@
     }
 }
 - (void)insertCellModels:(NSArray<LUICollectionCellModel *> *)cellModels afterIndexPath:(NSIndexPath *)indexPath {
-    if (cellModels.count==0 || !indexPath) return;
+    if (cellModels.count==0  ||  !indexPath) return;
     LUICollectionSectionModel *sectionModel = [self sectionModelAtIndex:indexPath.section];
     if (sectionModel) {
         [sectionModel insertCellModels:cellModels afterIndex:indexPath.row];
     }
 }
 - (void)insertCellModels:(NSArray<LUICollectionCellModel *> *)cellModels beforeIndexPath:(NSIndexPath *)indexPath {
-    if (cellModels.count==0 || !indexPath) return;
+    if (cellModels.count==0  ||  !indexPath) return;
     LUICollectionSectionModel *sectionModel = [self sectionModelAtIndex:indexPath.section];
     if (sectionModel) {
         [sectionModel insertCellModels:cellModels beforeIndex:indexPath.row];
@@ -314,7 +314,7 @@
     return sectionModels;
 }
 - (void)moveCellModelAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-    if (sourceIndexPath==nil || destinationIndexPath==nil) return;
+    if (sourceIndexPath==nil  ||  destinationIndexPath==nil) return;
     LUICollectionCellModel *sourceCellModel = [self cellModelAtIndexPath:sourceIndexPath];
     [self removeCellModelAtIndexPath:sourceIndexPath];
     [self insertCellModel:sourceCellModel atIndexPath:destinationIndexPath];

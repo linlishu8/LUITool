@@ -56,11 +56,11 @@ const CGFloat kLUILayoutConstraintItemFillContainerSize = NSIntegerMax;
 //    BOOL result = [super respondsToSelector:aSelector];
 //    if (!result) {
 //        if (aSelector==@selector(sizeThatFits:)) {
-//            if (self.sizeThatFitsBlock!=nil||[self.originItem respondsToSelector:@selector(sizeThatFits:)]) {
+//            if (self.sizeThatFitsBlock!=nil || [self.originItem respondsToSelector:@selector(sizeThatFits:)]) {
 //                result = YES;
 //            }
 //        } else if (aSelector==@selector(sizeThatFits:resizeItems:)) {
-//            if (self.sizeThatFitsResizeItemsBlock!=nil||[self.originItem respondsToSelector:@selector(sizeThatFits:resizeItems:)]) {
+//            if (self.sizeThatFitsResizeItemsBlock!=nil || [self.originItem respondsToSelector:@selector(sizeThatFits:resizeItems:)]) {
 //                result = YES;
 //            }
 //        } else if (aSelector==@selector(layoutItemsWithResizeItems:)) {
@@ -74,12 +74,12 @@ const CGFloat kLUILayoutConstraintItemFillContainerSize = NSIntegerMax;
 //- (void)forwardInvocation:(NSInvocation *)invocation {
 //    SEL aSelector = [invocation selector];
 //    if (aSelector==@selector(sizeThatFits:)) {
-//        if (self.sizeThatFitsBlock!=nil||[self.originItem respondsToSelector:@selector(sizeThatFits:)]) {
+//        if (self.sizeThatFitsBlock!=nil || [self.originItem respondsToSelector:@selector(sizeThatFits:)]) {
 //            invocation.selector = @selector(__sizeThatFits:);
 //            [invocation invokeWithTarget:invocation.target];
 //        }
 //    } else if (aSelector==@selector(sizeThatFits:resizeItems:)) {
-//        if (self.sizeThatFitsBlock!=nil||[self.originItem respondsToSelector:@selector(sizeThatFits:resizeItems:)]) {
+//        if (self.sizeThatFitsBlock!=nil || [self.originItem respondsToSelector:@selector(sizeThatFits:resizeItems:)]) {
 //            invocation.selector = @selector(__sizeThatFits:resizeItems:);
 //            [invocation invokeWithTarget:invocation.target];
 //        }

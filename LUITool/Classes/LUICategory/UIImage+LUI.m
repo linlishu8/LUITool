@@ -181,7 +181,7 @@
             break;
     }
     
-    if(radians||mirrored){
+    if(radians || mirrored){
         //将图片的中心移动到原点
         m = CGAffineTransformConcat(m, CGAffineTransformMakeTranslation(-newSize.width*0.5, -newSize.height*0.5));
         m = CGAffineTransformConcat(m, CGAffineTransformMakeRotation(radians));//旋转
@@ -228,7 +228,7 @@
         default:
             break;
     }
-    if(radians||mirrored){
+    if(radians || mirrored){
         //将图片的中心移动到原点
         m = CGAffineTransformConcat(m, CGAffineTransformMakeTranslation(-newSize.width*0.5, -newSize.height*0.5));
         m = CGAffineTransformConcat(m, CGAffineTransformMakeRotation(radians));//旋转
@@ -292,7 +292,7 @@
 }
 - (BOOL)l_isPngImage{
     CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(self.CGImage);
-    BOOL isPng = !(alphaInfo==kCGImageAlphaNone||alphaInfo==kCGImageAlphaNoneSkipLast||alphaInfo==kCGImageAlphaNoneSkipFirst);
+    BOOL isPng = !(alphaInfo==kCGImageAlphaNone || alphaInfo==kCGImageAlphaNoneSkipLast || alphaInfo==kCGImageAlphaNoneSkipFirst);
     return isPng;
 }
 - (NSData *)l_imageDataThatFitBytes:(NSUInteger)bytes withCompressionQuality:(CGFloat)compressionQuality{
@@ -446,7 +446,7 @@
 //    CGImageRelease(cgimg);
 //    CGContextRelease(ctx);
 
-    if(canvasSize.width<=0||canvasSize.height<=0) return nil;
+    if(canvasSize.width<=0 || canvasSize.height<=0) return nil;
     UIGraphicsBeginImageContextWithOptions(canvasSize, !self.l_isPngImage, 1);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     [self drawInRect:imageRect];
@@ -479,14 +479,14 @@
     for (NSString *unit in map) {
         NSUInteger n = [[map objectForKey:unit] integerValue];
         double v = fileSize*1.0/n;
-        if(v>=1||n==1){
+        if(v>=1 || n==1){
             str = [NSString stringWithFormat:@"%.1f%@",v,unit];
         }
     }
     return str;
 }
 + (UIImage *)l_disclosureIndicatorImageWithSize:(CGSize)size lineWidth:(CGFloat)lineWidth color:(UIColor *)color{
-    if(size.width<=0||size.height<=0)return nil;
+    if(size.width<=0 || size.height<=0) return nil;
     CGFloat scale = [UIScreen mainScreen].scale;
     UIGraphicsBeginImageContextWithOptions(size, NO, scale);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -517,7 +517,7 @@
     return [UIImage l_disclosureIndicatorImageWithSize:CGSizeMake(7, 14) lineWidth:2 color:color];
 }
 + (UIImage *)l_checkmarkImageWithSize:(CGSize)size lineWidth:(CGFloat)lineWidth color:(UIColor *)color{
-    if(size.width<=0||size.height<=0)return nil;
+    if(size.width<=0 || size.height<=0) return nil;
     CGFloat scale = [UIScreen mainScreen].scale;
     UIGraphicsBeginImageContextWithOptions(size, NO, scale);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -649,7 +649,7 @@
     if(!tintColor){
         return self;
     }
-    if(self.size.width<=0||self.size.height<=0)return nil;
+    if(self.size.width<=0 || self.size.height<=0) return nil;
     UIGraphicsBeginImageContextWithOptions(self.size, NO, self.scale);
     [tintColor setFill];
     CGRect bounds = CGRectMake(0, 0, self.size.width, self.size.height);
@@ -767,8 +767,8 @@
     return img;
 }
 + (UIImage *)l_imageWithUIColor:(UIColor *)color size:(CGSize)size{
-    if(size.width<=0||size.height<=0)return nil;
-    if(!color)return nil;
+    if(size.width<=0 || size.height<=0) return nil;
+    if(!color) return nil;
     CGRect rect = CGRectZero;
     rect.size = size;
     CGFloat scale = [UIScreen mainScreen].scale;
@@ -862,7 +862,7 @@
     CGRect rect = CGRectZero;
     rect.size.width = CGImageGetWidth(imageRef);
     rect.size.height= CGImageGetHeight(imageRef);
-    if(point.x<0||point.x>rect.size.width||point.y<0||point.y>rect.size.height){//越界了,返回nil
+    if(point.x<0 || point.x>rect.size.width || point.y<0 || point.y>rect.size.height){//越界了,返回nil
         return nil;
     }
     UIImage *aImage = self;
@@ -895,7 +895,7 @@
     return color;
 }
 + (UIImage *)l_linearGradientImageWithSize:(CGSize)size startColor:(UIColor *)startColor startPoint:(CGPoint)startPoint endColor:(UIColor *)endColor endPoint:(CGPoint)endPoint{
-    if(size.width<=0||size.height<=0)return nil;
+    if(size.width<=0 || size.height<=0) return nil;
     CGRect rect = CGRectZero;
     rect.size = size;
     CGFloat scale = [UIScreen mainScreen].scale;
@@ -922,7 +922,7 @@
 }
 
 + (UIImage *)l_radialGradientImageWithSize:(CGSize)size startColor:(UIColor *)startColor startCenter:(CGPoint)startCenter startRadius:(CGFloat)startRadius endColor:(UIColor *)endColor endCenter:(CGPoint)endCenter endRadius:(CGFloat)endRadius {
-    if (size.width <= 0 || size.height <= 0) return nil;
+    if (size.width <= 0  ||  size.height <= 0) return nil;
     CGRect rect = CGRectZero;
     rect.size = size;
     CGFloat scale = [UIScreen mainScreen].scale;
