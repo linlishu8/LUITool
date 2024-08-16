@@ -56,6 +56,21 @@ FOUNDATION_EXPORT const unsigned char LUIVersionString[];
 #import "LUITableViewCellBase.h"
 #import "LUITableViewSectionAdjustsView.h"
 
+#pragma mark - UICollectionModel(集合视图)
+#import "LUICollectionViewModel.h"
+#import "LUICollectionViewSectionModel.h"
+#import "LUICollectionViewSupplementaryElementProtocol.h"
+#import "LUICollectionViewSupplementaryView.h"
+#import "LUICollectionViewTitleSupplementarySectionModel.h"
+#import "LUICollectionViewTitleSupplementaryView.h"
+#import "LUICollectionViewCellModel.h"
+#import "LUICollectionViewCellBase.h"
+#import "LUICollectionViewCellProtocol.h"
+#import "LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h"
+#import "UICollectionReusableView+LUICollectionViewSupplementaryElementProtocol.h"
+#import "UICollectionViewCell+LUICollectionViewCellProtocol.h"
+#import "LUICollectionView.h"
+
 #pragma mark - Constraint(布局)
 #import "LUILayoutConstraint.h"
 #import "LUILayoutConstraintItemAttributeBase.h"
