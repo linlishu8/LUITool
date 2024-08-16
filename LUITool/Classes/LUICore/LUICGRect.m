@@ -224,18 +224,18 @@ LUICGRectXXXToValue(height)
 + (CGSize)scaleSize:(CGSize)originSize aspectFitToMaxSize:(CGSize)maxSize{//如果s的尺寸超过size，则等比例缩放s直到宽高都不超过size
     CGSize size = maxSize;
     CGSize s = originSize;
-    if(s.width<=size.width&&s.height<=size.height){
-    }else if(s.width<=size.width&&s.height>size.height){
+    if(s.width<=size.width && s.height<=size.height){
+    }else if(s.width<=size.width && s.height>size.height){
         CGFloat h = size.height;
         CGFloat w = h*s.width/s.height;
         s.width = w;
         s.height = h;
-    }else if(s.width>size.width&&s.height<=size.height){
+    }else if(s.width>size.width && s.height<=size.height){
         CGFloat w = size.width;
         CGFloat h = w*s.height/s.width;
         s.width = w;
         s.height = h;
-    }else if(s.width>size.width&&s.height>size.height){
+    }else if(s.width>size.width && s.height>size.height){
         CGFloat w = size.width;
         CGFloat h = w*s.height/s.width;
         if(h>size.height){

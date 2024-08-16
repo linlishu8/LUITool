@@ -22,6 +22,26 @@
     return __singleton__; \
 }
 
+#undef    LUIDEF_SINGLETON_SUBCLASS
+#define LUIDEF_SINGLETON_SUBCLASS \
+- (instancetype)sharedInstance{ \
+    return [[self class] sharedInstance]; \
+} \
++ (instancetype)sharedInstance{ \
+    static dispatch_once_t once;\
+    static NSMutableDictionary * __singleton__;\
+    dispatch_once( &once, ^{ __singleton__ = [[NSMutableDictionary alloc] init]; } );\
+    id shareObject;\
+    @synchronized (__singleton__) {\
+       shareObject = __singleton__[NSStringFromClass(self)];\
+        if(!shareObject){\
+            shareObject = [[self alloc] init];\
+            __singleton__[NSStringFromClass(self)] = shareObject;\
+        }\
+    }\
+    return shareObject;\
+}
+
 /**
  *  对于block外部与内部间的变量传递,定义block外的weak弱引用与block内的strong强引用,防止因block而引起的循环引用内存泄露
  *    范例:

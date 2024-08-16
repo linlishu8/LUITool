@@ -219,7 +219,7 @@
     UIEdgeInsets contentInsets = self.contentInsets;
     LUILayoutConstraintItemAttributeSection *allLines = [self itemAttributeSectionThatFits:size resizeItems:resizeItems];
     sizeFits = allLines.layoutFrame.size;
-    if (sizeFits.width>0&&sizeFits.height>0) {
+    if (sizeFits.width>0 && sizeFits.height>0) {
         sizeFits.width += contentInsets.left+contentInsets.right;
         sizeFits.height += contentInsets.top+contentInsets.bottom;
     }
@@ -230,8 +230,8 @@
 }
 - (void)layoutItemsWithResizeItems:(BOOL)resizeItems {
     CGSize size = self.bounds.size;
-    BOOL needRevert = (self.layoutDirection == LUILayoutConstraintDirectionHorizontal&&self.layoutHorizontalAlignment == LUILayoutConstraintHorizontalAlignmentRight)
-      ||  (self.layoutDirection == LUILayoutConstraintDirectionVertical&&self.layoutVerticalAlignment == LUILayoutConstraintVerticalAlignmentBottom)
+    BOOL needRevert = (self.layoutDirection == LUILayoutConstraintDirectionHorizontal && self.layoutHorizontalAlignment == LUILayoutConstraintHorizontalAlignmentRight)
+      ||  (self.layoutDirection == LUILayoutConstraintDirectionVertical && self.layoutVerticalAlignment == LUILayoutConstraintVerticalAlignmentBottom)
     ;
     
     LUILayoutConstraintItemAttributeSection *allLines = [self itemAttributeSectionThatFits:size resizeItems:resizeItems];

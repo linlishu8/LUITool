@@ -71,7 +71,7 @@
     NSInteger cellIndex = [self indexInSectionModel];
     NSInteger sectionIndex = [self.sectionModel indexInModel];
     NSIndexPath *indexPath;
-    if (cellIndex!=NSNotFound&&sectionIndex!=NSNotFound) {
+    if (cellIndex!=NSNotFound && sectionIndex!=NSNotFound) {
         indexPath = [NSIndexPath indexPathForRow:cellIndex inSection:sectionIndex];
     }
     return indexPath;

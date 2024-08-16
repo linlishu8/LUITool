@@ -51,8 +51,8 @@
     //对capInsets也进行翻转
     UIEdgeInsets capInsets = self.capInsets;
     BOOL isCapInsetsEq = capInsets.top==capInsets.bottom
-    &&capInsets.left==capInsets.right
-    &&capInsets.top==capInsets.left;
+     && capInsets.left==capInsets.right
+     && capInsets.top==capInsets.left;
     if(!isCapInsetsEq){
         UIEdgeInsets capInsets2 = capInsets;
         capInsets2.left = capInsets.right;
@@ -71,8 +71,8 @@
     //对capInsets也进行翻转
     UIEdgeInsets capInsets = self.capInsets;
     BOOL isCapInsetsEq = capInsets.top==capInsets.bottom
-    &&capInsets.left==capInsets.right
-    &&capInsets.top==capInsets.left;
+     && capInsets.left==capInsets.right
+     && capInsets.top==capInsets.left;
     if(!isCapInsetsEq){
         UIEdgeInsets capInsets2 = capInsets;
         capInsets2.top = capInsets.bottom;
@@ -98,8 +98,8 @@
     //判断是否是旋转90度的整数倍
     UIEdgeInsets capInsets = self.capInsets;
     BOOL isCapInsetsEq = capInsets.top==capInsets.bottom
-    &&capInsets.left==capInsets.right
-    &&capInsets.top==capInsets.left;
+     && capInsets.left==capInsets.right
+     && capInsets.top==capInsets.left;
     if(!isCapInsetsEq){
         NSInteger unitOf90 = (NSInteger)(radians/M_PI_2);
         if(ABS(unitOf90*M_PI_2-radians)<0.0000000000000001){
@@ -312,7 +312,7 @@
 - (NSData *)l_imageDataOfPngThatFitBytes:(NSUInteger)bytes{
     NSData *data = UIImagePNGRepresentation(self);
     NSUInteger len = data.length;
-    if(bytes!=0&&len>bytes){//可以简单认为压缩后的大小与像素点数量成正比
+    if(bytes!=0 && len>bytes){//可以简单认为压缩后的大小与像素点数量成正比
         CGFloat factor = 0.9*sqrt(1.0*bytes/len);//由于只是近似计算,因此再乘上0.9系数,让压缩后的值再小点
         CGSize size = self.size;
         size.width *= factor;
@@ -325,7 +325,7 @@
 - (NSData *)l_imageDataOfJpgThatFitBytes:(NSUInteger)bytes withCompressionQuality:(CGFloat)compressionQuality{
     NSData *data = UIImageJPEGRepresentation(self, compressionQuality);
     NSUInteger len = data.length;
-    if(bytes!=0&&len>bytes){//可以简单认为压缩后的大小与像素点数量成正比
+    if(bytes!=0 && len>bytes){//可以简单认为压缩后的大小与像素点数量成正比
         CGFloat factor = 0.9*sqrt(1.0*bytes/len);//由于只是近似计算,因此再乘上0.9系数,让压缩后的值再小点
         CGSize size = self.size;
         size.width *= factor;
@@ -347,7 +347,7 @@
 - (UIImage *)l_reduceImageSizeToMaxSize:(CGSize)size{
     UIImage *img;
     CGSize imageSize = self.size;
-    if(imageSize.width<=size.width&&imageSize.height<=size.height){
+    if(imageSize.width<=size.width && imageSize.height<=size.height){
         img = self;
     }else{
         //按image的比例,重新计算size的大小

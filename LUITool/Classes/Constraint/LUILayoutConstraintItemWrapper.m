@@ -103,7 +103,7 @@ const CGFloat kLUILayoutConstraintItemFillContainerSize = NSIntegerMax;
             CGSize paddingSize = self.paddingSize;
             if (CGSizeEqualToSize(fixedSize, CGSizeMake(kLUILayoutConstraintItemFillContainerSize, kLUILayoutConstraintItemFillContainerSize))) {
                 sizeFits = size;
-            } else if (fixedSize.width > 0&&fixedSize.width!=kLUILayoutConstraintItemFillContainerSize&&fixedSize.height > 0&&fixedSize.height!=kLUILayoutConstraintItemFillContainerSize) {
+            } else if (fixedSize.width > 0 && fixedSize.width!=kLUILayoutConstraintItemFillContainerSize && fixedSize.height > 0 && fixedSize.height!=kLUILayoutConstraintItemFillContainerSize) {
                 CGSize s = fixedSize;
                 sizeFits.width = s.width+margin.left+margin.right+paddingSize.width;
                 sizeFits.height = s.height+margin.top+margin.bottom+paddingSize.height;
@@ -141,7 +141,7 @@ const CGFloat kLUILayoutConstraintItemFillContainerSize = NSIntegerMax;
             CGSize paddingSize = self.paddingSize;
             if (CGSizeEqualToSize(fixedSize, CGSizeMake(kLUILayoutConstraintItemFillContainerSize, kLUILayoutConstraintItemFillContainerSize))) {
                 sizeFits = size;
-            } else if (fixedSize.width > 0&&fixedSize.width!=kLUILayoutConstraintItemFillContainerSize&&fixedSize.height > 0&&fixedSize.height!=kLUILayoutConstraintItemFillContainerSize) {
+            } else if (fixedSize.width > 0 && fixedSize.width!=kLUILayoutConstraintItemFillContainerSize && fixedSize.height > 0 && fixedSize.height!=kLUILayoutConstraintItemFillContainerSize) {
                 CGSize s = fixedSize;
                 sizeFits.width = s.width+margin.left+margin.right+paddingSize.width;
                 sizeFits.height = s.height+margin.top+margin.bottom+paddingSize.height;

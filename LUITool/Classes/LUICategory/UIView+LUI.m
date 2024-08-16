@@ -144,7 +144,7 @@
     UIViewController *rootController = self.rootViewController;
     do {//查找出最外层的根控制器
         UIViewController *presentedViewController = rootController.presentedViewController;
-        if (presentedViewController&&presentedViewController != rootController) {
+        if (presentedViewController && presentedViewController != rootController) {
             rootController = rootController.presentedViewController;
         } else {
             break;

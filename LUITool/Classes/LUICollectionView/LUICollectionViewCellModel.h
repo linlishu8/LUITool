@@ -6,6 +6,7 @@
 //
 
 #import <LUITool/LUITool.h>
+#import "LUICollectionViewCellProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

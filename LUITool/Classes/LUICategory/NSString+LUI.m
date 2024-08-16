@@ -23,7 +23,7 @@
 - (NSNumber *)l_numberOfInteger {
     NSScanner *scanner = [[NSScanner alloc] initWithString:self];
     NSInteger value;
-    if ([scanner scanInteger:&value]&&scanner.isAtEnd) {
+    if ([scanner scanInteger:&value] && scanner.isAtEnd) {
         return @(value);
     }
     return nil;
@@ -31,7 +31,7 @@
 - (NSNumber *)l_numberOfLongLong {
     NSScanner *scanner = [[NSScanner alloc] initWithString:self];
     long long value;
-    if ([scanner scanLongLong:&value]&&scanner.isAtEnd) {
+    if ([scanner scanLongLong:&value] && scanner.isAtEnd) {
         return @(value);
     }
     return nil;
@@ -46,7 +46,7 @@
 - (NSNumber *)l_numberOfFloat {
     NSScanner *scanner = [[NSScanner alloc] initWithString:self];
     float value;
-    if ([scanner scanFloat:&value]&&scanner.isAtEnd) {
+    if ([scanner scanFloat:&value] && scanner.isAtEnd) {
         return @(value);
     }
     return nil;
@@ -54,7 +54,7 @@
 - (NSNumber *)l_numberOfDouble {
     NSScanner *scanner = [[NSScanner alloc] initWithString:self];
     double value;
-    if ([scanner scanDouble:&value]&&scanner.isAtEnd) {
+    if ([scanner scanDouble:&value] && scanner.isAtEnd) {
         return @(value);
     }
     return nil;

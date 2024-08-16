@@ -94,7 +94,7 @@
     cellModel.needReloadCell = YES;
     UICollectionView *collectionView = self.collectionView;
     [self addCellModel:cellModel];
-    if (animated&&collectionView) {
+    if (animated && collectionView) {
         LUICollectionSectionModel *sm = (LUICollectionSectionModel *)[self.sectionModels lastObject];
         NSIndexPath *indexpath = [NSIndexPath indexPathForItem:[sm numberOfCells]-1 inSection:self.sectionModels.count-1];
         [collectionView performBatchUpdates:^ {
@@ -120,7 +120,7 @@
     cellModel.needReloadCell = YES;
     UICollectionView *collectionView = self.collectionView;
     [self insertCellModel:cellModel atIndexPath:indexPath];
-    if (animated&&collectionView) {
+    if (animated && collectionView) {
 //        LUICollectionSectionModel *sm = (LUICollectionSectionModel *)[self.sectionModels lastObject];
 //        NSIndexPath *indexpath = [NSIndexPath indexPathForItem:[sm numberOfCells]-1 inSection:self.sectionModels.count-1];
         [collectionView performBatchUpdates:^ {
@@ -148,7 +148,7 @@
     }
     UICollectionView *collectionView = self.collectionView;
     [self insertCellModels:cellModels afterIndexPath:indexPath];
-    if (animated&&collectionView) {
+    if (animated && collectionView) {
 //        LUICollectionSectionModel *sm = (LUICollectionSectionModel *)[self.sectionModels lastObject];
 //        NSIndexPath *indexpath = [NSIndexPath indexPathForItem:[sm numberOfCells]-1 inSection:self.sectionModels.count-1];
         [collectionView performBatchUpdates:^ {
@@ -181,7 +181,7 @@
     }
     UICollectionView *collectionView = self.collectionView;
     [self insertCellModels:cellModels beforeIndexPath:indexPath];
-    if (animated&&collectionView) {
+    if (animated && collectionView) {
 //        LUICollectionSectionModel *sm = (LUICollectionSectionModel *)[self.sectionModels lastObject];
 //        NSIndexPath *indexpath = [NSIndexPath indexPathForItem:[sm numberOfCells]-1 inSection:self.sectionModels.count-1];
         [collectionView performBatchUpdates:^ {
@@ -217,7 +217,7 @@
             [self removeSectionModelAtIndex:indexpath.section];
         }
         UICollectionView *collectionView = self.collectionView;
-        if (animated&&collectionView) {
+        if (animated && collectionView) {
             UICollectionView *collectionView = self.collectionView;
             [collectionView performBatchUpdates:^ {
                 if (sm.numberOfCells==0) {
@@ -252,7 +252,7 @@
             }
         }
         UICollectionView *collectionView = self.collectionView;
-        if (animated&&collectionView) {
+        if (animated && collectionView) {
             UICollectionView *collectionView = self.collectionView;
             [collectionView performBatchUpdates:^ {
                 if (deletedSectionIndexs.count!=0) {
@@ -303,7 +303,7 @@
         NSIndexPath *indexpath = [NSIndexPath indexPathForItem:i inSection:index];
         [indexpaths addObject:indexpath];
     }
-    if (animated&&collectionView) {
+    if (animated && collectionView) {
         [collectionView performBatchUpdates:^ {
             [collectionView insertSections:set];
             [collectionView insertItemsAtIndexPaths:indexpaths];
@@ -326,7 +326,7 @@
     UICollectionView *collectionView = self.collectionView;
     NSIndexSet *set = [NSIndexSet indexSetWithIndex:index];
     [self removeSectionModel:sectionModel];
-    if (animated&&collectionView) {
+    if (animated && collectionView) {
         [collectionView performBatchUpdates:^ {
             [collectionView deleteSections:set];
         } completion:^(BOOL finished) {
@@ -446,8 +446,8 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     if (cell
-       &&[cell conformsToProtocol:@protocol(LUICollectionViewCellProtocol)]
-       &&[cell respondsToSelector:@selector(collectionView:didSelectCell:)]
+        && [cell conformsToProtocol:@protocol(LUICollectionViewCellProtocol)]
+        && [cell respondsToSelector:@selector(collectionView:didSelectCell:)]
        ) {
         [(UICollectionViewCell<LUICollectionViewCellProtocol> *)cell collectionView:collectionView didSelectCell:YES];
     }
@@ -466,8 +466,8 @@
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     if (cell
-       &&[cell conformsToProtocol:@protocol(LUICollectionViewCellProtocol)]
-       &&[cell respondsToSelector:@selector(collectionView:didSelectCell:)]
+        && [cell conformsToProtocol:@protocol(LUICollectionViewCellProtocol)]
+        && [cell respondsToSelector:@selector(collectionView:didSelectCell:)]
        ) {
         [(UICollectionViewCell<LUICollectionViewCellProtocol> *)cell collectionView:collectionView didSelectCell:NO];
     }

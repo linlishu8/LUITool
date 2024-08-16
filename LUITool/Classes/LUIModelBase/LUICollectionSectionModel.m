@@ -107,7 +107,7 @@
 }
 - (void)removeCellModelAtIndex:(NSInteger)index {
     NSMutableArray<LUICollectionCellModel *> *cellModels = [self mutableCellModels];
-    if (index>=0&&index<cellModels.count) {
+    if (index>=0 && index<cellModels.count) {
         LUICollectionCellModel *cellModel = [cellModels objectAtIndex:index];
         [self configCellModelAfterRemoving:cellModel];
         [cellModels removeObjectAtIndex:index];

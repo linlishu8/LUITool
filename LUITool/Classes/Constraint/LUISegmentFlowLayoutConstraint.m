@@ -135,7 +135,7 @@
             }
         } else {
             LUICGRectSetLength(&f1, axis, self.layoutPriorityItemsMaxBoundsPercent*(LUICGRectGetLength(bounds, axis)-space));
-            CGSize f1_size = f1_size_fit.width<=f1.size.width&&f1_size_fit.height<=f1.size.height?f1_size_fit:[self.beforeItemsFlowlayout sizeThatFits:f1.size resizeItems:resizeItems];
+            CGSize f1_size = f1_size_fit.width<=f1.size.width && f1_size_fit.height<=f1.size.height?f1_size_fit:[self.beforeItemsFlowlayout sizeThatFits:f1.size resizeItems:resizeItems];
             f1.size.width = MIN(f1_size.width,f1.size.width);
             f1.size.height = MIN(f1_size.height,f1.size.height);
             //
@@ -144,7 +144,7 @@
             if (LUICGRectGetLength(f1, axis)>0) {
                 LUICGRectAddLength(&f2, axis, -space);
             }
-            CGSize f2_size = f2_size_fit.width<=f2.size.width&&f2_size_fit.height<=f2.size.height?f2_size_fit:[self.afterItemsFlowlayout sizeThatFits:f2.size resizeItems:resizeItems];
+            CGSize f2_size = f2_size_fit.width<=f2.size.width && f2_size_fit.height<=f2.size.height?f2_size_fit:[self.afterItemsFlowlayout sizeThatFits:f2.size resizeItems:resizeItems];
             f2.size.width = MIN(f2_size.width,f2.size.width);
             f2.size.height = MIN(f2_size.height,f2.size.height);
             CGFloat maxLengthAxisR = MAX(LUICGRectGetLength(f1, axisR),LUICGRectGetLength(f2, axisR));
@@ -166,7 +166,7 @@
             }
         } else {
             LUICGRectSetLength(&f2, axis, self.layoutPriorityItemsMaxBoundsPercent*(LUICGRectGetLength(bounds, axis)-space));
-            CGSize f2_size = f2_size_fit.width<=f2.size.width&&f2_size_fit.height<=f2.size.height?f2_size_fit:[self.afterItemsFlowlayout sizeThatFits:f2.size resizeItems:resizeItems];
+            CGSize f2_size = f2_size_fit.width<=f2.size.width && f2_size_fit.height<=f2.size.height?f2_size_fit:[self.afterItemsFlowlayout sizeThatFits:f2.size resizeItems:resizeItems];
             f2.size.width = MIN(f2_size.width,f2.size.width);
             f2.size.height = MIN(f2_size.height,f2.size.height);
             //
@@ -174,7 +174,7 @@
             if (LUICGRectGetLength(f2, axis)>0) {
                 LUICGRectAddLength(&f1, axis, -space);
             }
-            CGSize f1_size = f1_size_fit.width<=f1.size.width&&f1_size_fit.height<=f1.size.height?f1_size_fit:[self.beforeItemsFlowlayout sizeThatFits:f1.size resizeItems:resizeItems];
+            CGSize f1_size = f1_size_fit.width<=f1.size.width && f1_size_fit.height<=f1.size.height?f1_size_fit:[self.beforeItemsFlowlayout sizeThatFits:f1.size resizeItems:resizeItems];
             f1.size.width = MIN(f1_size.width,f1.size.width);
             f1.size.height = MIN(f1_size.height,f1.size.height);
             

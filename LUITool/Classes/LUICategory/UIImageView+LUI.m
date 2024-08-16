@@ -94,7 +94,7 @@
     if(size.height<=0){
         size.height = imageSize.height;
     }
-    if(imageSize.width<=size.width&&imageSize.height<=size.height){
+    if(imageSize.width<=size.width && imageSize.height<=size.height){
         return imageSize;
     }
     CGRect r1 = CGRectMake(0, 0, imageSize.width, imageSize.height);

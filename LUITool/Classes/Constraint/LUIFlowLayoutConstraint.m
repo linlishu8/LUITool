@@ -39,8 +39,8 @@
     NSArray *items = self.layoutedItems;
     NSInteger count = items.count;
     if (count==0) return nil;
-    BOOL needRevert = (self.layoutDirection==LUILayoutConstraintDirectionHorizontal&&self.layoutHorizontalAlignment==LUILayoutConstraintHorizontalAlignmentRight)
-     || (self.layoutDirection==LUILayoutConstraintDirectionVertical&&self.layoutVerticalAlignment==LUILayoutConstraintVerticalAlignmentBottom)
+    BOOL needRevert = (self.layoutDirection==LUILayoutConstraintDirectionHorizontal && self.layoutHorizontalAlignment==LUILayoutConstraintHorizontalAlignmentRight)
+     || (self.layoutDirection==LUILayoutConstraintDirectionVertical && self.layoutVerticalAlignment==LUILayoutConstraintVerticalAlignmentBottom)
     ;
     if (needRevert) {
         NSMutableArray *tmp = [[NSMutableArray alloc] init];
@@ -104,7 +104,7 @@
     UIEdgeInsets contentInsets = self.contentInsets;
     LUILayoutConstraintItemAttributeSection *line = [self itemAttributeSectionThatFits:size resizeItems:resizeItems needLimitSize:NO];
     sizeFits = line.layoutFrame.size;
-    if (sizeFits.width>0&&sizeFits.height>0) {
+    if (sizeFits.width>0 && sizeFits.height>0) {
         sizeFits.width += contentInsets.left+contentInsets.right;
         sizeFits.height += contentInsets.top+contentInsets.bottom;
     }

@@ -197,7 +197,7 @@
     [[self mutableSectionModels] removeObject:sectionModel];
 }
 - (void)removeSectionModelAtIndex:(NSInteger)index {
-    if (index>=0&&index<[self mutableSectionModels].count) {
+    if (index>=0 && index<[self mutableSectionModels].count) {
         [[self mutableSectionModels] removeObjectAtIndex:index];
     }
 }
@@ -295,7 +295,7 @@
 }
 - (LUICollectionSectionModel *)sectionModelAtIndex:(NSInteger)index {
     LUICollectionSectionModel *sectionModel;
-    if (index>=0&&index<[self sectionModels].count) {
+    if (index>=0 && index<[self sectionModels].count) {
         sectionModel = [[self sectionModels] objectAtIndex:index];
     }
     return sectionModel;

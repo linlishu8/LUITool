@@ -78,7 +78,7 @@ LUIDEF_EnumTypeCategories(LUILayoutConstraintDirection,
     }
 }
 - (void)addItem:(id<LUILayoutConstraintItemProtocol>)item {
-    if (item&&![_items containsObject:item]) {
+    if (item && ![_items containsObject:item]) {
         [_items addObject:item];
     }
 }

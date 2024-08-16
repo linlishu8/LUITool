@@ -79,7 +79,7 @@ LUIDEF_EnumTypeCategories(UIViewAnimationCurve,(@{
     NSNumber *number = nil;\
     NSScanner *scanner = [[NSScanner alloc] initWithString:self];\
     NSInteger value;\
-    if([scanner scanInteger:&value]&&scanner.isAtEnd){\
+    if([scanner scanInteger:&value] && scanner.isAtEnd){\
         number = @(value);\
     }\
     if(number!=nil){\
