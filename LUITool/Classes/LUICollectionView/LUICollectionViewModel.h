@@ -15,14 +15,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LUICollectionViewModel : LUICollectionModel <UICollectionViewDataSource, UICollectionViewDelegate>
-
+@interface LUICollectionViewModel : LUICollectionModel<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (nonatomic, weak, nullable) id<UICollectionViewDataSource> forwardDataSource;//调用链传递
 @property (nonatomic, weak, nullable) id<UICollectionViewDelegate> forwardDelegate;//调用链传递。ios10时，如果forwardDelegate实现了scrollViewDidScroll：方法，需要在forwardDelegate的dealloc方法中手动清空delegate，否则会闪退
-@property (nonatomic, readwrite, getter=isEditting) BOOL editting;//是否处在编辑状态中
+@property (nonatomic, readwrite,getter=isEditting) BOOL editting;//是否处在编辑状态中
 @property (nonatomic, weak, nullable) UICollectionView *collectionView;//弱引用外部的collectionView
 
-#pragma mark
+#pragma mark - empty
 @property (nonatomic, assign, nullable) Class emptyBackgroundViewClass;//没有单元格数据时的背景视图类
 @property (nonatomic, strong, nullable) __kindof UIView *emptyBackgroundView;//没有单元格数据时的背景视图
 typedef void(^LUICollectionViewModelC)(__kindof LUICollectionViewModel *model);
@@ -66,7 +65,6 @@ typedef void(^LUICollectionViewModelC)(__kindof LUICollectionViewModel *model);
 
 - (void)insertSectionModel:(LUICollectionViewSectionModel *)sectionModel atIndex:(NSInteger)index animated:(BOOL)animated completion:(void (^ __nullable)(BOOL finished))completion;//动画添加分组
 - (void)removeSectionModel:(LUICollectionViewSectionModel *)sectionModel animated:(BOOL)animated completion:(void (^ __nullable)(BOOL finished))completion;//动画移除分组
-
 @end
 
 NS_ASSUME_NONNULL_END

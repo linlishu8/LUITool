@@ -9,15 +9,14 @@
 #import "LUICollectionViewTitleSupplementaryView.h"
 
 @implementation LUICollectionViewTitleSupplementarySectionModel
-
-- (id)init {
+- (id)init{
     if (self = [super init]) {
         self.headClass = [LUICollectionViewTitleSupplementaryView class];
         self.footClass = [LUICollectionViewTitleSupplementaryView class];
     }
     return self;
 }
-- (id)copyWithZone:(NSZone *)zone {
+- (id)copyWithZone:(NSZone *)zone{
     LUICollectionViewTitleSupplementarySectionModel *obj = [super copyWithZone:zone];
     obj.showHead = self.showHead;
     obj.headTitle = self.headTitle;
@@ -27,13 +26,13 @@
     obj.footClass = self.footClass;
     return obj;
 }
-- (void)setHeadClass:(Class<LUICollectionViewSupplementaryElementProtocol>)headClass {
+- (void)setHeadClass:(Class<LUICollectionViewSupplementaryElementProtocol>)headClass{
     _headClass = headClass;
     if (self.showHead) {
         [self setSupplementaryElementViewClass:headClass forKind:UICollectionElementKindSectionHeader];
     }
 }
-- (void)setFootClass:(Class<LUICollectionViewSupplementaryElementProtocol>)footClass {
+- (void)setFootClass:(Class<LUICollectionViewSupplementaryElementProtocol>)footClass{
     _footClass = footClass;
     if (self.showFoot) {
         [self setSupplementaryElementViewClass:footClass forKind:UICollectionElementKindSectionFooter];
@@ -49,7 +48,7 @@
         }
     }
 }
-- (void)setShowFoot:(BOOL)showFoot {
+- (void)setShowFoot:(BOOL)showFoot{
     _showFoot = showFoot;
     if (self.footClass) {
         if (self.showFoot) {
@@ -59,5 +58,4 @@
         }
     }
 }
-
 @end

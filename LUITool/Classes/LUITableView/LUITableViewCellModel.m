@@ -23,7 +23,7 @@
 }
 
 - (id)init{
-    if(self=[super init]){
+    if (self = [super init]) {
         self.cellClass = [UITableViewCell class];
         self.performsFirstActionWithFullSwipe = YES;
     }
@@ -51,19 +51,19 @@
     obj.needReloadCell = self.needReloadCell;
     return obj;
 }
-- (UITableView *)tableView{
+- (UITableView *)tableView {
     return self.tableViewModel.tableView;
 }
-- (LUITableViewModel *)tableViewModel{
+- (LUITableViewModel *)tableViewModel {
     LUICollectionModel *collectionModel = [super collectionModel];
-    if([collectionModel isKindOfClass:[LUITableViewModel class]]){
+    if ([collectionModel isKindOfClass:[LUITableViewModel class]]) {
         return (LUITableViewModel *)collectionModel;
     }
     return nil;
 }
-- (__kindof LUITableViewSectionModel *)sectionModel{
+- (__kindof LUITableViewSectionModel *)sectionModel {
     LUICollectionSectionModel *sectionModel = [super sectionModel];
-    if([sectionModel isKindOfClass:[LUITableViewSectionModel class]]){
+    if ([sectionModel isKindOfClass:[LUITableViewSectionModel class]]) {
         return (LUITableViewSectionModel *)sectionModel;
     }
     return nil;
@@ -76,32 +76,32 @@
     ;
     cell.cellModel = self;
     self.tableViewCell = cell;
-    if(self.whenShow){
+    if (self.whenShow) {
         self.whenShow(self,cell);
     }
-    if(isCellModelChanged){
+    if (isCellModelChanged) {
         [cell setNeedsLayout];
     }
 }
 - (NSString *)reuseIdentity{
-    if(_reuseIdentity==nil){
+    if (_reuseIdentity == nil) {
         _reuseIdentity = NSStringFromClass(self.cellClass);
     }
     return _reuseIdentity;
 }
-- (void)refresh{
+- (void)refresh {
     NSIndexPath *indexPath = [self.tableViewModel indexPathOfCellModel:self];
-    if(indexPath){
+    if (indexPath) {
         self.needReloadCell = YES;
         [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
-- (void)refreshWithAnimated:(BOOL)animated{
+- (void)refreshWithAnimated:(BOOL)animated {
     NSIndexPath *indexPath = [self.tableViewModel indexPathOfCellModel:self];
-    if(indexPath){
+    if (indexPath) {
         self.needReloadCell = YES;
         [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:animated?UITableViewRowAnimationAutomatic:UITableViewRowAnimationNone];
-        if(self.selected){
+        if (self.selected) {
 //            dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView selectRowAtIndexPath:indexPath animated:animated scrollPosition:(UITableViewScrollPositionNone)];
 //            });
@@ -114,55 +114,55 @@
 - (void)selectCellWithAnimated:(BOOL)animated {
     [self setSelected:YES animated:animated];
 }
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [self.tableViewModel setCellModel:self selected:selected animated:animated];
 }
 
 - (void)didClickSelf{
-    if(self.whenClick){
+    if (self.whenClick) {
         self.whenClick(self);
     }
 }
 - (void)didClickAccessorySelf{
-    if(self.whenClickAccessory){
+    if (self.whenClickAccessory) {
         self.whenClickAccessory(self);
     }
 }
-- (void)didSelectedSelf:(BOOL)selected{
-    if(self.whenSelected){
+- (void)didSelectedSelf:(BOOL)selected {
+    if (self.whenSelected) {
         self.whenSelected(self,selected);
     }
 }
 - (void)didDeleteSelf{
-    if(self.whenDelete){
+    if (self.whenDelete) {
         self.whenDelete(self);
     }
 }
-- (void)setFocused:(BOOL)focused refreshed:(BOOL)refreshed{
-    if(!self.tableViewModel){
+- (void)setFocused:(BOOL)focused refreshed:(BOOL)refreshed {
+    if (!self.tableViewModel) {
         self.focused = focused;
         return;
     }
-    if(focused){
+    if (focused) {
         LUITableViewCellModel *oldCM = [self.tableViewModel cellModelForFocusedCellModel];
-        if(oldCM==self){
+        if (oldCM == self) {
             return;
         }
         oldCM.focused = NO;
         [oldCM refreshWithAnimated:YES];
         self.focused = YES;
-        if(refreshed){
+        if (refreshed) {
             [self refreshWithAnimated:YES];
             [self.tableView scrollToRowAtIndexPath:self.indexPathInModel atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
         }
-    }else{
+    } else {
         [self.tableViewModel focusCellModel:self focused:NO];
-        if(refreshed){
+        if (refreshed) {
             [self refreshWithAnimated:YES];
         }
     }
 }
-- (void)removeFromModelWithAnimated:(BOOL)animated{
+- (void)removeFromModelWithAnimated:(BOOL)animated {
     [self.tableViewModel removeCellModel:self animated:animated];
 }
 #pragma debug
@@ -173,7 +173,7 @@
 //    NSLog(@"deallocLUITableViewCellModel:%@", self);
 }
 - (NSArray<UITableViewRowAction *> *)editActions{
-    if(self.swipeActions.count==0){
+    if (self.swipeActions.count == 0) {
         return nil;
     }
     NSMutableArray<UITableViewRowAction *> *editActions = [[NSMutableArray alloc] initWithCapacity:self.swipeActions.count];
@@ -185,7 +185,7 @@
 }
  - (nullable UISwipeActionsConfiguration *)swipeActionsConfigurationWithIndexPath:(NSIndexPath *)indexPath leading:(BOOL)leading{
      NSArray<LUITableViewCellSwipeAction *> *swipeActions = leading?self.leadingSwipeActions:self.swipeActions;
-     if(swipeActions.count==0){
+     if (swipeActions.count == 0) {
          return nil;
      }
      NSMutableArray<UIContextualAction *> *actions = [[NSMutableArray alloc] initWithCapacity:swipeActions.count];

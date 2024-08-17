@@ -66,6 +66,7 @@ FOUNDATION_EXPORT const unsigned char LUIVersionString[];
 #import "LUICollectionViewCellModel.h"
 #import "LUICollectionViewCellBase.h"
 #import "LUICollectionViewCellProtocol.h"
+#import "LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h"
 #import "UICollectionReusableView+LUICollectionViewSupplementaryElementProtocol.h"
 #import "UICollectionViewCell+LUICollectionViewCellProtocol.h"
 #import "LUICollectionView.h"

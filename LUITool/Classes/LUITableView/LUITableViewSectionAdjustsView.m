@@ -56,7 +56,7 @@ LUIDEF_SINGLETON(LUITableViewSectionAdjustsView);
     size.width -= insets.left+insets.right;
     size.height -= insets.top+insets.bottom;
     CGSize s = [self.textLabel sizeThatFits:size];
-    if(!CGSizeEqualToSize(CGSizeZero, s)){
+    if (!CGSizeEqualToSize(CGSizeZero, s)) {
         s.width += insets.left+insets.right;
         s.height += insets.top+insets.bottom;
     }

@@ -10,8 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UICollectionViewCell (LUICollectionViewCellProtocol) <LUICollectionViewCellProtocol>
-
+@interface UICollectionViewCell (LUICollectionViewCellProtocol)<LUICollectionViewCellProtocol>
 /**
  *  动态计算单元格的尺寸,一般是使用单例cell进行动态尺寸计算.block中只需要计算尺寸,不需要再配置单例cell的bounds,collectionCellModel等属性
  *
@@ -22,8 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return 动态尺寸
  */
-+ (CGSize)dynamicSizeWithCollectionView:(UICollectionView *)collectionView collectionCellModel:(LUICollectionViewCellModel *)collectionCellModel cellShareInstance:(UICollectionViewCell<LUICollectionViewCellProtocol> *)cell calBlock:(CGSize(^)(UICollectionView *collectionView, LUICollectionViewCellModel *cellModel,id cell))block;
-
++ (CGSize)dynamicSizeWithCollectionView:(UICollectionView *)collectionView collectionCellModel:(LUICollectionViewCellModel *)collectionCellModel cellShareInstance:(UICollectionViewCell<LUICollectionViewCellProtocol> *)cell calBlock:(CGSize(^)(UICollectionView *collectionView,LUICollectionViewCellModel *cellModel,id cell))block;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,14 +9,14 @@
 #import "LUICollectionSectionModel.h"
 #import "LUICollectionCellModel.h"
 
-@interface LUICollectionModel(){
+@interface LUICollectionModel() {
     NSMutableArray<LUICollectionSectionModel *> *_sectionModels;
 }
 @end
 
 @implementation LUICollectionModel
 - (id)init{
-    if (self=[super init]) {
+    if (self = [super init]) {
         _sectionModels = [[NSMutableArray alloc] init];
         self.allowsSelection = YES;
     }
@@ -25,7 +25,7 @@
 - (id)copyWithZone:(NSZone *)zone{
     LUICollectionModel *obj = [super copyWithZone:zone];
     obj->_sectionModels = [_sectionModels mutableCopy];
-    for(LUICollectionSectionModel *sm in self.sectionModels){
+    for(LUICollectionSectionModel *sm in self.sectionModels) {
         sm.collectionModel = self;
     }
     obj.userInfo = self.userInfo;
@@ -37,13 +37,13 @@
 - (NSMutableArray<__kindof LUICollectionSectionModel *> *)mutableSectionModels{
     return _sectionModels;
 }
-- (NSIndexPath *)indexPathOfLastCellModel{
+- (NSIndexPath *)indexPathOfLastCellModel {
     NSIndexPath *indexpath;
     NSInteger sections = self.numberOfSections;
     for (NSInteger i=sections-1;i>=0;i--) {
         LUICollectionSectionModel *sm = [self sectionModelAtIndex:i];
         NSInteger cells = sm.numberOfCells;
-        if(cells>0){
+        if (cells>0) {
             indexpath = [NSIndexPath indexPathForItem:cells-1 inSection:i];
             break;
         }
@@ -56,7 +56,7 @@
 - (void)setSectionModels:(NSArray<LUICollectionSectionModel *> *)sectionModels{
     [[self mutableSectionModels] removeAllObjects];
     [[self mutableSectionModels] addObjectsFromArray:sectionModels];
-    for(LUICollectionSectionModel *sm in sectionModels){
+    for(LUICollectionSectionModel *sm in sectionModels) {
         sm.collectionModel = self;
     }
 }
@@ -78,23 +78,23 @@
     }
     return cells;
 }
-- (__kindof LUICollectionSectionModel *)createEmptySectionModel{
+- (__kindof LUICollectionSectionModel *)createEmptySectionModel {
     LUICollectionSectionModel *section = [[LUICollectionSectionModel alloc] init];
     return section;
 }
-- (void)addCellModel:(LUICollectionCellModel *)cellModel{
-    if(!cellModel)return;
+- (void)addCellModel:(LUICollectionCellModel *)cellModel {
+    if (!cellModel)return;
     LUICollectionSectionModel *section = [[self sectionModels] lastObject];
-    if(!section){
+    if (!section) {
         section = [self createEmptySectionModel];
         [self addSectionModel:section];
     }
     [section addCellModel:cellModel];
 }
-- (void)addCellModelToFirst:(LUICollectionCellModel *)cellModel{
-    if(!cellModel)return;
+- (void)addCellModelToFirst:(LUICollectionCellModel *)cellModel {
+    if (!cellModel)return;
     LUICollectionSectionModel *section = [[self sectionModels] firstObject];
-    if(!section){
+    if (!section) {
         section = [self createEmptySectionModel];
         [self addSectionModel:section];
     }
@@ -105,42 +105,42 @@
         [self addCellModel:cellModel];
     }
 }
-- (void)insertCellModel:(LUICollectionCellModel *)cellModel atIndexPath:(NSIndexPath *)indexPath{
-    if(!cellModel)return;
+- (void)insertCellModel:(LUICollectionCellModel *)cellModel atIndexPath:(NSIndexPath *)indexPath {
+    if (!cellModel)return;
     LUICollectionSectionModel *sectionModel = [self sectionModelAtIndex:indexPath.section];
-    if(sectionModel){
+    if (sectionModel) {
         [sectionModel insertCellModel:cellModel atIndex:indexPath.row];
     }
 }
-- (void)insertCellModels:(NSArray<LUICollectionCellModel *> *)cellModels afterIndexPath:(NSIndexPath *)indexPath{
-    if(cellModels.count==0||!indexPath)return;
+- (void)insertCellModels:(NSArray<LUICollectionCellModel *> *)cellModels afterIndexPath:(NSIndexPath *)indexPath {
+    if (cellModels.count == 0||!indexPath)return;
     LUICollectionSectionModel *sectionModel = [self sectionModelAtIndex:indexPath.section];
-    if(sectionModel){
+    if (sectionModel) {
         [sectionModel insertCellModels:cellModels afterIndex:indexPath.row];
     }
 }
-- (void)insertCellModels:(NSArray<LUICollectionCellModel *> *)cellModels beforeIndexPath:(NSIndexPath *)indexPath{
-    if(cellModels.count==0||!indexPath)return;
+- (void)insertCellModels:(NSArray<LUICollectionCellModel *> *)cellModels beforeIndexPath:(NSIndexPath *)indexPath {
+    if (cellModels.count == 0||!indexPath)return;
     LUICollectionSectionModel *sectionModel = [self sectionModelAtIndex:indexPath.section];
-    if(sectionModel){
+    if (sectionModel) {
         [sectionModel insertCellModels:cellModels beforeIndex:indexPath.row];
     }
 }
 - (void)insertCellModelsToBottom:(NSArray<LUICollectionCellModel *> *)cellModels{
-    if(cellModels.count==0)return;
+    if (cellModels.count == 0)return;
     LUICollectionSectionModel *sectionModel = [[self sectionModels] lastObject];
-    if(sectionModel){
+    if (sectionModel) {
         [sectionModel insertCellModelsToBottom:cellModels];
     }
 }
 - (void)insertCellModelsToTop:(NSArray<LUICollectionCellModel *> *)cellModels{
-    if(cellModels.count==0)return;
+    if (cellModels.count == 0)return;
     LUICollectionSectionModel *sectionModel = [[self sectionModels] firstObject];
-    if(sectionModel){
+    if (sectionModel) {
         [sectionModel insertCellModelsToTop:cellModels];
     }
 }
-- (void)removeCellModel:(LUICollectionCellModel *)cellModel{
+- (void)removeCellModel:(LUICollectionCellModel *)cellModel {
     for (LUICollectionSectionModel *section in [self sectionModels]) {
         [section removeCellModel:cellModel];
     }
@@ -150,17 +150,17 @@
         [self removeCellModel:cellModel];
     }
 }
-- (void)removeCellModelAtIndexPath:(NSIndexPath *)indexPath{
+- (void)removeCellModelAtIndexPath:(NSIndexPath *)indexPath {
     LUICollectionSectionModel *sectionModel = [self sectionModelAtIndex:indexPath.section];
     [sectionModel removeCellModelAtIndex:indexPath.row];
 }
 - (void)removeCellModelsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths{
-    if(indexPaths.count==0)return;
+    if (indexPaths.count == 0)return;
     NSMutableDictionary *sectionMap = [[NSMutableDictionary alloc] init];
     for (NSIndexPath *p in indexPaths) {
         NSInteger section = p.section;
         NSMutableArray<NSIndexPath *> *paths = sectionMap[@(section)];
-        if(!paths){
+        if (!paths) {
             paths = [[NSMutableArray alloc] initWithObjects:p, nil];
             sectionMap[@(section)] = paths;
         }
@@ -176,13 +176,13 @@
         [sectionModel removeCellModelsAtIndexes:indexset];
     }
 }
-- (void)addSectionModel:(LUICollectionSectionModel *)sectionModel{
-    if(!sectionModel)return;
+- (void)addSectionModel:(LUICollectionSectionModel *)sectionModel {
+    if (!sectionModel)return;
     sectionModel.collectionModel = self;
     [[self mutableSectionModels] addObject:sectionModel];
 }
-- (void)insertSectionModel:(LUICollectionSectionModel *)sectionModel atIndex:(NSInteger)index{
-    if(!sectionModel)return;
+- (void)insertSectionModel:(LUICollectionSectionModel *)sectionModel atIndex:(NSInteger)index {
+    if (!sectionModel)return;
     sectionModel.collectionModel = self;
     [[self mutableSectionModels] insertObject:sectionModel atIndex:index];
 }
@@ -191,12 +191,12 @@
         [self addSectionModel:sectionModel];
     }
 }
-- (void)removeSectionModel:(LUICollectionSectionModel *)sectionModel{
+- (void)removeSectionModel:(LUICollectionSectionModel *)sectionModel {
     sectionModel.collectionModel = nil;
     [[self mutableSectionModels] removeObject:sectionModel];
 }
-- (void)removeSectionModelAtIndex:(NSInteger)index{
-    if(index>=0&&index<[self mutableSectionModels].count){
+- (void)removeSectionModelAtIndex:(NSInteger)index {
+    if (index>=0&&index<[self mutableSectionModels].count) {
         [[self mutableSectionModels] removeObjectAtIndex:index];
     }
 }
@@ -206,12 +206,12 @@
 - (void)removeAllSectionModels{
     [[self mutableSectionModels] removeAllObjects];
 }
-- (NSIndexPath *)indexPathOfCellModel:(LUICollectionCellModel *)cellModel{
+- (NSIndexPath *)indexPathOfCellModel:(LUICollectionCellModel *)cellModel {
     __block NSIndexPath *indexpath = nil;
     [[self sectionModels] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         LUICollectionSectionModel *section = obj;
         NSInteger row = [section indexOfCellModel:cellModel];
-        if(row!=NSNotFound){
+        if (row!=NSNotFound) {
             indexpath = [NSIndexPath indexPathForRow:row inSection:idx];
             *stop = YES;
         }
@@ -219,7 +219,7 @@
     return indexpath;
 }
 - (void)enumerateCellModelsUsingBlock:(void(^)(id cellModel,NSIndexPath *indexpath,BOOL *stop))block{
-    if(!block)return;
+    if (!block)return;
     NSInteger sectionIndex = 0;
     BOOL stop = NO;
     for (LUICollectionSectionModel *sm in self.sectionModels) {
@@ -227,7 +227,7 @@
         for (LUICollectionCellModel *cellModel in sm.cellModels) {
             NSIndexPath *indexpath = [NSIndexPath indexPathForItem:itemIndex inSection:sectionIndex];
             block(cellModel,indexpath,&stop);
-            if(stop){
+            if (stop) {
                 return;
             }
             itemIndex++;
@@ -236,11 +236,11 @@
     }
 }
 - (NSIndexPath *)indexPathOfCellModelPassingTest:(BOOL(^)(id cellModel,NSIndexPath *indexpath,BOOL *stop))block{
-    if(!block)return nil;
+    if (!block)return nil;
     __block NSIndexPath *result;
     [self enumerateCellModelsUsingBlock:^(id cellModel, NSIndexPath *indexpath, BOOL *stop) {
         BOOL s = block(cellModel,indexpath,stop);
-        if(s){
+        if (s) {
             result = indexpath;
             *stop = YES;
         }
@@ -251,7 +251,7 @@
     NSMutableArray<NSIndexPath *> *indexpaths = [[NSMutableArray alloc] init];
     [self enumerateCellModelsUsingBlock:^(id cellModel, NSIndexPath *indexpath, BOOL *stop) {
         BOOL s = block(cellModel,indexpath,stop);
-        if(s){
+        if (s) {
             [indexpaths addObject:indexpath];
         }
     }];
@@ -261,23 +261,23 @@
     NSMutableArray<NSIndexPath *> *indexPaths = [[NSMutableArray alloc] initWithCapacity:cellModels.count];
     for (LUICollectionCellModel *cellModel in cellModels) {
         NSIndexPath *indexPath = [self indexPathOfCellModel:cellModel];
-        if(indexPath){
+        if (indexPath) {
             [indexPaths addObject:indexPath];
         }
     }
     return indexPaths;
 }
-- (NSInteger)indexOfSectionModel:(LUICollectionSectionModel *)sectionModel{
+- (NSInteger)indexOfSectionModel:(LUICollectionSectionModel *)sectionModel {
     NSInteger index = [[self sectionModels] indexOfObject:sectionModel];
     return index;
 }
-- (NSIndexSet *)indexSetOfSectionModel:(LUICollectionSectionModel *)sectionModel{
+- (NSIndexSet *)indexSetOfSectionModel:(LUICollectionSectionModel *)sectionModel {
     NSInteger index = [[self sectionModels] indexOfObject:sectionModel];
     NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:index];
     return indexSet;
 }
-- (LUICollectionCellModel *)cellModelAtIndexPath:(NSIndexPath *)indexpath{
-    if(!indexpath)return nil;
+- (LUICollectionCellModel *)cellModelAtIndexPath:(NSIndexPath *)indexpath {
+    if (!indexpath)return nil;
     LUICollectionSectionModel *section = [self sectionModelAtIndex:indexpath.section];
     LUICollectionCellModel *cell = [section cellModelAtIndex:indexpath.row];
     return cell;
@@ -286,15 +286,15 @@
     NSMutableArray<LUICollectionCellModel *> *cellModels = [[NSMutableArray alloc] init];
     for (NSIndexPath *indexpath in indexpaths) {
         id cm = [self cellModelAtIndexPath:indexpath];
-        if(cm){
+        if (cm) {
             [cellModels addObject:cm];
         }
     }
     return cellModels;
 }
-- (LUICollectionSectionModel *)sectionModelAtIndex:(NSInteger)index{
+- (LUICollectionSectionModel *)sectionModelAtIndex:(NSInteger)index {
     LUICollectionSectionModel *sectionModel;
-    if(index>=0&&index<[self sectionModels].count){
+    if (index>=0&&index<[self sectionModels].count) {
         sectionModel = [[self sectionModels] objectAtIndex:index];
     }
     return sectionModel;
@@ -306,20 +306,20 @@
 - (NSArray<__kindof LUICollectionSectionModel *> *)emptySectionModels{
     NSMutableArray<LUICollectionSectionModel *> *sectionModels = [[NSMutableArray alloc] init];
     for (LUICollectionSectionModel *sm in [self sectionModels]) {
-        if(sm.numberOfCells==0){
+        if (sm.numberOfCells == 0) {
             [sectionModels addObject:sm];
         }
     }
     return sectionModels;
 }
-- (void)moveCellModelAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
-    if(sourceIndexPath==nil||destinationIndexPath==nil)return;
+- (void)moveCellModelAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    if (sourceIndexPath == nil||destinationIndexPath == nil)return;
     LUICollectionCellModel *sourceCellModel = [self cellModelAtIndexPath:sourceIndexPath];
     [self removeCellModelAtIndexPath:sourceIndexPath];
     [self insertCellModel:sourceCellModel atIndexPath:destinationIndexPath];
 }
 
-- (void)selectCellModelAtIndexPath:(NSIndexPath *)indexPath{
+- (void)selectCellModelAtIndexPath:(NSIndexPath *)indexPath {
     LUICollectionCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
     [self selectCellModel:cellModel];
 }
@@ -327,12 +327,12 @@
     NSArray<LUICollectionCellModel *> *cellModels = [self cellModelsAtIndexPaths:indexPaths];
     [self selectCellModels:cellModels];
 }
-- (void)selectCellModel:(LUICollectionCellModel *)cellModel{
-    if(self.allowsSelection){
-        if(!self.allowsMultipleSelection){
+- (void)selectCellModel:(LUICollectionCellModel *)cellModel {
+    if (self.allowsSelection) {
+        if (!self.allowsMultipleSelection) {
             NSArray<LUICollectionCellModel *> *allCells = [self allCellModels];
             for (LUICollectionCellModel *cm in allCells) {
-                if(![cm isEqual:cellModel]){
+                if (![cm isEqual:cellModel]) {
                     cm.selected = NO;
                 }
             }
@@ -341,8 +341,8 @@
     }
 }
 - (void)selectCellModels:(NSArray<LUICollectionCellModel *> *)cellModels{
-    if(self.allowsSelection){
-        if(self.allowsMultipleSelection){
+    if (self.allowsSelection) {
+        if (self.allowsMultipleSelection) {
             for (LUICollectionCellModel *cellModel in cellModels) {
                 cellModel.selected = YES;
             }
@@ -352,11 +352,11 @@
 - (void)selectAllCellModels{
     [self selectCellModels:[self allCellModels]];
 }
-- (void)deselectCellModelAtIndexPath:(NSIndexPath *)indexPath{
+- (void)deselectCellModelAtIndexPath:(NSIndexPath *)indexPath {
     LUICollectionCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
     [self deselectCellModel:cellModel];
 }
-- (void)deselectCellModel:(LUICollectionCellModel *)cellModel{
+- (void)deselectCellModel:(LUICollectionCellModel *)cellModel {
     cellModel.selected = NO;
 }
 - (void)deselectCellModels:(NSArray<LUICollectionCellModel *> *)cellModels{
@@ -367,13 +367,13 @@
 - (void)deselectAllCellModels{
     [self deselectCellModels:[self allCellModels]];
 }
-- (NSIndexPath *)indexPathForSelectedCellModel{
+- (NSIndexPath *)indexPathForSelectedCellModel {
     for (int i=0;i<[self sectionModels].count;i++) {
         LUICollectionSectionModel *sm = [self sectionModels][i];
         NSArray<LUICollectionCellModel *> *cellModels = sm.cellModels;
         for (int j=0; j<cellModels.count; j++) {
             LUICollectionCellModel *cm = cellModels[j];
-            if(cm.selected){
+            if (cm.selected) {
                 NSIndexPath *indexpath = [NSIndexPath indexPathForItem:j inSection:i];
                 return indexpath;
             }
@@ -381,11 +381,11 @@
     }
     return nil;
 }
-- (__kindof LUICollectionCellModel *)cellModelForSelectedCellModel{
+- (__kindof LUICollectionCellModel *)cellModelForSelectedCellModel {
     for (LUICollectionSectionModel *sm in [self sectionModels]) {
         NSArray<LUICollectionCellModel *> *cellModels = sm.cellModels;
         for (LUICollectionCellModel *cm in cellModels) {
-            if(cm.selected){
+            if (cm.selected) {
                 return cm;
             }
         }
@@ -399,7 +399,7 @@
         NSArray<LUICollectionCellModel *> *cellModels = sm.cellModels;
         for (int j=0; j<cellModels.count; j++) {
             LUICollectionCellModel *cm = cellModels[j];
-            if(cm.selected){
+            if (cm.selected) {
                 NSIndexPath *indexpath = [NSIndexPath indexPathForItem:j inSection:i];
                 [indexpaths addObject:indexpath];
             }
@@ -412,7 +412,7 @@
     for (LUICollectionSectionModel *sm in [self sectionModels]) {
         NSArray<LUICollectionCellModel *> *cms = sm.cellModels;
         for (LUICollectionCellModel *cm in cms) {
-            if(cm.selected){
+            if (cm.selected) {
                 [cellModels addObject:cm];
             }
         }
@@ -421,13 +421,13 @@
 }
 @end
 @implementation LUICollectionModel(Focused)
-- (NSIndexPath *)indexPathForFocusedCellModel{
+- (NSIndexPath *)indexPathForFocusedCellModel {
     for (int i=0;i<[self sectionModels].count;i++) {
         LUICollectionSectionModel *sm = [self sectionModels][i];
         NSArray<LUICollectionCellModel *> *cellModels = sm.cellModels;
         for (int j=0; j<cellModels.count; j++) {
             LUICollectionCellModel *cm = cellModels[j];
-            if(cm.focused){
+            if (cm.focused) {
                 NSIndexPath *indexpath = [NSIndexPath indexPathForItem:j inSection:i];
                 return indexpath;
             }
@@ -435,36 +435,36 @@
     }
     return nil;
 }
-- (__kindof LUICollectionCellModel *)cellModelForFocusedCellModel{
+- (__kindof LUICollectionCellModel *)cellModelForFocusedCellModel {
     for (LUICollectionSectionModel *sm in [self sectionModels]) {
         NSArray<LUICollectionCellModel *> *cellModels = sm.cellModels;
         for (LUICollectionCellModel *cm in cellModels) {
-            if(cm.focused){
+            if (cm.focused) {
                 return cm;
             }
         }
     }
     return nil;
 }
-- (void)focusCellModelAtIndexPath:(NSIndexPath *)indexpath focused:(BOOL)focused{
-    if(!self.allowsFocus){
+- (void)focusCellModelAtIndexPath:(NSIndexPath *)indexpath focused:(BOOL)focused {
+    if (!self.allowsFocus) {
         return;
     }
     LUICollectionCellModel *cellModel = [self cellModelAtIndexPath:indexpath];
     [self focusCellModel:cellModel focused:focused];
 }
-- (void)focusCellModel:(LUICollectionCellModel *)cellModel focused:(BOOL)focused{
-    if(!self.allowsFocus){
+- (void)focusCellModel:(LUICollectionCellModel *)cellModel focused:(BOOL)focused {
+    if (!self.allowsFocus) {
         return;
     }
-    if(focused){
+    if (focused) {
         LUICollectionCellModel *oldCellModel = self.cellModelForFocusedCellModel;
         oldCellModel.focused = NO;
     }
     cellModel.focused = focused;
 }
 - (void)focusNone{
-    if(!self.allowsFocus){
+    if (!self.allowsFocus) {
         return;
     }
     LUICollectionCellModel *oldCellModel = self.cellModelForFocusedCellModel;

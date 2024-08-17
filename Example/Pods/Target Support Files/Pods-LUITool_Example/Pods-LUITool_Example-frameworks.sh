@@ -71,7 +71,7 @@ install_framework()
   fi
 
   # Strip invalid architectures so "fat" simulator / device frameworks work on device
-  if [[ "$(file "$binary")" == *"dynamically linked shared library"* ]]; then
+  if [[ "$(file "$binary")"  ==  *"dynamically linked shared library"* ]]; then
     strip_invalid_archs "$binary"
   fi
 
@@ -104,10 +104,10 @@ install_dsym() {
     binary="${DERIVED_FILES_DIR}/${basename}.dSYM/Contents/Resources/DWARF/${binary_name}"
 
     # Strip invalid architectures from the dSYM.
-    if [[ "$(file "$binary")" == *"Mach-O "*"dSYM companion"* ]]; then
+    if [[ "$(file "$binary")"  ==  *"Mach-O "*"dSYM companion"* ]]; then
       strip_invalid_archs "$binary" "$warn_missing_arch"
     fi
-    if [[ $STRIP_BINARY_RETVAL == 0 ]]; then
+    if [[ $STRIP_BINARY_RETVAL  ==  0 ]]; then
       # Move the stripped file into its final destination.
       echo "rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --links --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \"${DERIVED_FILES_DIR}/${basename}.framework.dSYM\" \"${DWARF_DSYM_FOLDER_PATH}\""
       rsync --delete -av "${RSYNC_PROTECT_TMP_FILES[@]}" --links --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "${DERIVED_FILES_DIR}/${basename}.dSYM" "${DWARF_DSYM_FOLDER_PATH}"
@@ -132,7 +132,7 @@ strip_invalid_archs() {
   intersected_archs="$(echo ${ARCHS[@]} ${binary_archs[@]} | tr ' ' '\n' | sort | uniq -d)"
   # If there are no archs supported by this binary then warn the user
   if [[ -z "$intersected_archs" ]]; then
-    if [[ "$warn_missing_arch" == "true" ]]; then
+    if [[ "$warn_missing_arch"  ==  "true" ]]; then
       echo "warning: [CP] Vendored binary '$binary' contains architectures ($binary_archs) none of which match the current build architectures ($ARCHS)."
     fi
     STRIP_BINARY_RETVAL=1
@@ -140,7 +140,7 @@ strip_invalid_archs() {
   fi
   stripped=""
   for arch in $binary_archs; do
-    if ! [[ "${ARCHS}" == *"$arch"* ]]; then
+    if ! [[ "${ARCHS}"  ==  *"$arch"* ]]; then
       # Strip non-valid architectures in-place
       lipo -remove "$arch" -output "$binary" "$binary"
       stripped="$stripped $arch"
@@ -167,7 +167,7 @@ code_sign_if_enabled() {
     echo "Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
     local code_sign_cmd="/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS:-} --preserve-metadata=identifier,entitlements '$1'"
 
-    if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
+    if [ "${COCOAPODS_PARALLEL_CODE_SIGN}"  ==  "true" ]; then
       code_sign_cmd="$code_sign_cmd &"
     fi
     echo "$code_sign_cmd"
@@ -175,12 +175,12 @@ code_sign_if_enabled() {
   fi
 }
 
-if [[ "$CONFIGURATION" == "Debug" ]]; then
+if [[ "$CONFIGURATION"  ==  "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/LUITool/LUITool.framework"
 fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
+if [[ "$CONFIGURATION"  ==  "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/LUITool/LUITool.framework"
 fi
-if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
+if [ "${COCOAPODS_PARALLEL_CODE_SIGN}"  ==  "true" ]; then
   wait
 fi

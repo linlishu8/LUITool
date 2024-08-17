@@ -11,7 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UICollectionReusableView (LUICollectionViewSupplementaryElementProtocol)
-
 /**
  *  动态计算sectionview的尺寸,一般是使用单例进行动态尺寸计算.block中只需要计算尺寸,不需要再配置单例view的bounds,sectionModel,kind等属性
  *
@@ -24,7 +23,5 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return 动态尺寸
  */
 + (CGSize)dynamicReferenceSizeWithCollectionView:(UICollectionView *)collectionView collectionSectionModel:(LUICollectionViewSectionModel *)sectionModel forKind:(NSString *)kind viewShareInstance:(UICollectionReusableView<LUICollectionViewSupplementaryElementProtocol> *)view calBlock:(CGSize(^)(UICollectionView *collectionView,LUICollectionViewSectionModel *sectionModel,NSString *kind,id view))block;
-
 @end
-
 NS_ASSUME_NONNULL_END

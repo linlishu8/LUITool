@@ -32,7 +32,7 @@
     UIColor *c = self;
     CGFloat r,g,b,a,H,S,B;
     if ([self getRed:&r green:&g blue:&b alpha:&a]) {//灰度图片，直接反转灰度值
-        if (r==g && g==b) {
+        if (r == g && g == b) {
             CGFloat gray = 1-r;
             c = [UIColor colorWithWhite:gray alpha:a];
             return c;
@@ -75,7 +75,7 @@
     if (@available(iOS 13.0, *)) {
         c = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
             UIColor *c = nil;
-            if (traitCollection.userInterfaceStyle==UIUserInterfaceStyleDark) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
                 if (darkColor) {
                     c = darkColor;
                 } else {

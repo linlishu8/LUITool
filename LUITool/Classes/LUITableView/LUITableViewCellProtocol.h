@@ -10,10 +10,10 @@
 
 #ifndef LDEF_LUITableViewCellModel
 #define LDEF_LUITableViewCellModel(clazz,property) \
-- (LUITableViewCellModel *)cellModel{\
+- (LUITableViewCellModel *)cellModel {\
     return self.property;\
 }\
-- (void)setCellModel:(LUITableViewCellModel *)cellModel{\
+- (void)setCellModel:(LUITableViewCellModel *)cellModel {\
     self.property = (clazz *)cellModel;\
 }
 #endif
@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (CGFloat)estimatedHeightWithTableView:(UITableView *)tableView cellModel:(__kindof LUITableViewCellModel *)cellModel;
 
 /// 单元格数据模型。在根据数据更新cell视图时，如果有异步加载资源的情况，在ios11以下时，需要判断当前cell是否单例，如果是单例，不进行异步加载资源操作。
-@property(nonatomic,strong,nullable) __kindof LUITableViewCellModel *cellModel;
+@property (nonatomic, strong, nullable) __kindof LUITableViewCellModel *cellModel;
 @optional
 //选中/取消选中单元格
 - (void)tableView:(UITableView *)tableView didSelectCell:(BOOL)selected;

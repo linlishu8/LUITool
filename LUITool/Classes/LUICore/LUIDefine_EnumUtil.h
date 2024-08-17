@@ -20,7 +20,7 @@ LUIDEF_EnumTypeCategories(UIViewAnimationCurve,(@{
     @(UIViewAnimationCurveLinear):@"Linear",
 }));
 @implementation MyClass
-+ (void)load{
++ (void)load {
     NSDictionary *json = @{@"key1":@"1",@"key2":@1,@"key3":@"EaseIn"};
     UIViewAnimationCurve mode = [json UIViewAnimationCurveAtPath:@"key1" otherwise:UIViewAnimationCurveEaseInOut];
 }
@@ -34,21 +34,21 @@ LUIDEF_EnumTypeCategories(UIViewAnimationCurve,(@{
 #define LUIDEF_EnumValueToNSString(EnumType,__staticMapDictionary)\
 + (NSString *)stringWith##EnumType:(EnumType)enumValue{\
     static NSDictionary<NSNumber*,NSString *> *staticMap;\
-    if(!staticMap){\
+    if (!staticMap) {\
         NSDictionary *mapDictionary = (__staticMapDictionary);\
         NSMutableDictionary<NSNumber *,NSString *> *map = [[NSMutableDictionary alloc] initWithCapacity:mapDictionary.count];\
-        for(id key in mapDictionary){\
+        for(id key in mapDictionary) {\
             id value = [mapDictionary objectForKey:key];\
-            if([key isKindOfClass:[NSNumber class]]){\
+            if ([key isKindOfClass:[NSNumber class]]) {\
                 [map setObject:value forKey:key];\
-            }else{\
+            } else {\
                 [map setObject:key forKey:value];\
             }\
         }\
         staticMap = (map);\
     }\
     NSString *str = staticMap[@(enumValue)];\
-    if(!str){\
+    if (!str) {\
         str = [@(enumValue) stringValue];\
     }\
     return str;\
@@ -63,14 +63,14 @@ LUIDEF_EnumTypeCategories(UIViewAnimationCurve,(@{
 }\
 - (EnumType)EnumType##WithOtherwise:(EnumType)otherwise{\
     static NSDictionary<NSString *,NSNumber *> *staticMap;\
-    if(!staticMap){\
+    if (!staticMap) {\
         NSDictionary *mapDictionary = (__staticMapDictionary);\
         NSMutableDictionary<NSString *,NSNumber *> *map = [[NSMutableDictionary alloc] initWithCapacity:mapDictionary.count];\
         for (id key in mapDictionary) {\
             id value = [mapDictionary objectForKey:key];\
-            if([key isKindOfClass:[NSNumber class]]){\
+            if ([key isKindOfClass:[NSNumber class]]) {\
                 [map setObject:key forKey:value];\
-            }else{\
+            } else {\
                 [map setObject:value forKey:key];\
             }\
         }\
@@ -79,14 +79,14 @@ LUIDEF_EnumTypeCategories(UIViewAnimationCurve,(@{
     NSNumber *number = nil;\
     NSScanner *scanner = [[NSScanner alloc] initWithString:self];\
     NSInteger value;\
-    if([scanner scanInteger:&value] && scanner.isAtEnd){\
+    if ([scanner scanInteger:&value] && scanner.isAtEnd) {\
         number = @(value);\
     }\
-    if(number!=nil){\
+    if (number!=nil) {\
         return [number EnumType##WithOtherwise:otherwise];\
     }\
     number = [staticMap objectForKey:self];\
-    if(number!=nil){\
+    if (number!=nil) {\
         return (EnumType)[number integerValue];\
     }\
     return otherwise;\
@@ -101,21 +101,21 @@ LUIDEF_EnumTypeCategories(UIViewAnimationCurve,(@{
 }\
 - (EnumType)EnumType##WithOtherwise:(EnumType)otherwise{\
     static NSDictionary<NSString *,NSNumber *> *staticMap;\
-    if(!staticMap){\
+    if (!staticMap) {\
         NSDictionary *mapDictionary = (__staticMapDictionary);\
         NSMutableDictionary<NSString *,NSNumber *> *map = [[NSMutableDictionary alloc] initWithCapacity:mapDictionary.count];\
         for (id key in mapDictionary) {\
             id value = [mapDictionary objectForKey:key];\
-            if([key isKindOfClass:[NSNumber class]]){\
+            if ([key isKindOfClass:[NSNumber class]]) {\
                 [map setObject:key forKey:value];\
-            }else{\
+            } else {\
                 [map setObject:value forKey:key];\
             }\
         }\
         staticMap = map;\
     }\
     EnumType enumValue = otherwise;\
-    if([staticMap.allValues containsObject:self]){\
+    if ([staticMap.allValues containsObject:self]) {\
         enumValue = (EnumType)[self integerValue];\
     }\
     return enumValue;\
@@ -157,19 +157,19 @@ LUIDEF_EnumValueFromNSNumber(EnumType,(__staticMapDictionary))\
 - (EnumType)EnumType##AtPath:(NSString *)path;\
 - (EnumType)EnumType##AtPath:(NSString *)path otherwise:(EnumType)otherwise;
 #define LUIDEF_EnumValueFromNSDictionaryAtPath(EnumType)\
-- (EnumType)EnumType##AtPath:(NSString *)path{\
+- (EnumType)EnumType##AtPath:(NSString *)path {\
     return [self EnumType##AtPath:path otherwise:(EnumType)0];\
 }\
 - (EnumType)EnumType##AtPath:(NSString *)path otherwise:(EnumType)otherwise{\
     id obj = [self valueForKeyPath:path];\
-    if(obj==[NSNull null]){\
+    if (obj == [NSNull null]) {\
         obj = nil;\
     }\
-    if(obj==nil) return otherwise;\
-    if([obj isKindOfClass:[NSNumber class]]){\
+    if (obj == nil) return otherwise;\
+    if ([obj isKindOfClass:[NSNumber class]]) {\
         return [(NSNumber *)obj EnumType##WithOtherwise:otherwise];\
     }\
-    if([obj isKindOfClass:[NSString class]]){\
+    if ([obj isKindOfClass:[NSString class]]) {\
         return [(NSString *)obj EnumType##WithOtherwise:otherwise];\
     }\
     return [[obj description] EnumType##WithOtherwise:otherwise];\
@@ -226,14 +226,14 @@ LUIDEF_EnumTypeCategoryToNSDictionary(EnumType)
 + (NSString *)stringWithOPTIONS##OptionType:(OptionType)optionValue{\
     NSMutableArray<NSString *> *masks = [[NSMutableArray alloc] init];\
     static NSDictionary<NSNumber *,NSString *> *staticMap;\
-    if(!staticMap){\
+    if (!staticMap) {\
         NSDictionary *mapDictionary = (__staticMapDictionary);\
         NSMutableDictionary<NSNumber *,NSString *> *map = [[NSMutableDictionary alloc] initWithCapacity:mapDictionary.count];\
         for (id key in mapDictionary) {\
             id value = [mapDictionary objectForKey:key];\
-            if([key isKindOfClass:[NSNumber class]]){\
+            if ([key isKindOfClass:[NSNumber class]]) {\
                 [map setObject:value forKey:key];\
-            }else{\
+            } else {\
                 [map setObject:key forKey:value];\
             }\
         }\
@@ -241,7 +241,7 @@ LUIDEF_EnumTypeCategoryToNSDictionary(EnumType)
     }\
     for (NSNumber *num in staticMap) {\
         OptionType v = (OptionType)[num integerValue];\
-        if((optionValue&v)==v){\
+        if ((optionValue&v) == v) {\
             NSString *s = staticMap[num];\
             [masks addObject:s];\
         }\

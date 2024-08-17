@@ -16,7 +16,7 @@
 @implementation LUIFlowLayoutConstraint
 
 - (LUICGAxis)layoutDirectionAxis {
-    LUICGAxis X = self.layoutDirection==LUILayoutConstraintDirectionHorizontal?LUICGAxisX:LUICGAxisY;
+    LUICGAxis X = self.layoutDirection == LUILayoutConstraintDirectionHorizontal?LUICGAxisX:LUICGAxisY;
     return X;
 }
 - (CGSize)itemSizeForItem:(id<LUILayoutConstraintItemProtocol>)item thatFits:(CGSize)size resizeItems:(BOOL)resizeItems {
@@ -38,9 +38,9 @@
 - (nullable LUILayoutConstraintItemAttributeSection *)itemAttributeSectionThatFits:(CGSize)size resizeItems:(BOOL)resizeItems needLimitSize:(BOOL)needLimitSize {
     NSArray *items = self.layoutedItems;
     NSInteger count = items.count;
-    if (count==0) return nil;
-    BOOL needRevert = (self.layoutDirection==LUILayoutConstraintDirectionHorizontal && self.layoutHorizontalAlignment==LUILayoutConstraintHorizontalAlignmentRight)
-     || (self.layoutDirection==LUILayoutConstraintDirectionVertical && self.layoutVerticalAlignment==LUILayoutConstraintVerticalAlignmentBottom)
+    if (count == 0) return nil;
+    BOOL needRevert = (self.layoutDirection == LUILayoutConstraintDirectionHorizontal && self.layoutHorizontalAlignment == LUILayoutConstraintHorizontalAlignmentRight)
+     || (self.layoutDirection == LUILayoutConstraintDirectionVertical && self.layoutVerticalAlignment == LUILayoutConstraintVerticalAlignmentBottom)
     ;
     if (needRevert) {
         NSMutableArray *tmp = [[NSMutableArray alloc] init];
@@ -124,8 +124,8 @@
     
     CGFloat xSpacing = self.interitemSpacing;
     
-    LUICGRectAlignment alignX = self.layoutDirection==LUILayoutConstraintDirectionVertical?LUICGRectAlignmentFromLUILayoutConstraintVerticalAlignment(self.layoutVerticalAlignment):LUICGRectAlignmentFromLUILayoutConstraintHorizontalAlignment(self.layoutHorizontalAlignment);
-    LUICGRectAlignment alignY = self.layoutDirection==LUILayoutConstraintDirectionHorizontal?LUICGRectAlignmentFromLUILayoutConstraintVerticalAlignment(self.layoutVerticalAlignment):LUICGRectAlignmentFromLUILayoutConstraintHorizontalAlignment(self.layoutHorizontalAlignment);
+    LUICGRectAlignment alignX = self.layoutDirection == LUILayoutConstraintDirectionVertical?LUICGRectAlignmentFromLUILayoutConstraintVerticalAlignment(self.layoutVerticalAlignment):LUICGRectAlignmentFromLUILayoutConstraintHorizontalAlignment(self.layoutHorizontalAlignment);
+    LUICGRectAlignment alignY = self.layoutDirection == LUILayoutConstraintDirectionHorizontal?LUICGRectAlignmentFromLUILayoutConstraintVerticalAlignment(self.layoutVerticalAlignment):LUICGRectAlignmentFromLUILayoutConstraintHorizontalAlignment(self.layoutHorizontalAlignment);
     
     CGRect bounds = UIEdgeInsetsInsetRect(self.bounds, contentInsets);
     CGRect f1 = line.layoutFrame;
@@ -158,7 +158,7 @@
         
         CGFloat interitemSpacing = self.interitemSpacing;
         CGSize limitSize = b.size;
-        LUICGAxis axis = self.layoutDirection==LUILayoutConstraintDirectionHorizontal?LUICGAxisX:LUICGAxisY;
+        LUICGAxis axis = self.layoutDirection == LUILayoutConstraintDirectionHorizontal?LUICGAxisX:LUICGAxisY;
         is = YES;
         for (id<LUILayoutConstraintItemProtocol> item in items) {
             CGRect f1 = b;

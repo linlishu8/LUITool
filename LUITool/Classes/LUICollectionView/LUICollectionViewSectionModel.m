@@ -10,14 +10,13 @@
 #import "LUICollectionViewModel.h"
 
 @implementation LUICollectionViewSectionModel
-
-- (id)init {
-    if (self=[super init]) {
+- (id)init{
+    if (self = [super init]) {
         _supplementaryElementCellClasses = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
-- (id)copyWithZone:(NSZone *)zone {
+- (id)copyWithZone:(NSZone *)zone{
     LUICollectionViewSectionModel *obj = [super copyWithZone:zone];
     obj->_supplementaryElementCellClasses = [self->_supplementaryElementCellClasses mutableCopy];
     return obj;
@@ -38,11 +37,11 @@
     }
 }
 - (void)setSupplementaryElementViewClass:(Class<LUICollectionViewSupplementaryElementProtocol>)aClass forKind:(NSString *)kind {
-    if (aClass==nil) {
+    if (aClass == nil) {
         [self removeSupplementaryElementViewClassForKind:kind];
         return;
     }
-    if (![(Class)aClass isSubclassOfClass:[UICollectionReusableView class]]) return;
+    if (![(Class)aClass isSubclassOfClass:[UICollectionReusableView class]])return;
     [_supplementaryElementCellClasses setObject:aClass forKey:kind];
 }
 - (void)removeSupplementaryElementViewClassForKind:(NSString *)kind {
@@ -56,5 +55,4 @@
     [view setCollectionSectionModel:self forKind:kind];
     [view setNeedsLayout];
 }
-
 @end

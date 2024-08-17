@@ -40,7 +40,7 @@
     [super layoutSubviews];
     CGRect bounds = self.bounds;
     //适配iphoneX
-    if(@available(iOS 11.0,*)){
+    if (@available(iOS 11.0,*)) {
         bounds = self.safeAreaLayoutGuide.layoutFrame;
     }
     self.contentView.frame = bounds;
@@ -54,15 +54,15 @@
     return CGSizeMake(size.width, kLUITableViewSectionViewDefaultHeight);
 }
 #pragma mark - delegate:LUITableViewSectionViewProtocol
-+ (CGFloat)heightWithTableView:(UITableView *)tableView sectionModel:(LUITableViewSectionModel *)sectionModel kind:(LUITableViewSectionViewKind)kind{
++ (CGFloat)heightWithTableView:(UITableView *)tableView sectionModel:(LUITableViewSectionModel *)sectionModel kind:(LUITableViewSectionViewKind)kind {
     CGFloat height = UITableViewAutomaticDimension;
     return height;
 }
-- (void)setSectionModel:(LUITableViewSectionModel *)sectionModel kind:(LUITableViewSectionViewKind)kind{
+- (void)setSectionModel:(LUITableViewSectionModel *)sectionModel kind:(LUITableViewSectionViewKind)kind {
     self.sectionModel = sectionModel;
     self.kind = kind;
     
-    self.textLabel.text = kind==LUITableViewSectionViewKindOfHead?sectionModel.headTitle:sectionModel.footTitle;
+    self.textLabel.text = kind == LUITableViewSectionViewKindOfHead?sectionModel.headTitle:sectionModel.footTitle;
     [self setNeedsLayout];
     [self setNeedsDisplay];
 }

@@ -14,18 +14,18 @@ NS_ASSUME_NONNULL_BEGIN
 @class LUICollectionCellModel, LUICollectionSectionModel;
 
 @interface LUICollectionModel : LUICollectionModelObjectBase
-@property(nonatomic,strong,nullable) NSArray<__kindof LUICollectionSectionModel *> *sectionModels;//分组
-@property(nonatomic,readonly,nullable) NSArray<__kindof LUICollectionCellModel *> *allCellModels;//返回所有的单元格数据
-@property(nonatomic,strong,nullable) id userInfo;//自定義的擴展對象
-@property(nonatomic,readonly) NSInteger numberOfSections;//分组数量
-@property(nonatomic,readonly) NSInteger numberOfCells;//所有单元格的数量
+@property (nonatomic, strong, nullable) NSArray<__kindof LUICollectionSectionModel *> *sectionModels;//分组
+@property (nonatomic, readonly, nullable) NSArray<__kindof LUICollectionCellModel *> *allCellModels;//返回所有的单元格数据
+@property (nonatomic, strong, nullable) id userInfo;//自定義的擴展對象
+@property (nonatomic, readonly) NSInteger numberOfSections;//分组数量
+@property (nonatomic, readonly) NSInteger numberOfCells;//所有单元格的数量
 
-@property(nonatomic,assign) BOOL allowsSelection;//default YES
-@property(nonatomic,assign) BOOL allowsMultipleSelection;//default NO
-@property(nonatomic,assign) BOOL allowsFocus;//default YES
+@property (nonatomic, assign) BOOL allowsSelection;//default YES
+@property (nonatomic, assign) BOOL allowsMultipleSelection;//default NO
+@property (nonatomic, assign) BOOL allowsFocus;//default YES
 
-@property(nonatomic,readonly,nullable) NSIndexPath *indexPathOfLastCellModel;//返回最后一个单元格数据的位置
-@property(nonatomic,readonly,nullable) NSMutableArray<__kindof LUICollectionSectionModel *> *mutableSectionModels;//可编辑的分组列表数据
+@property (nonatomic, readonly, nullable) NSIndexPath *indexPathOfLastCellModel;//返回最后一个单元格数据的位置
+@property (nonatomic, readonly, nullable) NSMutableArray<__kindof LUICollectionSectionModel *> *mutableSectionModels;//可编辑的分组列表数据
 
 /**
  *  产生一个空的分组
@@ -236,8 +236,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface LUICollectionModel(Focused)
-@property(nonatomic,readonly,nullable) NSIndexPath *indexPathForFocusedCellModel;
-@property(nonatomic,readonly,nullable) __kindof LUICollectionCellModel *cellModelForFocusedCellModel;
+@property (nonatomic, readonly, nullable) NSIndexPath *indexPathForFocusedCellModel;
+@property (nonatomic, readonly, nullable) __kindof LUICollectionCellModel *cellModelForFocusedCellModel;
 - (void)focusCellModelAtIndexPath:(nullable NSIndexPath *)indexpath focused:(BOOL)focused;
 - (void)focusCellModel:(nullable LUICollectionCellModel *)cellModel focused:(BOOL)focused;
 - (void)focusNone;

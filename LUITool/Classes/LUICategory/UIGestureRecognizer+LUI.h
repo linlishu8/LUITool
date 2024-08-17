@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //响应手势，生成平移手势相应的属性值
 @interface LUIGestureRecognizerMoveAction : NSObject
-@property (nonatomic, weak, nullable) UIGestureRecognizer *gestureRecognizer;//设置关联的手势（会将自己添加到手势的target中）
+@property (nonatomic, weak,  nullable) UIGestureRecognizer *gestureRecognizer;//设置关联的手势（会将自己添加到手势的target中）
 @property (nonatomic, readonly) CGVector moveVector;//平移的瞬间向量，值=endPoint-prePoint
 @property (nonatomic, readonly) CGVector moveDistance;//平移的总距离向量，值=endPoint-beginPoint
 

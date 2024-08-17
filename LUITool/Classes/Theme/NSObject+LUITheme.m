@@ -47,7 +47,7 @@ NSString *const kLUIThemeUpdateNotification=@"kLUIThemeUpdateNotification";
 }
 - (void)ltheme_removePickerForKey:(NSString *)key {
     NSMutableDictionary<NSString *,id<LUIThemePickerProtocol>> *allPickers = [self __lthemePickers];
-    if(allPickers.count!=0){
+    if (allPickers.count!=0) {
         [allPickers removeObjectForKey:key];
         self.lthemePickers = allPickers;
     }
@@ -90,86 +90,86 @@ NSString *const kLUIThemeUpdateNotification=@"kLUIThemeUpdateNotification";
      ^type ： type类型的指针
      ? ： 未知类型（其它时候，一般用来指函数指针）
      */
-    if(strcmp(methodReturnType, @encode(void))==0){
+    if (strcmp(methodReturnType, @encode(void)) == 0) {
         [invo invoke];
         result = nil;
-    }else if(strcmp(methodReturnType, @encode(char))==0){
+    }else if (strcmp(methodReturnType, @encode(char)) == 0) {
         [invo invoke];
         char v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if(strcmp(methodReturnType, @encode(int))==0){
+    }else if (strcmp(methodReturnType, @encode(int)) == 0) {
         [invo invoke];
         int v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if(strcmp(methodReturnType, @encode(short))==0){
+    }else if (strcmp(methodReturnType, @encode(short)) == 0) {
         [invo invoke];
         short v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if(strcmp(methodReturnType, @encode(long))==0){
+    }else if (strcmp(methodReturnType, @encode(long)) == 0) {
         [invo invoke];
         long v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if(strcmp(methodReturnType, @encode(long long))==0){
+    }else if (strcmp(methodReturnType, @encode(long long)) == 0) {
         [invo invoke];
         long long v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if(strcmp(methodReturnType, @encode(unsigned char))==0){
+    }else if (strcmp(methodReturnType, @encode(unsigned char)) == 0) {
         [invo invoke];
         unsigned char v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if(strcmp(methodReturnType, @encode(unsigned int))==0){
+    }else if (strcmp(methodReturnType, @encode(unsigned int)) == 0) {
         [invo invoke];
         unsigned int v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if(strcmp(methodReturnType, @encode(unsigned short))==0){
+    }else if (strcmp(methodReturnType, @encode(unsigned short)) == 0) {
         [invo invoke];
         unsigned short v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if(strcmp(methodReturnType, @encode(unsigned long))==0){
+    }else if (strcmp(methodReturnType, @encode(unsigned long)) == 0) {
         [invo invoke];
         unsigned long v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if(strcmp(methodReturnType, @encode(unsigned long long))==0){
+    }else if (strcmp(methodReturnType, @encode(unsigned long long)) == 0) {
         [invo invoke];
         unsigned long long v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if(strcmp(methodReturnType, @encode(float))==0){
+    }else if (strcmp(methodReturnType, @encode(float)) == 0) {
         [invo invoke];
         float v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if(strcmp(methodReturnType, @encode(double))==0){
+    }else if (strcmp(methodReturnType, @encode(double)) == 0) {
         [invo invoke];
         double v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if(strcmp(methodReturnType, @encode(BOOL))==0){
+    }else if (strcmp(methodReturnType, @encode(BOOL)) == 0) {
         [invo invoke];
         BOOL v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if(strcmp(methodReturnType, @encode(char *))==0){
+    }else if (strcmp(methodReturnType, @encode(char *)) == 0) {
         [invo invoke];
         char *v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if(*methodReturnType == '{'){
+    }else if (*methodReturnType  ==  '{') {
         //结构体
         [invo invoke];
         void * v;
         [invo getReturnValue:&v];
         result = [NSValue value:&v withObjCType:methodReturnType];
-    }else{//调用原来的performSelector:，返回对象
+    } else {//调用原来的performSelector:，返回对象
         #pragma clang diagnostic push
         #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         result = [self performSelector:aSelector];

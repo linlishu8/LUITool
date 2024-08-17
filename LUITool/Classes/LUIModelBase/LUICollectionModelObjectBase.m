@@ -33,7 +33,7 @@
     return _dynamicProperties;
 }
 - (void)setObject:(nullable id)obj forKeyedSubscript:(id<NSCopying>)key {
-    if (obj==nil) {
+    if (obj == nil) {
         [_dynamicProperties removeObjectForKey:key];
     } else {
         _dynamicProperties[key] = obj;

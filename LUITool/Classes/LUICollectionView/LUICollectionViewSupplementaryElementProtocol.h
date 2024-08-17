@@ -9,10 +9,10 @@
 
 #ifndef LUIDEF_LUICollectionViewSectionModel
 #define LUIDEF_LUICollectionViewSectionModel(clazz,property) \
-- (LUICollectionViewSectionModel *)sectionModel{\
+- (LUICollectionViewSectionModel *)sectionModel {\
     return self.property;\
 }\
-- (void)setCollectionSectionModel:(LUICollectionViewSectionModel *)sectionModel forKind:(NSString *)kind{\
+- (void)setCollectionSectionModel:(LUICollectionViewSectionModel *)sectionModel forKind:(NSString *)kind {\
     self.property = (clazz *)sectionModel;\
 }
 #endif

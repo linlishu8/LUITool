@@ -7,12 +7,12 @@
 
 #import "LUICollectionViewCellBase.h"
 #import "LUICollectionViewCellModel.h"
+
 #import "UICollectionViewCell+LUICollectionViewCellProtocol.h"
 
-@interface LUICollectionViewCellBase ()
-
-@property(nonatomic) BOOL isCellModelChanged;//cellmodel是否有变化
-@property(nonatomic) BOOL isNeedLayoutCellSubviews;//是否要重新布局视图
+@interface LUICollectionViewCellBase()
+@property (nonatomic) BOOL isCellModelChanged;//cellmodel是否有变化
+@property (nonatomic) BOOL isNeedLayoutCellSubviews;//是否要重新布局视图
 
 @end
 
@@ -39,24 +39,24 @@ LUIDEF_SINGLETON_SUBCLASS
     }
 }
 
-+ (NSString *)cachedFitedSizeKey {
++ (NSString *)cachedFitedSizeKey{
     return [NSString stringWithFormat:@"%@_cachedFitedSize",NSStringFromClass(self)];
 }
-+ (BOOL)useCachedFitedSize {
++ (BOOL)useCachedFitedSize{
     return YES;
 }
-- (BOOL)isSharedInstance {
+- (BOOL)isSharedInstance{
     return self == [self sharedInstance];
 }
-- (void)layoutSubviews {
+- (void)layoutSubviews{
     [super layoutSubviews];
-    if (!self.isCellModelChanged && !self.isNeedLayoutCellSubviews && !self.isSharedInstance) {
+    if (!self.isCellModelChanged&&!self.isNeedLayoutCellSubviews&&!self.isSharedInstance) {
         return;
     }
     [self customLayoutSubviews];
     self.isNeedLayoutCellSubviews = NO;
 }
-- (CGSize)sizeThatFits:(CGSize)size {
+- (CGSize)sizeThatFits:(CGSize)size{
     return [self customSizeThatFits:size];
 }
 + (CGSize)sizeWithCollectionView:(UICollectionView *)collectionView collectionCellModel:(__kindof LUICollectionViewCellModel *)collectionCellModel {
@@ -67,7 +67,7 @@ LUIDEF_SINGLETON_SUBCLASS
             return cacheSize;
         }
     }
-    CGSize sizeFits = [self dynamicSizeWithCollectionView:collectionView collectionCellModel:collectionCellModel cellShareInstance:[self sharedInstance] calBlock:^CGSize(UICollectionView * _Nonnull collectionView, LUICollectionViewCellModel * _Nonnull cellModel, LUICollectionViewCellBase * _Nonnull cell)  {
+    CGSize sizeFits = [self dynamicSizeWithCollectionView:collectionView collectionCellModel:collectionCellModel cellShareInstance:[self sharedInstance] calBlock:^CGSize(UICollectionView * _Nonnull collectionView, LUICollectionViewCellModel * _Nonnull cellModel, LUICollectionViewCellBase * _Nonnull cell) {
         CGRect bounds = cell.bounds;
         return [cell sizeThatFits:bounds.size];
     }];
@@ -80,10 +80,10 @@ LUIDEF_SINGLETON_SUBCLASS
 - (void)customReloadCellModel {
     
 }
-- (void)customLayoutSubviews {
+- (void)customLayoutSubviews{
     
 }
-- (CGSize)customSizeThatFits:(CGSize)size {
+- (CGSize)customSizeThatFits:(CGSize)size{
     return size;
 }
 @end

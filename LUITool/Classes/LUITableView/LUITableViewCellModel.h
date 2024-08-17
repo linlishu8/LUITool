@@ -25,38 +25,38 @@ typedef void(^LUITableViewCellModelBlockM)(__kindof LUITableViewCellModel *src,
 typedef void(^LUITableViewCellModelBlockS)(__kindof LUITableViewCellModel *cellModel,
                                           __kindof UITableViewCell<LUITableViewCellProtocol> *cellView);    //繪製該数据时觸發的动作
 
-@interface LUITableViewCellModel : LUICollectionCellModel{
+@interface LUITableViewCellModel : LUICollectionCellModel {
 @protected
     BOOL _selected;
     NSString *_reuseIdentity;
 }
-@property(nonatomic,assign) Class<LUITableViewCellProtocol> cellClass;            //对应的cell類,實例化时默认设置为UITableViewCell
-@property(nonatomic,strong,nullable) NSString *indexTitle;//自動進行分组时,使用的索引值
-@property(nonatomic,assign) BOOL canEdit;//是否可以被編輯
-@property(nonatomic,assign) BOOL canMove;//是否可以被移動
+@property (nonatomic, assign) Class<LUITableViewCellProtocol> cellClass;            //对应的cell類,實例化时默认设置为UITableViewCell
+@property (nonatomic, strong, nullable) NSString *indexTitle;//自動進行分组时,使用的索引值
+@property (nonatomic, assign) BOOL canEdit;//是否可以被編輯
+@property (nonatomic, assign) BOOL canMove;//是否可以被移動
 
-@property(nonatomic,copy,nullable) LUITableViewCellModelBlockC whenClick;//点击触发
-@property(nonatomic,copy,nullable) LUITableViewCellModelBlockP whenSelected;//被触控事件选中时触发
-@property(nonatomic,copy,nullable) LUITableViewCellModelBlockC whenClickAccessory;//操作按鈕被點擊时的action
-@property(nonatomic,copy,nullable) LUITableViewCellModelBlockD whenDelete;//删除触发.返回YES时，将会将model中删除自身,并动画删除cell
-@property(nonatomic,copy,nullable) LUITableViewCellModelBlockM whenMove;//移動位置觸發
+@property (nonatomic, copy, nullable) LUITableViewCellModelBlockC whenClick;//点击触发
+@property (nonatomic, copy, nullable) LUITableViewCellModelBlockP whenSelected;//被触控事件选中时触发
+@property (nonatomic, copy, nullable) LUITableViewCellModelBlockC whenClickAccessory;//操作按鈕被點擊时的action
+@property (nonatomic, copy, nullable) LUITableViewCellModelBlockD whenDelete;//删除触发.返回YES时，将会将model中删除自身,并动画删除cell
+@property (nonatomic, copy, nullable) LUITableViewCellModelBlockM whenMove;//移動位置觸發
 
-@property(nonatomic,copy,nullable) LUITableViewCellModelBlockS whenShow;//设置cell繪製的block,在cell被显示时進行自定義畫面的處理.一般是用於cellClass=UITableViewCell时,對UITableViewCell的內容進行定制.如需要更複雜的控制,請創建UITableViewCell的子類來实现.
+@property (nonatomic, copy, nullable) LUITableViewCellModelBlockS whenShow;//设置cell繪製的block,在cell被显示时進行自定義畫面的處理.一般是用於cellClass=UITableViewCell时,對UITableViewCell的內容進行定制.如需要更複雜的控制,請創建UITableViewCell的子類來实现.
 
 //左滑显示更多按钮
-@property(nonatomic,strong,nullable) NSArray<LUITableViewCellSwipeAction *> *swipeActions;
-@property(nonatomic,assign) BOOL performsFirstActionWithFullSwipe;// default YES, set to NO to prevent a full swipe from performing the first action
+@property (nonatomic, strong, nullable) NSArray<LUITableViewCellSwipeAction *> *swipeActions;
+@property (nonatomic, assign) BOOL performsFirstActionWithFullSwipe;// default YES, set to NO to prevent a full swipe from performing the first action
 
-@property(nonatomic,strong,nullable) NSArray<LUITableViewCellSwipeAction *> *leadingSwipeActions;//右滑显示的按钮
+@property (nonatomic, strong, nullable) NSArray<LUITableViewCellSwipeAction *> *leadingSwipeActions;//右滑显示的按钮
 
-@property(nonatomic,readonly,nullable) NSArray<UITableViewRowAction *> *editActions;
+@property (nonatomic, readonly, nullable) NSArray<UITableViewRowAction *> *editActions;
 - (nullable UISwipeActionsConfiguration *)swipeActionsConfigurationWithIndexPath:(NSIndexPath *)indexPath leading:(BOOL)leading API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos);
 
-@property(nonatomic,readonly,nullable) __kindof LUITableViewModel *tableViewModel;//弱引用外部的tableViewModel
-@property(nonatomic,weak,nullable) __kindof UITableViewCell *tableViewCell;//弱引用对应的cell视图
-@property(nonatomic,readonly,nullable) UITableView *tableView;//弱引用外部的tableview
-@property(nonatomic,assign) UITableViewCellStyle cellStyle;//cell视图的style值,对应于cell.cellStyle
-@property(nonatomic,strong) NSString *reuseIdentity;//用於列表重用单元格视图时的标志符,默认为NSStringFromCGClass(self.class)。如果cell的绘制很耗时，可以考虑将reuseIdentity设置为唯一值，防止tableView的重用，以减少重绘次数，提升滚动性能。
+@property (nonatomic, readonly, nullable) __kindof LUITableViewModel *tableViewModel;//弱引用外部的tableViewModel
+@property (nonatomic, weak, nullable) __kindof UITableViewCell *tableViewCell;//弱引用对应的cell视图
+@property (nonatomic, readonly, nullable) UITableView *tableView;//弱引用外部的tableview
+@property (nonatomic, assign) UITableViewCellStyle cellStyle;//cell视图的style值,对应于cell.cellStyle
+@property (nonatomic, strong) NSString *reuseIdentity;//用於列表重用单元格视图时的标志符,默认为NSStringFromCGClass(self.class)。如果cell的绘制很耗时，可以考虑将reuseIdentity设置为唯一值，防止tableView的重用，以减少重绘次数，提升滚动性能。
 + (instancetype)modelWithValue:(nullable id)modelValue cellClass:(Class)cellClass;
 + (instancetype)modelWithValue:(nullable id)modelValue cellClass:(Class)cellClass whenClick:(nullable LUITableViewCellModelBlockC)whenClick;
 
@@ -71,7 +71,7 @@ typedef void(^LUITableViewCellModelBlockS)(__kindof LUITableViewCellModel *cellM
  */
 - (void)displayCell:(UITableViewCell<LUITableViewCellProtocol> *)cell;
 
-@property(nonatomic) BOOL needReloadCell;//是否需要更新cell的视图内容
+@property (nonatomic) BOOL needReloadCell;//是否需要更新cell的视图内容
 
 /**
  *    刷新视图

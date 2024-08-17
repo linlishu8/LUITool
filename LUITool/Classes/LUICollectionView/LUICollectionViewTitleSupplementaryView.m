@@ -10,20 +10,19 @@
 #import "UIColor+LUI.h"
 
 @implementation LUICollectionViewTitleSupplementaryView
-
-- (id)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
+- (id)initWithFrame:(CGRect)frame{
+    if (self=[super initWithFrame:frame]) {
         [self _myInit];
     }
     return self;
 }
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (id)initWithCoder:(NSCoder *)aDecoder{
     if (self=[super initWithCoder:aDecoder]) {
         [self _myInit];
     }
     return self;
 }
-- (void)_myInit {
+- (void)_myInit{
     self.textLabel = [[UILabel alloc] init];
     self.textLabel.font = [UIFont boldSystemFontOfSize:17];
     self.textLabel.numberOfLines = 0;
@@ -32,7 +31,7 @@
     self.backgroundColor = [UIColor l_colorWithLight:[UIColor colorWithWhite:0.9 alpha:1] dark:[UIColor colorWithWhite:0.2 alpha:1]];
     self.textLabel.textColor = [UIColor l_colorWithLight:[UIColor colorWithWhite:0.14 alpha:1] dark:[UIColor colorWithWhite:0.86 alpha:1]];
 }
-- (void)layoutSubviews {
+- (void)layoutSubviews{
     [super layoutSubviews];
     CGRect bounds = self.contentView.bounds;
     UIEdgeInsets insets = [self.class contentInsets];
@@ -40,11 +39,11 @@
     CGRect f1 = UIEdgeInsetsInsetRect(bounds, insets);
     self.textLabel.frame = f1;
 }
-+ (UIEdgeInsets)contentInsets {
-    UIEdgeInsets insets = UIEdgeInsetsMake(5, 5, 5,5);
++ (UIEdgeInsets)contentInsets{
+    UIEdgeInsets insets = UIEdgeInsetsMake(5,5,5,5);
     return insets;
 }
-- (CGSize)sizeThatFits:(CGSize)size {
+- (CGSize)sizeThatFits:(CGSize)size{
     UIEdgeInsets insets = [self.class contentInsets];
     size.width -= insets.left+insets.right;
     size.height -= insets.top+insets.bottom;
@@ -66,7 +65,7 @@
     NSString *text = nil;
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         text = self.titleSectionModel.headTitle;
-    } else if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
+    }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
         text = self.titleSectionModel.footTitle;
     }
     self.textLabel.text = text;
@@ -79,5 +78,4 @@ LUIDEF_SINGLETON(LUICollectionViewTitleSupplementaryView)
     }];
     return size;
 }
-
 @end

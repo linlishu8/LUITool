@@ -15,7 +15,7 @@ NSString *const kLUIUserInterfaceStyleChangeNotification=@"kLUIUserInterfaceStyl
 + (BOOL)l_isDarkStyle {
     BOOL isDark = NO;
     if (@available(iOS 12.0, *)) {
-        isDark = ([UIScreen mainScreen].traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark);
+        isDark = ([UIScreen mainScreen].traitCollection.userInterfaceStyle  ==  UIUserInterfaceStyleDark);
     }
     return isDark;
 }

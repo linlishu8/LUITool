@@ -11,9 +11,9 @@
 @implementation LUITheme
 - (nullable id)getElementValueWithKey:(NSString *)key{
     id value = self.elements[key];
-    if(!value){
+    if (!value) {
         SEL selector = NSSelectorFromString(key);
-        if([self respondsToSelector:selector]){
+        if ([self respondsToSelector:selector]) {
             value = [self ltheme_performSelector:selector];
         }
     }
@@ -34,25 +34,25 @@
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:kLUIThemeUpdateNotification object:nil]];
 }
 - (void)setCurrentTheme:(id<LUIThemeProtocol>)currentTheme {
-    if(_currentTheme!=currentTheme){
+    if (_currentTheme!=currentTheme) {
         _currentTheme = currentTheme;
         [self notifyThemeChange];
     }
 }
-- (void)setCurrentThemeIndex:(NSUInteger)currentIndex{
-    if(currentIndex>=0 && currentIndex<self.themes.count){
+- (void)setCurrentThemeIndex:(NSUInteger)currentIndex {
+    if (currentIndex>=0 && currentIndex<self.themes.count) {
         self.currentTheme = self.themes[currentIndex];
     }
 }
-- (NSUInteger)currentThemeIndex{
+- (NSUInteger)currentThemeIndex {
     return [self.themes indexOfObject:self.currentTheme];
 }
-- (void)setDefaultThemeIndex:(NSUInteger)defaultThemeIndex{
-    if(defaultThemeIndex>=0 && defaultThemeIndex<self.themes.count){
+- (void)setDefaultThemeIndex:(NSUInteger)defaultThemeIndex {
+    if (defaultThemeIndex>=0 && defaultThemeIndex<self.themes.count) {
         self.defaultTheme = self.themes[defaultThemeIndex];
     }
 }
-- (NSUInteger)defaultThemeIndex{
+- (NSUInteger)defaultThemeIndex {
     return [self.themes indexOfObject:self.defaultTheme];
 }
 @end

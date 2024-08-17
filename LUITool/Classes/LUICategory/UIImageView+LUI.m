@@ -37,7 +37,7 @@
     return m;
 }
 - (CGRect)l_frameOfImageContent{
-    if(!self.image) return self.bounds;
+    if (!self.image) return self.bounds;
     CGSize size = self.image.size;
     size.width *= self.image.scale;
     size.height *= self.image.scale;
@@ -48,32 +48,32 @@
     return f;
 }
 - (CGSize)l_sizeThatFitsFixedImageSize:(CGSize)size{
-    if(size.width>0&size.height>0){
+    if (size.width>0&size.height>0) {
         return size;
     }
     UIImage *image = self.image;
-    if(image==nil){
-        if(size.width>0){
+    if (image == nil) {
+        if (size.width>0) {
             return CGSizeMake(size.width, 0);
-        }else if(size.height>0){
+        }else if (size.height>0) {
             return CGSizeMake(0, size.height);
-        }else{
+        } else {
             return CGSizeZero;
         }
     }
     CGSize imageSize = self.image.size;
-    if(size.width>0){
+    if (size.width>0) {
         imageSize.height = size.width*imageSize.height/imageSize.width;
         imageSize.width = size.width;
-    }else if(size.height>0){
+    }else if (size.height>0) {
         imageSize.width = size.height*imageSize.width/imageSize.height;
         imageSize.height = size.height;
     }
     CGSize limitSize = size;
-    if(limitSize.width<=0){
+    if (limitSize.width<=0) {
         limitSize.width = imageSize.width;
     }
-    if(limitSize.height<=0){
+    if (limitSize.height<=0) {
         limitSize.height = imageSize.height;
     }
     CGRect r1 = CGRectMake(0, 0, imageSize.width, imageSize.height);
@@ -84,17 +84,17 @@
 }
 - (CGSize)l_sizeThatFits:(CGSize)size{
     UIImage *image = self.image;
-    if(image==nil){
+    if (image == nil) {
         return CGSizeZero;
     }
     CGSize imageSize = self.image.size;
-    if(size.width<=0){
+    if (size.width<=0) {
         size.width = imageSize.width;
     }
-    if(size.height<=0){
+    if (size.height<=0) {
         size.height = imageSize.height;
     }
-    if(imageSize.width<=size.width && imageSize.height<=size.height){
+    if (imageSize.width<=size.width && imageSize.height<=size.height) {
         return imageSize;
     }
     CGRect r1 = CGRectMake(0, 0, imageSize.width, imageSize.height);

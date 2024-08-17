@@ -11,15 +11,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LUIWaterFlowLayoutConstraint : LUILayoutConstraint
 
-@property(nonatomic,assign) LUILayoutConstraintDirection layoutDirection;//布局方向.默认为LUILayoutConstraintDirectionHorizontal
-@property(nonatomic,assign) LUILayoutConstraintVerticalAlignment layoutVerticalAlignment;//所有元素作为一个整体,在垂直方向上的位置,以及每一个元素在整体内的垂直方向上的对齐方式.默认为LUILayoutConstraintVerticalAlignmentCenter
+@property (nonatomic, assign) LUILayoutConstraintDirection layoutDirection;//布局方向.默认为LUILayoutConstraintDirectionHorizontal
+@property (nonatomic, assign) LUILayoutConstraintVerticalAlignment layoutVerticalAlignment;//所有元素作为一个整体,在垂直方向上的位置,以及每一个元素在整体内的垂直方向上的对齐方式.默认为LUILayoutConstraintVerticalAlignmentCenter
 
-@property(nonatomic,assign) LUILayoutConstraintHorizontalAlignment layoutHorizontalAlignment;//所有元素作为一个整体,在水平方向上的位置,以及每一个元素在整体内的水平方向上的对方方式.默认为LUILayoutConstraintHorizontalAlignmentCenter
-@property(nonatomic,assign) UIEdgeInsets contentInsets;//内边距,默认为(0,0,0,0)
-@property(nonatomic,assign) CGFloat interitemSpacing;//平行layoutDirection方向上元素间的间隔,默认为0
-@property(nonatomic,assign) CGFloat lineSpacing;//垂直layoutDirection方向上，元素间的间隔,默认为0
+@property (nonatomic, assign) LUILayoutConstraintHorizontalAlignment layoutHorizontalAlignment;//所有元素作为一个整体,在水平方向上的位置,以及每一个元素在整体内的水平方向上的对方方式.默认为LUILayoutConstraintHorizontalAlignmentCenter
+@property (nonatomic, assign) UIEdgeInsets contentInsets;//内边距,默认为(0,0,0,0)
+@property (nonatomic, assign) CGFloat interitemSpacing;//平行layoutDirection方向上元素间的间隔,默认为0
+@property (nonatomic, assign) CGFloat lineSpacing;//垂直layoutDirection方向上，元素间的间隔,默认为0
 
-@property(nonatomic,readonly,nullable) LUILayoutConstraintItemAttributeSection *itemAttributeSection;
+@property (nonatomic, readonly, nullable) LUILayoutConstraintItemAttributeSection *itemAttributeSection;
 
 /// 计算最合适的尺寸
 /// @param size 外层限制
@@ -39,10 +39,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 在瀑布流布局的基础上，添加上行数限制。具体为超出上限的行，不展示。同时固定最后一行末尾元素为lastLineItem，且该元素优先布局。
 /// 这种布局可以用在app的搜索历史列表，末尾添加上一个“展开/折叠"的按钮(=lastLineItem)，同时折叠起来时，只展示N行。
 #pragma mark - limit max lines
-@property(nonatomic,assign) NSInteger maxLines;//限制最大的行数（水平布局时为行数，垂直布局时为列数)，<=0代表不限。超过该行数，后续元素尺寸都设置为(0,0)
-@property(nonatomic,strong,nullable) id<LUILayoutConstraintItemProtocol> lastLineItem;//最后一行固定在末尾的item。如果有值，最后一行布局时，每一个元素都将扣除该末尾元素的空间，保证末尾元素一定显示。
-@property(nonatomic,assign) BOOL showLastLineItemWithinMaxLine;//当maxLines>0且行数在最大值之内时，是否显示lastLineItem
-@property(nonatomic,readonly) BOOL overMaxLines;//当maxLines>0时，行数是否超出行上限
+@property (nonatomic, assign) NSInteger maxLines;//限制最大的行数（水平布局时为行数，垂直布局时为列数)，<=0代表不限。超过该行数，后续元素尺寸都设置为(0,0)
+@property (nonatomic, strong, nullable) id<LUILayoutConstraintItemProtocol> lastLineItem;//最后一行固定在末尾的item。如果有值，最后一行布局时，每一个元素都将扣除该末尾元素的空间，保证末尾元素一定显示。
+@property (nonatomic, assign) BOOL showLastLineItemWithinMaxLine;//当maxLines>0且行数在最大值之内时，是否显示lastLineItem
+@property (nonatomic, readonly) BOOL overMaxLines;//当maxLines>0时，行数是否超出行上限
 @end
 
 NS_ASSUME_NONNULL_END
@@ -74,7 +74,7 @@ LUIAS_EnumTypeCategories(LUIWaterFlowLayoutConstraintParam)
 @interface LUIWaterFlowLayoutConstraint(InitMethod)
 - (id)initWithItems:(nullable NSArray<id<LUILayoutConstraintItemProtocol>> *)items constraintParam:(LUIWaterFlowLayoutConstraintParam)param contentInsets:(UIEdgeInsets)contentInsets interitemSpacing:(CGFloat)interitemSpacing lineSpacing:(CGFloat)lineSpacing;
 - (void)configWithConstraintParam:(LUIWaterFlowLayoutConstraintParam)param;
-@property(nonatomic,assign) LUIWaterFlowLayoutConstraintParam constraintParam;
+@property (nonatomic, assign) LUIWaterFlowLayoutConstraintParam constraintParam;
 
 + (void)parseConstraintParam:(LUIWaterFlowLayoutConstraintParam)param layoutDirection:(LUILayoutConstraintDirection *)layoutDirection layoutVerticalAlignment:(LUILayoutConstraintVerticalAlignment *)layoutVerticalAlignment layoutHorizontalAlignment:(LUILayoutConstraintHorizontalAlignment *)layoutHorizontalAlignment;
 + (LUIWaterFlowLayoutConstraintParam)constraintParamWithLayoutDirection:(LUILayoutConstraintDirection)layoutDirection layoutVerticalAlignment:(LUILayoutConstraintVerticalAlignment)layoutVerticalAlignment layoutHorizontalAlignment:(LUILayoutConstraintHorizontalAlignment)layoutHorizontalAlignment;

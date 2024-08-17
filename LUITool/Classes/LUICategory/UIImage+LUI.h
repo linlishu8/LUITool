@@ -261,7 +261,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 返回灰度图片。
 ///
-@property(nonatomic,readonly) UIImage *l_grayImage;
+@property (nonatomic, readonly) UIImage *l_grayImage;
 
 /**
  *  根据color,获取1x1尺寸的图片.可用于UIButton的backgroundImage属性设置

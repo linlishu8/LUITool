@@ -53,7 +53,7 @@
 @implementation UIButton (LUI_ActionBlock)
 - (NSMutableArray<__LUIButtonActionBlockObject *> *)__LUIButtonActionBlockObjectList {
     NSMutableArray<__LUIButtonActionBlockObject *> *list = objc_getAssociatedObject(self, @"__LUIButtonActionBlockObjectList");
-    if(!list){
+    if (!list) {
         list = [[NSMutableArray alloc] init];
         objc_setAssociatedObject(self, @"__LUIButtonActionBlockObjectList", list, OBJC_ASSOCIATION_RETAIN);
     }

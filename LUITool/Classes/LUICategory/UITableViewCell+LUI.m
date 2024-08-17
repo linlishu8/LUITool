@@ -135,7 +135,7 @@ CGFloat const kLUIAccessoryTypeDefaultRightMargin = 15;
 }
 - (CGFloat)l_accessoryViewLeftMargin {
     CGFloat margin = 0;
-    if (self.accessoryView==nil) {
+    if (self.accessoryView == nil) {
         margin = self.l_accessorySystemTypeViewLeftMargin;
     }else {
         margin = self.l_accessoryCustomViewLeftMargin;
@@ -144,7 +144,7 @@ CGFloat const kLUIAccessoryTypeDefaultRightMargin = 15;
 }
 - (CGFloat)l_accessoryViewRightMargin {
     CGFloat margin = 0;
-    if (self.accessoryView==nil) {
+    if (self.accessoryView == nil) {
         margin = self.l_accessorySystemTypeViewRightMargin;
     }else {
         margin = self.l_accessoryCustomViewRightMargin;

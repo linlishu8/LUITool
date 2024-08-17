@@ -12,8 +12,8 @@
     BOOL __needConfigSubFlowLayouts;
 }
 
-@property(nonatomic,strong) LUIFlowLayoutConstraint *beforeItemsFlowlayout;
-@property(nonatomic,strong) LUIFlowLayoutConstraint *afterItemsFlowlayout;
+@property (nonatomic, strong) LUIFlowLayoutConstraint *beforeItemsFlowlayout;
+@property (nonatomic, strong) LUIFlowLayoutConstraint *afterItemsFlowlayout;
 
 @end
 
@@ -85,7 +85,7 @@
     self.beforeItemsFlowlayout.layoutDirection = self.layoutDirection;
     self.afterItemsFlowlayout.layoutDirection = self.layoutDirection;
     //
-    if (self.layoutDirection==LUILayoutConstraintDirectionHorizontal) {//水平方向布局,A B C
+    if (self.layoutDirection == LUILayoutConstraintDirectionHorizontal) {//水平方向布局,A B C
         self.beforeItemsFlowlayout.layoutVerticalAlignment = self.layoutVerticalAlignment;
         self.afterItemsFlowlayout.layoutVerticalAlignment = self.layoutVerticalAlignment;
         self.beforeItemsFlowlayout.layoutHorizontalAlignment = LUILayoutConstraintHorizontalAlignmentLeft;
@@ -116,7 +116,7 @@
     CGRect f2 = bounds;
     CGRect f_filling = bounds;
     
-    LUICGAxis axis = self.layoutDirection == LUILayoutConstraintDirectionHorizontal ? LUICGAxisX : LUICGAxisY;
+    LUICGAxis axis = self.layoutDirection  ==  LUILayoutConstraintDirectionHorizontal ? LUICGAxisX : LUICGAxisY;
     LUICGAxis axisR = LUICGAxisReverse(axis);
     
     CGFloat maxLengthR = 0;
@@ -172,10 +172,10 @@
     CGRect f2 = bounds;
     CGRect f_filling = bounds;
     
-    LUICGAxis axis = self.layoutDirection == LUILayoutConstraintDirectionHorizontal ? LUICGAxisX : LUICGAxisY;
+    LUICGAxis axis = self.layoutDirection  ==  LUILayoutConstraintDirectionHorizontal ? LUICGAxisX : LUICGAxisY;
     LUICGAxis axisR = LUICGAxisReverse(axis);
     
-    LUICGRectAlignment align = self.layoutDirection == LUILayoutConstraintDirectionHorizontal? LUICGRectAlignmentFromLUILayoutConstraintVerticalAlignment(self.layoutVerticalAlignment):LUICGRectAlignmentFromLUILayoutConstraintHorizontalAlignment(self.layoutHorizontalAlignment);
+    LUICGRectAlignment align = self.layoutDirection  ==  LUILayoutConstraintDirectionHorizontal? LUICGRectAlignmentFromLUILayoutConstraintVerticalAlignment(self.layoutVerticalAlignment):LUICGRectAlignmentFromLUILayoutConstraintHorizontalAlignment(self.layoutHorizontalAlignment);
     
     self.beforeItemsFlowlayout.bounds = f1;
     [self.beforeItemsFlowlayout layoutItemsWithResizeItems:resizeItems];
@@ -307,7 +307,7 @@ LUIDEF_EnumTypeCategories(LUIFillingLayoutConstraintParam,
 }
 + (LUIFillingLayoutConstraintParam)constraintParamWithLayoutDirection:(LUILayoutConstraintDirection)layoutDirection layoutVerticalAlignment:(LUILayoutConstraintVerticalAlignment)layoutVerticalAlignment layoutHorizontalAlignment:(LUILayoutConstraintHorizontalAlignment)layoutHorizontalAlignment {
     LUIFillingLayoutConstraintParam param;
-    if (layoutDirection==LUILayoutConstraintDirectionHorizontal) {
+    if (layoutDirection == LUILayoutConstraintDirectionHorizontal) {
         NSDictionary<NSArray<NSNumber *> *,NSNumber *> *ConstraintParamRevertMapOfHorizontal = [self.class ConstraintParamRevertMapOfHorizontal];
         param = (LUIFillingLayoutConstraintParam)[ConstraintParamRevertMapOfHorizontal[@[@(layoutDirection),@(layoutVerticalAlignment)]] integerValue];
     }else {

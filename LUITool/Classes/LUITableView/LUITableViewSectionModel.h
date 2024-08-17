@@ -20,26 +20,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^LUITableViewSectionModelS)(__kindof LUITableViewSectionModel *sectionModel,__kindof UIView *view);    //繪製該数据时觸發的动作
 
-@interface LUITableViewSectionModel : LUICollectionSectionModel{
+@interface LUITableViewSectionModel : LUICollectionSectionModel {
 }
-@property(nonatomic,strong,nullable) NSString *indexTitle;//本組的索引字符串
-@property(nonatomic,assign,nullable) Class<LUITableViewSectionViewProtocol> headViewClass;//默认是UIView
-@property(nonatomic,assign,nullable) Class<LUITableViewSectionViewProtocol> footViewClass;//默认是UIView
+@property (nonatomic, strong, nullable) NSString *indexTitle;//本組的索引字符串
+@property (nonatomic, assign, nullable) Class<LUITableViewSectionViewProtocol> headViewClass;//默认是UIView
+@property (nonatomic, assign, nullable) Class<LUITableViewSectionViewProtocol> footViewClass;//默认是UIView
 
-@property(nonatomic,assign) BOOL showHeadView;//是否显示頭部视图,默认为否
-@property(nonatomic,assign) BOOL showFootView;//是否显示尾部视图,默认为否
-@property(nonatomic,assign) BOOL showDefaultHeadView;//是否使用系統默认的頭部,默认为NO
-@property(nonatomic,assign) BOOL showDefaultFootView;//是否使用系統默认的尾部,默认为NO
-@property(nonatomic,assign) CGFloat headViewHeight;//使用系統默认的视图时,head视图高度
-@property(nonatomic,assign) CGFloat footViewHeight;//使用系統默认的视图时,foot视图高度
-@property(nonatomic,strong,nullable) NSString *headTitle;//head區域的字符串
-@property(nonatomic,strong,nullable) NSString *footTitle;//foot區域的字符串
+@property (nonatomic, assign) BOOL showHeadView;//是否显示頭部视图,默认为否
+@property (nonatomic, assign) BOOL showFootView;//是否显示尾部视图,默认为否
+@property (nonatomic, assign) BOOL showDefaultHeadView;//是否使用系統默认的頭部,默认为NO
+@property (nonatomic, assign) BOOL showDefaultFootView;//是否使用系統默认的尾部,默认为NO
+@property (nonatomic, assign) CGFloat headViewHeight;//使用系統默认的视图时,head视图高度
+@property (nonatomic, assign) CGFloat footViewHeight;//使用系統默认的视图时,foot视图高度
+@property (nonatomic, strong, nullable) NSString *headTitle;//head區域的字符串
+@property (nonatomic, strong, nullable) NSString *footTitle;//foot區域的字符串
 
-@property(nonatomic,readonly,nullable) UITableView *tableView;//弱引用外部的tableview
-@property(nonatomic,weak,nullable) __kindof LUITableViewModel *tableViewModel;
+@property (nonatomic, readonly, nullable) UITableView *tableView;//弱引用外部的tableview
+@property (nonatomic, weak, nullable) __kindof LUITableViewModel *tableViewModel;
 
-@property(nonatomic,copy,nullable) LUITableViewSectionModelS whenShowHeadView;//显示自定義head视图的繪製block
-@property(nonatomic,copy,nullable) LUITableViewSectionModelS whenShowFootView;//显示自定義foot视图的繪製block
+@property (nonatomic, copy, nullable) LUITableViewSectionModelS whenShowHeadView;//显示自定義head视图的繪製block
+@property (nonatomic, copy, nullable) LUITableViewSectionModelS whenShowFootView;//显示自定義foot视图的繪製block
 
 - (nullable __kindof LUITableViewCellModel *)cellModelAtIndex:(NSInteger)index;
 

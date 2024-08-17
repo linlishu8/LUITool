@@ -12,8 +12,8 @@
     BOOL __needConfigSubFlowLayouts;
 }
 
-@property(nonatomic,strong) LUIFlowLayoutConstraint *beforeItemsFlowlayout;
-@property(nonatomic,strong) LUIFlowLayoutConstraint *afterItemsFlowlayout;
+@property (nonatomic, strong) LUIFlowLayoutConstraint *beforeItemsFlowlayout;
+@property (nonatomic, strong) LUIFlowLayoutConstraint *afterItemsFlowlayout;
 
 @end
 
@@ -91,7 +91,7 @@
     self.beforeItemsFlowlayout.layoutDirection = self.layoutDirection;
     self.afterItemsFlowlayout.layoutDirection = self.layoutDirection;
     //
-    if (self.layoutDirection==LUILayoutConstraintDirectionHorizontal) {//水平方向布局,A B C
+    if (self.layoutDirection == LUILayoutConstraintDirectionHorizontal) {//水平方向布局,A B C
         self.beforeItemsFlowlayout.layoutVerticalAlignment = self.layoutVerticalAlignment;
         self.afterItemsFlowlayout.layoutVerticalAlignment = self.layoutVerticalAlignment;
         self.beforeItemsFlowlayout.layoutHorizontalAlignment = LUILayoutConstraintHorizontalAlignmentLeft;
@@ -118,14 +118,14 @@
     bounds.size = size;
     bounds = UIEdgeInsetsInsetRect(bounds, insets);
     CGFloat space = self.interitemSpacing;
-    if (self.beforeItemsFlowlayout.layoutedItems.count==0 || self.afterItemsFlowlayout.layoutedItems.count==0) {
+    if (self.beforeItemsFlowlayout.layoutedItems.count == 0 || self.afterItemsFlowlayout.layoutedItems.count == 0) {
         space = 0;
     }
     CGRect f1 = bounds;
     CGRect f2 = bounds;
     CGSize f1_size_fit  = [self.beforeItemsFlowlayout sizeThatFits:f1.size resizeItems:resizeItems];
     CGSize f2_size_fit = [self.afterItemsFlowlayout sizeThatFits:f2.size resizeItems:resizeItems];
-    LUICGAxis axis = self.layoutDirection==LUILayoutConstraintDirectionHorizontal?LUICGAxisX:LUICGAxisY;
+    LUICGAxis axis = self.layoutDirection == LUILayoutConstraintDirectionHorizontal?LUICGAxisX:LUICGAxisY;
     LUICGAxis axisR = LUICGAxisReverse(axis);
     if (self.isLayoutPriorityFirstItems) {
         if (CGSizeEqualToSize(f2_size_fit, CGSizeZero)) {//后半部分没有占用空间,空间全部分配给前半部分
@@ -209,12 +209,12 @@
     UIEdgeInsets insets = self.contentInsets;
     CGRect bounds = UIEdgeInsetsInsetRect(self.bounds, insets);
     CGFloat space = self.interitemSpacing;
-    if (self.beforeItemsFlowlayout.layoutedItems.count==0 || self.afterItemsFlowlayout.layoutedItems.count==0) {
+    if (self.beforeItemsFlowlayout.layoutedItems.count == 0 || self.afterItemsFlowlayout.layoutedItems.count == 0) {
         space = 0;
     }
     CGRect f1 = bounds;
     CGRect f2 = bounds;
-    LUICGAxis axis = self.layoutDirection==LUILayoutConstraintDirectionHorizontal?LUICGAxisX:LUICGAxisY;
+    LUICGAxis axis = self.layoutDirection == LUILayoutConstraintDirectionHorizontal?LUICGAxisX:LUICGAxisY;
 //    LUICGAxis axisR = LUICGAxisReverse(axis);
     if (self.isLayoutPriorityFirstItems) {
         BOOL isAfterItemsEmpty = [self.afterItemsFlowlayout isEmptyBounds:f2 withResizeItems:resizeItems];
@@ -353,7 +353,7 @@ LUIDEF_EnumTypeCategories(LUISegmentFlowLayoutConstraintParam,
 }
 + (LUISegmentFlowLayoutConstraintParam)constraintParamWithLayoutDirection:(LUILayoutConstraintDirection)layoutDirection layoutVerticalAlignment:(LUILayoutConstraintVerticalAlignment)layoutVerticalAlignment layoutHorizontalAlignment:(LUILayoutConstraintHorizontalAlignment)layoutHorizontalAlignment {
     LUISegmentFlowLayoutConstraintParam param;
-    if (layoutDirection==LUILayoutConstraintDirectionHorizontal) {
+    if (layoutDirection == LUILayoutConstraintDirectionHorizontal) {
         NSDictionary<NSArray<NSNumber *> *,NSNumber *> *ConstraintParamRevertMapOfHorizontal = [self.class ConstraintParamRevertMapOfHorizontal];
         param = (LUISegmentFlowLayoutConstraintParam)[ConstraintParamRevertMapOfHorizontal[@[@(layoutDirection),@(layoutVerticalAlignment)]] integerValue];
     } else {

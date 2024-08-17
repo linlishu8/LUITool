@@ -9,10 +9,10 @@
 
 #ifndef LUIDEF_LUICollectionViewCellModel
 #define LUIDEF_LUICollectionViewCellModel(clazz,property) \
-- (LUICollectionViewCellModel *)collectionCellModel{\
+- (LUICollectionViewCellModel *)collectionCellModel {\
     return self.property;\
 }\
-- (void)setCollectionCellModel:(LUICollectionViewCellModel *)collectionCellModel{\
+- (void)setCollectionCellModel:(LUICollectionViewCellModel *)collectionCellModel {\
     self.property = (clazz *)collectionCellModel;\
 }
 #endif

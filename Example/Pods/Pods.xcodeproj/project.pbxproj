@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F45B5E02C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B5DF2C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m */; };
+		1F45B5E12C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B5DE2C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADCA2C685F6600170B35 /* LUICGRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADC92C685F6600170B35 /* LUICGRect.m */; };
 		1FCBADCB2C685F6600170B35 /* LUICGRect.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADC82C685F6600170B35 /* LUICGRect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADCF2C688EB400170B35 /* UIButton+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADCE2C688EB400170B35 /* UIButton+LUI.m */; };
@@ -147,6 +149,8 @@
 		14AD8304831DAE18F46F14306CF41C58 /* Pods-LUITool_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LUITool_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		16601A25B853674D1542E78FDCBD93A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1B5C38C0ED0DCCCC309C7DC788170ED0 /* LUITool.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LUITool.modulemap; sourceTree = "<group>"; };
+		1F45B5DE2C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h"; sourceTree = "<group>"; };
+		1F45B5DF2C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m"; sourceTree = "<group>"; };
 		1FCBADC82C685F6600170B35 /* LUICGRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUICGRect.h; sourceTree = "<group>"; };
 		1FCBADC92C685F6600170B35 /* LUICGRect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUICGRect.m; sourceTree = "<group>"; };
 		1FCBADCD2C688EB400170B35 /* UIButton+LUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+LUI.h"; sourceTree = "<group>"; };
@@ -442,13 +446,6 @@
 		1FCBAEED2C7097AC00170B35 /* LUICollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				1FCBAED52C7097AC00170B35 /* LUICollectionView.h */,
-				1FCBAED62C7097AC00170B35 /* LUICollectionView.m */,
-				1FCBAED72C7097AC00170B35 /* LUICollectionViewCellBase.h */,
-				1FCBAED82C7097AC00170B35 /* LUICollectionViewCellBase.m */,
-				1FCBAED92C7097AC00170B35 /* LUICollectionViewCellModel.h */,
-				1FCBAEDA2C7097AC00170B35 /* LUICollectionViewCellModel.m */,
-				1FCBAEDB2C7097AC00170B35 /* LUICollectionViewCellProtocol.h */,
 				1FCBAEDC2C7097AC00170B35 /* LUICollectionViewModel.h */,
 				1FCBAEDD2C7097AC00170B35 /* LUICollectionViewModel.m */,
 				1FCBAEE02C7097AC00170B35 /* LUICollectionViewSectionModel.h */,
@@ -460,10 +457,19 @@
 				1FCBAEE62C7097AC00170B35 /* LUICollectionViewTitleSupplementarySectionModel.m */,
 				1FCBAEE72C7097AC00170B35 /* LUICollectionViewTitleSupplementaryView.h */,
 				1FCBAEE82C7097AC00170B35 /* LUICollectionViewTitleSupplementaryView.m */,
+				1FCBAED92C7097AC00170B35 /* LUICollectionViewCellModel.h */,
+				1FCBAEDA2C7097AC00170B35 /* LUICollectionViewCellModel.m */,
+				1FCBAED72C7097AC00170B35 /* LUICollectionViewCellBase.h */,
+				1FCBAED82C7097AC00170B35 /* LUICollectionViewCellBase.m */,
+				1FCBAEDB2C7097AC00170B35 /* LUICollectionViewCellProtocol.h */,
+				1F45B5DE2C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h */,
+				1F45B5DF2C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m */,
 				1FCBAEE92C7097AC00170B35 /* UICollectionReusableView+LUICollectionViewSupplementaryElementProtocol.h */,
 				1FCBAEEA2C7097AC00170B35 /* UICollectionReusableView+LUICollectionViewSupplementaryElementProtocol.m */,
 				1FCBAEEB2C7097AC00170B35 /* UICollectionViewCell+LUICollectionViewCellProtocol.h */,
 				1FCBAEEC2C7097AC00170B35 /* UICollectionViewCell+LUICollectionViewCellProtocol.m */,
+				1FCBAED52C7097AC00170B35 /* LUICollectionView.h */,
+				1FCBAED62C7097AC00170B35 /* LUICollectionView.m */,
 			);
 			name = LUICollectionView;
 			path = LUITool/Classes/LUICollectionView;
@@ -663,6 +669,7 @@
 				1FCBAE882C6E293D00170B35 /* LUIThemePickerProtocol.h in Headers */,
 				1FCBADF42C68A13000170B35 /* NSObject+LUI.h in Headers */,
 				1FCBADDC2C68955A00170B35 /* UIScrollView+LUI.h in Headers */,
+				1F45B5E12C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h in Headers */,
 				3F05F689B03836519FDBF1140D1EBB6D /* LUITool.h in Headers */,
 				BD1D2051C902197C50C02F5502BBD729 /* LUITool-umbrella.h in Headers */,
 			);
@@ -828,6 +835,7 @@
 				1FCBAEEF2C7097AC00170B35 /* LUICollectionView.m in Sources */,
 				1FCBAEFA2C7097AC00170B35 /* LUICollectionViewSectionModel.m in Sources */,
 				1FCBADCA2C685F6600170B35 /* LUICGRect.m in Sources */,
+				1F45B5E02C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m in Sources */,
 				1FCBADFB2C68E6BB00170B35 /* NSString+LUI.m in Sources */,
 				1FCBAE452C6B8ED200170B35 /* LUITableViewSectionAdjustsView.m in Sources */,
 				1FCBAE6C2C6CFF9900170B35 /* LUIFillingFlowLayoutConstraint.m in Sources */,

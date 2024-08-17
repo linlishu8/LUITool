@@ -7,20 +7,19 @@
 
 #import "LUICollectionViewCellModel.h"
 #import "LUICollectionViewModel.h"
-#import "LUICollectionViewCellProtocol.h"
+#import "LUICollectionViewSectionModel.h"
 
 @implementation LUICollectionViewCellModel
-
-+ (instancetype)modelWithValue:(id)modelValue cellClass:(Class)cellClass {
++ (instancetype)modelWithValue:(id)modelValue cellClass:(Class)cellClass{
     return [self modelWithValue:modelValue cellClass:cellClass whenClick:nil];
 }
-+ (instancetype)modelWithValue:(nullable id)modelValue cellClass:(Class)cellClass whenClick:(nullable LUICollectionViewCellModelBlockC)whenClick {
++ (instancetype)modelWithValue:(nullable id)modelValue cellClass:(Class)cellClass whenClick:(nullable LUICollectionViewCellModelBlockC)whenClick{
     LUICollectionViewCellModel *cm = [self modelWithValue:modelValue];
     cm.cellClass = cellClass;
     cm.whenClick = whenClick;
     return cm;
 }
-- (id)copyWithZone:(NSZone *)zone {
+- (id)copyWithZone:(NSZone *)zone{
     LUICollectionViewCellModel *obj = [super copyWithZone:zone];
     obj.cellClass = self.cellClass;
     obj.reuseIdentity = self.reuseIdentity;
@@ -43,13 +42,13 @@
 - (UICollectionView *)collectionView {
     return ((LUICollectionViewModel *)[self collectionModel]).collectionView;
 }
-- (NSString *)reuseIdentity {
+- (NSString *)reuseIdentity{
     if (!_reuseIdentity) {
         _reuseIdentity = NSStringFromClass(self.cellClass);
     }
     return _reuseIdentity;
 }
-- (void)displayCell:(UICollectionViewCell<LUICollectionViewCellProtocol> *)cell {
+- (void)displayCell:(UICollectionViewCell<LUICollectionViewCellProtocol> *)cell{
     cell.collectionCellModel = self;
     self.collectionViewCell = cell;
     [cell setNeedsLayout];
@@ -64,10 +63,10 @@
         }
     }
 }
-- (void)removeCellModelWithAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion {
+- (void)removeCellModelWithAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion{
     [[self collectionModel] removeCellModel:self animated:animated completion:completion];
 }
-- (void)didClickSelf {
+- (void)didClickSelf{
     if (self.whenClick) {
         self.whenClick(self);
     }
@@ -77,11 +76,10 @@
         self.whenSelected(self,selected);
     }
 }
-- (BOOL)didDeleteSelf {
+- (BOOL)didDeleteSelf{
     if (self.whenDelete) {
         return self.whenDelete(self);
     }
     return NO;
 }
-
 @end

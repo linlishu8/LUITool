@@ -50,10 +50,10 @@
     
     //对capInsets也进行翻转
     UIEdgeInsets capInsets = self.capInsets;
-    BOOL isCapInsetsEq = capInsets.top==capInsets.bottom
-     && capInsets.left==capInsets.right
-     && capInsets.top==capInsets.left;
-    if(!isCapInsetsEq){
+    BOOL isCapInsetsEq = capInsets.top == capInsets.bottom
+     && capInsets.left == capInsets.right
+     && capInsets.top == capInsets.left;
+    if (!isCapInsetsEq) {
         UIEdgeInsets capInsets2 = capInsets;
         capInsets2.left = capInsets.right;
         capInsets2.right = capInsets.left;
@@ -70,10 +70,10 @@
     
     //对capInsets也进行翻转
     UIEdgeInsets capInsets = self.capInsets;
-    BOOL isCapInsetsEq = capInsets.top==capInsets.bottom
-     && capInsets.left==capInsets.right
-     && capInsets.top==capInsets.left;
-    if(!isCapInsetsEq){
+    BOOL isCapInsetsEq = capInsets.top == capInsets.bottom
+     && capInsets.left == capInsets.right
+     && capInsets.top == capInsets.left;
+    if (!isCapInsetsEq) {
         UIEdgeInsets capInsets2 = capInsets;
         capInsets2.top = capInsets.bottom;
         capInsets2.bottom = capInsets.top;
@@ -88,7 +88,7 @@
     m = CGAffineTransformConcat(m, CGAffineTransformMakeTranslation(-imageSize.width*0.5, -imageSize.height*0.5));
     m = CGAffineTransformConcat(m, CGAffineTransformMakeRotation(radians));//旋转
     //旋转后,图片的矩形大小会变发变化,因此要重新计算矩形大小
-    CGRect f = (CGRect){CGPointZero,imageSize};
+    CGRect f = (CGRect) {CGPointZero,imageSize};
     CGRect bounds = CGRectApplyAffineTransform(f,m);
     
     m = CGAffineTransformConcat(m, CGAffineTransformMakeTranslation(bounds.size.width*0.5, bounds.size.height*0.5));//将矩形的左下角移动到原点
@@ -97,14 +97,14 @@
     
     //判断是否是旋转90度的整数倍
     UIEdgeInsets capInsets = self.capInsets;
-    BOOL isCapInsetsEq = capInsets.top==capInsets.bottom
-     && capInsets.left==capInsets.right
-     && capInsets.top==capInsets.left;
-    if(!isCapInsetsEq){
+    BOOL isCapInsetsEq = capInsets.top == capInsets.bottom
+     && capInsets.left == capInsets.right
+     && capInsets.top == capInsets.left;
+    if (!isCapInsetsEq) {
         NSInteger unitOf90 = (NSInteger)(radians/M_PI_2);
-        if(ABS(unitOf90*M_PI_2-radians)<0.0000000000000001){
+        if (ABS(unitOf90*M_PI_2-radians)<0.0000000000000001) {
             NSInteger direction = unitOf90%4;
-            if(direction<0){
+            if (direction<0) {
                 direction += 4;
             }
             UIEdgeInsets capInsets2 = UIEdgeInsetsZero;
@@ -140,7 +140,7 @@
 }
 - (UIImage *)l_imageWithOrientation:(UIImageOrientation)orientation{
     UIImageOrientation oldOrientation = self.imageOrientation;
-    if(self.imageOrientation==orientation){
+    if (self.imageOrientation == orientation) {
         return self;
     }
     CGSize imageSize = CGSizeMake(CGImageGetWidth(self.CGImage), CGImageGetHeight(self.CGImage));//该方法已经考虑到了@2x图片的情况和图片的朝向
@@ -181,15 +181,15 @@
             break;
     }
     
-    if(radians || mirrored){
+    if (radians || mirrored) {
         //将图片的中心移动到原点
         m = CGAffineTransformConcat(m, CGAffineTransformMakeTranslation(-newSize.width*0.5, -newSize.height*0.5));
         m = CGAffineTransformConcat(m, CGAffineTransformMakeRotation(radians));//旋转
-        if(mirrored){
+        if (mirrored) {
             m = CGAffineTransformConcat(m, CGAffineTransformMakeScale(-1, 1));
         }
         //旋转后,图片的矩形大小会变发变化,因此要重新计算矩形大小
-        CGRect f = (CGRect){CGPointZero,imageSize};
+        CGRect f = (CGRect) {CGPointZero,imageSize};
         CGRect bounds = CGRectApplyAffineTransform(f,m);
         
         m = CGAffineTransformConcat(m, CGAffineTransformMakeTranslation(bounds.size.width*0.5, bounds.size.height*0.5));//将矩形的左下角移动到原点
@@ -228,15 +228,15 @@
         default:
             break;
     }
-    if(radians || mirrored){
+    if (radians || mirrored) {
         //将图片的中心移动到原点
         m = CGAffineTransformConcat(m, CGAffineTransformMakeTranslation(-newSize.width*0.5, -newSize.height*0.5));
         m = CGAffineTransformConcat(m, CGAffineTransformMakeRotation(radians));//旋转
-        if(mirrored){
+        if (mirrored) {
             m = CGAffineTransformConcat(m, CGAffineTransformMakeScale(-1, 1));
         }
         //旋转后,图片的矩形大小会变发变化,因此要重新计算矩形大小
-        CGRect f = (CGRect){CGPointZero,imageSize};
+        CGRect f = (CGRect) {CGPointZero,imageSize};
         CGRect bounds = CGRectApplyAffineTransform(f,m);
         
         m = CGAffineTransformConcat(m, CGAffineTransformMakeTranslation(bounds.size.width*0.5, bounds.size.height*0.5));//将矩形的左下角移动到原点
@@ -263,17 +263,17 @@
 }
 - (UIImage *)l_cropImageToFitAspectRatio:(CGFloat)aspectRatio{//aspectRatio=height/width
     CGSize imageSize = self.size;
-    if(imageSize.width==0){
+    if (imageSize.width == 0) {
         return self;
     }
     UIImage *resultImage = self;
     CGFloat myAspectRatio = imageSize.height/imageSize.width;
-    if(ABS(myAspectRatio-aspectRatio)>0.0000001){//比例不相同
+    if (ABS(myAspectRatio-aspectRatio)>0.0000001) {//比例不相同
         CGRect r = CGRectZero;
-        if(myAspectRatio>aspectRatio){//height太大了
+        if (myAspectRatio>aspectRatio) {//height太大了
             r.size.width = imageSize.width;
             r.size.height = imageSize.width*aspectRatio;
-        }else{//width太大了
+        } else {//width太大了
             r.size.height = imageSize.height;
             r.size.width = imageSize.height/aspectRatio;
         }
@@ -292,15 +292,15 @@
 }
 - (BOOL)l_isPngImage{
     CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(self.CGImage);
-    BOOL isPng = !(alphaInfo==kCGImageAlphaNone || alphaInfo==kCGImageAlphaNoneSkipLast || alphaInfo==kCGImageAlphaNoneSkipFirst);
+    BOOL isPng = !(alphaInfo == kCGImageAlphaNone || alphaInfo == kCGImageAlphaNoneSkipLast || alphaInfo == kCGImageAlphaNoneSkipFirst);
     return isPng;
 }
 - (NSData *)l_imageDataThatFitBytes:(NSUInteger)bytes withCompressionQuality:(CGFloat)compressionQuality{
     BOOL isPng = self.l_isPngImage;
     NSData *data;
-    if(isPng){
+    if (isPng) {
         data = [self l_imageDataOfPngThatFitBytes:bytes];
-    }else{
+    } else {
         data = [self l_imageDataOfJpgThatFitBytes:bytes withCompressionQuality:compressionQuality];
     }
     return data;
@@ -312,7 +312,7 @@
 - (NSData *)l_imageDataOfPngThatFitBytes:(NSUInteger)bytes{
     NSData *data = UIImagePNGRepresentation(self);
     NSUInteger len = data.length;
-    if(bytes!=0 && len>bytes){//可以简单认为压缩后的大小与像素点数量成正比
+    if (bytes!=0 && len>bytes) {//可以简单认为压缩后的大小与像素点数量成正比
         CGFloat factor = 0.9*sqrt(1.0*bytes/len);//由于只是近似计算,因此再乘上0.9系数,让压缩后的值再小点
         CGSize size = self.size;
         size.width *= factor;
@@ -325,7 +325,7 @@
 - (NSData *)l_imageDataOfJpgThatFitBytes:(NSUInteger)bytes withCompressionQuality:(CGFloat)compressionQuality{
     NSData *data = UIImageJPEGRepresentation(self, compressionQuality);
     NSUInteger len = data.length;
-    if(bytes!=0 && len>bytes){//可以简单认为压缩后的大小与像素点数量成正比
+    if (bytes!=0 && len>bytes) {//可以简单认为压缩后的大小与像素点数量成正比
         CGFloat factor = 0.9*sqrt(1.0*bytes/len);//由于只是近似计算,因此再乘上0.9系数,让压缩后的值再小点
         CGSize size = self.size;
         size.width *= factor;
@@ -347,14 +347,14 @@
 - (UIImage *)l_reduceImageSizeToMaxSize:(CGSize)size{
     UIImage *img;
     CGSize imageSize = self.size;
-    if(imageSize.width<=size.width && imageSize.height<=size.height){
+    if (imageSize.width<=size.width && imageSize.height<=size.height) {
         img = self;
-    }else{
+    } else {
         //按image的比例,重新计算size的大小
         CGFloat width = (self.size.width/self.size.height)*size.height;
-        if(width>size.width){
+        if (width>size.width) {
             size.height = (self.size.height/self.size.width)*size.width;
-        }else{
+        } else {
             size.width = width;
         }
         img = [self l_scaleImageToFillSize:size];
@@ -369,7 +369,7 @@
 }
 //缩放图片到指定尺寸,比例不对时,按照mode进行处理
 - (UIImage *)scaleImageToSize:(CGSize)size withContentMode:(UIViewContentMode)mode{
-    if(CGSizeEqualToSize(size, self.size)){
+    if (CGSizeEqualToSize(size, self.size)) {
         return self;
     }
     CGFloat scale = self.scale;
@@ -390,9 +390,9 @@
         {
             //缩放
             CGFloat widthOfNew = (retinaSize.width/retinaSize.height)*canvasSize.height;
-            if(widthOfNew<=canvasSize.width){
+            if (widthOfNew<=canvasSize.width) {
                 imageRect.size.width = widthOfNew;
-            }else{
+            } else {
                 imageRect.size.height = (retinaSize.height/retinaSize.width)*canvasSize.width;
             }
             //居中
@@ -404,9 +404,9 @@
         {
             //缩放
             CGFloat widthOfNew = (retinaSize.width/retinaSize.height)*canvasSize.height;
-            if(widthOfNew>=canvasSize.width){
+            if (widthOfNew>=canvasSize.width) {
                 imageRect.size.width = widthOfNew;
-            }else{
+            } else {
                 imageRect.size.height = (retinaSize.height/retinaSize.width)*canvasSize.width;
             }
             //居中
@@ -429,7 +429,7 @@
 //    //    CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo(aImage.CGImage);//当图片的bitmapinfo为kCGImageAlphaLast时,创建context失败,失败是不支持colorspace与该bitmapinfo的组合
 //    CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo(imageRef);
 //    bitmapInfo = (CGBitmapInfo)kCGImageAlphaPremultipliedLast;
-////    if(kCGImageAlphaLast==bitmapInfo){
+////    if (kCGImageAlphaLast == bitmapInfo) {
 ////        bitmapInfo = (CGBitmapInfo)kCGImageAlphaPremultipliedLast;
 ////    }
 //    CGContextRef ctx = CGBitmapContextCreate(NULL,//由系统自动创建和管理位图内存
@@ -446,7 +446,7 @@
 //    CGImageRelease(cgimg);
 //    CGContextRelease(ctx);
 
-    if(canvasSize.width<=0 || canvasSize.height<=0) return nil;
+    if (canvasSize.width<=0 || canvasSize.height<=0) return nil;
     UIGraphicsBeginImageContextWithOptions(canvasSize, !self.l_isPngImage, 1);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     [self drawInRect:imageRect];
@@ -479,14 +479,14 @@
     for (NSString *unit in map) {
         NSUInteger n = [[map objectForKey:unit] integerValue];
         double v = fileSize*1.0/n;
-        if(v>=1 || n==1){
+        if (v>=1 || n == 1) {
             str = [NSString stringWithFormat:@"%.1f%@",v,unit];
         }
     }
     return str;
 }
 + (UIImage *)l_disclosureIndicatorImageWithSize:(CGSize)size lineWidth:(CGFloat)lineWidth color:(UIColor *)color{
-    if(size.width<=0 || size.height<=0) return nil;
+    if (size.width<=0 || size.height<=0) return nil;
     CGFloat scale = [UIScreen mainScreen].scale;
     UIGraphicsBeginImageContextWithOptions(size, NO, scale);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -517,7 +517,7 @@
     return [UIImage l_disclosureIndicatorImageWithSize:CGSizeMake(7, 14) lineWidth:2 color:color];
 }
 + (UIImage *)l_checkmarkImageWithSize:(CGSize)size lineWidth:(CGFloat)lineWidth color:(UIColor *)color{
-    if(size.width<=0 || size.height<=0) return nil;
+    if (size.width<=0 || size.height<=0) return nil;
     CGFloat scale = [UIScreen mainScreen].scale;
     UIGraphicsBeginImageContextWithOptions(size, NO, scale);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -565,8 +565,8 @@
         case UIViewContentModeScaleAspectFit:{
             CGFloat scale = viewSize.width/imageSize.width;//视图/图片的比例值
             CGFloat h_view = imageSize.height*scale;
-            if(h_view<=viewSize.height){//正解:按宽度等比例缩放
-            }else{//按高度等比例缩放
+            if (h_view<=viewSize.height) {//正解:按宽度等比例缩放
+            } else {//按高度等比例缩放
                 scale = viewSize.height/imageSize.height;
             }
             m = CGAffineTransformConcat(m, CGAffineTransformMakeScale(scale, scale));//缩放
@@ -579,8 +579,8 @@
         case UIViewContentModeScaleAspectFill:{
             CGFloat scale = viewSize.width/imageSize.width;//视图/图片的比例值
             CGFloat h_view = imageSize.height*scale;
-            if(h_view>=viewSize.height){//正解:按宽度等比例缩放
-            }else{//按高度等比例缩放
+            if (h_view>=viewSize.height) {//正解:按宽度等比例缩放
+            } else {//按高度等比例缩放
                 scale = viewSize.height/imageSize.height;
             }
             m = CGAffineTransformConcat(m, CGAffineTransformMakeScale(scale, scale));//缩放
@@ -646,10 +646,10 @@
 
 @implementation UIImage (l_UIColor)
 - (UIImage *)l_imageWithTintColor:(UIColor *)tintColor{
-    if(!tintColor){
+    if (!tintColor) {
         return self;
     }
-    if(self.size.width<=0 || self.size.height<=0) return nil;
+    if (self.size.width<=0 || self.size.height<=0) return nil;
     UIGraphicsBeginImageContextWithOptions(self.size, NO, self.scale);
     [tintColor setFill];
     CGRect bounds = CGRectMake(0, 0, self.size.width, self.size.height);
@@ -662,13 +662,13 @@
     UIGraphicsEndImageContext();
     UIEdgeInsets capInsets = self.capInsets;
     UIImageResizingMode resizingMode = self.resizingMode;
-    if(!UIEdgeInsetsEqualToEdgeInsets(capInsets, UIEdgeInsetsZero)){
+    if (!UIEdgeInsetsEqualToEdgeInsets(capInsets, UIEdgeInsetsZero)) {
         tintedImage = [tintedImage resizableImageWithCapInsets:capInsets resizingMode:resizingMode];
     }
     return tintedImage;
 }
 - (void)l_enumRGBAPixcelsWithBlock:(void(^)(int x,int y,int r,int g,int b,int a))block{
-    if(!block){
+    if (!block) {
         return;
     }
     UIImage *aImage = self;
@@ -697,7 +697,7 @@
                 g = data[index+2];
                 b = data[index+1];
                 a = data[index+0];
-                if(block){
+                if (block) {
                     block(x,y,r,g,b,a);
                 }
                 index+=4;
@@ -709,7 +709,7 @@
     CGColorSpaceRelease(space);
 }
 - (UIImage *)l_convertRGBAImageWithBlock:(void(^)(int x,int y,int *r,int *g,int *b,int *a))block{
-    if(!block){
+    if (!block) {
         return self;
     }
     UIImage *aImage = self;
@@ -723,7 +723,7 @@
     uint8_t* rgbaPixel = (uint8_t*)malloc(width * height * 4);
 
     [self l_enumRGBAPixcelsWithBlock:^void(int x, int y, int r, int g, int b, int a) {
-        if(block){
+        if (block) {
             block(x,y,&r,&g,&b,&a);
         }
         NSInteger index = y*width*4+x*4;
@@ -767,8 +767,8 @@
     return img;
 }
 + (UIImage *)l_imageWithUIColor:(UIColor *)color size:(CGSize)size{
-    if(size.width<=0 || size.height<=0) return nil;
-    if(!color) return nil;
+    if (size.width<=0 || size.height<=0) return nil;
+    if (!color) return nil;
     CGRect rect = CGRectZero;
     rect.size = size;
     CGFloat scale = [UIScreen mainScreen].scale;
@@ -822,7 +822,7 @@
     
     //第二步 取每个点的像素值
     unsigned char* data = CGBitmapContextGetData (context);
-//    if (data == NULL) {
+//    if (data  ==  NULL) {
 //        CGContextRelease(context);
 //        return nil;
 //    }
@@ -862,7 +862,7 @@
     CGRect rect = CGRectZero;
     rect.size.width = CGImageGetWidth(imageRef);
     rect.size.height= CGImageGetHeight(imageRef);
-    if(point.x<0 || point.x>rect.size.width || point.y<0 || point.y>rect.size.height){//越界了,返回nil
+    if (point.x<0 || point.x>rect.size.width || point.y<0 || point.y>rect.size.height) {//越界了,返回nil
         return nil;
     }
     UIImage *aImage = self;
@@ -895,7 +895,7 @@
     return color;
 }
 + (UIImage *)l_linearGradientImageWithSize:(CGSize)size startColor:(UIColor *)startColor startPoint:(CGPoint)startPoint endColor:(UIColor *)endColor endPoint:(CGPoint)endPoint{
-    if(size.width<=0 || size.height<=0) return nil;
+    if (size.width<=0 || size.height<=0) return nil;
     CGRect rect = CGRectZero;
     rect.size = size;
     CGFloat scale = [UIScreen mainScreen].scale;

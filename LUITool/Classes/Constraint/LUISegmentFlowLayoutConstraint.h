@@ -10,18 +10,18 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LUISegmentFlowLayoutConstraint : LUILayoutConstraint
-@property(nonatomic,assign) LUILayoutConstraintDirection layoutDirection;//布局方向.默认为LUILayoutConstraintDirectionVertical
-@property(nonatomic,assign) LUILayoutConstraintVerticalAlignment layoutVerticalAlignment;//所有元素作为一个整体,在垂直方向上的位置,以及每一个元素在整体内的垂直方向上的对齐方式.默认为LUILayoutConstraintVerticalAlignmentCenter
+@property (nonatomic, assign) LUILayoutConstraintDirection layoutDirection;//布局方向.默认为LUILayoutConstraintDirectionVertical
+@property (nonatomic, assign) LUILayoutConstraintVerticalAlignment layoutVerticalAlignment;//所有元素作为一个整体,在垂直方向上的位置,以及每一个元素在整体内的垂直方向上的对齐方式.默认为LUILayoutConstraintVerticalAlignmentCenter
 
-@property(nonatomic,assign) LUILayoutConstraintHorizontalAlignment layoutHorizontalAlignment;//所有元素作为一个整体,在水平方向上的位置,以及每一个元素在整体内的水平方向上的对方方式.默认为LUILayoutConstraintHorizontalAlignmentCenter
-@property(nonatomic,assign) UIEdgeInsets contentInsets;//内边距,默认为(0,0,0,0)
-@property(nonatomic,assign) CGFloat interitemSpacing;//元素间的间隔,默认为0
+@property (nonatomic, assign) LUILayoutConstraintHorizontalAlignment layoutHorizontalAlignment;//所有元素作为一个整体,在水平方向上的位置,以及每一个元素在整体内的水平方向上的对方方式.默认为LUILayoutConstraintHorizontalAlignmentCenter
+@property (nonatomic, assign) UIEdgeInsets contentInsets;//内边距,默认为(0,0,0,0)
+@property (nonatomic, assign) CGFloat interitemSpacing;//元素间的间隔,默认为0
 
-@property(nonatomic,assign) NSInteger boundaryItemIndex;//临界点,用于将self.items区分成两块,第一块为[0,boundaryItemIndex],第二块为(boundaryItemIndex,self.items.count)
+@property (nonatomic, assign) NSInteger boundaryItemIndex;//临界点,用于将self.items区分成两块,第一块为[0,boundaryItemIndex],第二块为(boundaryItemIndex,self.items.count)
 - (void)setBoundaryItemIndexWithItem:(id<LUILayoutConstraintItemProtocol>)item;
-@property(nonatomic,assign) BOOL isLayoutPriorityFirstItems;//是否优先布局前半部分.如果是,对前半部分sizeToFit,然后bounds扣掉前半部分区域,剩下区域给后半部分布局.默认为NO
-@property(nonatomic,assign) CGFloat layoutPriorityItemsMaxBoundsPercent;//优先布局的一方,最多占掉bounds的宽/长的百分比,默认为0.75
-@property(nonatomic,assign) BOOL fixSizeToFitsBounds;//在计算sizeThatFits时,根据布局方向,自动固定对应边的尺寸为传入的 size 的边,(如水平布局时,sizeThatFits.width=size.width),默认为 NO,即不固定
+@property (nonatomic, assign) BOOL isLayoutPriorityFirstItems;//是否优先布局前半部分.如果是,对前半部分sizeToFit,然后bounds扣掉前半部分区域,剩下区域给后半部分布局.默认为NO
+@property (nonatomic, assign) CGFloat layoutPriorityItemsMaxBoundsPercent;//优先布局的一方,最多占掉bounds的宽/长的百分比,默认为0.75
+@property (nonatomic, assign) BOOL fixSizeToFitsBounds;//在计算sizeThatFits时,根据布局方向,自动固定对应边的尺寸为传入的 size 的边,(如水平布局时,sizeThatFits.width=size.width),默认为 NO,即不固定
 
 /**
  *  计算最合适的尺寸
@@ -57,7 +57,7 @@ LUIAS_EnumTypeCategories(LUISegmentFlowLayoutConstraintParam)
 - (id)initWithItems:(nullable NSArray<id<LUILayoutConstraintItemProtocol>> *)items constraintParam:(LUISegmentFlowLayoutConstraintParam)param contentInsets:(UIEdgeInsets)contentInsets interitemSpacing:(CGFloat)interitemSpacing;
 - (void)configWithConstraintParam:(LUISegmentFlowLayoutConstraintParam)param;
 
-@property(nonatomic,assign) LUISegmentFlowLayoutConstraintParam constraintParam;
+@property (nonatomic, assign) LUISegmentFlowLayoutConstraintParam constraintParam;
 
 + (void)parseConstraintParam:(LUISegmentFlowLayoutConstraintParam)param layoutDirection:(LUILayoutConstraintDirection *)layoutDirection layoutVerticalAlignment:(LUILayoutConstraintVerticalAlignment *)layoutVerticalAlignment layoutHorizontalAlignment:(LUILayoutConstraintHorizontalAlignment *)layoutHorizontalAlignment;
 + (LUISegmentFlowLayoutConstraintParam)constraintParamWithLayoutDirection:(LUILayoutConstraintDirection)layoutDirection layoutVerticalAlignment:(LUILayoutConstraintVerticalAlignment)layoutVerticalAlignment layoutHorizontalAlignment:(LUILayoutConstraintHorizontalAlignment)layoutHorizontalAlignment;

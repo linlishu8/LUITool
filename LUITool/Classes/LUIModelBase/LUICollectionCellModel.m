@@ -25,12 +25,12 @@
     NSIndexPath *preIndexPath;
     NSInteger row = [self indexInSectionModel];
     NSInteger section = [self.sectionModel indexInModel];
-    if(row>0){
+    if (row>0) {
         preIndexPath = [NSIndexPath indexPathForRow:row-1 inSection:section];
-    }else{
+    } else {
         for (NSInteger i=section-1; i>=0; i++) {
             LUICollectionSectionModel *sm = [self.collectionModel sectionModelAtIndex:i];
-            if(sm.numberOfCells>0){
+            if (sm.numberOfCells>0) {
                 preIndexPath = [NSIndexPath indexPathForRow:sm.numberOfCells-1 inSection:i];
                 break;
             }
@@ -42,13 +42,13 @@
     NSIndexPath *nextIndexPath;
     NSInteger row = [self indexInSectionModel];
     NSInteger section = [self.sectionModel indexInModel];
-    if(row+1<self.sectionModel.numberOfCells){
+    if (row+1<self.sectionModel.numberOfCells) {
         nextIndexPath = [NSIndexPath indexPathForRow:row+1 inSection:section];
-    }else{
+    } else {
         NSInteger sectionCount = [self.collectionModel numberOfSections];
         for (NSInteger i=section+1; i<sectionCount; i++) {
             LUICollectionSectionModel *sm = [self.collectionModel sectionModelAtIndex:i];
-            if(sm.numberOfCells>0){
+            if (sm.numberOfCells>0) {
                 nextIndexPath = [NSIndexPath indexPathForRow:0 inSection:i];
                 break;
             }
@@ -57,44 +57,44 @@
     return nextIndexPath;
 }
 - (BOOL)isFirstInAllCellModels{
-    BOOL is = self.indexPathOfPreCell==nil;
+    BOOL is = self.indexPathOfPreCell == nil;
     return is;
 }
 - (BOOL)isLastInAllCellModels{
-    BOOL is = self.indexPathOfNextCell==nil;
+    BOOL is = self.indexPathOfNextCell == nil;
     return is;
 }
-- (NSInteger)indexInSectionModel{
+- (NSInteger)indexInSectionModel {
     NSInteger index = [self.sectionModel indexOfCellModel:self];
     return index;
 }
-- (NSIndexPath *)indexPathInModel{
+- (NSIndexPath *)indexPathInModel {
     NSInteger cellIndex = [self indexInSectionModel];
     NSInteger sectionIndex = [self.sectionModel indexInModel];
     NSIndexPath *indexPath;
-    if(cellIndex!=NSNotFound&&sectionIndex!=NSNotFound){
+    if (cellIndex!=NSNotFound&&sectionIndex!=NSNotFound) {
         indexPath = [NSIndexPath indexPathForRow:cellIndex inSection:sectionIndex];
     }
     return indexPath;
 }
-- (LUICollectionModel *)collectionModel{
+- (LUICollectionModel *)collectionModel {
     LUICollectionModel *model = [[self sectionModel] collectionModel];
     return model;
 }
-- (void)setSectionModel:(LUICollectionSectionModel *)sectionModel{
+- (void)setSectionModel:(LUICollectionSectionModel *)sectionModel {
     _sectionModel = sectionModel;
 }
-- (LUICollectionSectionModel *)sectionModel{
+- (LUICollectionSectionModel *)sectionModel {
     return _sectionModel;
 }
 - (NSComparisonResult)compare:(LUICollectionCellModel *)otherObject{
     NSComparisonResult r = [self.sectionModel compare:otherObject.sectionModel];
-    if(r==NSOrderedSame){
+    if (r == NSOrderedSame) {
         NSInteger row1 = [self.sectionModel indexOfCellModel:self];
         NSInteger row2 = [otherObject.sectionModel indexOfCellModel:otherObject];
-        if(row1<row2){
+        if (row1<row2) {
             r = NSOrderedAscending;
-        }else if(row1>row2){
+        }else if (row1>row2) {
             r = NSOrderedDescending;
         }
     }

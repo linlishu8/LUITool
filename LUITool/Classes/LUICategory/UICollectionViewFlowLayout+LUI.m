@@ -65,7 +65,7 @@
     UICollectionViewFlowLayout *flowlayout = self;
     UICollectionViewScrollDirection direction = flowlayout.scrollDirection;
     
-    LUICGAxis axis = direction==UICollectionViewScrollDirectionVertical?LUICGAxisX:LUICGAxisY;
+    LUICGAxis axis = direction == UICollectionViewScrollDirectionVertical?LUICGAxisX:LUICGAxisY;
     LUICGAxis axisR = LUICGAxisReverse(axis);
     LUICGSizeSetLength(&size, axisR, 99999999);
     
@@ -125,7 +125,7 @@
 - (CGSize)__l_allCellsSizeThatFitsCellBoundsSize:(CGSize)size {
     UICollectionViewFlowLayout *flowlayout = self;
     UICollectionViewScrollDirection direction = flowlayout.scrollDirection;
-    LUICGAxis X = direction==UICollectionViewScrollDirectionVertical?LUICGAxisX:LUICGAxisY;
+    LUICGAxis X = direction == UICollectionViewScrollDirectionVertical?LUICGAxisX:LUICGAxisY;
     LUICGAxis Y = LUICGAxisReverse(X);
     LUICGSizeSetLength(&size, Y, 99999999);
     
@@ -138,8 +138,8 @@
         boundSize.width -= sectionInset.left+sectionInset.right;
         boundSize.height -= sectionInset.top+sectionInset.bottom;
         
-        CGFloat interitemSpacing = X==LUICGAxisX?minimumInteritemSpacing:minimumLineSpacing;
-        CGFloat lineSpacing = X==LUICGAxisX?minimumLineSpacing:minimumInteritemSpacing;
+        CGFloat interitemSpacing = X == LUICGAxisX?minimumInteritemSpacing:minimumLineSpacing;
+        CGFloat lineSpacing = X == LUICGAxisX?minimumLineSpacing:minimumInteritemSpacing;
         NSInteger itemCount = [self.collectionView numberOfItemsInSection:i];
         CGSize sectionFitSize = CGSizeZero;
         CGSize limitSize = boundSize;

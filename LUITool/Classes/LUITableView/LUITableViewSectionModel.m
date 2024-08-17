@@ -13,7 +13,7 @@
 
 @implementation LUITableViewSectionModel
 - (id)init{
-    if (self=[super init]) {
+    if (self = [super init]) {
         self.headViewClass = [LUITableViewSectionView class];
         self.footViewClass = [LUITableViewSectionView class];
     }
@@ -37,42 +37,42 @@
     obj.whenShowFootView = [self.whenShowFootView copy];
     return obj;
 }
-- (UITableView *)tableView{
+- (UITableView *)tableView {
     return self.tableViewModel.tableView;
 }
-- (LUITableViewModel *)tableViewModel{
+- (LUITableViewModel *)tableViewModel {
     LUICollectionModel *collectionModel = [super collectionModel];
-    if([collectionModel isKindOfClass:[LUITableViewModel class]]){
+    if ([collectionModel isKindOfClass:[LUITableViewModel class]]) {
         return (LUITableViewModel *)collectionModel;
     }
     return nil;
 }
-- (void)setTableViewModel:(LUITableViewModel *)tableViewModel{
+- (void)setTableViewModel:(LUITableViewModel *)tableViewModel {
     self.collectionModel = tableViewModel;
 }
-- (__kindof LUITableViewCellModel *)cellModelAtIndex:(NSInteger)index{
+- (__kindof LUITableViewCellModel *)cellModelAtIndex:(NSInteger)index {
     LUICollectionCellModel *cellModel = [super cellModelAtIndex:index];
-    if([cellModel isKindOfClass:[LUITableViewCellModel class]]){
+    if ([cellModel isKindOfClass:[LUITableViewCellModel class]]) {
         return (LUITableViewCellModel *)cellModel;
     }
     return nil;
  }
 - (id)initWithBlankHeadView:(CGFloat)height{
-    if(self=[self init]){
+    if (self=[self init]) {
         [self showDefaultHeadViewWithHeight:height];
         [self showDefaultFootViewWithHeight:0.1];
     }
     return self;
 }
 - (id)initWithBlankFootView:(CGFloat)height{
-    if(self=[self init]){
+    if (self=[self init]) {
         [self showDefaultHeadViewWithHeight:0.1];
         [self showDefaultFootViewWithHeight:height];
     }
     return self;
 }
 - (id)initWithBlankHeadView:(CGFloat)headViewHeight footView:(CGFloat)footViewHeight{
-    if(self=[self init]){
+    if (self=[self init]) {
         [self showDefaultHeadViewWithHeight:headViewHeight];
         [self showDefaultFootViewWithHeight:footViewHeight];
     }
@@ -88,36 +88,36 @@
     self.showDefaultFootView = YES;
     self.footViewHeight = height;
 }
-- (void)displayHeadView:(UIView<LUITableViewSectionViewProtocol> *)view{
+- (void)displayHeadView:(UIView<LUITableViewSectionViewProtocol> *)view {
     [view setSectionModel:self kind:LUITableViewSectionViewKindOfHead];
-    if(self.whenShowHeadView){
+    if (self.whenShowHeadView) {
         self.whenShowHeadView(self,view);
     }
     [view setNeedsLayout];
 }
-- (void)displayFootView:(UIView<LUITableViewSectionViewProtocol> *)view{
+- (void)displayFootView:(UIView<LUITableViewSectionViewProtocol> *)view {
     [view setSectionModel:self kind:LUITableViewSectionViewKindOfFoot];
-    if(self.whenShowFootView){
+    if (self.whenShowFootView) {
         self.whenShowFootView(self,view);
     }
     [view setNeedsLayout];
 }
 
-- (void)refresh{
+- (void)refresh {
     [self refreshWithAnimated:NO];
 }
-- (void)refreshWithAnimated:(BOOL)animated{
+- (void)refreshWithAnimated:(BOOL)animated {
     if (self.tableView) {
         for (LUITableViewCellModel *cm in self.cellModels) {
             cm.needReloadCell = YES;
         }
         NSIndexSet *set = [self.tableViewModel indexSetOfSectionModel:self];
-        if(set){
+        if (set) {
             [self.tableView reloadSections:set withRowAnimation:animated?UITableViewRowAnimationNone:UITableViewRowAnimationAutomatic];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             for (LUITableViewCellModel *cm in self.cellModels) {
-                if(cm.selected){
+                if (cm.selected) {
                     [self.tableView selectRowAtIndexPath:cm.indexPathInModel animated:animated scrollPosition:(UITableViewScrollPositionNone)];
                 }
             }

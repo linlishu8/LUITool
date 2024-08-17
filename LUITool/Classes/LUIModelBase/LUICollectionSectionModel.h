@@ -14,11 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 @class LUICollectionModel,LUICollectionCellModel;
 
 @interface LUICollectionSectionModel : LUICollectionModelObjectBase
-@property(nonatomic,strong,nullable) NSArray<__kindof LUICollectionCellModel *> *cellModels;//含有的单元格
-@property(nonatomic,strong,nullable) id userInfo;//自定義的擴展對象
-@property(nonatomic,readonly) NSInteger numberOfCells;//单元格数量
-@property(nonatomic,readonly) NSInteger indexInModel;
-@property(nonatomic,readonly,nullable) NSMutableArray<__kindof LUICollectionCellModel *> * mutableCellModels;
+@property (nonatomic, strong, nullable) NSArray<__kindof LUICollectionCellModel *> *cellModels;//含有的单元格
+@property (nonatomic, strong, nullable) id userInfo;//自定義的擴展對象
+@property (nonatomic, readonly) NSInteger numberOfCells;//单元格数量
+@property (nonatomic, readonly) NSInteger indexInModel;
+@property (nonatomic, readonly, nullable) NSMutableArray<__kindof LUICollectionCellModel *> * mutableCellModels;
 //弱引用外層的数据
 - (void)setCollectionModel:(nullable LUICollectionModel *)collectionModel;
 - (nullable __kindof LUICollectionModel *)collectionModel;
@@ -97,8 +97,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface LUICollectionSectionModel(Focused)
-@property(nonatomic,readonly) NSInteger indexForFocusedCellModel;
-@property(nonatomic,readonly,nullable) __kindof LUICollectionCellModel *cellModelForFocusedCellModel;
+@property (nonatomic, readonly) NSInteger indexForFocusedCellModel;
+@property (nonatomic, readonly, nullable) __kindof LUICollectionCellModel *cellModelForFocusedCellModel;
 @end
 
 NS_ASSUME_NONNULL_END

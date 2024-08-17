@@ -10,8 +10,7 @@
 #import "UICollectionViewFlowLayout+LUI.h"
 
 @implementation UICollectionReusableView (LUICollectionViewSupplementaryElementProtocol)
-
-+ (CGSize)dynamicReferenceSizeWithCollectionView:(UICollectionView *)collectionView collectionSectionModel:(LUICollectionViewSectionModel *)sectionModel forKind:(NSString *)kind viewShareInstance:(UICollectionReusableView<LUICollectionViewSupplementaryElementProtocol> *)view calBlock:(CGSize(^)(UICollectionView *collectionView,LUICollectionViewSectionModel *sectionModel,NSString *kind,id view))block {
++ (CGSize)dynamicReferenceSizeWithCollectionView:(UICollectionView *)collectionView collectionSectionModel:(LUICollectionViewSectionModel *)sectionModel forKind:(NSString *)kind viewShareInstance:(UICollectionReusableView<LUICollectionViewSupplementaryElementProtocol> *)view calBlock:(CGSize(^)(UICollectionView *collectionView,LUICollectionViewSectionModel *sectionModel,NSString *kind,id view))block{
     CGSize size = CGSizeZero;
     
     UICollectionViewFlowLayout *flowlayout = collectionView.l_collectionViewFlowLayout;
@@ -39,7 +38,7 @@
 
     //限制view不能超过view可布局区域的范围
     if (flowlayout) {
-        if (flowlayout.scrollDirection==UICollectionViewScrollDirectionVertical) {
+        if (flowlayout.scrollDirection == UICollectionViewScrollDirectionVertical) {
             size.width = MIN(size.width,bounds.size.width);
         } else {
             size.height = MIN(size.height,bounds.size.height);
@@ -52,5 +51,4 @@
     
     return size;
 }
-
 @end

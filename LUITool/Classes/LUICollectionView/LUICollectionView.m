@@ -7,16 +7,14 @@
 
 #import "LUICollectionView.h"
 #import "UICollectionViewFlowLayout+LUI.h"
-
 @implementation LUICollectionView
-
 - (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout{
     if (self=[super initWithFrame:frame collectionViewLayout:layout]) {
         self.model = [[LUICollectionViewModel alloc] initWithCollectionView:self];
     }
     return self;
 }
-- (void)setModel:(LUICollectionViewModel *)model{
+- (void)setModel:(LUICollectionViewModel *)Model {
     if (_model!=model) {
         _model = model;
         [_model setCollectionViewDataSourceAndDelegate:self];
@@ -25,9 +23,9 @@
 - (CGSize)sizeThatFits:(CGSize)size{
     CGSize s = CGSizeZero;
     UICollectionViewLayout *layout = self.collectionViewLayout;
-    if([layout conformsToProtocol:@protocol(LUICollectionViewLayoutSizeFitsProtocol)]){
+    if ([layout conformsToProtocol:@protocol(LUICollectionViewLayoutSizeFitsProtocol)]) {
         s = [(id<LUICollectionViewLayoutSizeFitsProtocol>)layout l_sizeThatFits:size];
-    }else{
+    } else {
         s = [super sizeThatFits:size];
     }
     return s;
@@ -57,5 +55,4 @@
 - (UICollectionViewFlowLayout *)collectionViewFlowLayout{
     return (UICollectionViewFlowLayout *)self.collectionViewLayout;
 }
-
 @end

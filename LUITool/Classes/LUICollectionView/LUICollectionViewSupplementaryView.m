@@ -9,16 +9,15 @@
 #import "UIView+LUI.h"
 
 @implementation LUICollectionViewSupplementaryView
-
-- (id)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
+- (id)initWithFrame:(CGRect)frame{
+    if (self=[super initWithFrame:frame]) {
         self.contentView = [[UIView alloc] init];
         self.contentView.accessibilityLabel = @"contentView";
         [self addSubview:self.contentView];
     }
     return self;
 }
-- (void)layoutSubviews {
+- (void)layoutSubviews{
     [super layoutSubviews];
     CGRect bounds = self.bounds;
     //适配iphoneX
@@ -35,5 +34,4 @@
 + (CGSize)referenceSizeWithCollectionView:(UICollectionView *)collectionView collectionSectionModel:(LUICollectionViewSectionModel *)sectionModel forKind:(NSString *)kind {
     return CGSizeZero;
 }
-
 @end

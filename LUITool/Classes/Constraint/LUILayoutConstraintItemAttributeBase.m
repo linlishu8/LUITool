@@ -61,7 +61,7 @@
 
 @implementation LUILayoutConstraintItemAttributeSection
 - (id)init {
-    if (self=[super init]) {
+    if (self = [super init]) {
         _allItemAttributes = [[NSMutableArray alloc] init];
     }
     return self;

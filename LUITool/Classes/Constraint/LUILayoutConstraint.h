@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger, LUILayoutConstraintVerticalAlignment) {
 };
 LUIAS_EnumTypeCategories(LUILayoutConstraintVerticalAlignment)
 CG_INLINE LUICGRectAlignment LUICGRectAlignmentFromLUILayoutConstraintVerticalAlignment(LUILayoutConstraintVerticalAlignment align) {
-    return align == LUILayoutConstraintVerticalAlignmentCenter ? LUICGRectAlignmentMid:(align == LUILayoutConstraintVerticalAlignmentTop ? LUICGRectAlignmentMin:LUICGRectAlignmentMax);
+    return align  ==  LUILayoutConstraintVerticalAlignmentCenter ? LUICGRectAlignmentMid:(align  ==  LUILayoutConstraintVerticalAlignmentTop ? LUICGRectAlignmentMin:LUICGRectAlignmentMax);
 }
 
 typedef NS_ENUM(NSInteger, LUILayoutConstraintHorizontalAlignment) {
@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, LUILayoutConstraintHorizontalAlignment) {
 };
 LUIAS_EnumTypeCategories(LUILayoutConstraintHorizontalAlignment)
 CG_INLINE LUICGRectAlignment LUICGRectAlignmentFromLUILayoutConstraintHorizontalAlignment(LUILayoutConstraintHorizontalAlignment align) {
-    return align==LUILayoutConstraintHorizontalAlignmentCenter?LUICGRectAlignmentMid:(align==LUILayoutConstraintHorizontalAlignmentLeft?LUICGRectAlignmentMin:LUICGRectAlignmentMax);
+    return align == LUILayoutConstraintHorizontalAlignmentCenter?LUICGRectAlignmentMid:(align == LUILayoutConstraintHorizontalAlignmentLeft?LUICGRectAlignmentMin:LUICGRectAlignmentMax);
 }
 
 typedef NS_ENUM(NSUInteger, LUILayoutConstraintDirection) {
@@ -61,7 +61,7 @@ LUIAS_EnumTypeCategories(LUILayoutConstraintDirection)
 - (instancetype)initWithItems:(nullable NSArray<id<LUILayoutConstraintItemProtocol>> *)items bounds:(CGRect)bounds;
 - (void)addItem:(id<LUILayoutConstraintItemProtocol>)item;
 - (void)removeItem:(id<LUILayoutConstraintItemProtocol>)item;
-- (void)replaceItem:(id<LUILayoutConstraintItemProtocol>)oldItem with:(nullable id<LUILayoutConstraintItemProtocol>)newItem;//进行item的替换,如果items中元素为LUILayoutConstraintItemWrapper话,会检查期origin是否==oldItem
+- (void)replaceItem:(id<LUILayoutConstraintItemProtocol>)oldItem with:(nullable id<LUILayoutConstraintItemProtocol>)newItem;//进行item的替换,如果items中元素为LUILayoutConstraintItemWrapper话,会检查期origin是否 == oldItem
 - (void)layoutItems;//进行布局,子类实现
 @property (nonatomic, readonly, nullable) NSArray<id<LUILayoutConstraintItemProtocol>> *layoutedItems;//显示的元素,@[id<LUILayoutConstraintItemProtocol>]
 @property (nonatomic, readonly, nullable) NSArray<id<LUILayoutConstraintItemProtocol>> *visiableItems;//显示的元素,@[id<LUILayoutConstraintItemProtocol>]

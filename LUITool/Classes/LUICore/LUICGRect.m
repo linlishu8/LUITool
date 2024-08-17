@@ -8,7 +8,7 @@
 #import "LUICGRect.h"
 
 @implementation LUICGRect
-//+ (void)load{
+//+ (void)load {
 //    CGRect fullBounds = [UIScreen mainScreen].bounds;
 //    UIEdgeInsets insets = UIEdgeInsetsMake(44, 0, 20, 0);
 //    CGRect bounds = UIEdgeInsetsInsetRect(fullBounds, insets);
@@ -143,18 +143,18 @@
 
 #pragma mark - 链式调用
 + (LUICGRect *(^)(CGRect rect))rect{
-    return [^LUICGRect *(CGRect rect){
+    return [^LUICGRect *(CGRect rect) {
         return [self rect:rect];
     } copy];
 }
 + (LUICGRect *(^)(CGFloat x,CGFloat y,CGFloat width,CGFloat height))make{
-    return [^LUICGRect *(CGFloat x,CGFloat y,CGFloat width,CGFloat height){
+    return [^LUICGRect *(CGFloat x,CGFloat y,CGFloat width,CGFloat height) {
         return [self rect:CGRectMake(x, y, width, height)];
     } copy];
 }
 #define LUICGRectXXXToRect(position) \
 - (LUICGRectR)position##ToRect{\
-    return [^LUICGRect *(CGRect bounds){\
+    return [^LUICGRect *(CGRect bounds) {\
         self.position = LUICGRect.rect(bounds).position;\
         return self;\
     } copy];\
@@ -170,7 +170,7 @@ LUICGRectXXXToRect(rect)
 
 #define LUICGRectXXXToValue(position) \
 - (LUICGRectF)position##ToValue{\
-    return [^LUICGRect *(CGFloat value){\
+    return [^LUICGRect *(CGFloat value) {\
         self.position = value;\
         return self;\
     } copy];\
@@ -187,32 +187,32 @@ LUICGRectXXXToValue(width)
 LUICGRectXXXToValue(height)
 
 - (LUICGRectS)sizeToValue{
-    return [^LUICGRect *(CGSize size){
+    return [^LUICGRect *(CGSize size) {
         self.size = size;
         return self;
     } copy];
 }
 
 - (LUICGRect *(^)(CGRect bounds,CGFloat edge))minXToEdge{
-    return [^LUICGRect *(CGRect bounds,CGFloat edge){
+    return [^LUICGRect *(CGRect bounds,CGFloat edge) {
         self.minXToValue(CGRectGetMinX(bounds)+edge);
         return self;
     } copy];
 }
 - (LUICGRect *(^)(CGRect bounds,CGFloat edge))maxXToEdge{
-    return [^LUICGRect *(CGRect bounds,CGFloat edge){
+    return [^LUICGRect *(CGRect bounds,CGFloat edge) {
         self.maxXToValue(CGRectGetMaxX(bounds)-edge);
         return self;
     } copy];
 }
 - (LUICGRect *(^)(CGRect bounds,CGFloat edge))minYToEdge{
-    return [^LUICGRect *(CGRect bounds,CGFloat edge){
+    return [^LUICGRect *(CGRect bounds,CGFloat edge) {
         self.minYToValue(CGRectGetMinY(bounds)+edge);
         return self;
     } copy];
 }
 - (LUICGRect *(^)(CGRect bounds,CGFloat edge))maxYToEdge{
-    return [^LUICGRect *(CGRect bounds,CGFloat edge){
+    return [^LUICGRect *(CGRect bounds,CGFloat edge) {
         self.maxYToValue(CGRectGetMaxY(bounds)-edge);
         return self;
     } copy];
@@ -224,21 +224,21 @@ LUICGRectXXXToValue(height)
 + (CGSize)scaleSize:(CGSize)originSize aspectFitToMaxSize:(CGSize)maxSize{//如果s的尺寸超过size，则等比例缩放s直到宽高都不超过size
     CGSize size = maxSize;
     CGSize s = originSize;
-    if(s.width<=size.width && s.height<=size.height){
-    }else if(s.width<=size.width && s.height>size.height){
+    if (s.width<=size.width && s.height<=size.height) {
+    }else if (s.width<=size.width && s.height>size.height) {
         CGFloat h = size.height;
         CGFloat w = h*s.width/s.height;
         s.width = w;
         s.height = h;
-    }else if(s.width>size.width && s.height<=size.height){
+    }else if (s.width>size.width && s.height<=size.height) {
         CGFloat w = size.width;
         CGFloat h = w*s.height/s.width;
         s.width = w;
         s.height = h;
-    }else if(s.width>size.width && s.height>size.height){
+    }else if (s.width>size.width && s.height>size.height) {
         CGFloat w = size.width;
         CGFloat h = w*s.height/s.width;
-        if(h>size.height){
+        if (h>size.height) {
             h = size.height;
             w = h*s.width/s.height;
         }
@@ -253,7 +253,7 @@ LUICGRectXXXToValue(height)
     CGSize s = originSize;
     CGFloat w = size.width;
     CGFloat h = w*s.height/s.width;
-    if(h>size.height){
+    if (h>size.height) {
         h = size.height;
         w = h*s.width/s.height;
     }

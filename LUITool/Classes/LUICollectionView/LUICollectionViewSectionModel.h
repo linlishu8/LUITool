@@ -8,15 +8,14 @@
 #import "LUICollectionSectionModel.h"
 #import "LUICollectionViewSupplementaryElementProtocol.h"
 
+@class LUICollectionViewModel,LUICollectionViewCellModel;
+
 NS_ASSUME_NONNULL_BEGIN
 
-@class LUICollectionViewModel, LUICollectionViewCellModel;
-
 @interface LUICollectionViewSectionModel : LUICollectionSectionModel {
-@protected
-NSMutableDictionary *_supplementaryElementCellClasses;
+    @protected
+    NSMutableDictionary *_supplementaryElementCellClasses;
 }
-
 @property (nonatomic, readonly, nullable) __kindof UICollectionView *collectionView;//弱引用集合视图
 - (nullable __kindof LUICollectionViewModel *)collectionModel;
 - (nullable __kindof LUICollectionViewCellModel *)cellModelAtIndex:(NSInteger)index;
@@ -57,7 +56,6 @@ NSMutableDictionary *_supplementaryElementCellClasses;
  *  @param kind 补充元素对应的类型
  */
 - (void)displaySupplementaryElementView:(UICollectionReusableView<LUICollectionViewSupplementaryElementProtocol> *)view forKind:(NSString *)kind;
-
 @end
 
 NS_ASSUME_NONNULL_END

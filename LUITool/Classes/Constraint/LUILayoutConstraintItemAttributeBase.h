@@ -19,15 +19,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LUILayoutConstraintItemAttributeBase : NSObject <LUILayoutConstraintItemAttributeProtocol>
 
-@property(nonatomic,assign) CGRect layoutFrame;
-@property(nonatomic,assign) CGSize size;
-@property(nonatomic,assign) CGPoint origin;
+@property (nonatomic, assign) CGRect layoutFrame;
+@property (nonatomic, assign) CGSize size;
+@property (nonatomic, assign) CGPoint origin;
 
 @end
 
 /// 临时保存单个可布局元素以及它的尺寸信息。
 @interface LUILayoutConstraintItemAttribute : LUILayoutConstraintItemAttributeBase
-@property(nonatomic,strong) id<LUILayoutConstraintItemAttributeProtocol> item;
+@property (nonatomic, strong) id<LUILayoutConstraintItemAttributeProtocol> item;
 - (id)initWithItem:(id<LUILayoutConstraintItemAttributeProtocol>)item;
 
 /// 设置item的frame信息
@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 临时保存多个可布局元素，同时把它们作为一个整体，保存整体尺寸信息
 @interface LUILayoutConstraintItemAttributeSection : LUILayoutConstraintItemAttributeBase
-@property(nonatomic,strong) NSArray<id<LUILayoutConstraintItemAttributeProtocol>> *itemAttributs;
+@property (nonatomic, strong) NSArray<id<LUILayoutConstraintItemAttributeProtocol>> *itemAttributs;
 - (void)addItemAttribute:(id<LUILayoutConstraintItemAttributeProtocol>)itemAttribute;
 - (void)insertItemAttribute:(id<LUILayoutConstraintItemAttributeProtocol>)itemAttribute atIndex:(NSInteger)index;
 - (void)removeItemAttributeAtIndex:(NSInteger)index;

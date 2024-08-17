@@ -12,27 +12,27 @@
 
 @implementation UIScrollView (LUI)
 
-- (void)l_scrollToBottomWithAnimated:(BOOL)animated{
+- (void)l_scrollToBottomWithAnimated:(BOOL)animated {
     CGFloat offsetYMax = self.l_contentOffsetOfMaxY;
     CGFloat offsetYMin = self.l_contentOffsetOfMinY;
-    if(offsetYMax<offsetYMin){
+    if (offsetYMax<offsetYMin) {
         offsetYMax = offsetYMin;
     }
     CGPoint contentOffset = self.contentOffset;
     contentOffset.y = offsetYMax;
-    if(animated){
+    if (animated) {
         [self setContentOffset:contentOffset animated:animated];
-    }else{
+    } else {
         self.contentOffset = contentOffset;
     }
 }
-- (void)l_scrollToTopWithAnimated:(BOOL)animated{
+- (void)l_scrollToTopWithAnimated:(BOOL)animated {
     CGFloat offsetYMin = self.l_contentOffsetOfMinY;
     CGPoint contentOffset = self.contentOffset;
     contentOffset.y = offsetYMin;
-    if(animated){
+    if (animated) {
         [self setContentOffset:contentOffset animated:animated];
-    }else{
+    } else {
         self.contentOffset = contentOffset;
     }
 }
@@ -108,7 +108,7 @@
     }
     return insets;
 }
-- (void)l_zoomToPoint:(CGPoint)point zoomScale:(CGFloat)scale animated:(BOOL)animated{
+- (void)l_zoomToPoint:(CGPoint)point zoomScale:(CGFloat)scale animated:(BOOL)animated {
     CGFloat zoomScale = self.zoomScale;
     CGFloat resultZoomScale = scale;
     CGPoint p = point;//由于scrollview的locationInView方法,会包含zoomScale值,因此要扣除掉zoomScale的影响
@@ -128,11 +128,11 @@
 - (void)l_toggleZoomScale:(UIGestureRecognizer *)gesture{
     CGFloat maxScale = self.maximumZoomScale;
     CGFloat zoomScale = self.zoomScale;
-    CGFloat resultZoomScale = zoomScale==1?maxScale:1;
+    CGFloat resultZoomScale = zoomScale == 1?maxScale:1;
     CGPoint p = [gesture locationInView:self];//由于scrollview的locationInView方法,会包含zoomScale值,因此要扣除掉zoomScale的影响
     [self l_zoomToPoint:p zoomScale:resultZoomScale animated:YES];
 }
-- (void)l_adjustContentWithUIKeyboardDidShowNotification:(NSNotification *)noti responderViewClass:(Class)responderViewClass contentInsets:(UIEdgeInsets)contentInsets window:(UIWindow *)window{
+- (void)l_adjustContentWithUIKeyboardDidShowNotification:(NSNotification *)noti responderViewClass:(Class)responderViewClass contentInsets:(UIEdgeInsets)contentInsets window:(UIWindow *)window {
     CGFloat duration = [noti.userInfo l_floatForKeyPath:UIKeyboardAnimationDurationUserInfoKey];
     CGRect keyboardFrame = [noti.userInfo l_NSValueForKeyPath:UIKeyboardFrameEndUserInfoKey].CGRectValue;
     CGRect windowRect = window.bounds;
@@ -142,17 +142,17 @@
     self.contentInset = insets;
     
     UIView *responderView = self.l_firstResponder;
-    if(responderViewClass!=nil){
+    if (responderViewClass!=nil) {
         UIView *superView = [responderView l_firstSuperViewWithClass:responderViewClass];
-        if(superView){
+        if (superView) {
             responderView = superView;
         }
     }
-    if(responderView){
+    if (responderView) {
         CGRect responderFrame = [responderView.superview convertRect:responderView.frame toView:self];
         CGPoint contentOffset = self.contentOffset;
         CGFloat offsetMinY = responderFrame.origin.y-self.frame.size.height+keyboardFrame.size.height-(windowRect.size.height-CGRectGetMaxY(scrollViewFrame))+responderFrame.size.height;
-        if(contentOffset.y<offsetMinY){
+        if (contentOffset.y<offsetMinY) {
             contentOffset.y = offsetMinY;
             [UIView animateWithDuration:duration animations:^{
                 [self setContentOffset:contentOffset];
@@ -161,7 +161,7 @@
     }
 }
 - (CGPoint)l_contentOffsetWithScrollTo:(CGRect)viewFrame direction:(LUIScrollViewScrollDirection)direction position:(LUIScrollViewScrollPosition)position {
-    LUICGAxis Y = direction == LUIScrollViewScrollDirectionVertical ? LUICGAxisY : LUICGAxisX;
+    LUICGAxis Y = direction  ==  LUIScrollViewScrollDirectionVertical ? LUICGAxisY : LUICGAxisX;
     CGPoint offset = self.contentOffset;
     CGRect bounds = self.bounds;
     UIEdgeInsets contentInset = self.l_adjustedContentInset;
