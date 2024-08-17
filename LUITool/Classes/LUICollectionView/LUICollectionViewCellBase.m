@@ -23,7 +23,7 @@ LUIDEF_SINGLETON_SUBCLASS
         _collectionCellModel = collectionCellModel;
         [self customReloadCellModel];
     } else {
-        self.isCellModelChanged = collectionCellModel.needReloadCell || _collectionCellModel!=collectionCellModel || collectionCellModel.collectionViewCell!=self;
+        self.isCellModelChanged = collectionCellModel.needReloadCell || _collectionCellModel != collectionCellModel || collectionCellModel.collectionViewCell != self;
         _collectionCellModel = collectionCellModel;
         
         if (self.class.useCachedFitedSize && collectionCellModel.needReloadCell) {

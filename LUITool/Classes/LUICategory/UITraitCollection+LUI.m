@@ -31,7 +31,7 @@ NSString *const kLUIUserInterfaceStyleChangeNotification=@"kLUIUserInterfaceStyl
     //调用原始的traitCollectionDidChange:方法
     [self luitheme_traitCollectionDidChange:previousTraitCollection];
     if (@available(iOS 12.0, *)) {
-        if (self.traitCollection.userInterfaceStyle!=previousTraitCollection.userInterfaceStyle) {
+        if (self.traitCollection.userInterfaceStyle != previousTraitCollection.userInterfaceStyle) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kLUIUserInterfaceStyleChangeNotification object:nil];
         }
     } else {

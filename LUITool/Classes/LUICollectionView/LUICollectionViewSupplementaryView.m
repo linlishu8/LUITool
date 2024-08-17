@@ -10,7 +10,7 @@
 
 @implementation LUICollectionViewSupplementaryView
 - (id)initWithFrame:(CGRect)frame{
-    if (self=[super initWithFrame:frame]) {
+    if (self = [super initWithFrame:frame]) {
         self.contentView = [[UIView alloc] init];
         self.contentView.accessibilityLabel = @"contentView";
         [self addSubview:self.contentView];

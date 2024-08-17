@@ -58,21 +58,21 @@
     return nil;
  }
 - (id)initWithBlankHeadView:(CGFloat)height{
-    if (self=[self init]) {
+    if (self = [self init]) {
         [self showDefaultHeadViewWithHeight:height];
         [self showDefaultFootViewWithHeight:0.1];
     }
     return self;
 }
 - (id)initWithBlankFootView:(CGFloat)height{
-    if (self=[self init]) {
+    if (self = [self init]) {
         [self showDefaultHeadViewWithHeight:0.1];
         [self showDefaultFootViewWithHeight:height];
     }
     return self;
 }
 - (id)initWithBlankHeadView:(CGFloat)headViewHeight footView:(CGFloat)footViewHeight{
-    if (self=[self init]) {
+    if (self = [self init]) {
         [self showDefaultHeadViewWithHeight:headViewHeight];
         [self showDefaultFootViewWithHeight:footViewHeight];
     }

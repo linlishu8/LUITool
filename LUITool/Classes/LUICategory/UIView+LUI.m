@@ -122,17 +122,17 @@
 }
 - (CGSize)l_sizeThatFits:(CGSize)size limitInSize:(CGSize)maxSize {
     CGSize size1 = size;
-    if (maxSize.width != 0) {
+    if (maxSize.width  !=  0) {
         size1.width = MIN(maxSize.width, size1.width);
     }
-    if (maxSize.height != 0) {
+    if (maxSize.height  !=  0) {
         size1.height = MIN(maxSize.height, size1.height);
     }
     CGSize sizeFits = [self sizeThatFits:size1];
-    if (maxSize.width != 0) {
+    if (maxSize.width  !=  0) {
         sizeFits.width = MIN(maxSize.width, sizeFits.width);
     }
-    if (maxSize.height != 0) {
+    if (maxSize.height  !=  0) {
         sizeFits.height = MIN(maxSize.height, sizeFits.height);
     }
     return sizeFits;
@@ -144,7 +144,7 @@
     UIViewController *rootController = self.rootViewController;
     do {//查找出最外层的根控制器
         UIViewController *presentedViewController = rootController.presentedViewController;
-        if (presentedViewController && presentedViewController != rootController) {
+        if (presentedViewController && presentedViewController  !=  rootController) {
             rootController = rootController.presentedViewController;
         } else {
             break;

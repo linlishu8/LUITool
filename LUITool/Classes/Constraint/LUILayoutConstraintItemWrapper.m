@@ -56,11 +56,11 @@ const CGFloat kLUILayoutConstraintItemFillContainerSize = NSIntegerMax;
 //    BOOL result = [super respondsToSelector:aSelector];
 //    if (!result) {
 //        if (aSelector == @selector(sizeThatFits:)) {
-//            if (self.sizeThatFitsBlock!=nil || [self.originItem respondsToSelector:@selector(sizeThatFits:)]) {
+//            if (self.sizeThatFitsBlock != nil || [self.originItem respondsToSelector:@selector(sizeThatFits:)]) {
 //                result = YES;
 //            }
 //        } else if (aSelector == @selector(sizeThatFits:resizeItems:)) {
-//            if (self.sizeThatFitsResizeItemsBlock!=nil || [self.originItem respondsToSelector:@selector(sizeThatFits:resizeItems:)]) {
+//            if (self.sizeThatFitsResizeItemsBlock != nil || [self.originItem respondsToSelector:@selector(sizeThatFits:resizeItems:)]) {
 //                result = YES;
 //            }
 //        } else if (aSelector == @selector(layoutItemsWithResizeItems:)) {
@@ -74,12 +74,12 @@ const CGFloat kLUILayoutConstraintItemFillContainerSize = NSIntegerMax;
 //- (void)forwardInvocation:(NSInvocation *)invocation {
 //    SEL aSelector = [invocation selector];
 //    if (aSelector == @selector(sizeThatFits:)) {
-//        if (self.sizeThatFitsBlock!=nil || [self.originItem respondsToSelector:@selector(sizeThatFits:)]) {
+//        if (self.sizeThatFitsBlock != nil || [self.originItem respondsToSelector:@selector(sizeThatFits:)]) {
 //            invocation.selector = @selector(__sizeThatFits:);
 //            [invocation invokeWithTarget:invocation.target];
 //        }
 //    } else if (aSelector == @selector(sizeThatFits:resizeItems:)) {
-//        if (self.sizeThatFitsBlock!=nil || [self.originItem respondsToSelector:@selector(sizeThatFits:resizeItems:)]) {
+//        if (self.sizeThatFitsBlock != nil || [self.originItem respondsToSelector:@selector(sizeThatFits:resizeItems:)]) {
 //            invocation.selector = @selector(__sizeThatFits:resizeItems:);
 //            [invocation invokeWithTarget:invocation.target];
 //        }
@@ -103,7 +103,7 @@ const CGFloat kLUILayoutConstraintItemFillContainerSize = NSIntegerMax;
             CGSize paddingSize = self.paddingSize;
             if (CGSizeEqualToSize(fixedSize, CGSizeMake(kLUILayoutConstraintItemFillContainerSize, kLUILayoutConstraintItemFillContainerSize))) {
                 sizeFits = size;
-            } else if (fixedSize.width > 0 && fixedSize.width!=kLUILayoutConstraintItemFillContainerSize && fixedSize.height > 0 && fixedSize.height!=kLUILayoutConstraintItemFillContainerSize) {
+            } else if (fixedSize.width > 0 && fixedSize.width != kLUILayoutConstraintItemFillContainerSize && fixedSize.height > 0 && fixedSize.height != kLUILayoutConstraintItemFillContainerSize) {
                 CGSize s = fixedSize;
                 sizeFits.width = s.width+margin.left+margin.right+paddingSize.width;
                 sizeFits.height = s.height+margin.top+margin.bottom+paddingSize.height;
@@ -141,7 +141,7 @@ const CGFloat kLUILayoutConstraintItemFillContainerSize = NSIntegerMax;
             CGSize paddingSize = self.paddingSize;
             if (CGSizeEqualToSize(fixedSize, CGSizeMake(kLUILayoutConstraintItemFillContainerSize, kLUILayoutConstraintItemFillContainerSize))) {
                 sizeFits = size;
-            } else if (fixedSize.width > 0 && fixedSize.width!=kLUILayoutConstraintItemFillContainerSize && fixedSize.height > 0 && fixedSize.height!=kLUILayoutConstraintItemFillContainerSize) {
+            } else if (fixedSize.width > 0 && fixedSize.width != kLUILayoutConstraintItemFillContainerSize && fixedSize.height > 0 && fixedSize.height != kLUILayoutConstraintItemFillContainerSize) {
                 CGSize s = fixedSize;
                 sizeFits.width = s.width+margin.left+margin.right+paddingSize.width;
                 sizeFits.height = s.height+margin.top+margin.bottom+paddingSize.height;

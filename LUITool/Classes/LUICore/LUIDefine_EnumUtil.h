@@ -82,11 +82,11 @@ LUIDEF_EnumTypeCategories(UIViewAnimationCurve,(@{
     if ([scanner scanInteger:&value] && scanner.isAtEnd) {\
         number = @(value);\
     }\
-    if (number!=nil) {\
+    if (number != nil) {\
         return [number EnumType##WithOtherwise:otherwise];\
     }\
     number = [staticMap objectForKey:self];\
-    if (number!=nil) {\
+    if (number != nil) {\
         return (EnumType)[number integerValue];\
     }\
     return otherwise;\

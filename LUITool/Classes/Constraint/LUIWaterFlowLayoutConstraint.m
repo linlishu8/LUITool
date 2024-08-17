@@ -66,7 +66,7 @@
     NSInteger maxLines =  self.maxLines;
     CGSize lastLineItemSize = CGSizeZero;
     BOOL hadLastLineItem = NO;
-    if (self.lastLineItem!=nil) {
+    if (self.lastLineItem != nil) {
         hadLastLineItem = YES;
         lastLineItemSize = [self itemSizeForItem:self.lastLineItem thatFits:originLimitSize resizeItems:resizeItems];
     }

@@ -71,9 +71,9 @@
     __needConfigSubFlowLayouts = NO;
     NSArray *items = self.layoutedItems;
     NSInteger fillingItemIndex = [items indexOfObject:self.fillingItem];
-    if (fillingItemIndex!=NSNotFound) {
-        self.beforeItemsFlowlayout.items = fillingItemIndex!=NSNotFound && fillingItemIndex>0?[items subarrayWithRange:NSMakeRange(0, fillingItemIndex)]:nil;
-        self.afterItemsFlowlayout.items = fillingItemIndex!=NSNotFound && fillingItemIndex<items.count-1?[items subarrayWithRange:NSMakeRange(fillingItemIndex+1, items.count-fillingItemIndex-1)]:nil;
+    if (fillingItemIndex != NSNotFound) {
+        self.beforeItemsFlowlayout.items = fillingItemIndex != NSNotFound && fillingItemIndex>0?[items subarrayWithRange:NSMakeRange(0, fillingItemIndex)]:nil;
+        self.afterItemsFlowlayout.items = fillingItemIndex != NSNotFound && fillingItemIndex<items.count-1?[items subarrayWithRange:NSMakeRange(fillingItemIndex+1, items.count-fillingItemIndex-1)]:nil;
     }else {
         self.beforeItemsFlowlayout.items = items;
         self.afterItemsFlowlayout.items = @[];
@@ -182,7 +182,7 @@
     //
     id<LUILayoutConstraintItemProtocol> item1 = [self.beforeItemsFlowlayout.layoutedItems lastObject];
     CGRect item1Frame = [item1 layoutFrame];
-    if (item1 && LUICGRectGetMax(item1Frame,axis)!=LUICGRectGetMin(f1, axis)) {
+    if (item1 && LUICGRectGetMax(item1Frame,axis) != LUICGRectGetMin(f1, axis)) {
         LUICGRectSetMin(&f_filling, axis, LUICGRectGetMax(item1Frame,axis)+space);
         LUICGRectSetLength(&f_filling, axis, LUICGRectGetMax(bounds,axis)-LUICGRectGetMin(f_filling, axis));
         LUICGRectSetMin(&f2, axis, LUICGRectGetMin(f_filling, axis));
@@ -192,7 +192,7 @@
     [self.afterItemsFlowlayout layoutItemsWithResizeItems:resizeItems];
     id<LUILayoutConstraintItemProtocol> item2 = [self.afterItemsFlowlayout.layoutedItems firstObject];
     CGRect item2Frame = [item2 layoutFrame];
-    if (item2 && LUICGRectGetMin(item2Frame, axis)!=LUICGRectGetMax(f2,axis)) {
+    if (item2 && LUICGRectGetMin(item2Frame, axis) != LUICGRectGetMax(f2,axis)) {
         LUICGRectSetLength(&f_filling, axis, LUICGRectGetMin(item2Frame, axis)-space-LUICGRectGetMin(f_filling, axis));
     }
     if (resizeItems) {

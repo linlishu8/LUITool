@@ -34,7 +34,7 @@
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:kLUIThemeUpdateNotification object:nil]];
 }
 - (void)setCurrentTheme:(id<LUIThemeProtocol>)currentTheme {
-    if (_currentTheme!=currentTheme) {
+    if (_currentTheme != currentTheme) {
         _currentTheme = currentTheme;
         [self notifyThemeChange];
     }

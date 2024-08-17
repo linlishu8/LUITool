@@ -11,13 +11,13 @@
 
 @implementation LUICollectionViewTitleSupplementaryView
 - (id)initWithFrame:(CGRect)frame{
-    if (self=[super initWithFrame:frame]) {
+    if (self = [super initWithFrame:frame]) {
         [self _myInit];
     }
     return self;
 }
 - (id)initWithCoder:(NSCoder *)aDecoder{
-    if (self=[super initWithCoder:aDecoder]) {
+    if (self = [super initWithCoder:aDecoder]) {
         [self _myInit];
     }
     return self;

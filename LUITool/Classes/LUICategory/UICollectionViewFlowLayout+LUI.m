@@ -83,8 +83,8 @@
     //由于cell在originBoundsSize限制下，计算出适合的尺寸。这个尺寸会受originBoundsSize影响，在后续真实布局中，originBoundsSize的值可能会改变。因此要二次计算cell的最合适尺寸
     //第一次计算所有cell的最合适尺寸
     CGSize allCellsSize = [self __l_allCellsSizeThatFitsCellBoundsSize:size];//所有cell占用的总区域尺寸
-    //如果allCellsSize限制值!=size限制值，代表cell动态计算时，限定的size变更了，需要二次计算
-    if (LUICGSizeGetLength(allCellsSize, axis)!=LUICGSizeGetLength(size,axis)) {
+    //如果allCellsSize限制值 != size限制值，代表cell动态计算时，限定的size变更了，需要二次计算
+    if (LUICGSizeGetLength(allCellsSize, axis) != LUICGSizeGetLength(size,axis)) {
         CGSize boundsSize = size;
         LUICGSizeSetLength(&boundsSize, axis, LUICGSizeGetLength(allCellsSize, axis));
         

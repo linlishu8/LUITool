@@ -10,7 +10,7 @@
 
 @implementation LUITableView
 - (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
-    if (self=[super initWithFrame:frame style:style]) {
+    if (self = [super initWithFrame:frame style:style]) {
         self.model = [[LUITableViewModel alloc] initWithTableView:self];
         if (@available(iOS 15.0, *)) {
             self.sectionHeaderTopPadding = 0;
@@ -18,8 +18,8 @@
     }
     return self;
 }
-- (void)setModel:(LUITableViewModel *)Model {
-    if (_model!=model) {
+- (void)setModel:(LUITableViewModel *)model {
+    if (_model != model) {
         _model = model;
         [_model setTableViewDataSourceAndDelegate:self];
     }

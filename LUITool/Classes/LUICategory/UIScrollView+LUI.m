@@ -142,7 +142,7 @@
     self.contentInset = insets;
     
     UIView *responderView = self.l_firstResponder;
-    if (responderViewClass!=nil) {
+    if (responderViewClass != nil) {
         UIView *superView = [responderView l_firstSuperViewWithClass:responderViewClass];
         if (superView) {
             responderView = superView;

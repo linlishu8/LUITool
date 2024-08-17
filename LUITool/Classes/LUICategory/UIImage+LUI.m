@@ -312,7 +312,7 @@
 - (NSData *)l_imageDataOfPngThatFitBytes:(NSUInteger)bytes{
     NSData *data = UIImagePNGRepresentation(self);
     NSUInteger len = data.length;
-    if (bytes!=0 && len>bytes) {//可以简单认为压缩后的大小与像素点数量成正比
+    if (bytes != 0 && len>bytes) {//可以简单认为压缩后的大小与像素点数量成正比
         CGFloat factor = 0.9*sqrt(1.0*bytes/len);//由于只是近似计算,因此再乘上0.9系数,让压缩后的值再小点
         CGSize size = self.size;
         size.width *= factor;
@@ -325,7 +325,7 @@
 - (NSData *)l_imageDataOfJpgThatFitBytes:(NSUInteger)bytes withCompressionQuality:(CGFloat)compressionQuality{
     NSData *data = UIImageJPEGRepresentation(self, compressionQuality);
     NSUInteger len = data.length;
-    if (bytes!=0 && len>bytes) {//可以简单认为压缩后的大小与像素点数量成正比
+    if (bytes != 0 && len>bytes) {//可以简单认为压缩后的大小与像素点数量成正比
         CGFloat factor = 0.9*sqrt(1.0*bytes/len);//由于只是近似计算,因此再乘上0.9系数,让压缩后的值再小点
         CGSize size = self.size;
         size.width *= factor;
@@ -688,7 +688,7 @@
     CGContextDrawImage(ctx,CGRectMake(0,0, width, height), imageRef);
     //第二步 取每个点的像素值
     unsigned char* data = CGBitmapContextGetData(ctx);
-    if (data != NULL) {
+    if (data  !=  NULL) {
         int index = 0;
         int r,g,b,a;
         for (int y=0; y<height; y++) {

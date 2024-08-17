@@ -108,7 +108,7 @@
 - (NSInteger)l_integerForKeyPath:(NSString *)path otherwise:(NSInteger)other {
     NSNumber *obj = [self l_numberForKeyPath:path otherwise:nil];
     NSInteger value = other;
-    if (obj!=nil) {
+    if (obj != nil) {
         value = [obj integerValue];
     }
     return value;
@@ -120,7 +120,7 @@
 - (CGFloat)l_floatForKeyPath:(NSString *)path otherwise:(CGFloat)other {
     NSNumber *obj = [self l_numberForKeyPath:path otherwise:nil];
     CGFloat value = other;
-    if (obj!=nil) {
+    if (obj != nil) {
         value = [obj floatValue];
     }
     return value;
@@ -132,7 +132,7 @@
 - (CGFloat)l_CGFloatForKeyPath:(NSString *)path otherwise:(CGFloat)other {
     NSNumber *obj = [self l_numberForKeyPath:path otherwise:nil];
     CGFloat value = other;
-    if (obj!=nil) {
+    if (obj != nil) {
         value = [obj floatValue];
     }
     return value;
@@ -144,7 +144,7 @@
 - (double)l_doubleForKeyPath:(NSString *)path otherwise:(CGFloat)other {
     NSNumber *obj = [self l_numberForKeyPath:path otherwise:nil];
     double value = other;
-    if (obj!=nil) {
+    if (obj != nil) {
         value = [obj doubleValue];
     }
     return value;
@@ -164,7 +164,7 @@
 - (NSTimeInterval)l_timeIntervalForKeyPath:(NSString *)path otherwise:(NSTimeInterval)other {
     NSNumber *obj = [self l_numberForKeyPath:path otherwise:nil];
     NSTimeInterval value = other;
-    if (obj!=nil) {
+    if (obj != nil) {
         value = [obj doubleValue];
     }
     return value;
@@ -188,7 +188,7 @@ NSString *const kLUIDateFormatNormal = @"yyyy-MM-dd HH:mm:ss";//"yyyy-MM-dd HH:m
     } else if ([obj isKindOfClass:[NSString class]]) {
         //判断是否是字符串化的数字
         NSNumber *numberValue = [(NSString *)obj l_numberValue];
-        if (numberValue!=nil) {
+        if (numberValue != nil) {
             value = [NSDate dateWithTimeIntervalSinceReferenceDate:[numberValue doubleValue]];
         } else if (dateFormatter) {
             value = [dateFormatter dateFromString:(NSString *)obj];
@@ -218,7 +218,7 @@ NSString *const kLUIDateFormatNormal = @"yyyy-MM-dd HH:mm:ss";//"yyyy-MM-dd HH:m
     } else if ([obj isKindOfClass:[NSString class]]) {
         //判断是否是字符串化的数字
         NSNumber *numberValue = [(NSString *)obj l_numberValue];
-        if (numberValue!=nil) {
+        if (numberValue != nil) {
             value = [NSDate dateWithTimeIntervalSince1970:[numberValue doubleValue]];
         } else if (dateFormatter) {
             value = [dateFormatter dateFromString:(NSString *)obj];
@@ -249,7 +249,7 @@ NSString *const kLUIDateFormatNormal = @"yyyy-MM-dd HH:mm:ss";//"yyyy-MM-dd HH:m
     } else if ([obj isKindOfClass:[NSString class]]) {
         //判断是否是字符串化的数字
         NSNumber *numberValue = [(NSString *)obj l_numberValue];
-        if (numberValue!=nil) {
+        if (numberValue != nil) {
             value = [NSDate dateWithTimeIntervalSince1970:[numberValue doubleValue]/1000.0];
         } else if (dateFormatter) {
             value = [dateFormatter dateFromString:(NSString *)obj];

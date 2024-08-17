@@ -9,13 +9,13 @@
 #import "UICollectionViewFlowLayout+LUI.h"
 @implementation LUICollectionView
 - (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout{
-    if (self=[super initWithFrame:frame collectionViewLayout:layout]) {
+    if (self = [super initWithFrame:frame collectionViewLayout:layout]) {
         self.model = [[LUICollectionViewModel alloc] initWithCollectionView:self];
     }
     return self;
 }
-- (void)setModel:(LUICollectionViewModel *)Model {
-    if (_model!=model) {
+- (void)setModel:(LUICollectionViewModel *)model {
+    if (_model  !=  model) {
         _model = model;
         [_model setCollectionViewDataSourceAndDelegate:self];
     }
@@ -44,7 +44,7 @@
 @implementation LUICollectionFlowLayoutView
 - (id)initWithFrame:(CGRect)frame{
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    if (self=[super initWithFrame:frame collectionViewLayout:layout]) {
+    if (self = [super initWithFrame:frame collectionViewLayout:layout]) {
         
     }
     return self;

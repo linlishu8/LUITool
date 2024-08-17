@@ -100,7 +100,7 @@ LUIDEF_EnumTypeCategories(LUILayoutConstraintDirection,
         }
         return NO;
     }];
-    if (index != NSNotFound) {
+    if (index  !=  NSNotFound) {
         [_items replaceObjectAtIndex:index withObject:newItem];
     }
 }

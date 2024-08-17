@@ -27,7 +27,7 @@ NSString *const kLUIThemeUpdateNotification=@"kLUIThemeUpdateNotification";
 - (void)setLthemePickers:(NSDictionary<NSString *, id<LUIThemePickerProtocol>> *)lthemePickers {
     objc_setAssociatedObject(self, __lthemePickersProperty__, lthemePickers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kLUIThemeUpdateNotification object:nil];
-    if (lthemePickers.count != 0) {
+    if (lthemePickers.count  !=  0) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(__LUITheme_refreshTheme) name:kLUIThemeUpdateNotification object:nil];
     }
 }
@@ -47,7 +47,7 @@ NSString *const kLUIThemeUpdateNotification=@"kLUIThemeUpdateNotification";
 }
 - (void)ltheme_removePickerForKey:(NSString *)key {
     NSMutableDictionary<NSString *,id<LUIThemePickerProtocol>> *allPickers = [self __lthemePickers];
-    if (allPickers.count!=0) {
+    if (allPickers.count != 0) {
         [allPickers removeObjectForKey:key];
         self.lthemePickers = allPickers;
     }

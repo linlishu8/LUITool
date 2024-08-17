@@ -38,7 +38,7 @@
     return obj;
 }
 - (id)initWithTableView:(UITableView *)tableView {
-    if (self=[self init]) {
+    if (self = [self init]) {
         [self setTableViewDataSourceAndDelegate:tableView];
     }
     return self;
@@ -119,7 +119,7 @@
         NSString *t1 = [(LUITableViewSectionModel *)obj1 indexTitle];
         NSString *t2 = [(LUITableViewSectionModel *)obj2 indexTitle];
         NSComparisonResult r = [t1 compare:t2];
-        if (r!=NSOrderedSame) {    //保證使用默认的分组索引值位置排序的最底部
+        if (r != NSOrderedSame) {    //保證使用默认的分组索引值位置排序的最底部
             if (obj1 == self->_defaultIndexTitleSectionModel) {
                 r = NSOrderedDescending;
             }else if (obj2 == self->_defaultIndexTitleSectionModel) {
@@ -392,13 +392,13 @@
     }
 }
 - (void)setHiddenSectionHeadView:(BOOL)hiddenSectionHeadView {
-    if (_hiddenSectionHeadView!=hiddenSectionHeadView) {
+    if (_hiddenSectionHeadView != hiddenSectionHeadView) {
         _hiddenSectionHeadView = hiddenSectionHeadView;
         [self __resetTableViewDelegateDataSource];
     }
 }
 - (void)setHiddenSectionFootView:(BOOL)hiddenSectionFootView {
-    if (_hiddenSectionFootView!=hiddenSectionFootView) {
+    if (_hiddenSectionFootView != hiddenSectionFootView) {
         _hiddenSectionFootView = hiddenSectionFootView;
         [self __resetTableViewDelegateDataSource];
     }

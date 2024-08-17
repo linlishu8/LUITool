@@ -46,7 +46,7 @@
 }
 - (void)setBoundaryItemIndexWithItem:(id<LUILayoutConstraintItemProtocol>)item {
     NSInteger index = [self.items indexOfObject:item];
-    if (index!=NSNotFound) {
+    if (index != NSNotFound) {
         self.boundaryItemIndex = index;
     } else {
         //出错了

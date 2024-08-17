@@ -70,7 +70,6 @@
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.scrollEnabled = NO;
         [_tableView l_hiddenFooterAreaSeparators];
-        _tableView.backgroundColor = UIColor.redColor;
     }
     return _tableView;
 }

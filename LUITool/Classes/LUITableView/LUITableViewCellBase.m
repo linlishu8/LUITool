@@ -45,8 +45,8 @@
 - (void)setCellModel:(__kindof LUITableViewCellModel *)cellModel {//tableview尺寸变化时，并不会reload数据，cell也不会重新获取。只是会调用estimatedHeight、height方式，获取cell的估算尺寸和实际尺寸，然后更新cell.frame
     self.isCellModelChanged =
        cellModel.needReloadCell
-    || _cellModel!=cellModel
-    || cellModel.tableViewCell!=self
+    || _cellModel != cellModel
+    || cellModel.tableViewCell != self
     ;
     _cellModel = cellModel;
     if (self.class.useCachedFitedSize && cellModel.needReloadCell) {

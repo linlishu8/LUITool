@@ -18,7 +18,7 @@
     }
 }
 - (void)l_hiddenFooterAreaSeparators {
-    if (self.tableFooterView  ==  nil && self.separatorStyle!=UITableViewCellSeparatorStyleNone) {
+    if (self.tableFooterView  ==  nil && self.separatorStyle != UITableViewCellSeparatorStyleNone) {
         UIView *emptyFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
         self.tableFooterView = emptyFooterView;
     }
@@ -80,7 +80,7 @@ LUIAS_SINGLETON(__LUI_UITableViewDefaultSectionView)
 @implementation __LUI_UITableViewDefaultSectionView
 LUIDEF_SINGLETON(__LUI_UITableViewDefaultSectionView)
 - (id)initWithFrame:(CGRect)frame {
-    if (self=[super initWithFrame:frame]) {
+    if (self = [super initWithFrame:frame]) {
         self.titleLabel = [[UILabel alloc] init];
         self.titleLabel.numberOfLines = 0;
         self.titleLabel.font = [UIFont systemFontOfSize:13];
@@ -266,7 +266,7 @@ LUIDEF_SINGLETON(__LUI_UITableViewDefaultGroupFootSectionView)
     CGFloat height = 0;
     
     CGRect originBounds = self.bounds;
-    if (originBounds.size.width!=boundsWidth) {
+    if (originBounds.size.width != boundsWidth) {
         CGRect bounds = originBounds;
         bounds.size.width = boundsWidth;
         self.bounds = bounds;
@@ -307,7 +307,7 @@ LUIDEF_SINGLETON(__LUI_UITableViewDefaultGroupFootSectionView)
     
     height = ceil(height);//消除浮点误差
     
-    if (originBounds.size.width!=boundsWidth) {
+    if (originBounds.size.width != boundsWidth) {
         self.bounds = originBounds;
     }
     return height;

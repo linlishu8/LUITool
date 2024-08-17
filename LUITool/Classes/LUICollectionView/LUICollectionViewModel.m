@@ -31,7 +31,7 @@
     return obj;
 }
 - (id)initWithCollectionView:(UICollectionView *)collectionView {
-    if (self=[self init]) {
+    if (self = [self init]) {
         [self setCollectionViewDataSourceAndDelegate:collectionView];
     }
     return self;
@@ -256,7 +256,7 @@
         if (animated&&collectionView) {
             UICollectionView *collectionView = self.collectionView;
             [collectionView performBatchUpdates:^{
-                if (deletedSectionIndexs.count!=0) {
+                if (deletedSectionIndexs.count != 0) {
                     [collectionView deleteSections:deletedSectionIndexs];
                 }
                 [collectionView deleteItemsAtIndexPaths:indexpaths];

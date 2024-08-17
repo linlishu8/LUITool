@@ -211,7 +211,7 @@
     [[self sectionModels] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         LUICollectionSectionModel *section = obj;
         NSInteger row = [section indexOfCellModel:cellModel];
-        if (row!=NSNotFound) {
+        if (row != NSNotFound) {
             indexpath = [NSIndexPath indexPathForRow:row inSection:idx];
             *stop = YES;
         }

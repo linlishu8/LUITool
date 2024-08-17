@@ -212,7 +212,7 @@
 - (__kindof LUICollectionCellModel *)cellModelForFocusedCellModel {
     NSInteger index = self.indexForFocusedCellModel;
     LUICollectionCellModel *cm = nil;
-    if (index!=NSNotFound) {
+    if (index != NSNotFound) {
         cm = [self cellModelAtIndex:index];
     }
     return cm;

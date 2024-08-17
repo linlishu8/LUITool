@@ -64,7 +64,7 @@
     if (self.length == 0) return nil;
     NSError *error = nil;
     id obj =[NSJSONSerialization JSONObjectWithData:[self dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
-    if (obj == nil && error!=nil)  {
+    if (obj == nil && error != nil)  {
 #ifdef DEBUG
         NSLog(@"jsonValue:%@ error:%@",self,error);
 #endif
