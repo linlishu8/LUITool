@@ -7,6 +7,7 @@
 //
 
 #import "LUIViewController.h"
+#import "LUIMainViewTableViewCell.h"
 
 @interface LUIViewController ()
 
@@ -27,10 +28,13 @@
 }
 
 - (void)__reloadData {
-    {
-        LUITableViewCellModel *alertViewCellModel = [[LUITableViewCellModel alloc] init];
-//        alertViewCellModel.cellClass =
-    }
+    [self.tableView.model removeAllSectionModels];
+    LUITableViewCellModel *alertViewCellModel = [[LUITableViewCellModel alloc] init];
+    alertViewCellModel.cellClass = [LUIMainViewTableViewCell class];
+    alertViewCellModel.modelValue = @"弹窗";
+    [self.tableView.model addCellModel:alertViewCellModel];
+    
+    [self.tableView.model reloadTableViewData];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -66,6 +70,7 @@
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.scrollEnabled = NO;
         [_tableView l_hiddenFooterAreaSeparators];
+        _tableView.backgroundColor = UIColor.redColor;
     }
     return _tableView;
 }

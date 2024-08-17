@@ -5,38 +5,45 @@
 //  Created by 六月 on 2023/8/11.
 //
 
+#import <Foundation/Foundation.h>
+
 #import "LUICollectionModel.h"
+#import "LUICollectionCellModel.h"
+#import "LUICollectionSectionModel.h"
+
 #import "LUITableViewSectionModel.h"
 #import "LUITableViewCellModel.h"
-#import "LUICollectionCellModel.h"
+#import "LUITableViewSectionViewProtocol.h"
+#import "LUITableViewCellProtocol.h"
+#import "UITableViewCell+LUITableViewCell.h"
 
 #define LUITableViewDefaultSectionIndexTitle @"#"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LUITableViewModel : LUICollectionModel <UITableViewDataSource, UITableViewDelegate> {
+@interface LUITableViewModel : LUICollectionModel<UITableViewDataSource,UITableViewDelegate>{
 @protected
     LUITableViewSectionModel *_defaultIndexTitleSectionModel;    //存儲section的indexTitle沒有值的情況
 }
-@property (nonatomic, weak, nullable) id<UITableViewDataSource> forwardDataSource;//调用链传递
-@property (nonatomic, weak, nullable) id<UITableViewDelegate> forwardDelegate;//调用链传递。ios10时，如果forwardDelegate实现了scrollViewDidScroll：方法，需要在forwardDelegate的dealloc方法中手动清空delegate，否则会闪退
+@property(nonatomic,weak,nullable) id<UITableViewDataSource> forwardDataSource;//调用链传递
+@property(nonatomic,weak,nullable) id<UITableViewDelegate> forwardDelegate;//调用链传递。ios10时，如果forwardDelegate实现了scrollViewDidScroll：方法，需要在forwardDelegate的dealloc方法中手动清空delegate，否则会闪退
 
-@property (nonatomic, weak, nullable) UITableView *tableView;//弱引用
-@property (nonatomic, assign) BOOL showSectionIndexTitle;//是否显示分组索引，默认为NO
-@property (nonatomic, strong) NSString *defaultSectionIndexTitle;//当sectionModel.indexTitle沒有值时,采用此默认值，默认为#
+@property(nonatomic,weak,nullable) UITableView *tableView;//弱引用
+@property(nonatomic,assign) BOOL showSectionIndexTitle;//是否显示分组索引，默认为NO
+@property(nonatomic,strong) NSString *defaultSectionIndexTitle;//当sectionModel.indexTitle沒有值时,采用此默认值，默认为#
 
-@property (nonatomic, readwrite, getter=isEditing) BOOL editing;//独立的编辑中状态，并不与tableView的editting状态相关，可用于自定义的多选单元格功能
+@property(nonatomic,readwrite,getter=isEditing) BOOL editing;//独立的编辑中状态，并不与tableView的editting状态相关，可用于自定义的多选单元格功能
 
-@property (nonatomic) BOOL reuseCell;;//是否重用cell，默认为YES
+@property(nonatomic) BOOL reuseCell;;//是否重用cell，默认为YES
 #pragma mark - empty
-@property (nonatomic, assign, nullable) Class emptyBackgroundViewClass;//没有单元格数据时的背景视图类
-@property (nonatomic, strong, nullable) UIView *emptyBackgroundView;//没有单元格数据时的背景视图
+@property(nonatomic,assign,nullable) Class emptyBackgroundViewClass;//没有单元格数据时的背景视图类
+@property(nonatomic,strong,nullable) UIView *emptyBackgroundView;//没有单元格数据时的背景视图
 typedef void(^LUITableViewModelC)(LUITableViewModel *model);
-@property (nonatomic, copy, nullable) LUITableViewModelC whenReloadBackgroundView;
+@property(nonatomic,copy,nullable) LUITableViewModelC whenReloadBackgroundView;
 
 //如果刷新cell、section时，出现滑动上下跳动问题，可以调用hideSectionHeadFootView，隐藏section的head、foot视图。
-@property (nonatomic) BOOL hiddenSectionHeadView;//是否隐藏分组头部视图,默认为NO
-@property (nonatomic) BOOL hiddenSectionFootView;//是否隐藏分组尾部视图,默认为NO
+@property(nonatomic) BOOL hiddenSectionHeadView;//是否隐藏分组头部视图,默认为NO
+@property(nonatomic) BOOL hiddenSectionFootView;//是否隐藏分组尾部视图,默认为NO
 - (void)hideSectionHeadFootView;//隐藏分组的头部和尾部视图
 
 - (void)reloadTableViewBackgroundView;//刷新tableview的backgroundView
@@ -113,7 +120,6 @@ typedef void(^LUITableViewModelC)(LUITableViewModel *model);
 - (void)selectAllCellModelsWithAnimated:(BOOL)animated;
 
 - (void)setCellModel:(LUITableViewCellModel *)cellModel selected:(BOOL)selected animated:(BOOL)animated;
-
 @end
 
 NS_ASSUME_NONNULL_END

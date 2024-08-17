@@ -6,6 +6,9 @@
 //
 
 #import "UITableViewCell+LUITableViewCell.h"
+#import "UITableViewCell+LUI.h"
+#import "UITableView+LUI.h"
+#import "UIScrollView+LUI.h"
 #import <objc/runtime.h>
 
 @implementation UITableViewCell (LUITableViewCell)

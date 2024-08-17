@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LUICollectionModel, LUICollectionCellModel;
+@class LUICollectionModel,LUICollectionCellModel;
 
 @interface LUICollectionSectionModel : LUICollectionModelObjectBase
 @property(nonatomic,strong,nullable) NSArray<__kindof LUICollectionCellModel *> *cellModels;//含有的单元格
@@ -96,11 +96,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSComparisonResult)compare:(LUICollectionSectionModel *)otherObject;
 @end
 
-@interface LUICollectionSectionModel (Focused)
-
-@property (nonatomic, readonly) NSInteger indexForFocusedCellModel;
-@property (nonatomic, readonly, nullable) __kindof LUICollectionCellModel *cellModelForFocusedCellModel;
-
+@interface LUICollectionSectionModel(Focused)
+@property(nonatomic,readonly) NSInteger indexForFocusedCellModel;
+@property(nonatomic,readonly,nullable) __kindof LUICollectionCellModel *cellModelForFocusedCellModel;
 @end
 
 NS_ASSUME_NONNULL_END

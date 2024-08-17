@@ -6,13 +6,12 @@
 //
 
 #import "LUICollectionModelObjectBase.h"
-@interface LUICollectionModelObjectBase () {
+
+@interface LUICollectionModelObjectBase() {
     NSMutableDictionary *_dynamicProperties;
 }
 @end
-
 @implementation LUICollectionModelObjectBase
-
 - (id)init {
     if (self = [super init]) {
         _dynamicProperties = [[NSMutableDictionary alloc] init];
@@ -30,11 +29,11 @@
     m.modelValue = modelVaule;
     return m;
 }
-- (NSMutableDictionary *)dynamicProperties {
+- (NSMutableDictionary *)dynamicProperties{
     return _dynamicProperties;
 }
 - (void)setObject:(nullable id)obj forKeyedSubscript:(id<NSCopying>)key {
-    if (obj == nil) {
+    if (obj==nil) {
         [_dynamicProperties removeObjectForKey:key];
     } else {
         _dynamicProperties[key] = obj;
@@ -44,13 +43,9 @@
     id value = _dynamicProperties[key];
     return value;
 }
-
 @end
-
 #import "NSObject+LUI.h"
-
-@implementation LUICollectionModelObjectBase(LUI_ValueForKeyPath)
-
+@implementation LUICollectionModelObjectBase(LUI_ValueForKeyPathOtherwise)
 - (nullable id)l_valueForKeyPath:(NSString *)path otherwise:(nullable id)other {
     return [_dynamicProperties l_valueForKeyPath:path otherwise:other];
 }

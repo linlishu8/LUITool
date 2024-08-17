@@ -6,11 +6,12 @@
 //
 
 #import "LUITableViewSectionView.h"
+#import "LUIMacro.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LUITableViewSectionAdjustsView : LUITableViewSectionView
-
+LUIAS_SINGLETON(LUITableViewSectionAdjustsView);//用于进行动态高度计算
 + (UIEdgeInsets)contentMargin;//返回UIEdgeInsetsMake(8, 16, 8, 16)
 /**
  *  只显示头部,分组高度自适应

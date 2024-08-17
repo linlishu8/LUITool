@@ -11,21 +11,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LUICollectionModelObjectBase : NSObject<NSCopying>
 
-@property(nonatomic,strong,nullable) id modelValue;
-
+@property (nonatomic, strong, nullable) id modelValue;
 + (instancetype)modelWithValue:(nullable id)modelVaule;
 //id value = model[@"key"];
 //model[@"key"] = nil;
 //model[@"key"] = @(YES);
-@property(nonatomic,readonly) NSMutableDictionary *dynamicProperties;
-
+@property (nonatomic, readonly) NSMutableDictionary *dynamicProperties;
 - (void)setObject:(nullable id)obj forKeyedSubscript:(id<NSCopying>)key;
-
 - (nullable id)objectForKeyedSubscript:(id<NSCopying>)key;
-
 @end
 
-@interface LUICollectionModelObjectBase(LUI_ValueForKeyPath)
+@interface LUICollectionModelObjectBase(LUI_ValueForKeyPathOtherwise)
 
 - (nullable id)l_valueForKeyPath:(NSString *)path otherwise:(nullable id)other;
 
