@@ -46,7 +46,7 @@ Pod::Spec.new do |s|
   #UI扩展
   s.subspec 'LUICategory' do |ss|
     ss.source_files = 'LUITool/Classes/LUICategory/*.{h,m}'
-#    ss.dependency 'LUITool/Classes/LUICategory'
+    ss.dependency 'LUITool/Classes/LUICategory'
     ss.frameworks = 'UIKit'
   end
   
