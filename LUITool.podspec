@@ -46,16 +46,25 @@ Pod::Spec.new do |s|
   #UI扩展
   s.subspec 'LUICategory' do |ss|
     ss.source_files = 'LUITool/Classes/LUICategory/*.{h,m}'
-    ss.dependency 'LUITool/LUICategory'
+#    ss.dependency 'LUITool/Classes/LUICategory'
     ss.frameworks = 'UIKit'
   end
   
-  #布局容器
-  s.subspec 'LUIConstraint' do |ss|
-    ss.source_files = 'LUITool/Classes/LUIConstraint/*.{h,m}'
-    ss.dependency 'LUITool/LUIConstraint'
-    ss.frameworks = 'UIKit'
-  end
+#  #布局容器
+#  s.subspec 'LUIConstraint' do |ss|
+#    ss.source_files = 'LUITool/Classes/LUIConstraint/*.{h,m}'
+#    ss.dependency 'LUITool/Classes/LUIConstraint'
+#    ss.frameworks = 'UIKit'
+#  end
+#  
+#  #可扩大点击面的按钮
+#  s.subspec 'LUILayoutButton' do |ss|
+#    ss.source_files = 'LUITool/Classes/LUILayoutButton/*.{h,m}'
+#    ss.dependency 'LUITool/Classes/LUIConstraint'
+#    ss.dependency 'LUITool/Classes/LUICategory'
+#    ss.dependency 'LUITool/Classes/LUICore'
+#    ss.frameworks = 'UIKit'
+#  end
   
   
   # s.resource_bundles = {
