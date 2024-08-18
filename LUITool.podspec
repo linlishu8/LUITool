@@ -37,35 +37,70 @@ Pod::Spec.new do |s|
   s.source_files = 'LUITool/Classes/*.h'
   s.frameworks = 'UIKit'
   
-  #Core基础
+  #LUICore基础
   s.subspec 'LUICore' do |ss|
     ss.source_files = 'LUITool/Classes/LUICore/*.{h,m}'
     ss.frameworks = 'UIKit'
   end
-    
-  #UI扩展
+  
+  #LUICategory扩展
   s.subspec 'LUICategory' do |ss|
     ss.source_files = 'LUITool/Classes/LUICategory/*.{h,m}'
-#    ss.dependency 'LUITool/Classes/LUICategory'
+    ss.dependency 'LUITool/LUICore'
     ss.frameworks = 'UIKit'
   end
   
-#  #布局容器
-#  s.subspec 'LUIConstraint' do |ss|
-#    ss.source_files = 'LUITool/Classes/LUIConstraint/*.{h,m}'
-#    ss.dependency 'LUITool/Classes/LUIConstraint'
-#    ss.frameworks = 'UIKit'
-#  end
-#  
-#  #可扩大点击面的按钮
-#  s.subspec 'LUILayoutButton' do |ss|
-#    ss.source_files = 'LUITool/Classes/LUILayoutButton/*.{h,m}'
-#    ss.dependency 'LUITool/Classes/LUIConstraint'
-#    ss.dependency 'LUITool/Classes/LUICategory'
-#    ss.dependency 'LUITool/Classes/LUICore'
-#    ss.frameworks = 'UIKit'
-#  end
+  #布局容器
+  s.subspec 'LUIConstraint' do |ss|
+    ss.source_files = 'LUITool/Classes/LUIConstraint/*.{h,m}'
+    ss.dependency 'LUITool/LUICore'
+    ss.frameworks = 'UIKit'
+  end
   
+  #可扩大点击区域的按钮
+  s.subspec 'LUILayoutButton' do |ss|
+    ss.source_files = 'LUITool/Classes/LUILayoutButton/*.{h,m}'
+    ss.dependency 'LUITool/LUIConstraint'
+    ss.dependency 'LUITool/LUICategory'
+    ss.dependency 'LUITool/LUICore'
+    ss.frameworks = 'UIKit'
+  end
+  
+  #集合基础数据模型
+  s.subspec 'LUICollectionModelBase' do |ss|
+    ss.source_files = 'LUITool/Classes/LUICollectionModelBase/*.{h,m}'
+    ss.dependency 'LUITool/LUICategory'
+    ss.dependency 'LUITool/LUICore'
+    ss.frameworks = 'UIKit'
+  end
+  
+  #对UITableView进行模型数据封装
+  s.subspec 'LUITableView' do |ss|
+    ss.source_files = 'LUITool/Classes/LUITableView/*.{h,m}'
+    ss.dependency 'LUITool/LUICollectionModelBase'
+    ss.dependency 'LUITool/LUIConstraint'
+    ss.dependency 'LUITool/LUICategory'
+    ss.dependency 'LUITool/LUICore'
+    ss.frameworks = 'UIKit'
+  end
+  
+  #对UICollectionView进行模型数据封装
+  s.subspec 'LUICollectionView' do |ss|
+    ss.source_files = 'LUITool/Classes/LUICollectionView/*.{h,m}'
+    ss.dependency 'LUITool/LUICollectionModelBase'
+    ss.dependency 'LUITool/LUIConstraint'
+    ss.dependency 'LUITool/LUICategory'
+    ss.dependency 'LUITool/LUICore'
+    ss.frameworks = 'UIKit'
+  end
+  
+  #Theme(主题化)
+  s.subspec 'LUITheme' do |ss|
+    ss.source_files = 'LUITool/Classes/LUITheme/*.{h,m}'
+    ss.dependency 'LUITool/LUICore'
+    ss.dependency 'LUITool/LUICategory'
+    ss.frameworks = 'UIKit'
+  end
   
   # s.resource_bundles = {
   #   'LUITool' => ['LUITool/Assets/*.png']
