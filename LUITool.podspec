@@ -34,8 +34,30 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'LUITool/Classes/**/*'
+  s.source_files = 'LUITool/Classes/*.h'
   s.frameworks = 'UIKit'
+  
+  #Core基础
+  s.subspec 'LUICore' do |ss|
+    ss.source_files = 'LUITool/Classes/LUICore/*.{h,m}'
+    ss.frameworks = 'UIKit'
+  end
+    
+  #UI扩展
+  s.subspec 'LUICategory' do |ss|
+    ss.source_files = 'LUITool/Classes/LUICategory/*.{h,m}'
+    ss.dependency 'LUITool/LUICategory'
+    ss.frameworks = 'UIKit'
+  end
+  
+  #布局容器
+  s.subspec 'LUIConstraint' do |ss|
+    ss.source_files = 'LUITool/Classes/LUIConstraint/*.{h,m}'
+    ss.dependency 'LUITool/LUIConstraint'
+    ss.frameworks = 'UIKit'
+  end
+  
+  
   # s.resource_bundles = {
   #   'LUITool' => ['LUITool/Assets/*.png']
   # }
