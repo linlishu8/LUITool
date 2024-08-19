@@ -108,6 +108,21 @@ Pod::Spec.new do |s|
     ss.frameworks = 'UIKit'
   end
   
+  #CollectionViewLayout(自定义集合布局)
+  s.subspec 'LUICollectionViewLayout' do |ss|
+    ss.source_files = 'LUITool/Classes/LUICollectionViewLayout/*.{h,m}'
+    ss.dependency 'LUITool/LUICore'
+    ss.dependency 'LUITool/LUICategory'
+    ss.dependency 'LUITool/LUIConstraint'
+    ss.frameworks = 'UIKit'
+  end
+  
+  #SafeKeyboard(自定义安全键盘)
+  s.subspec 'LUIKeyboard' do |ss|
+    ss.source_files = 'LUITool/Classes/LUIKeyboard/*.{h,m}'
+    ss.frameworks = 'UIKit'
+  end
+  
   # s.resource_bundles = {
   #   'LUITool' => ['LUITool/Assets/*.png']
   # }

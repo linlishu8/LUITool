@@ -36,6 +36,9 @@ FOUNDATION_EXPORT const unsigned char LUIVersionString[];
 #import "NSString+LUI.h"
 #import "NSArray+LUI.h"
 #import "UIGestureRecognizer+LUI.h"
+#import "NSTimer+LUI.h"
+#import "NSValue+LUI.h"
+#import "NSArray+LUI_BinarySearch.h"
 
 #pragma mark - CollectionModel
 #import "LUICollectionModelObjectBase.h"
@@ -92,3 +95,14 @@ FOUNDATION_EXPORT const unsigned char LUIVersionString[];
 
 #pragma mark - LUIEdgeInsetsUILabel(内边距Label)
 #import "LUIEdgeInsetsUILabel.h"
+
+#pragma mark - CollectionViewLayout(自定义集合布局)
+#import "LUIGridPageCollectionViewLayout.h"
+#import "LUICollectionViewPageFlowLayout.h"
+#import "LUICollectionViewFlowLayout.h"
+#import "LUICollectionViewWaterFlowLayout.h"
+#import "UICollectionViewLayoutAttributes+LUI.h"
+
+#pragma mark - keyboard(安全键盘)
+#import "LUIKeyboardButtonModel.h"
+#import "LUIKeyboardView.h"

@@ -44,25 +44,25 @@
 		1F45B62A2C71EE09004839E2 /* LUIEdgeInsetsUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B6292C71EE09004839E2 /* LUIEdgeInsetsUILabel.m */; };
 		1F45B62B2C71EE09004839E2 /* LUIEdgeInsetsUILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B6282C71EE09004839E2 /* LUIEdgeInsetsUILabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F45B6472C723F6A004839E2 /* LUIKeyboardButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B6462C723F6A004839E2 /* LUIKeyboardButtonModel.m */; };
-		1F45B6482C723F6A004839E2 /* LUIKeyboardButtonModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B6452C723F6A004839E2 /* LUIKeyboardButtonModel.h */; };
+		1F45B6482C723F6A004839E2 /* LUIKeyboardButtonModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B6452C723F6A004839E2 /* LUIKeyboardButtonModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F45B64B2C7244BD004839E2 /* LUIKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B64A2C7244BD004839E2 /* LUIKeyboardView.m */; };
-		1F45B64C2C7244BD004839E2 /* LUIKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B6492C7244BD004839E2 /* LUIKeyboardView.h */; };
+		1F45B64C2C7244BD004839E2 /* LUIKeyboardView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B6492C7244BD004839E2 /* LUIKeyboardView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F45B6512C7245D3004839E2 /* LUIGridPageCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B6502C7245D3004839E2 /* LUIGridPageCollectionViewLayout.m */; };
-		1F45B6522C7245D3004839E2 /* LUIGridPageCollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B64F2C7245D3004839E2 /* LUIGridPageCollectionViewLayout.h */; };
+		1F45B6522C7245D3004839E2 /* LUIGridPageCollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B64F2C7245D3004839E2 /* LUIGridPageCollectionViewLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F45B6552C7246E9004839E2 /* NSArray+LUI_BinarySearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B6542C7246E9004839E2 /* NSArray+LUI_BinarySearch.m */; };
-		1F45B6562C7246E9004839E2 /* NSArray+LUI_BinarySearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B6532C7246E9004839E2 /* NSArray+LUI_BinarySearch.h */; };
+		1F45B6562C7246E9004839E2 /* NSArray+LUI_BinarySearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B6532C7246E9004839E2 /* NSArray+LUI_BinarySearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F45B6592C724769004839E2 /* UICollectionViewLayoutAttributes+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B6582C724769004839E2 /* UICollectionViewLayoutAttributes+LUI.m */; };
-		1F45B65A2C724769004839E2 /* UICollectionViewLayoutAttributes+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B6572C724769004839E2 /* UICollectionViewLayoutAttributes+LUI.h */; };
+		1F45B65A2C724769004839E2 /* UICollectionViewLayoutAttributes+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B6572C724769004839E2 /* UICollectionViewLayoutAttributes+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F45B65D2C72479B004839E2 /* NSTimer+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B65C2C72479B004839E2 /* NSTimer+LUI.m */; };
-		1F45B65E2C72479B004839E2 /* NSTimer+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B65B2C72479B004839E2 /* NSTimer+LUI.h */; };
+		1F45B65E2C72479B004839E2 /* NSTimer+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B65B2C72479B004839E2 /* NSTimer+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F45B6612C73774C004839E2 /* LUICollectionViewPageFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B6602C73774C004839E2 /* LUICollectionViewPageFlowLayout.m */; };
-		1F45B6622C73774C004839E2 /* LUICollectionViewPageFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B65F2C73774C004839E2 /* LUICollectionViewPageFlowLayout.h */; };
+		1F45B6622C73774C004839E2 /* LUICollectionViewPageFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B65F2C73774C004839E2 /* LUICollectionViewPageFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F45B6652C7378BB004839E2 /* NSValue+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B6642C7378BB004839E2 /* NSValue+LUI.m */; };
-		1F45B6662C7378BB004839E2 /* NSValue+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B6632C7378BB004839E2 /* NSValue+LUI.h */; };
+		1F45B6662C7378BB004839E2 /* NSValue+LUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B6632C7378BB004839E2 /* NSValue+LUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F45B6692C737A62004839E2 /* LUICollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B6682C737A62004839E2 /* LUICollectionViewFlowLayout.m */; };
-		1F45B66A2C737A62004839E2 /* LUICollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B6672C737A62004839E2 /* LUICollectionViewFlowLayout.h */; };
+		1F45B66A2C737A62004839E2 /* LUICollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B6672C737A62004839E2 /* LUICollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F45B66D2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B66C2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.m */; };
-		1F45B66E2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B66B2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.h */; };
+		1F45B66E2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B66B2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADCA2C685F6600170B35 /* LUICGRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADC92C685F6600170B35 /* LUICGRect.m */; };
 		1FCBADCB2C685F6600170B35 /* LUICGRect.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADC82C685F6600170B35 /* LUICGRect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADCF2C688EB400170B35 /* UIButton+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADCE2C688EB400170B35 /* UIButton+LUI.m */; };
@@ -751,25 +751,19 @@
 				1FCBAE362C6A46F000170B35 /* LUITableViewCellSwipeAction.h in Headers */,
 				1FCBAE3E2C6B86B300170B35 /* LUITableViewSectionView.h in Headers */,
 				1FCBAE422C6B8BF200170B35 /* LUITableViewCellBase.h in Headers */,
-				1F45B65E2C72479B004839E2 /* NSTimer+LUI.h in Headers */,
-				1F45B66A2C737A62004839E2 /* LUICollectionViewFlowLayout.h in Headers */,
 				1FCBAE462C6B8ED200170B35 /* LUITableViewSectionAdjustsView.h in Headers */,
 				1FCBAE302C6A3E8100170B35 /* LUITableViewCellProtocol.h in Headers */,
 				1FCBAE522C6B9FCC00170B35 /* CGGeometry+LUI.h in Headers */,
 				1FCBAE3A2C6A487400170B35 /* UITableViewCell+LUITableViewCell.h in Headers */,
 				1FCBAE322C6A426200170B35 /* LUITableViewSectionViewProtocol.h in Headers */,
-				1F45B6482C723F6A004839E2 /* LUIKeyboardButtonModel.h in Headers */,
 				1FCBADE42C68969B00170B35 /* UITableViewCell+LUI.h in Headers */,
 				1FCBAEF22C7097AC00170B35 /* LUICollectionViewCellModel.h in Headers */,
 				1FCBAF022C7097AC00170B35 /* UICollectionReusableView+LUICollectionViewSupplementaryElementProtocol.h in Headers */,
 				1FCBAEEE2C7097AC00170B35 /* LUICollectionView.h in Headers */,
 				1FCBAEFB2C7097AC00170B35 /* LUICollectionViewSupplementaryElementProtocol.h in Headers */,
-				1F45B64C2C7244BD004839E2 /* LUIKeyboardView.h in Headers */,
 				1FCBAF042C7097AC00170B35 /* UICollectionViewCell+LUICollectionViewCellProtocol.h in Headers */,
 				1FCBAF002C7097AC00170B35 /* LUICollectionViewTitleSupplementaryView.h in Headers */,
-				1F45B66E2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.h in Headers */,
 				1FCBAEF52C7097AC00170B35 /* LUICollectionViewModel.h in Headers */,
-				1F45B6562C7246E9004839E2 /* NSArray+LUI_BinarySearch.h in Headers */,
 				1FCBAEFE2C7097AC00170B35 /* LUICollectionViewTitleSupplementarySectionModel.h in Headers */,
 				1FCBAEFC2C7097AC00170B35 /* LUICollectionViewSupplementaryView.h in Headers */,
 				1F45B6022C718978004839E2 /* LUIFillingLayoutConstraint.h in Headers */,
@@ -786,20 +780,26 @@
 				1F45B6062C718978004839E2 /* LUILayoutConstraint.h in Headers */,
 				1F45B6082C718978004839E2 /* LUILayoutConstraintItemAttributeBase.h in Headers */,
 				1FCBAEF42C7097AC00170B35 /* LUICollectionViewCellProtocol.h in Headers */,
-				1F45B6622C73774C004839E2 /* LUICollectionViewPageFlowLayout.h in Headers */,
 				1FCBAEF02C7097AC00170B35 /* LUICollectionViewCellBase.h in Headers */,
 				1FCBAEF92C7097AC00170B35 /* LUICollectionViewSectionModel.h in Headers */,
 				1FCBADEC2C689B3200170B35 /* UIView+LUI.h in Headers */,
 				1FCBAE082C68E8FC00170B35 /* LUITableView.h in Headers */,
-				1F45B6522C7245D3004839E2 /* LUIGridPageCollectionViewLayout.h in Headers */,
 				1FCBAE002C68E75300170B35 /* NSArray+LUI.h in Headers */,
 				1F45B6252C71D059004839E2 /* LUICollectionSectionModel.h in Headers */,
+				1F45B65E2C72479B004839E2 /* NSTimer+LUI.h in Headers */,
+				1F45B66A2C737A62004839E2 /* LUICollectionViewFlowLayout.h in Headers */,
+				1F45B6482C723F6A004839E2 /* LUIKeyboardButtonModel.h in Headers */,
+				1F45B64C2C7244BD004839E2 /* LUIKeyboardView.h in Headers */,
+				1F45B66E2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.h in Headers */,
+				1F45B6562C7246E9004839E2 /* NSArray+LUI_BinarySearch.h in Headers */,
+				1F45B6622C73774C004839E2 /* LUICollectionViewPageFlowLayout.h in Headers */,
+				1F45B6522C7245D3004839E2 /* LUIGridPageCollectionViewLayout.h in Headers */,
+				1F45B6662C7378BB004839E2 /* NSValue+LUI.h in Headers */,
+				1F45B65A2C724769004839E2 /* UICollectionViewLayoutAttributes+LUI.h in Headers */,
 				1F45B61F2C71D059004839E2 /* LUICollectionCellModel.h in Headers */,
 				1F45B6212C71D059004839E2 /* LUICollectionModel.h in Headers */,
 				1F45B6232C71D059004839E2 /* LUICollectionModelObjectBase.h in Headers */,
-				1F45B6662C7378BB004839E2 /* NSValue+LUI.h in Headers */,
 				1FCBADF42C68A13000170B35 /* NSObject+LUI.h in Headers */,
-				1F45B65A2C724769004839E2 /* UICollectionViewLayoutAttributes+LUI.h in Headers */,
 				1FCBADDC2C68955A00170B35 /* UIScrollView+LUI.h in Headers */,
 				1F45B5E12C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h in Headers */,
 				1F45B62B2C71EE09004839E2 /* LUIEdgeInsetsUILabel.h in Headers */,
