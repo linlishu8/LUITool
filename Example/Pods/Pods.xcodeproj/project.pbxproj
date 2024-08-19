@@ -63,6 +63,8 @@
 		1F45B66A2C737A62004839E2 /* LUICollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B6672C737A62004839E2 /* LUICollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F45B66D2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B66C2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.m */; };
 		1F45B66E2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B66B2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F4AA2FD2C73870200CDC476 /* LUIKeyboardButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4AA2FC2C73870200CDC476 /* LUIKeyboardButtonCell.m */; };
+		1F4AA2FE2C73870200CDC476 /* LUIKeyboardButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F4AA2FB2C73870200CDC476 /* LUIKeyboardButtonCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADCA2C685F6600170B35 /* LUICGRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADC92C685F6600170B35 /* LUICGRect.m */; };
 		1FCBADCB2C685F6600170B35 /* LUICGRect.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADC82C685F6600170B35 /* LUICGRect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADCF2C688EB400170B35 /* UIButton+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADCE2C688EB400170B35 /* UIButton+LUI.m */; };
@@ -231,6 +233,8 @@
 		1F45B6682C737A62004839E2 /* LUICollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUICollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		1F45B66B2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUICollectionViewWaterFlowLayout.h; sourceTree = "<group>"; };
 		1F45B66C2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUICollectionViewWaterFlowLayout.m; sourceTree = "<group>"; };
+		1F4AA2FB2C73870200CDC476 /* LUIKeyboardButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIKeyboardButtonCell.h; sourceTree = "<group>"; };
+		1F4AA2FC2C73870200CDC476 /* LUIKeyboardButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIKeyboardButtonCell.m; sourceTree = "<group>"; };
 		1FCBADC82C685F6600170B35 /* LUICGRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUICGRect.h; sourceTree = "<group>"; };
 		1FCBADC92C685F6600170B35 /* LUICGRect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUICGRect.m; sourceTree = "<group>"; };
 		1FCBADCD2C688EB400170B35 /* UIButton+LUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+LUI.h"; sourceTree = "<group>"; };
@@ -451,6 +455,8 @@
 			children = (
 				1F45B6452C723F6A004839E2 /* LUIKeyboardButtonModel.h */,
 				1F45B6462C723F6A004839E2 /* LUIKeyboardButtonModel.m */,
+				1F4AA2FB2C73870200CDC476 /* LUIKeyboardButtonCell.h */,
+				1F4AA2FC2C73870200CDC476 /* LUIKeyboardButtonCell.m */,
 				1F45B6492C7244BD004839E2 /* LUIKeyboardView.h */,
 				1F45B64A2C7244BD004839E2 /* LUIKeyboardView.m */,
 			);
@@ -803,6 +809,7 @@
 				1FCBADDC2C68955A00170B35 /* UIScrollView+LUI.h in Headers */,
 				1F45B5E12C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h in Headers */,
 				1F45B62B2C71EE09004839E2 /* LUIEdgeInsetsUILabel.h in Headers */,
+				1F4AA2FE2C73870200CDC476 /* LUIKeyboardButtonCell.h in Headers */,
 				3F05F689B03836519FDBF1140D1EBB6D /* LUITool.h in Headers */,
 				BD1D2051C902197C50C02F5502BBD729 /* LUITool-umbrella.h in Headers */,
 			);
@@ -1007,6 +1014,7 @@
 				1FCBAE032C68E7F000170B35 /* UIGestureRecognizer+LUI.m in Sources */,
 				1FCBADE32C68969B00170B35 /* UITableViewCell+LUI.m in Sources */,
 				1FCBAF052C7097AC00170B35 /* UICollectionViewCell+LUICollectionViewCellProtocol.m in Sources */,
+				1F4AA2FD2C73870200CDC476 /* LUIKeyboardButtonCell.m in Sources */,
 				1F45B6092C718978004839E2 /* LUILayoutConstraintItemAttributeBase.m in Sources */,
 				6F1E3225E22EE9A691A57CA31199E549 /* LUITool-dummy.m in Sources */,
 				1F45B6592C724769004839E2 /* UICollectionViewLayoutAttributes+LUI.m in Sources */,

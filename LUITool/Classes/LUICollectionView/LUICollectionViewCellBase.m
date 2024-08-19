@@ -10,7 +10,7 @@
 
 #import "UICollectionViewCell+LUICollectionViewCellProtocol.h"
 
-@interface LUICollectionViewCellBase()
+@interface LUICollectionViewCellBase ()
 @property (nonatomic) BOOL isCellModelChanged;//cellmodel是否有变化
 @property (nonatomic) BOOL isNeedLayoutCellSubviews;//是否要重新布局视图
 

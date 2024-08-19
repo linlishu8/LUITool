@@ -9,6 +9,7 @@
 #import "LUIViewController.h"
 #import "LUIMainViewTableViewCell.h"
 #import "LUIThemeViewController.h"
+#import "LUISafeKeyboardViewController.h"
 
 @interface LUIViewController ()
 
@@ -40,7 +41,11 @@
     };
     
     LUITableViewCellModel *keyBoardCellModel = [self addCellModelWithCellTitle:@"自定义键盘"];
-    
+    keyBoardCellModel.whenClick = ^(__kindof LUITableViewCellModel * _Nonnull cellModel) {
+        lui_strongify(self)
+        LUISafeKeyboardViewController *themeViewController = [[LUISafeKeyboardViewController alloc] init];
+        [self.navigationController pushViewController:themeViewController animated:YES];
+    };
     [self.tableView.model reloadTableViewData];
 }
 

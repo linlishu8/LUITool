@@ -6,10 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LUIKeyboardButtonModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LUIKeyboardView : UIView
+
+- (instancetype)initWithKeyboardButtons:(NSArray <NSArray <LUIKeyboardButtonModel *> *> *)keyboardButtons;
 
 @end
 

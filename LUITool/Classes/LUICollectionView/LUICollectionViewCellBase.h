@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) BOOL isCellModelChanged;//cellmodel是否有变化
 
 //是否缓存sizeThatFits:的结果，默认为YES
-@property (nonatomic, readonly,class) BOOL useCachedFitedSize;
+@property (nonatomic, readonly, class) BOOL useCachedFitedSize;
 @property (nonatomic, readonly) BOOL isSharedInstance;
 //单例，用于计算动态尺寸(实现使用LUIDEF_SINGLETON_SUBCLASS)
 LUIAS_SINGLETON(LUICollectionViewCellBase)

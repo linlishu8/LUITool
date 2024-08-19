@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class LUICollectionViewCellModel,LUICollectionViewSectionModel,LUICollectionViewModel;
+@class LUICollectionViewCellModel, LUICollectionViewSectionModel, LUICollectionViewModel;
 
 typedef void(^LUICollectionViewCellModelBlockC)(__kindof LUICollectionViewCellModel *cellModel);
 typedef void(^LUICollectionViewCellModelBlockS)(__kindof LUICollectionViewCellModel *cellModel,BOOL selected);
