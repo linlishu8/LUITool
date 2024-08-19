@@ -37,7 +37,7 @@ LUIDEF_EnumTypeCategories(UIViewAnimationCurve,(@{
     if (!staticMap) {\
         NSDictionary *mapDictionary = (__staticMapDictionary);\
         NSMutableDictionary<NSNumber *,NSString *> *map = [[NSMutableDictionary alloc] initWithCapacity:mapDictionary.count];\
-        for(id key in mapDictionary) {\
+        for (id key in mapDictionary) {\
             id value = [mapDictionary objectForKey:key];\
             if ([key isKindOfClass:[NSNumber class]]) {\
                 [map setObject:value forKey:key];\

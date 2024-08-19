@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F45B5DD2C70D7A9004839E2 /* LUIMainViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B5DC2C70D7A9004839E2 /* LUIMainViewTableViewCell.m */; };
+		1F45B6332C721A61004839E2 /* LUIThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B6322C721A61004839E2 /* LUIThemeViewController.m */; };
 		1FCBACA82C67BA7300170B35 /* LUIThemeCenter+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBACA72C67BA7300170B35 /* LUIThemeCenter+Test.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -43,6 +44,9 @@
 		04878745882AF625EB599D3F /* Pods-LUITool_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LUITool_Example.release.xcconfig"; path = "Target Support Files/Pods-LUITool_Example/Pods-LUITool_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1F45B5DB2C70D7A9004839E2 /* LUIMainViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIMainViewTableViewCell.h; sourceTree = "<group>"; };
 		1F45B5DC2C70D7A9004839E2 /* LUIMainViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIMainViewTableViewCell.m; sourceTree = "<group>"; };
+		1F45B6312C721A61004839E2 /* LUIThemeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIThemeViewController.h; sourceTree = "<group>"; };
+		1F45B6322C721A61004839E2 /* LUIThemeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIThemeViewController.m; sourceTree = "<group>"; };
+		1F45B6352C721C34004839E2 /* LUIMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIMacro.h; sourceTree = "<group>"; };
 		1FCBACA62C67BA7300170B35 /* LUIThemeCenter+Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LUIThemeCenter+Test.h"; sourceTree = "<group>"; };
 		1FCBACA72C67BA7300170B35 /* LUIThemeCenter+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LUIThemeCenter+Test.m"; sourceTree = "<group>"; };
 		47AE684EB1BF9722DA67E971 /* Pods-LUITool_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LUITool_Tests.debug.xcconfig"; path = "Target Support Files/Pods-LUITool_Tests/Pods-LUITool_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,11 +116,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		1F45B6342C721C26004839E2 /* LUIMacro */ = {
+			isa = PBXGroup;
+			children = (
+				1F45B6352C721C34004839E2 /* LUIMacro.h */,
+			);
+			path = LUIMacro;
+			sourceTree = "<group>";
+		};
 		1FCBACA52C67BA5B00170B35 /* 主题化 */ = {
 			isa = PBXGroup;
 			children = (
 				1FCBACA62C67BA7300170B35 /* LUIThemeCenter+Test.h */,
 				1FCBACA72C67BA7300170B35 /* LUIThemeCenter+Test.m */,
+				1F45B6312C721A61004839E2 /* LUIThemeViewController.h */,
+				1F45B6322C721A61004839E2 /* LUIThemeViewController.m */,
 			);
 			name = "主题化";
 			sourceTree = "<group>";
@@ -158,6 +172,7 @@
 		6003F593195388D20070C39A /* Example for LUITool */ = {
 			isa = PBXGroup;
 			children = (
+				1F45B6342C721C26004839E2 /* LUIMacro */,
 				1FCBACA52C67BA5B00170B35 /* 主题化 */,
 				6003F59C195388D20070C39A /* LUIAppDelegate.h */,
 				6003F59D195388D20070C39A /* LUIAppDelegate.m */,
@@ -390,6 +405,7 @@
 				1F45B5DD2C70D7A9004839E2 /* LUIMainViewTableViewCell.m in Sources */,
 				6003F5A7195388D20070C39A /* LUIViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				1F45B6332C721A61004839E2 /* LUIThemeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

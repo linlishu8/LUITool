@@ -27,7 +27,7 @@
     LUICollectionSectionModel *obj = [super copyWithZone:zone];
     obj.userInfo = self.userInfo;
     obj->_cellModels = [self.cellModels mutableCopy];
-    for(LUICollectionCellModel *cm in self.cellModels) {
+    for (LUICollectionCellModel *cm in self.cellModels) {
         [self configCellModelAfterAdding:cm];
     }
     return obj;
@@ -55,7 +55,7 @@
 - (void)setCellModels:(NSArray<LUICollectionCellModel *> *)cellModels{
     [[self mutableCellModels] removeAllObjects];
     [[self mutableCellModels] addObjectsFromArray:cellModels];
-    for(LUICollectionCellModel *cm in cellModels) {
+    for (LUICollectionCellModel *cm in cellModels) {
         [self configCellModelAfterAdding:cm];
     }
 }
@@ -200,7 +200,7 @@
 @implementation LUICollectionSectionModel(Focused)
 - (NSInteger)indexForFocusedCellModel {
     NSInteger index = NSNotFound;
-    for(int i=0;i<self.numberOfCells;i++) {
+    for (int i=0;i<self.numberOfCells;i++) {
         LUICollectionCellModel *cm = self.cellModels[i];
         if (cm.focused) {
             index = i;

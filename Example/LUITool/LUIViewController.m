@@ -8,6 +8,7 @@
 
 #import "LUIViewController.h"
 #import "LUIMainViewTableViewCell.h"
+#import "LUIThemeViewController.h"
 
 @interface LUIViewController ()
 
@@ -28,13 +29,27 @@
 }
 
 - (void)__reloadData {
-    [self.tableView.model removeAllSectionModels];
-    LUITableViewCellModel *alertViewCellModel = [[LUITableViewCellModel alloc] init];
-    alertViewCellModel.cellClass = [LUIMainViewTableViewCell class];
-    alertViewCellModel.modelValue = @"弹窗";
-    [self.tableView.model addCellModel:alertViewCellModel];
+    lui_weakify(self)
+    LUITableViewCellModel *alertCellModel = [self addCellModelWithCellTitle:@"弹窗"];
+    
+    LUITableViewCellModel *themeCellModel = [self addCellModelWithCellTitle:@"主题化"];
+    themeCellModel.whenClick = ^(__kindof LUITableViewCellModel * _Nonnull cellModel) {
+        lui_strongify(self)
+        LUIThemeViewController *themeViewController = [[LUIThemeViewController alloc] init];
+        [self.navigationController pushViewController:themeViewController animated:YES];
+    };
+    
+    LUITableViewCellModel *keyBoardCellModel = [self addCellModelWithCellTitle:@"自定义键盘"];
     
     [self.tableView.model reloadTableViewData];
+}
+
+- (LUITableViewCellModel *)addCellModelWithCellTitle:(NSString *)cellTitle {
+    LUITableViewCellModel *cellModel = [[LUITableViewCellModel alloc] init];
+    cellModel.cellClass = [LUIMainViewTableViewCell class];
+    cellModel.modelValue = cellTitle;
+    [self.tableView.model addCellModel:cellModel];
+    return cellModel;
 }
 
 - (void)viewDidLayoutSubviews {

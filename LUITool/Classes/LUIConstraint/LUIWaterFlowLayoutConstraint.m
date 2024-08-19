@@ -79,7 +79,7 @@
     LUILayoutConstraintItemAttributeSection *line = [[LUILayoutConstraintItemAttributeSection alloc] init];
     NSInteger effectCountAtOneLine = 0;
     NSInteger lineIndex = 0;
-    for(int i=0;i<items.count;i++) {
+    for (int i=0;i<items.count;i++) {
         BOOL isLast = i  ==  items.count-1;
         id<LUILayoutConstraintItemProtocol> item = items[i];
         
@@ -166,7 +166,7 @@
             NSArray<id<LUILayoutConstraintItemAttributeProtocol> > *itemAttributs = lastLine.itemAttributs;
             CGSize limitSize = lastLine.layoutFrame.size;
             CGFloat lastLineItemWidth = LUICGSizeGetLength(lastLineItemSize, X);
-            for(NSInteger i=itemAttributs.count-1;i>=0;i--) {
+            for (NSInteger i=itemAttributs.count-1;i>=0;i--) {
                 LUILayoutConstraintItemAttribute *itemAttr = itemAttributs[i];
                 CGSize itemSize = itemAttr.size;
                 if (CGSizeEqualToSize(itemSize, CGSizeZero)) {//空尺寸跳过
@@ -254,9 +254,9 @@
     
     BOOL applyLastItemFrame = NO;
     [allLines flowLayoutItemsWithSpacing:ySpacing axis:Y alignment:alignX needRevert:NO];
-    for(LUILayoutConstraintItemAttributeSection *line in allLines.itemAttributs) {
+    for (LUILayoutConstraintItemAttributeSection *line in allLines.itemAttributs) {
         [line flowLayoutItemsWithSpacing:xSpacing axis:X alignment:alignY needRevert:needRevert];
-        for(LUILayoutConstraintItemAttribute *itemAttr in line.itemAttributs) {
+        for (LUILayoutConstraintItemAttribute *itemAttr in line.itemAttributs) {
             [itemAttr applyAttributeWithResizeItems:resizeItems];
             if (itemAttr.item  ==  self.lastLineItem) {
                 applyLastItemFrame = YES;

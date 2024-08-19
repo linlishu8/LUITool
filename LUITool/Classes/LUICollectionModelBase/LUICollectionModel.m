@@ -25,7 +25,7 @@
 - (id)copyWithZone:(NSZone *)zone{
     LUICollectionModel *obj = [super copyWithZone:zone];
     obj->_sectionModels = [_sectionModels mutableCopy];
-    for(LUICollectionSectionModel *sm in self.sectionModels) {
+    for (LUICollectionSectionModel *sm in self.sectionModels) {
         sm.collectionModel = self;
     }
     obj.userInfo = self.userInfo;
@@ -56,7 +56,7 @@
 - (void)setSectionModels:(NSArray<LUICollectionSectionModel *> *)sectionModels{
     [[self mutableSectionModels] removeAllObjects];
     [[self mutableSectionModels] addObjectsFromArray:sectionModels];
-    for(LUICollectionSectionModel *sm in sectionModels) {
+    for (LUICollectionSectionModel *sm in sectionModels) {
         sm.collectionModel = self;
     }
 }

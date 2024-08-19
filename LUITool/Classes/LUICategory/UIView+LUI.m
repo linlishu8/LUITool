@@ -243,7 +243,7 @@
 }
 - (nullable UIView *)l_firstResponder {
     if (self.canBecomeFirstResponder && self.isFirstResponder) return self;
-    for(UIView *subview in self.subviews) {
+    for (UIView *subview in self.subviews) {
         UIView *r = subview.l_firstResponder;
         if (r) return r;
     }

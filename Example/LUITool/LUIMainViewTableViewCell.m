@@ -11,6 +11,7 @@
 @interface LUIMainViewTableViewCell ()
 
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIView *lineView;
 
 @property (nonatomic, strong) LUIFlowLayoutConstraint *flowlayout;
 
@@ -22,6 +23,10 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.contentView.backgroundColor = [UIColor clearColor];
+        
+        self.lineView = [[UIView alloc] init];
+        self.lineView.backgroundColor = [UIColor l_colorWithLight:[UIColor grayColor] dark:[UIColor lightTextColor]];
+        [self.contentView addSubview:self.lineView];
         
         [self.contentView addSubview:self.titleLabel];
         
@@ -41,6 +46,12 @@
     CGRect bounds = self.contentView.bounds;
     self.flowlayout.bounds = bounds;
     [self.flowlayout layoutItemsWithResizeItems:YES];
+    
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, 10, 0, 10);
+    CGRect f1 = UIEdgeInsetsInsetRect(bounds, insets);
+    f1.size.height = 1.0/[UIScreen mainScreen].scale;
+    LUICGRectAlignMidToRect(&f1, LUICGAxisX, bounds);
+    self.lineView.frame = f1;
 }
 
 - (CGSize)customSizeThatFits:(CGSize)size {
