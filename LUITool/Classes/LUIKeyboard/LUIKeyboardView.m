@@ -8,6 +8,7 @@
 #import "LUIKeyboardView.h"
 #import "LUICollectionView.h"
 #import "LUIKeyboardButtonCell.h"
+#import "LUIKeyBoardSectionModel.h"
 
 @interface LUIKeyboardView ()
 
@@ -38,9 +39,16 @@
 }
 
 - (void)__reloadKeyboardButtons:(NSArray <NSArray <LUIKeyboardButtonModel *> *> *)keyboardButtons {
+    [self.collectionView.model removeAllSectionModels];
     [keyboardButtons enumerateObjectsUsingBlock:^(NSArray<LUIKeyboardButtonModel *> *lines, NSUInteger idx, BOOL * _Nonnull stop) {
-        LUICollectionViewSectionModel *sectionModel = [[LUICollectionViewSectionModel alloc] init];
+        LUIKeyBoardSectionModel *sectionModel = [[LUIKeyBoardSectionModel alloc] init];
+        sectionModel.l_maxHeight = 0;
         [lines enumerateObjectsUsingBlock:^(LUIKeyboardButtonModel *buttonModel, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (!CGSizeEqualToSize(buttonModel.size, CGSizeZero)) {
+                sectionModel.l_otherLength += buttonModel.size.width;
+                sectionModel.l_numberOfOtherButtons += 1;
+                sectionModel.l_maxHeight = MAX(sectionModel.l_maxHeight, buttonModel.size.height);
+            }
             LUICollectionViewCellModel *cm = [[LUICollectionViewCellModel alloc] init];
             cm.modelValue = buttonModel;
             cm.cellClass = [LUIKeyboardButtonCell class];

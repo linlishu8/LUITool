@@ -10,6 +10,7 @@
 #import "LUIKeyboardButtonModel.h"
 #import "UICollectionViewFlowLayout+LUI.h"
 #import "LUILayoutConstraintItemWrapper.h"
+#import "LUIKeyBoardSectionModel.h"
 
 @interface LUIKeyboardButtonCell()
 
@@ -24,13 +25,7 @@
         
         [self.contentView addSubview:self.titleLabel];
         
-        LUILayoutConstraintItemWrapper *labelWrapper = [LUILayoutConstraintItemWrapper wrapItem:self.titleLabel sizeThatFitsBlock:^CGSize(LUILayoutConstraintItemWrapper * _Nonnull wrapper, CGSize size, BOOL resizeItems) {
-            CGSize s = [wrapper.originItem sizeThatFits:size];
-            s.width = size.width;
-            return s;
-        }];
-        
-        self.flowlayout = [[LUIFlowLayoutConstraint alloc] initWithItems:@[labelWrapper] constraintParam:LUIFlowLayoutConstraintParam_H_C_C contentInsets:UIEdgeInsetsZero interitemSpacing:0];
+        self.flowlayout = [[LUIFlowLayoutConstraint alloc] initWithItems:@[self.titleLabel] constraintParam:LUIFlowLayoutConstraintParam_H_C_C contentInsets:UIEdgeInsetsZero interitemSpacing:0];
     }
     return self;
 }
@@ -50,16 +45,32 @@
     
     self.flowlayout.bounds = bounds;
     [self.flowlayout layoutItemsWithResizeItems:YES];
+    
+    LUIKeyboardButtonModel *buttonModel = self.collectionCellModel.modelValue;
+    CGRect f = bounds;
+    if (!UIEdgeInsetsEqualToEdgeInsets(buttonModel.paddingSpacing, UIEdgeInsetsZero)) {
+        f = UIEdgeInsetsInsetRect(bounds, buttonModel.paddingSpacing);
+    }
+    
+    self.titleLabel.frame = f;
 }
 
 - (CGSize)customSizeThatFits:(CGSize)size {
+    LUIKeyBoardSectionModel *sectionModel = (LUIKeyBoardSectionModel *)self.collectionCellModel.sectionModel;
     CGSize s = [self.flowlayout sizeThatFits:size resizeItems:YES];
-    NSInteger count = self.collectionCellModel.sectionModel.numberOfCells;
-    CGFloat space = self.collectionCellModel.collectionView.l_collectionViewFlowLayout.minimumInteritemSpacing;
-    if (count) {
-        s.width = floor((size.width-(count-1)*space)/count);
+    LUIKeyboardButtonModel *buttonModel = self.collectionCellModel.modelValue;
+    if (CGSizeEqualToSize(buttonModel.size, CGSizeZero)) {
+        NSInteger count = self.collectionCellModel.sectionModel.numberOfCells;
+        CGFloat space = self.collectionCellModel.collectionView.l_collectionViewFlowLayout.minimumInteritemSpacing;
+        if (count) {
+            s.width = floor(((size.width - sectionModel.l_otherLength)-(count-1)*space)/(count - sectionModel.l_numberOfOtherButtons));
+        }
+    } else {
+        s.width = buttonModel.size.width;
     }
-    
+    if (sectionModel.l_maxHeight > 0) {
+        s.height = sectionModel.l_maxHeight;
+    }
     return s;
 }
 

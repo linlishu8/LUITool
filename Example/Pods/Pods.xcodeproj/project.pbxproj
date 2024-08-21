@@ -65,6 +65,8 @@
 		1F45B66E2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B66B2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F4AA2FD2C73870200CDC476 /* LUIKeyboardButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4AA2FC2C73870200CDC476 /* LUIKeyboardButtonCell.m */; };
 		1F4AA2FE2C73870200CDC476 /* LUIKeyboardButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F4AA2FB2C73870200CDC476 /* LUIKeyboardButtonCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FBE4C902C74DB6E0054F742 /* LUIKeyBoardSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FBE4C8E2C74DB6E0054F742 /* LUIKeyBoardSectionModel.h */; };
+		1FBE4C912C74DB6E0054F742 /* LUIKeyBoardSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE4C8F2C74DB6E0054F742 /* LUIKeyBoardSectionModel.m */; };
 		1FCBADCA2C685F6600170B35 /* LUICGRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADC92C685F6600170B35 /* LUICGRect.m */; };
 		1FCBADCB2C685F6600170B35 /* LUICGRect.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FCBADC82C685F6600170B35 /* LUICGRect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FCBADCF2C688EB400170B35 /* UIButton+LUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADCE2C688EB400170B35 /* UIButton+LUI.m */; };
@@ -235,6 +237,8 @@
 		1F45B66C2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUICollectionViewWaterFlowLayout.m; sourceTree = "<group>"; };
 		1F4AA2FB2C73870200CDC476 /* LUIKeyboardButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIKeyboardButtonCell.h; sourceTree = "<group>"; };
 		1F4AA2FC2C73870200CDC476 /* LUIKeyboardButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIKeyboardButtonCell.m; sourceTree = "<group>"; };
+		1FBE4C8E2C74DB6E0054F742 /* LUIKeyBoardSectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIKeyBoardSectionModel.h; sourceTree = "<group>"; };
+		1FBE4C8F2C74DB6E0054F742 /* LUIKeyBoardSectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIKeyBoardSectionModel.m; sourceTree = "<group>"; };
 		1FCBADC82C685F6600170B35 /* LUICGRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUICGRect.h; sourceTree = "<group>"; };
 		1FCBADC92C685F6600170B35 /* LUICGRect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUICGRect.m; sourceTree = "<group>"; };
 		1FCBADCD2C688EB400170B35 /* UIButton+LUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+LUI.h"; sourceTree = "<group>"; };
@@ -457,6 +461,8 @@
 				1F45B6462C723F6A004839E2 /* LUIKeyboardButtonModel.m */,
 				1F4AA2FB2C73870200CDC476 /* LUIKeyboardButtonCell.h */,
 				1F4AA2FC2C73870200CDC476 /* LUIKeyboardButtonCell.m */,
+				1FBE4C8E2C74DB6E0054F742 /* LUIKeyBoardSectionModel.h */,
+				1FBE4C8F2C74DB6E0054F742 /* LUIKeyBoardSectionModel.m */,
 				1F45B6492C7244BD004839E2 /* LUIKeyboardView.h */,
 				1F45B64A2C7244BD004839E2 /* LUIKeyboardView.m */,
 			);
@@ -807,6 +813,7 @@
 				1F45B6232C71D059004839E2 /* LUICollectionModelObjectBase.h in Headers */,
 				1FCBADF42C68A13000170B35 /* NSObject+LUI.h in Headers */,
 				1FCBADDC2C68955A00170B35 /* UIScrollView+LUI.h in Headers */,
+				1FBE4C902C74DB6E0054F742 /* LUIKeyBoardSectionModel.h in Headers */,
 				1F45B5E12C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h in Headers */,
 				1F45B62B2C71EE09004839E2 /* LUIEdgeInsetsUILabel.h in Headers */,
 				1F4AA2FE2C73870200CDC476 /* LUIKeyboardButtonCell.h in Headers */,
@@ -1017,6 +1024,7 @@
 				1F4AA2FD2C73870200CDC476 /* LUIKeyboardButtonCell.m in Sources */,
 				1F45B6092C718978004839E2 /* LUILayoutConstraintItemAttributeBase.m in Sources */,
 				6F1E3225E22EE9A691A57CA31199E549 /* LUITool-dummy.m in Sources */,
+				1FBE4C912C74DB6E0054F742 /* LUIKeyBoardSectionModel.m in Sources */,
 				1F45B6592C724769004839E2 /* UICollectionViewLayoutAttributes+LUI.m in Sources */,
 				1F45B62A2C71EE09004839E2 /* LUIEdgeInsetsUILabel.m in Sources */,
 				1FCBAE072C68E8FC00170B35 /* LUITableView.m in Sources */,

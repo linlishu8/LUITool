@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, LUIKeyboardButtonType) {
 @property (nonatomic, assign) BOOL showTouchEffect;      // 是否显示点击效果
 @property (nonatomic, assign) LUIKeyboardButtonType type;   // 按钮类型
 @property (nonatomic, assign) CGSize size;               // 按钮大小
-@property (nonatomic, assign) CGFloat verticalSpacing;   // 按钮上下间隔
+@property (nonatomic, assign) UIEdgeInsets paddingSpacing;   // 按钮上下左右间隔
 @property (nonatomic, copy) NSArray <NSArray <LUIKeyboardButtonModel *> *> *keyBoardButtons; // 切换的键盘按键
 
 @end
