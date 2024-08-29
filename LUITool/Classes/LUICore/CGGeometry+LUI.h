@@ -14,14 +14,14 @@ typedef enum : NSUInteger {
     LUICGAxisY, //Y轴
 } LUICGAxis;
 UIKIT_STATIC_INLINE LUICGAxis LUICGAxisReverse(LUICGAxis axis) {
-    return axis  ==  LUICGAxisX ? LUICGAxisY : LUICGAxisX;
+    return axis == LUICGAxisX ? LUICGAxisY : LUICGAxisX;
 }
 #pragma mark - CGPoint
 UIKIT_STATIC_INLINE CGFloat LUICGPointGetValue(CGPoint point, LUICGAxis axis) {
-    return axis  ==  LUICGAxisX ? point.x : point.y;
+    return axis == LUICGAxisX ? point.x : point.y;
 }
 UIKIT_STATIC_INLINE void LUICGPointSetValue(CGPoint *point, LUICGAxis axis, CGFloat value) {
-    if (axis  ==  LUICGAxisX) {(*point).x = value;} else {(*point).y = value;}
+    if (axis == LUICGAxisX) {(*point).x = value;} else {(*point).y = value;}
 }
 UIKIT_STATIC_INLINE void LUICGPointAddValue(CGPoint *point, LUICGAxis axis, CGFloat value) {
     LUICGPointSetValue(point, axis, LUICGPointGetValue(*point, axis) + value);
@@ -29,10 +29,10 @@ UIKIT_STATIC_INLINE void LUICGPointAddValue(CGPoint *point, LUICGAxis axis, CGFl
 
 #pragma mark - CGVector
 UIKIT_STATIC_INLINE CGFloat LUICGVectorGetValue(CGVector v, LUICGAxis axis) {
-    return axis  ==  LUICGAxisX ? v.dx : v.dy;
+    return axis == LUICGAxisX ? v.dx : v.dy;
 }
 UIKIT_STATIC_INLINE void LUICGVectorSetValue(CGVector *v, LUICGAxis axis, CGFloat value) {
-    if (axis  ==  LUICGAxisX) {(*v).dx = value;} else {(*v).dy = value;}
+    if (axis == LUICGAxisX) {(*v).dx = value;} else {(*v).dy = value;}
 }
 UIKIT_STATIC_INLINE void LUICGVectorAddValue(CGVector *v, LUICGAxis axis, CGFloat value) {
     LUICGVectorSetValue(v, axis, LUICGVectorGetValue(*v, axis) + value);
@@ -40,10 +40,10 @@ UIKIT_STATIC_INLINE void LUICGVectorAddValue(CGVector *v, LUICGAxis axis, CGFloa
 
 #pragma mark - CGSize
 UIKIT_STATIC_INLINE CGFloat LUICGSizeGetLength(CGSize size, LUICGAxis axis) {
-    return axis  ==  LUICGAxisX ? size.width : size.height;
+    return axis == LUICGAxisX ? size.width : size.height;
 }
 UIKIT_STATIC_INLINE void LUICGSizeSetLength(CGSize *size, LUICGAxis axis, CGFloat value) {
-    if (axis  ==  LUICGAxisX) {(*size).width = value;} else {(*size).height = value;}
+    if (axis == LUICGAxisX) {(*size).width = value;} else {(*size).height = value;}
 }
 UIKIT_STATIC_INLINE void LUICGSizeAddLength(CGSize *size, LUICGAxis axis, CGFloat value) {
     LUICGSizeSetLength(size, axis, LUICGSizeGetLength(*size, axis) + value);
@@ -56,7 +56,7 @@ typedef enum : NSUInteger {
     LUICGRectAlignmentMax, //max最大值对齐
 } LUICGRectAlignment;//对齐方向
 UIKIT_STATIC_INLINE LUICGRectAlignment LUICGRectAlignmentReverse(LUICGRectAlignment align) {
-    return align  ==  LUICGRectAlignmentMin ? LUICGRectAlignmentMax : (align  ==  LUICGRectAlignmentMax ? LUICGRectAlignmentMin : LUICGRectAlignmentMid);
+    return align == LUICGRectAlignmentMin ? LUICGRectAlignmentMax : (align == LUICGRectAlignmentMax ? LUICGRectAlignmentMin : LUICGRectAlignmentMid);
 }
 
 UIKIT_STATIC_INLINE void LUICGRectSetMinX(CGRect *rect, CGFloat value) {
@@ -134,55 +134,55 @@ UIKIT_STATIC_INLINE void LUICGRectAlignMaxYToRect(CGRect *rect, CGRect bounds) {
 
 #pragma mark - Axis operation
 UIKIT_STATIC_INLINE CGFloat LUICGRectGetMin(CGRect rect, LUICGAxis axis) {
-    return axis  ==  LUICGAxisX ? CGRectGetMinX(rect):CGRectGetMinY(rect);
+    return axis == LUICGAxisX ? CGRectGetMinX(rect):CGRectGetMinY(rect);
 }
 UIKIT_STATIC_INLINE void LUICGRectSetMin(CGRect *rect, LUICGAxis axis, CGFloat value) {
-    if (axis  ==  LUICGAxisX) {LUICGRectSetMinX(rect, value);} else {LUICGRectSetMinY(rect, value);}
+    if (axis == LUICGAxisX) {LUICGRectSetMinX(rect, value);} else {LUICGRectSetMinY(rect, value);}
 }
 UIKIT_STATIC_INLINE void LUICGRectAddMin(CGRect *rect, LUICGAxis axis, CGFloat value) {
     LUICGRectSetMin(rect, axis, LUICGRectGetMin(*rect, axis)+value);
 }
 UIKIT_STATIC_INLINE CGFloat LUICGRectGetMid(CGRect rect, LUICGAxis axis) {
-    return axis  ==  LUICGAxisX ? CGRectGetMidX(rect) : CGRectGetMidY(rect);
+    return axis == LUICGAxisX ? CGRectGetMidX(rect) : CGRectGetMidY(rect);
 }
 UIKIT_STATIC_INLINE void LUICGRectSetMid(CGRect *rect, LUICGAxis axis, CGFloat value) {
-    if (axis  ==  LUICGAxisX) {LUICGRectSetMidX(rect, value);} else {LUICGRectSetMidY(rect, value);}
+    if (axis == LUICGAxisX) {LUICGRectSetMidX(rect, value);} else {LUICGRectSetMidY(rect, value);}
 }
 UIKIT_STATIC_INLINE void LUICGRectAddMid(CGRect *rect, LUICGAxis axis, CGFloat value) {
     LUICGRectSetMid(rect, axis, LUICGRectGetMid(*rect, axis)+value);
 }
 UIKIT_STATIC_INLINE CGFloat LUICGRectGetMax(CGRect rect, LUICGAxis axis) {
-    return axis  ==  LUICGAxisX ? CGRectGetMaxX(rect) : CGRectGetMaxY(rect);
+    return axis == LUICGAxisX ? CGRectGetMaxX(rect) : CGRectGetMaxY(rect);
 }
 UIKIT_STATIC_INLINE void LUICGRectSetMax(CGRect *rect, LUICGAxis axis, CGFloat value) {
-    if (axis  ==  LUICGAxisX) {LUICGRectSetMaxX(rect, value);} else {LUICGRectSetMaxY(rect, value);}
+    if (axis == LUICGAxisX) {LUICGRectSetMaxX(rect, value);} else {LUICGRectSetMaxY(rect, value);}
 }
 UIKIT_STATIC_INLINE void LUICGRectAddMax(CGRect *rect, LUICGAxis axis, CGFloat value) {
     LUICGRectSetMax(rect, axis, LUICGRectGetMax(*rect, axis) + value);
 }
 UIKIT_STATIC_INLINE void LUICGRectSetMinEdgeToRect(CGRect *rect, LUICGAxis axis, CGRect bounds, CGFloat edge) {
-    if (axis  ==  LUICGAxisX) {LUICGRectSetMinXEdgeToRect(rect, bounds, edge);} else {LUICGRectSetMinYEdgeToRect(rect, bounds, edge);}
+    if (axis == LUICGAxisX) {LUICGRectSetMinXEdgeToRect(rect, bounds, edge);} else {LUICGRectSetMinYEdgeToRect(rect, bounds, edge);}
 }
 UIKIT_STATIC_INLINE void LUICGRectSetMaxEdgeToRect(CGRect *rect, LUICGAxis axis, CGRect bounds, CGFloat edge) {
-    if (axis  ==  LUICGAxisX) {LUICGRectSetMaxXEdgeToRect(rect, bounds, edge);} else {LUICGRectSetMaxYEdgeToRect(rect, bounds, edge);}
+    if (axis == LUICGAxisX) {LUICGRectSetMaxXEdgeToRect(rect, bounds, edge);} else {LUICGRectSetMaxYEdgeToRect(rect, bounds, edge);}
 }
 UIKIT_STATIC_INLINE CGFloat LUICGRectGetLength(CGRect rect, LUICGAxis axis) {
-    return axis  ==  LUICGAxisX ? CGRectGetWidth(rect) : CGRectGetHeight(rect);
+    return axis == LUICGAxisX ? CGRectGetWidth(rect) : CGRectGetHeight(rect);
 }
 UIKIT_STATIC_INLINE void LUICGRectSetLength(CGRect *rect, LUICGAxis axis, CGFloat value) {
-    if (axis  ==  LUICGAxisX) {LUICGRectSetWidth(rect, value);} else {LUICGRectSetHeight(rect, value);}
+    if (axis == LUICGAxisX) {LUICGRectSetWidth(rect, value);} else {LUICGRectSetHeight(rect, value);}
 }
 UIKIT_STATIC_INLINE void LUICGRectAddLength(CGRect *rect, LUICGAxis axis, CGFloat value) {
     LUICGRectSetLength(rect, axis, LUICGRectGetLength(*rect, axis)+value);
 }
 UIKIT_STATIC_INLINE void LUICGRectAlignMinToRect(CGRect *rect, LUICGAxis axis, CGRect bounds) {
-    if (axis  ==  LUICGAxisX) {LUICGRectAlignMinXToRect(rect, bounds);} else {LUICGRectAlignMinYToRect(rect, bounds);}
+    if (axis == LUICGAxisX) {LUICGRectAlignMinXToRect(rect, bounds);} else {LUICGRectAlignMinYToRect(rect, bounds);}
 }
 UIKIT_STATIC_INLINE void LUICGRectAlignMidToRect(CGRect *rect, LUICGAxis axis, CGRect bounds) {
-    if (axis  ==  LUICGAxisX) {LUICGRectAlignMidXToRect(rect, bounds);} else {LUICGRectAlignMidYToRect(rect, bounds);}
+    if (axis == LUICGAxisX) {LUICGRectAlignMidXToRect(rect, bounds);} else {LUICGRectAlignMidYToRect(rect, bounds);}
 }
 UIKIT_STATIC_INLINE void LUICGRectAlignMaxToRect(CGRect *rect, LUICGAxis axis, CGRect bounds) {
-    if (axis  ==  LUICGAxisX) {LUICGRectAlignMaxXToRect(rect, bounds);} else {LUICGRectAlignMaxYToRect(rect, bounds);}
+    if (axis == LUICGAxisX) {LUICGRectAlignMaxXToRect(rect, bounds);} else {LUICGRectAlignMaxYToRect(rect, bounds);}
 }
 UIKIT_STATIC_INLINE void LUICGRectAlignToRect(CGRect *rect, LUICGAxis axis, LUICGRectAlignment alignment, CGRect bounds) {
     switch (alignment) {
@@ -210,13 +210,13 @@ typedef enum : NSUInteger {
 } LUIEdgeInsetsEdge;
 
 UIKIT_STATIC_INLINE CGFloat LUIEdgeInsetsGetEdge(UIEdgeInsets insets, LUICGAxis axis, LUIEdgeInsetsEdge edge) {
-    return axis  ==  LUICGAxisX?(edge  ==  LUIEdgeInsetsMin?insets.left:insets.right):(edge  ==  LUIEdgeInsetsMin?insets.top:insets.bottom);
+    return axis == LUICGAxisX ? (edge == LUIEdgeInsetsMin?insets.left:insets.right):(edge == LUIEdgeInsetsMin?insets.top:insets.bottom);
 }
 UIKIT_STATIC_INLINE CGFloat LUIEdgeInsetsGetEdgeSum(UIEdgeInsets insets, LUICGAxis axis) {
-    return axis  ==  LUICGAxisX?(insets.left+insets.right):(insets.top+insets.bottom);
+    return axis == LUICGAxisX ? (insets.left+insets.right):(insets.top+insets.bottom);
 }
 UIKIT_STATIC_INLINE void LUIEdgeInsetsSetEdge(UIEdgeInsets *insets, LUICGAxis axis, LUIEdgeInsetsEdge edge, CGFloat value) {
-    if (axis  ==  LUICGAxisX) {if (edge  ==  LUIEdgeInsetsMin) {(*insets).left=value;} else {(*insets).right=value;}} else {if (edge  ==  LUIEdgeInsetsMin) {(*insets).top=value;} else {(*insets).bottom=value;}}
+    if (axis == LUICGAxisX) {if (edge == LUIEdgeInsetsMin) {(*insets).left=value;} else {(*insets).right=value;}} else {if (edge == LUIEdgeInsetsMin) {(*insets).top=value;} else {(*insets).bottom=value;}}
 }
 UIKIT_STATIC_INLINE void LUIEdgeInsetsAddEdge(UIEdgeInsets *insets, LUICGAxis axis, LUIEdgeInsetsEdge edge, CGFloat value) {
     LUIEdgeInsetsSetEdge(insets, axis, edge, LUIEdgeInsetsGetEdge(*insets, axis, edge)+value);
@@ -224,17 +224,17 @@ UIKIT_STATIC_INLINE void LUIEdgeInsetsAddEdge(UIEdgeInsets *insets, LUICGAxis ax
 
 #pragma mark - CGAffineTransform
 UIKIT_STATIC_INLINE CGAffineTransform LUICGAffineTransformMakeTranslation(LUICGAxis X, CGFloat tx) {
-    return X  ==  LUICGAxisX?CGAffineTransformMakeTranslation(tx, 0):CGAffineTransformMakeTranslation(0, tx);
+    return X == LUICGAxisX?CGAffineTransformMakeTranslation(tx, 0):CGAffineTransformMakeTranslation(0, tx);
 }
 #pragma mark - CATransform3D
 UIKIT_STATIC_INLINE CATransform3D LUICATransform3DMakeTranslation(LUICGAxis X, CGFloat tx) {
-    return X  ==  LUICGAxisX?CATransform3DMakeTranslation(tx, 0, 0):CATransform3DMakeTranslation(0, tx, 0);
+    return X == LUICGAxisX?CATransform3DMakeTranslation(tx, 0, 0):CATransform3DMakeTranslation(0, tx, 0);
 }
 UIKIT_STATIC_INLINE CATransform3D LUICATransform3DMakeRotation(LUICGAxis X, CGFloat angle) {
-    return X  ==  LUICGAxisX?CATransform3DMakeRotation(angle, 1, 0, 0):CATransform3DMakeRotation(angle, 0, 1, 0);
+    return X == LUICGAxisX?CATransform3DMakeRotation(angle, 1, 0, 0):CATransform3DMakeRotation(angle, 0, 1, 0);
 }
 UIKIT_STATIC_INLINE CATransform3D LUICATransform3DMakeScale(LUICGAxis X , CGFloat sx) {
-    return X  ==  LUICGAxisX?CATransform3DMakeScale(sx, 1, 1):CATransform3DMakeScale(1, sx, 1);
+    return X == LUICGAxisX?CATransform3DMakeScale(sx, 1, 1):CATransform3DMakeScale(1, sx, 1);
 }
 
 //闭区间
@@ -257,7 +257,7 @@ UIKIT_STATIC_INLINE BOOL LUICGRangeIsNull(LUICGRange r) {//是否是无效的区
     return r.end<r.begin;
 }
 UIKIT_STATIC_INLINE BOOL LUICGRangeIsEmpty(LUICGRange r) {//是否是空区间
-    return r.end  ==  r.begin;
+    return r.end == r.begin;
 }
 UIKIT_STATIC_INLINE BOOL LUICGRangeIntersectsRange(LUICGRange r1, LUICGRange r2) {//两个区间是否相交
     return LUICGRangeContainsValue(r1, r2.end)  ||  LUICGRangeContainsValue(r1, r2.begin)

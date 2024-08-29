@@ -21,12 +21,12 @@
     CGSize sizeFits = CGSizeZero;
     NSArray<id<LUILayoutConstraintItemProtocol>> *items = self.layoutedItems;
     NSInteger count = items.count;
-    if (count  ==  0) return CGSizeZero;
+    if (count == 0) return CGSizeZero;
     UIEdgeInsets contentInsets = self.contentInsets;
     CGSize limitSize = CGSizeMake(size.width-contentInsets.left-contentInsets.right, size.height-contentInsets.top-contentInsets.bottom);//限制在 size -contentInsets 矩形内
     CGFloat interitemSpacing = 0;
     
-    LUICGAxis axis = self.layoutDirection  ==  LUILayoutConstraintDirectionHorizontal?LUICGAxisX:LUICGAxisY;
+    LUICGAxis axis = self.layoutDirection == LUILayoutConstraintDirectionHorizontal?LUICGAxisX:LUICGAxisY;
     LUICGAxis axisR = LUICGAxisReverse(axis);
     
     CGFloat maxLengthReverseAxis = 0;//元素的最大高度
@@ -64,14 +64,14 @@
 - (void)layoutItemsWithResizeItems:(BOOL)resizeItems {
     NSArray<id<LUILayoutConstraintItemProtocol>> *items = self.layoutedItems;
     NSInteger count = items.count;
-    if (count  ==  0) return;
+    if (count == 0) return;
     UIEdgeInsets contentInsets = self.contentInsets;
     CGRect bounds = UIEdgeInsetsInsetRect(self.bounds, contentInsets);
     CGSize limitSize = bounds.size;
 
-    LUICGAxis axis = self.layoutDirection  ==  LUILayoutConstraintDirectionHorizontal?LUICGAxisX:LUICGAxisY;
+    LUICGAxis axis = self.layoutDirection == LUILayoutConstraintDirectionHorizontal?LUICGAxisX:LUICGAxisY;
 //    LUICGAxis axisR = LUICGAxisReverse(axis);
-    LUICGRectAlignment align = self.layoutDirection  ==  LUILayoutConstraintDirectionHorizontal?LUICGRectAlignmentFromLUILayoutConstraintVerticalAlignment(self.layoutVerticalAlignment):LUICGRectAlignmentFromLUILayoutConstraintHorizontalAlignment(self.layoutHorizontalAlignment);
+    LUICGRectAlignment align = self.layoutDirection == LUILayoutConstraintDirectionHorizontal?LUICGRectAlignmentFromLUILayoutConstraintVerticalAlignment(self.layoutVerticalAlignment):LUICGRectAlignmentFromLUILayoutConstraintHorizontalAlignment(self.layoutHorizontalAlignment);
     //分布局头尾元素
     id<LUILayoutConstraintItemProtocol> firstItem = items.firstObject;
     id<LUILayoutConstraintItemProtocol> lastItem = items.count>1?items.lastObject:nil;
@@ -261,7 +261,7 @@ LUIDEF_EnumTypeCategories(LUIFillingFlowLayoutConstraintParam,
 }
 + (LUIFillingFlowLayoutConstraintParam)constraintParamWithLayoutDirection:(LUILayoutConstraintDirection)layoutDirection layoutVerticalAlignment:(LUILayoutConstraintVerticalAlignment)layoutVerticalAlignment layoutHorizontalAlignment:(LUILayoutConstraintHorizontalAlignment)layoutHorizontalAlignment {
     LUIFillingFlowLayoutConstraintParam param;
-    if (layoutDirection  ==  LUILayoutConstraintDirectionHorizontal) {
+    if (layoutDirection == LUILayoutConstraintDirectionHorizontal) {
         NSDictionary<NSArray<NSNumber *> *,NSNumber *> *ConstraintParamRevertMapOfHorizontal = [self.class ConstraintParamRevertMapOfHorizontal];
         param = (LUIFillingFlowLayoutConstraintParam)[ConstraintParamRevertMapOfHorizontal[@[@(layoutDirection),@(layoutVerticalAlignment)]] integerValue];
     } else {

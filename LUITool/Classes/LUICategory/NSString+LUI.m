@@ -12,10 +12,10 @@
 - (NSNumber *)l_numberValue {
     NSNumber *number;
     number = [self l_numberOfInteger];
-    if (number  ==  nil) {
+    if (number == nil) {
         number = [self l_numberOfLongLong];
     }
-    if (number  ==  nil) {
+    if (number == nil) {
         number = [self l_numberOfCGFloat];
     }
     return number;

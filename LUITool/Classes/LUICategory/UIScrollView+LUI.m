@@ -161,7 +161,7 @@
     }
 }
 - (CGPoint)l_contentOffsetWithScrollTo:(CGRect)viewFrame direction:(LUIScrollViewScrollDirection)direction position:(LUIScrollViewScrollPosition)position {
-    LUICGAxis Y = direction  ==  LUIScrollViewScrollDirectionVertical ? LUICGAxisY : LUICGAxisX;
+    LUICGAxis Y = direction == LUIScrollViewScrollDirectionVertical ? LUICGAxisY : LUICGAxisX;
     CGPoint offset = self.contentOffset;
     CGRect bounds = self.bounds;
     UIEdgeInsets contentInset = self.l_adjustedContentInset;

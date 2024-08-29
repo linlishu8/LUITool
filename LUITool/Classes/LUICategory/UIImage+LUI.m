@@ -822,7 +822,7 @@
     
     //第二步 取每个点的像素值
     unsigned char* data = CGBitmapContextGetData (context);
-//    if (data  ==  NULL) {
+//    if (data == NULL) {
 //        CGContextRelease(context);
 //        return nil;
 //    }

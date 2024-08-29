@@ -163,7 +163,7 @@ NSString *const kLUIThemeUpdateNotification=@"kLUIThemeUpdateNotification";
         char *v;
         [invo getReturnValue:&v];
         result = @(v);
-    }else if (*methodReturnType  ==  '{') {
+    }else if (*methodReturnType == '{') {
         //结构体
         [invo invoke];
         void * v;

@@ -21,7 +21,7 @@
 @end
 @implementation LUIGestureRecognizerMoveAction
 - (void)setGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer {
-    if (_gestureRecognizer  ==  gestureRecognizer) return;
+    if (_gestureRecognizer == gestureRecognizer) return;
     [_gestureRecognizer removeTarget:self action:@selector(__moveGesture:)];
     _gestureRecognizer = gestureRecognizer;
     [_gestureRecognizer addTarget:self action:@selector(__moveGesture:)];
@@ -68,14 +68,14 @@
         default:
             break;
     }
-    if (gesture.state  ==  UIGestureRecognizerStateChanged) {
+    if (gesture.state == UIGestureRecognizerStateChanged) {
         CGPoint pre = __gestureState.prePoint;
         self.moveVector = CGVectorMake(p.x-pre.x, p.y-pre.y);
     }
     if (self.whenAction) {
         self.whenAction(self);
     }
-    if (gesture.state  ==  UIGestureRecognizerStateChanged) {
+    if (gesture.state == UIGestureRecognizerStateChanged) {
         CGPoint pre = __gestureState.prePoint;
         self.moveVector = CGVectorMake(p.x-pre.x, p.y-pre.y);
         __gestureState.prePoint = p;

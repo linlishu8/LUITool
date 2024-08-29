@@ -89,12 +89,12 @@ LUIDEF_EnumTypeCategories(LUILayoutConstraintDirection,
 }
 - (void)replaceItem:(id<LUILayoutConstraintItemProtocol>)oldItem with:(id<LUILayoutConstraintItemProtocol>)newItem {
     NSUInteger index = [_items indexOfObjectPassingTest:^BOOL(id<LUILayoutConstraintItemProtocol>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj  ==  oldItem) {
+        if (obj == oldItem) {
             return YES;
         }
         if ([obj isKindOfClass:[LUILayoutConstraintItemWrapper class]]) {
             LUILayoutConstraintItemWrapper *w = (LUILayoutConstraintItemWrapper *)obj;
-            if (w.originItem  ==  oldItem) {
+            if (w.originItem == oldItem) {
                 return YES;
             }
         }

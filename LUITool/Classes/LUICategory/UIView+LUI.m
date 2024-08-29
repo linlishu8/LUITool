@@ -249,5 +249,42 @@
     }
     return nil;
 }
+/// 添加圆角
+- (void)l_setCornerRadius:(CGFloat)radius forCorners:(UIRectCorner)corners {
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                                   byRoundingCorners:corners
+                                                         cornerRadii:CGSizeMake(radius, radius)];
+        CAShapeLayer *mask = [[CAShapeLayer alloc] init];
+        mask.path = path.CGPath;
+        self.layer.mask = mask;
+}
+
+/// 添加边框
+- (void)l_setBorderWidth:(CGFloat)width forEdges:(UIRectEdge)edges color:(UIColor *)color {
+    if (edges & UIRectEdgeTop) {
+        CALayer *border = [CALayer layer];
+        border.frame = CGRectMake(0, 0, self.frame.size.width, width);
+        border.backgroundColor = color.CGColor;
+        [self.layer addSublayer:border];
+    }
+    if (edges & UIRectEdgeBottom) {
+        CALayer *border = [CALayer layer];
+        border.frame = CGRectMake(0, self.frame.size.height - width, self.frame.size.width, width);
+        border.backgroundColor = color.CGColor;
+        [self.layer addSublayer:border];
+    }
+    if (edges & UIRectEdgeLeft) {
+        CALayer *border = [CALayer layer];
+        border.frame = CGRectMake(0, 0, width, self.frame.size.height);
+        border.backgroundColor = color.CGColor;
+        [self.layer addSublayer:border];
+    }
+    if (edges & UIRectEdgeRight) {
+        CALayer *border = [CALayer layer];
+        border.frame = CGRectMake(self.frame.size.width - width, 0, width, self.frame.size.height);
+        border.backgroundColor = color.CGColor;
+        [self.layer addSublayer:border];
+    }
+}
 
 @end

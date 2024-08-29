@@ -451,7 +451,7 @@
  */
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector {
     NSMethodSignature *signature = [super methodSignatureForSelector:selector];
-    if (signature  ==  nil) {
+    if (signature == nil) {
         id delegate = self.forwardDelegate;
         if ([delegate respondsToSelector:selector]) {
             signature = [delegate methodSignatureForSelector:selector];

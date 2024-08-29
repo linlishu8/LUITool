@@ -135,6 +135,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 递归查找isFirstResponder的控件
 - (nullable __kindof UIView *)l_firstResponder;
+
+/// 添加圆角
+- (void)l_setCornerRadius:(CGFloat)radius forCorners:(UIRectCorner)corners;
+
+/// 添加边框
+- (void)l_setBorderWidth:(CGFloat)width forEdges:(UIRectEdge)edges color:(UIColor *)color;
 @end
 
 NS_ASSUME_NONNULL_END

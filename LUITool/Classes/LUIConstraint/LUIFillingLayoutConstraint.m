@@ -116,7 +116,7 @@
     CGRect f2 = bounds;
     CGRect f_filling = bounds;
     
-    LUICGAxis axis = self.layoutDirection  ==  LUILayoutConstraintDirectionHorizontal ? LUICGAxisX : LUICGAxisY;
+    LUICGAxis axis = self.layoutDirection == LUILayoutConstraintDirectionHorizontal ? LUICGAxisX : LUICGAxisY;
     LUICGAxis axisR = LUICGAxisReverse(axis);
     
     CGFloat maxLengthR = 0;
@@ -172,10 +172,10 @@
     CGRect f2 = bounds;
     CGRect f_filling = bounds;
     
-    LUICGAxis axis = self.layoutDirection  ==  LUILayoutConstraintDirectionHorizontal ? LUICGAxisX : LUICGAxisY;
+    LUICGAxis axis = self.layoutDirection == LUILayoutConstraintDirectionHorizontal ? LUICGAxisX : LUICGAxisY;
     LUICGAxis axisR = LUICGAxisReverse(axis);
     
-    LUICGRectAlignment align = self.layoutDirection  ==  LUILayoutConstraintDirectionHorizontal? LUICGRectAlignmentFromLUILayoutConstraintVerticalAlignment(self.layoutVerticalAlignment):LUICGRectAlignmentFromLUILayoutConstraintHorizontalAlignment(self.layoutHorizontalAlignment);
+    LUICGRectAlignment align = self.layoutDirection == LUILayoutConstraintDirectionHorizontal? LUICGRectAlignmentFromLUILayoutConstraintVerticalAlignment(self.layoutVerticalAlignment):LUICGRectAlignmentFromLUILayoutConstraintHorizontalAlignment(self.layoutHorizontalAlignment);
     
     self.beforeItemsFlowlayout.bounds = f1;
     [self.beforeItemsFlowlayout layoutItemsWithResizeItems:resizeItems];

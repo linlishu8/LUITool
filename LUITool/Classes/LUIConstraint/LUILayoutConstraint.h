@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger, LUILayoutConstraintVerticalAlignment) {
 };
 LUIAS_EnumTypeCategories(LUILayoutConstraintVerticalAlignment)
 CG_INLINE LUICGRectAlignment LUICGRectAlignmentFromLUILayoutConstraintVerticalAlignment(LUILayoutConstraintVerticalAlignment align) {
-    return align  ==  LUILayoutConstraintVerticalAlignmentCenter ? LUICGRectAlignmentMid:(align  ==  LUILayoutConstraintVerticalAlignmentTop ? LUICGRectAlignmentMin:LUICGRectAlignmentMax);
+    return align == LUILayoutConstraintVerticalAlignmentCenter ? LUICGRectAlignmentMid:(align == LUILayoutConstraintVerticalAlignmentTop ? LUICGRectAlignmentMin:LUICGRectAlignmentMax);
 }
 
 typedef NS_ENUM(NSInteger, LUILayoutConstraintHorizontalAlignment) {

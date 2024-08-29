@@ -12,13 +12,13 @@
 @implementation UITableView (LUI)
 
 - (void)l_hiddenHeaderAreaBlank {
-    if (self.tableHeaderView  ==  nil && self.style  ==  UITableViewStyleGrouped) {
+    if (self.tableHeaderView == nil && self.style == UITableViewStyleGrouped) {
         UIView *emptyHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
         self.tableHeaderView = emptyHeaderView;
     }
 }
 - (void)l_hiddenFooterAreaSeparators {
-    if (self.tableFooterView  ==  nil && self.separatorStyle != UITableViewCellSeparatorStyleNone) {
+    if (self.tableFooterView == nil && self.separatorStyle != UITableViewCellSeparatorStyleNone) {
         UIView *emptyFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
         self.tableFooterView = emptyFooterView;
     }
@@ -45,7 +45,7 @@
     return maxAreaIndexPath;
 }
 - (CGFloat)l_separatorHeight {
-    CGFloat h = self.separatorStyle  ==  UITableViewCellSeparatorStyleNone ? 0 : 1.0 / [UIScreen mainScreen].scale;
+    CGFloat h = self.separatorStyle == UITableViewCellSeparatorStyleNone ? 0 : 1.0 / [UIScreen mainScreen].scale;
     return h;
 }
 + (BOOL)l_isAutoAddSeparatorHeightToCell {
@@ -125,9 +125,9 @@ LUIDEF_SINGLETON(__LUI_UITableViewDefaultGroupFootSectionView)
     if ([self.delegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
         cellHeight = [self.delegate tableView:self heightForRowAtIndexPath:p];
     }
-    if (cellHeight  ==  UITableViewAutomaticDimension) {
+    if (cellHeight == UITableViewAutomaticDimension) {
         UITableViewCell *cell = [self.dataSource tableView:self cellForRowAtIndexPath:p];
-        BOOL nosuperView = cell.superview  ==  nil;
+        BOOL nosuperView = cell.superview == nil;
         if (nosuperView) {//在计算动态高度时，会用到tableView.l_separatorHeight,因此cell必须临时添加到tableView中
             [self addSubview:cell];
         }
@@ -144,7 +144,7 @@ LUIDEF_SINGLETON(__LUI_UITableViewDefaultGroupFootSectionView)
         cellBounds.origin = CGPointZero;
         CGRect contentViewBounds = UIEdgeInsetsInsetRect(cellBounds, safeAreaInsets);
         
-        if (cell.accessoryView  ==  nil) {
+        if (cell.accessoryView == nil) {
             if (cell.accessoryView) {
                 contentViewBounds.size.width -= cell.accessoryView.bounds.size.width+cell.l_accessoryCustomViewLeftMargin+cell.l_accessoryCustomViewRightMargin;//扣掉自定义accessoryView的宽度
             } else {
@@ -182,7 +182,7 @@ LUIDEF_SINGLETON(__LUI_UITableViewDefaultGroupFootSectionView)
             sectionHeight = self.sectionFooterHeight;
         }
     }
-    if (sectionHeight  ==  UITableViewAutomaticDimension) {
+    if (sectionHeight == UITableViewAutomaticDimension) {
         UIView *sectionView = nil;
         if (isHeader) {
             if ([self.delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
@@ -194,7 +194,7 @@ LUIDEF_SINGLETON(__LUI_UITableViewDefaultGroupFootSectionView)
             }
         }
         if (!sectionView) {
-            if (self.style  ==  UITableViewStylePlain) {
+            if (self.style == UITableViewStylePlain) {
                 CGFloat fixHeight = 28;//使用系统自带的头/尾，固定尺寸为28（没有title也占用同样的尺寸）
                 if (isHeader) {
                     if ([self.dataSource respondsToSelector:@selector(tableView:titleForHeaderInSection:)] || [self.delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
@@ -243,7 +243,7 @@ LUIDEF_SINGLETON(__LUI_UITableViewDefaultGroupFootSectionView)
     CGFloat padding = 0;
     if (@available(iOS 15.0, *)) {
         CGFloat sectionHeaderTopPadding = self.sectionHeaderTopPadding;
-        if (sectionHeaderTopPadding  ==  UITableViewAutomaticDimension) {
+        if (sectionHeaderTopPadding == UITableViewAutomaticDimension) {
             //iOS15,系统给section的头部添加了22的间距
             padding += 22;
         } else {
@@ -301,7 +301,7 @@ LUIDEF_SINGLETON(__LUI_UITableViewDefaultGroupFootSectionView)
         height += separatorHeight;//由于多个cell之间因为分隔线的累加，可能会造成浮点误差。这里额外添加一次分隔线
     }
     
-    if (self.style  ==  UITableViewStyleGrouped && self.separatorStyle  ==  UITableViewCellSeparatorStyleNone) {
+    if (self.style == UITableViewStyleGrouped && self.separatorStyle == UITableViewCellSeparatorStyleNone) {
         height += 20;//group且没有分隔线时，tableview会自动添加20的contentSize
     }
     
