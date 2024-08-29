@@ -29,14 +29,12 @@
     CGSize keyboardSize = [safetKeyboard sizeThatFits:self.view.frame.size];
     safetKeyboard.frame = CGRectMake(0, 50, self.view.bounds.size.width, keyboardSize.height);
     
-    [self.view addSubview:safetKeyboard];
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
+    textField.layer.borderWidth = 2;
+    textField.layer.borderColor = UIColor.blackColor.CGColor;
+    [self.view addSubview:textField];
     
-//    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
-//    textField.layer.borderWidth = 2;
-//    textField.layer.borderColor = UIColor.blackColor.CGColor;
-//    [self.view addSubview:textField];
-//    
-//    textField.inputView = safetKeyboard;
+    textField.inputView = safetKeyboard;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {

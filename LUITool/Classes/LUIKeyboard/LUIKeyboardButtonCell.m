@@ -42,28 +42,6 @@
     } else if (buttonModel.backgroundColor) {
         [self.cellButton setBackgroundColor:buttonModel.backgroundColor];
     }
-    
-    
-    // 为四边分别设置边框
-//    [self addBorderToLayer:self.contentView.layer
-//         withConfiguration:buttonModel.topBorder
-//                startPoint:CGPointMake(0, 0)
-//                  endPoint:CGPointMake(self.contentView.frame.size.width, 0)];
-//    
-//    [self addBorderToLayer:self.contentView.layer
-//         withConfiguration:buttonModel.leftBorder
-//                startPoint:CGPointMake(0, 0)
-//                  endPoint:CGPointMake(0, self.contentView.frame.size.height)];
-//    
-//    [self addBorderToLayer:self.contentView.layer
-//         withConfiguration:buttonModel.bottomBorder
-//                startPoint:CGPointMake(0, self.contentView.frame.size.height)
-//                  endPoint:CGPointMake(self.contentView.frame.size.width, self.contentView.frame.size.height)];
-//    
-//    [self addBorderToLayer:self.contentView.layer
-//         withConfiguration:buttonModel.rightBorder
-//                startPoint:CGPointMake(self.contentView.frame.size.width, 0)
-//                  endPoint:CGPointMake(self.contentView.frame.size.width, self.contentView.frame.size.height)];
 }
 
 - (void)applyCornerRadii:(LUICornerRadiiConfiguration *)cornerRadii toView:(UIView *)view {
@@ -125,6 +103,30 @@
     
     // 为四个角分别设置圆角
     [self applyCornerRadii:buttonModel.cornerRadii toView:self.cellButton];
+    [self addBorderWithButtonModel:buttonModel];
+}
+
+- (void)addBorderWithButtonModel:(LUIKeyboardButtonModel *)buttonModel {
+    // 为四边分别设置边框
+    [self addBorderToLayer:self.contentView.layer
+         withConfiguration:buttonModel.topBorder
+                startPoint:CGPointMake(0, 0)
+                  endPoint:CGPointMake(self.cellButton.frame.size.width, 0)];
+
+    [self addBorderToLayer:self.contentView.layer
+         withConfiguration:buttonModel.leftBorder
+                startPoint:CGPointMake(0, 0)
+                  endPoint:CGPointMake(0, self.cellButton.frame.size.height)];
+
+    [self addBorderToLayer:self.contentView.layer
+         withConfiguration:buttonModel.bottomBorder
+                startPoint:CGPointMake(0, self.cellButton.frame.size.height)
+                  endPoint:CGPointMake(self.cellButton.frame.size.width, self.cellButton.frame.size.height)];
+
+    [self addBorderToLayer:self.contentView.layer
+         withConfiguration:buttonModel.rightBorder
+                startPoint:CGPointMake(self.cellButton.frame.size.width, 0)
+                  endPoint:CGPointMake(self.cellButton.frame.size.width, self.cellButton.frame.size.height)];
 }
 
 - (CGSize)customSizeThatFits:(CGSize)size {

@@ -25,7 +25,7 @@
         buttonModel.title = num;
         buttonModel.type = LUIKeyboardButtonTypeCharacter;
         buttonModel.backgroundColor = UIColor.whiteColor;
-//        buttonModel.cornerRadii = [[LUICornerRadiiConfiguration alloc] initWithAllCornerRadii:4.0];
+        buttonModel.rightBorder = [[LUIBorderConfiguration alloc] initWithWidth:1 color:UIColor.blackColor];
         [line1Buttons addObject:buttonModel];
     }];
     
@@ -36,7 +36,12 @@
     [line2Char enumerateObjectsUsingBlock:^(NSString *num, NSUInteger idx, BOOL * _Nonnull stop) {
         LUIKeyboardButtonModel *buttonModel = [[LUIKeyboardButtonModel alloc] init];
         buttonModel.buttonHeight = 44;
+        buttonModel.backgroundColor = UIColor.whiteColor;
         buttonModel.title = num;
+        if (idx > 0) {
+            buttonModel.marginInsets = UIEdgeInsetsMake(0, 3, 0, 0);
+        }
+        buttonModel.cornerRadii = [[LUICornerRadiiConfiguration alloc] initWithAllCornerRadii:4.0];
         buttonModel.type = LUIKeyboardButtonTypeCharacter;
         [line2Buttons addObject:buttonModel];
     }];
