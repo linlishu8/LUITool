@@ -23,18 +23,20 @@
     titleView.backgroundColor = UIColor.blackColor;
     LUIKeyboardView *safetKeyboard = [[LUIKeyboardView alloc] initWithTitleView:titleView];
     safetKeyboard.sectionInset = UIEdgeInsetsMake(6, 0, 0, 0);
-    safetKeyboard.minimumInteritemSpacing = 3;
+    safetKeyboard.minimumInteritemSpacing = 0;
     [safetKeyboard __reloadKeyboardButtons:[LUISafeKeyboardButtons LetterKeyboard]];
-    safetKeyboard.backgroundColor = UIColor.redColor;
+    safetKeyboard.backgroundColor = UIColor.grayColor;
     CGSize keyboardSize = [safetKeyboard sizeThatFits:self.view.frame.size];
-    safetKeyboard.frame = CGRectMake(0, 0, self.view.bounds.size.width, keyboardSize.height);
+    safetKeyboard.frame = CGRectMake(0, 50, self.view.bounds.size.width, keyboardSize.height);
     
-    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
-    textField.layer.borderWidth = 2;
-    textField.layer.borderColor = UIColor.blackColor.CGColor;
-    [self.view addSubview:textField];
+    [self.view addSubview:safetKeyboard];
     
-    textField.inputView = safetKeyboard;
+//    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
+//    textField.layer.borderWidth = 2;
+//    textField.layer.borderColor = UIColor.blackColor.CGColor;
+//    [self.view addSubview:textField];
+//    
+//    textField.inputView = safetKeyboard;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {

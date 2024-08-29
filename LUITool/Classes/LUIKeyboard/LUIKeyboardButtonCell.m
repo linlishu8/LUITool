@@ -43,55 +43,53 @@
         [self.cellButton setBackgroundColor:buttonModel.backgroundColor];
     }
     
-    // 为四个角分别设置圆角
-    [self applyCornerRadii:buttonModel.cornerRadii toView:self.contentView];
     
     // 为四边分别设置边框
-    [self addBorderToLayer:self.contentView.layer
-         withConfiguration:buttonModel.topBorder
-                startPoint:CGPointMake(0, 0)
-                  endPoint:CGPointMake(self.contentView.frame.size.width, 0)];
-    
-    [self addBorderToLayer:self.contentView.layer
-         withConfiguration:buttonModel.leftBorder
-                startPoint:CGPointMake(0, 0)
-                  endPoint:CGPointMake(0, self.contentView.frame.size.height)];
-    
-    [self addBorderToLayer:self.contentView.layer
-         withConfiguration:buttonModel.bottomBorder
-                startPoint:CGPointMake(0, self.contentView.frame.size.height)
-                  endPoint:CGPointMake(self.contentView.frame.size.width, self.contentView.frame.size.height)];
-    
-    [self addBorderToLayer:self.contentView.layer
-         withConfiguration:buttonModel.rightBorder
-                startPoint:CGPointMake(self.contentView.frame.size.width, 0)
-                  endPoint:CGPointMake(self.contentView.frame.size.width, self.contentView.frame.size.height)];
+//    [self addBorderToLayer:self.contentView.layer
+//         withConfiguration:buttonModel.topBorder
+//                startPoint:CGPointMake(0, 0)
+//                  endPoint:CGPointMake(self.contentView.frame.size.width, 0)];
+//    
+//    [self addBorderToLayer:self.contentView.layer
+//         withConfiguration:buttonModel.leftBorder
+//                startPoint:CGPointMake(0, 0)
+//                  endPoint:CGPointMake(0, self.contentView.frame.size.height)];
+//    
+//    [self addBorderToLayer:self.contentView.layer
+//         withConfiguration:buttonModel.bottomBorder
+//                startPoint:CGPointMake(0, self.contentView.frame.size.height)
+//                  endPoint:CGPointMake(self.contentView.frame.size.width, self.contentView.frame.size.height)];
+//    
+//    [self addBorderToLayer:self.contentView.layer
+//         withConfiguration:buttonModel.rightBorder
+//                startPoint:CGPointMake(self.contentView.frame.size.width, 0)
+//                  endPoint:CGPointMake(self.contentView.frame.size.width, self.contentView.frame.size.height)];
 }
 
 - (void)applyCornerRadii:(LUICornerRadiiConfiguration *)cornerRadii toView:(UIView *)view {
-    UIBezierPath *cornerPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds
-                                                     byRoundingCorners:UIRectCornerAllCorners
-                                                           cornerRadii:CGSizeMake(0, 0)];
+    if (!cornerRadii) return;
+    // 创建路径来定义按钮的圆角
+    UIBezierPath *path = [UIBezierPath bezierPath];
     
-    if (cornerRadii) {
-        // 构造每个角的圆角
-        [cornerPath moveToPoint:CGPointMake(view.bounds.size.width, view.bounds.size.height / 2)];
-        [cornerPath addArcWithCenter:CGPointMake(view.bounds.size.width - cornerRadii.topRight, cornerRadii.topRight)
-                              radius:cornerRadii.topRight startAngle:0 endAngle:M_PI_2 clockwise:NO];
-        [cornerPath addLineToPoint:CGPointMake(cornerRadii.bottomRight, view.bounds.size.height)];
-        [cornerPath addArcWithCenter:CGPointMake(cornerRadii.bottomRight, view.bounds.size.height - cornerRadii.bottomRight)
-                              radius:cornerRadii.bottomRight startAngle:M_PI_2 endAngle:M_PI clockwise:NO];
-        [cornerPath addLineToPoint:CGPointMake(0, cornerRadii.bottomLeft)];
-        [cornerPath addArcWithCenter:CGPointMake(cornerRadii.bottomLeft, cornerRadii.bottomLeft)
-                              radius:cornerRadii.bottomLeft startAngle:M_PI endAngle:M_PI + M_PI_2 clockwise:NO];
-        [cornerPath addLineToPoint:CGPointMake(view.bounds.size.width - cornerRadii.topLeft, 0)];
-        [cornerPath addArcWithCenter:CGPointMake(view.bounds.size.width - cornerRadii.topLeft, cornerRadii.topLeft)
-                              radius:cornerRadii.topLeft startAngle:M_PI + M_PI_2 endAngle:0 clockwise:NO];
-    }
+    // 处理四个角的圆角
+    [path moveToPoint:CGPointMake(view.bounds.size.width - cornerRadii.topRight, 0)];
+    [path addArcWithCenter:CGPointMake(view.bounds.size.width - cornerRadii.topRight, cornerRadii.topRight)
+                    radius:cornerRadii.topRight startAngle:-M_PI_2 endAngle:0 clockwise:YES];
     
+    [path addArcWithCenter:CGPointMake(view.bounds.size.width - cornerRadii.bottomRight, view.bounds.size.height - cornerRadii.bottomRight)
+                    radius:cornerRadii.bottomRight startAngle:0 endAngle:M_PI_2 clockwise:YES];
+    
+    [path addArcWithCenter:CGPointMake(cornerRadii.bottomLeft, view.bounds.size.height - cornerRadii.bottomLeft)
+                    radius:cornerRadii.bottomLeft startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
+    
+    [path addArcWithCenter:CGPointMake(cornerRadii.topLeft, cornerRadii.topLeft)
+                    radius:cornerRadii.topLeft startAngle:M_PI endAngle:-M_PI_2 clockwise:YES];
+    
+    [path closePath];
+    
+    // 设置遮罩层，应用圆角
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
-    maskLayer.frame = view.bounds;
-    maskLayer.path = cornerPath.CGPath;
+    maskLayer.path = path.CGPath;
     view.layer.mask = maskLayer;
 }
 
@@ -124,6 +122,9 @@
     }
     
     self.cellButton.frame = f;
+    
+    // 为四个角分别设置圆角
+    [self applyCornerRadii:buttonModel.cornerRadii toView:self.cellButton];
 }
 
 - (CGSize)customSizeThatFits:(CGSize)size {
@@ -133,8 +134,14 @@
     if (buttonModel.buttonWidth == 0) {
         NSInteger count = self.collectionCellModel.sectionModel.numberOfCells;
         CGFloat space = self.collectionCellModel.collectionView.l_collectionViewFlowLayout.minimumInteritemSpacing;
+        CGFloat totalSpacing = (count - 1) * space;
+        CGFloat availableWidth = size.width - totalSpacing;
         if (count) {
             s.width = floor(((size.width - sectionModel.l_otherLength)-(count-1)*space)/(count - sectionModel.l_numberOfOtherButtons));
+            CGFloat remainingWidth = availableWidth - (s.width * count);
+            if ((self.collectionCellModel.indexPathInModel.item + 1) % count == 0) {
+                s.width += remainingWidth;
+            }
         }
     } else {
         s.width = buttonModel.buttonWidth;

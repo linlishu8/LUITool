@@ -33,6 +33,17 @@
     return self;
 }
 
+- (instancetype)initWithAllCornerRadii:(CGFloat)cornerRadii {
+    self = [super init];
+    if (self) {
+        _topLeft = cornerRadii;
+        _topRight = cornerRadii;
+        _bottomLeft = cornerRadii;
+        _bottomRight = cornerRadii;
+    }
+    return self;
+}
+
 @end
 
 @implementation LUIKeyboardButtonModel

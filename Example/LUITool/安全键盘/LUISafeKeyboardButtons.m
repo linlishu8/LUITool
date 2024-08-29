@@ -25,6 +25,7 @@
         buttonModel.title = num;
         buttonModel.type = LUIKeyboardButtonTypeCharacter;
         buttonModel.backgroundColor = UIColor.whiteColor;
+//        buttonModel.cornerRadii = [[LUICornerRadiiConfiguration alloc] initWithAllCornerRadii:4.0];
         [line1Buttons addObject:buttonModel];
     }];
     
