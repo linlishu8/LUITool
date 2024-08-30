@@ -56,7 +56,7 @@
 
 - (CGSize)customSizeThatFits:(CGSize)size {
     CGSize s = [self.flowlayout sizeThatFits:size resizeItems:YES];
-    s.height = MAX(s.height, 30);
+    s.height = MAX(s.height, 44);
     return s;
 }
 
@@ -65,7 +65,7 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.textColor = UIColor.blackColor;
+        _titleLabel.textColor = [UIColor l_colorWithLight:[UIColor blackColor] dark:[UIColor lightTextColor]];
         _titleLabel.font = [UIFont systemFontOfSize:14];
     }
     return _titleLabel;
