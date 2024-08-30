@@ -122,6 +122,7 @@ Pod::Spec.new do |s|
     ss.source_files = 'LUITool/Classes/LUIKeyboard/*.{h,m}'
     ss.dependency 'LUITool/LUIConstraint'
     ss.dependency 'LUITool/LUICollectionView'
+    ss.dependency 'LUITool/LUILayoutButton'
     ss.frameworks = 'UIKit'
   end
   
