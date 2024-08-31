@@ -9,12 +9,12 @@
 
 @implementation LUIAlertView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++ (instancetype)alertViewWithTitle:(nullable NSString *)title message:(nullable NSString *)message preferredStyle:(LUIAlertViewStyle)preferredStyle {
+    LUIAlertView *alertView = [[self alloc] init];
+    alertView.title = title;
+    alertView.message = message;
+    alertView.preferredStyle = preferredStyle;
+    return alertView;
 }
-*/
 
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F27070A2C80B73000DC9247 /* LUIKeyboardButtonModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2707082C80B73000DC9247 /* LUIKeyboardButtonModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F27070B2C80B73000DC9247 /* LUIKeyboardButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707092C80B73000DC9247 /* LUIKeyboardButtonModel.m */; };
+		1F27070E2C83071900DC9247 /* LUIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B62E2C71F013004839E2 /* LUIAlertView.m */; };
 		1F45B5E02C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B5DF2C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m */; };
 		1F45B5E12C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B5DE2C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F45B5E92C71896A004839E2 /* LUIThemeCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B5E22C71896A004839E2 /* LUIThemeCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1019,6 +1020,7 @@
 				1FCBAEF62C7097AC00170B35 /* LUICollectionViewModel.m in Sources */,
 				1FCBAE032C68E7F000170B35 /* UIGestureRecognizer+LUI.m in Sources */,
 				1FCBADE32C68969B00170B35 /* UITableViewCell+LUI.m in Sources */,
+				1F27070E2C83071900DC9247 /* LUIAlertView.m in Sources */,
 				1FCBAF052C7097AC00170B35 /* UICollectionViewCell+LUICollectionViewCellProtocol.m in Sources */,
 				1F4AA2FD2C73870200CDC476 /* LUIKeyboardButtonCell.m in Sources */,
 				1F45B6092C718978004839E2 /* LUILayoutConstraintItemAttributeBase.m in Sources */,
