@@ -26,6 +26,8 @@
 		1F27072E2C85FB6000DC9247 /* UIKit+LUITheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F27072C2C85FB6000DC9247 /* UIKit+LUITheme.m */; };
 		1F2707312C85FE8B00DC9247 /* UIKit+LUIThemeElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F27072F2C85FE8B00DC9247 /* UIKit+LUIThemeElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F2707322C85FE8B00DC9247 /* UIKit+LUIThemeElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707302C85FE8B00DC9247 /* UIKit+LUIThemeElement.m */; };
+		1F2707462C860EE500DC9247 /* LUILedBannerVerticalView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2707442C860EE500DC9247 /* LUILedBannerVerticalView.h */; };
+		1F2707472C860EE500DC9247 /* LUILedBannerVerticalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707452C860EE500DC9247 /* LUILedBannerVerticalView.m */; };
 		1F45B5E02C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B5DF2C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m */; };
 		1F45B5E12C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B5DE2C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F45B5E92C71896A004839E2 /* LUIThemeCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B5E22C71896A004839E2 /* LUIThemeCenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -212,6 +214,8 @@
 		1F27072C2C85FB6000DC9247 /* UIKit+LUITheme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIKit+LUITheme.m"; sourceTree = "<group>"; };
 		1F27072F2C85FE8B00DC9247 /* UIKit+LUIThemeElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIKit+LUIThemeElement.h"; sourceTree = "<group>"; };
 		1F2707302C85FE8B00DC9247 /* UIKit+LUIThemeElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIKit+LUIThemeElement.m"; sourceTree = "<group>"; };
+		1F2707442C860EE500DC9247 /* LUILedBannerVerticalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUILedBannerVerticalView.h; sourceTree = "<group>"; };
+		1F2707452C860EE500DC9247 /* LUILedBannerVerticalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUILedBannerVerticalView.m; sourceTree = "<group>"; };
 		1F45B5DE2C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h"; sourceTree = "<group>"; };
 		1F45B5DF2C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m"; sourceTree = "<group>"; };
 		1F45B5E22C71896A004839E2 /* LUIThemeCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUIThemeCenter.h; sourceTree = "<group>"; };
@@ -403,6 +407,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F2707432C860EC800DC9247 /* LUILedBannerVerticalView */ = {
+			isa = PBXGroup;
+			children = (
+				1F2707442C860EE500DC9247 /* LUILedBannerVerticalView.h */,
+				1F2707452C860EE500DC9247 /* LUILedBannerVerticalView.m */,
+			);
+			name = LUILedBannerVerticalView;
+			path = LUITool/Classes/LUILedBannerVerticalView;
+			sourceTree = "<group>";
+		};
 		1F45B5E82C71896A004839E2 /* LUITheme */ = {
 			isa = PBXGroup;
 			children = (
@@ -758,6 +772,7 @@
 			isa = PBXGroup;
 			children = (
 				0E3D36B1F54495A630B693164B709F8D /* LUITool.h */,
+				1F2707432C860EC800DC9247 /* LUILedBannerVerticalView */,
 				1F45B62C2C71EF12004839E2 /* LUIAlertView */,
 				1F45B6272C71EDDB004839E2 /* LUIEdgeInsetsUILabel */,
 				1FCBADC32C685F0400170B35 /* LUICore */,
@@ -830,6 +845,7 @@
 				1F45B6022C718978004839E2 /* LUIFillingLayoutConstraint.h in Headers */,
 				1F45B5EC2C71896A004839E2 /* LUIThemePickerProtocol.h in Headers */,
 				1F45B6042C718978004839E2 /* LUIFlowLayoutConstraint.h in Headers */,
+				1F2707462C860EE500DC9247 /* LUILedBannerVerticalView.h in Headers */,
 				1F45B6002C718978004839E2 /* LUIFillingFlowLayoutConstraint.h in Headers */,
 				1F45B5EB2C71896A004839E2 /* LUIThemeElementProtocol.h in Headers */,
 				1F45B60C2C718978004839E2 /* LUISegmentFlowLayoutConstraint.h in Headers */,
@@ -1087,6 +1103,7 @@
 				1F27070E2C83071900DC9247 /* LUIAlertView.m in Sources */,
 				1FCBAF052C7097AC00170B35 /* UICollectionViewCell+LUICollectionViewCellProtocol.m in Sources */,
 				1F4AA2FD2C73870200CDC476 /* LUIKeyboardButtonCell.m in Sources */,
+				1F2707472C860EE500DC9247 /* LUILedBannerVerticalView.m in Sources */,
 				1F45B6092C718978004839E2 /* LUILayoutConstraintItemAttributeBase.m in Sources */,
 				6F1E3225E22EE9A691A57CA31199E549 /* LUITool-dummy.m in Sources */,
 				1FBE4C912C74DB6E0054F742 /* LUIKeyBoardSectionModel.m in Sources */,

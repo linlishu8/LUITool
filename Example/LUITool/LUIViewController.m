@@ -52,6 +52,9 @@
         LUISafeKeyboardViewController *themeViewController = [[LUISafeKeyboardViewController alloc] init];
         [self.navigationController pushViewController:themeViewController animated:YES];
     };
+    LUITableViewCellModel *chatCellModel = [self addCellModelWithCellTitle:@"聊天"];
+    LUITableViewCellModel *ledVerticalCellModel = [self addCellModelWithCellTitle:@"垂直跑马灯"];
+    LUITableViewCellModel *menuCellModel = [self addCellModelWithCellTitle:@"菜单"];
     [self.tableView.model reloadTableViewData];
 }
 
