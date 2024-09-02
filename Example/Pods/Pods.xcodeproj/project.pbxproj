@@ -10,21 +10,21 @@
 		1F27070A2C80B73000DC9247 /* LUIKeyboardButtonModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2707082C80B73000DC9247 /* LUIKeyboardButtonModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F27070B2C80B73000DC9247 /* LUIKeyboardButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707092C80B73000DC9247 /* LUIKeyboardButtonModel.m */; };
 		1F27070E2C83071900DC9247 /* LUIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B62E2C71F013004839E2 /* LUIAlertView.m */; };
-		1F2707152C85F44800DC9247 /* LUIThemeCenterElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2707132C85F44800DC9247 /* LUIThemeCenterElement.h */; };
+		1F2707152C85F44800DC9247 /* LUIThemeCenterElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2707132C85F44800DC9247 /* LUIThemeCenterElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F2707162C85F44800DC9247 /* LUIThemeCenterElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707142C85F44800DC9247 /* LUIThemeCenterElement.m */; };
-		1F2707192C85F4FD00DC9247 /* LUIThemePickerBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2707172C85F4FD00DC9247 /* LUIThemePickerBase.h */; };
+		1F2707192C85F4FD00DC9247 /* LUIThemePickerBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2707172C85F4FD00DC9247 /* LUIThemePickerBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F27071A2C85F4FD00DC9247 /* LUIThemePickerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707182C85F4FD00DC9247 /* LUIThemePickerBase.m */; };
-		1F27071D2C85F6BE00DC9247 /* UIColor+LUITheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F27071B2C85F6BE00DC9247 /* UIColor+LUITheme.h */; };
+		1F27071D2C85F6BE00DC9247 /* UIColor+LUITheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F27071B2C85F6BE00DC9247 /* UIColor+LUITheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F27071E2C85F6BE00DC9247 /* UIColor+LUITheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F27071C2C85F6BE00DC9247 /* UIColor+LUITheme.m */; };
-		1F2707212C85F92A00DC9247 /* LUIThemePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F27071F2C85F92A00DC9247 /* LUIThemePicker.h */; };
+		1F2707212C85F92A00DC9247 /* LUIThemePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F27071F2C85F92A00DC9247 /* LUIThemePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F2707222C85F92A00DC9247 /* LUIThemePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707202C85F92A00DC9247 /* LUIThemePicker.m */; };
-		1F2707252C85F9CD00DC9247 /* LUIThemeStatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2707232C85F9CD00DC9247 /* LUIThemeStatePicker.h */; };
+		1F2707252C85F9CD00DC9247 /* LUIThemeStatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2707232C85F9CD00DC9247 /* LUIThemeStatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F2707262C85F9CD00DC9247 /* LUIThemeStatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707242C85F9CD00DC9247 /* LUIThemeStatePicker.m */; };
-		1F2707292C85FAA500DC9247 /* NSString+LUITheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2707272C85FAA500DC9247 /* NSString+LUITheme.h */; };
+		1F2707292C85FAA500DC9247 /* NSString+LUITheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2707272C85FAA500DC9247 /* NSString+LUITheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F27072A2C85FAA500DC9247 /* NSString+LUITheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707282C85FAA500DC9247 /* NSString+LUITheme.m */; };
-		1F27072D2C85FB6000DC9247 /* UIKit+LUITheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F27072B2C85FB6000DC9247 /* UIKit+LUITheme.h */; };
+		1F27072D2C85FB6000DC9247 /* UIKit+LUITheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F27072B2C85FB6000DC9247 /* UIKit+LUITheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F27072E2C85FB6000DC9247 /* UIKit+LUITheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F27072C2C85FB6000DC9247 /* UIKit+LUITheme.m */; };
-		1F2707312C85FE8B00DC9247 /* UIKit+LUIThemeElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F27072F2C85FE8B00DC9247 /* UIKit+LUIThemeElement.h */; };
+		1F2707312C85FE8B00DC9247 /* UIKit+LUIThemeElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F27072F2C85FE8B00DC9247 /* UIKit+LUIThemeElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F2707322C85FE8B00DC9247 /* UIKit+LUIThemeElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707302C85FE8B00DC9247 /* UIKit+LUIThemeElement.m */; };
 		1F45B5E02C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B5DF2C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m */; };
 		1F45B5E12C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F45B5DE2C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -794,10 +794,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F2707192C85F4FD00DC9247 /* LUIThemePickerBase.h in Headers */,
 				1FCBADF82C68E66E00170B35 /* UITraitCollection+LUI.h in Headers */,
 				1FCBADD42C68928100170B35 /* UIImage+LUI.h in Headers */,
-				1F27072D2C85FB6000DC9247 /* UIKit+LUITheme.h in Headers */,
 				1FCBAE042C68E7F000170B35 /* UIGestureRecognizer+LUI.h in Headers */,
 				1FCBAE2E2C6A2EB600170B35 /* LUIMacro.h in Headers */,
 				1FCBADD82C6894DB00170B35 /* UIImageView+LUI.h in Headers */,
@@ -806,7 +804,6 @@
 				1FCBADF02C689D6000170B35 /* UIColor+LUI.h in Headers */,
 				1FCBADFC2C68E6BB00170B35 /* NSString+LUI.h in Headers */,
 				1FCBADE02C68961800170B35 /* UITableView+LUI.h in Headers */,
-				1F2707252C85F9CD00DC9247 /* LUIThemeStatePicker.h in Headers */,
 				1FCBAE262C68F0A000170B35 /* LUITableViewSectionModel.h in Headers */,
 				1FCBADD02C688EB400170B35 /* UIButton+LUI.h in Headers */,
 				1FCBAE222C68EFF200170B35 /* LUITableViewModel.h in Headers */,
@@ -820,10 +817,8 @@
 				1FCBAE522C6B9FCC00170B35 /* CGGeometry+LUI.h in Headers */,
 				1FCBAE3A2C6A487400170B35 /* UITableViewCell+LUITableViewCell.h in Headers */,
 				1FCBAE322C6A426200170B35 /* LUITableViewSectionViewProtocol.h in Headers */,
-				1F2707292C85FAA500DC9247 /* NSString+LUITheme.h in Headers */,
 				1FCBADE42C68969B00170B35 /* UITableViewCell+LUI.h in Headers */,
 				1FCBAEF22C7097AC00170B35 /* LUICollectionViewCellModel.h in Headers */,
-				1F27071D2C85F6BE00DC9247 /* UIColor+LUITheme.h in Headers */,
 				1FCBAF022C7097AC00170B35 /* UICollectionReusableView+LUICollectionViewSupplementaryElementProtocol.h in Headers */,
 				1FCBAEEE2C7097AC00170B35 /* LUICollectionView.h in Headers */,
 				1FCBAEFB2C7097AC00170B35 /* LUICollectionViewSupplementaryElementProtocol.h in Headers */,
@@ -839,7 +834,6 @@
 				1F45B5EB2C71896A004839E2 /* LUIThemeElementProtocol.h in Headers */,
 				1F45B60C2C718978004839E2 /* LUISegmentFlowLayoutConstraint.h in Headers */,
 				1F45B6152C718B72004839E2 /* LUILayoutButton.h in Headers */,
-				1F2707312C85FE8B00DC9247 /* UIKit+LUIThemeElement.h in Headers */,
 				1F45B5E92C71896A004839E2 /* LUIThemeCenter.h in Headers */,
 				1F45B60A2C718978004839E2 /* LUILayoutConstraintItemWrapper.h in Headers */,
 				1F45B5ED2C71896A004839E2 /* NSObject+LUITheme.h in Headers */,
@@ -866,13 +860,19 @@
 				1F45B6212C71D059004839E2 /* LUICollectionModel.h in Headers */,
 				1F45B6232C71D059004839E2 /* LUICollectionModelObjectBase.h in Headers */,
 				1FCBADF42C68A13000170B35 /* NSObject+LUI.h in Headers */,
+				1F2707192C85F4FD00DC9247 /* LUIThemePickerBase.h in Headers */,
+				1F27072D2C85FB6000DC9247 /* UIKit+LUITheme.h in Headers */,
+				1F2707252C85F9CD00DC9247 /* LUIThemeStatePicker.h in Headers */,
+				1F2707292C85FAA500DC9247 /* NSString+LUITheme.h in Headers */,
+				1F27071D2C85F6BE00DC9247 /* UIColor+LUITheme.h in Headers */,
+				1F2707312C85FE8B00DC9247 /* UIKit+LUIThemeElement.h in Headers */,
+				1F2707212C85F92A00DC9247 /* LUIThemePicker.h in Headers */,
+				1F2707152C85F44800DC9247 /* LUIThemeCenterElement.h in Headers */,
 				1FCBADDC2C68955A00170B35 /* UIScrollView+LUI.h in Headers */,
 				1F45B5E12C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.h in Headers */,
 				1F45B62B2C71EE09004839E2 /* LUIEdgeInsetsUILabel.h in Headers */,
-				1F2707212C85F92A00DC9247 /* LUIThemePicker.h in Headers */,
 				1FBE4C902C74DB6E0054F742 /* LUIKeyBoardSectionModel.h in Headers */,
 				1F27070A2C80B73000DC9247 /* LUIKeyboardButtonModel.h in Headers */,
-				1F2707152C85F44800DC9247 /* LUIThemeCenterElement.h in Headers */,
 				1F4AA2FE2C73870200CDC476 /* LUIKeyboardButtonCell.h in Headers */,
 				3F05F689B03836519FDBF1140D1EBB6D /* LUITool.h in Headers */,
 				BD1D2051C902197C50C02F5502BBD729 /* LUITool-umbrella.h in Headers */,

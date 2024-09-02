@@ -10,6 +10,11 @@
 		1F2707012C7637C200DC9247 /* LUISafeKeyboardButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707002C7637C200DC9247 /* LUISafeKeyboardButtons.m */; };
 		1F27070D2C82025200DC9247 /* baodi.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1F27070C2C82025200DC9247 /* baodi.gpx */; };
 		1F2707122C83163E00DC9247 /* LUIAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707112C83163E00DC9247 /* LUIAlertViewController.m */; };
+		1F2707352C85FF8F00DC9247 /* TestThemeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707342C85FF8F00DC9247 /* TestThemeBase.m */; };
+		1F2707392C86055A00DC9247 /* TestThemeNormal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707382C86055A00DC9247 /* TestThemeNormal.m */; };
+		1F27073C2C86064E00DC9247 /* TestThemeVip.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F27073B2C86064E00DC9247 /* TestThemeVip.m */; };
+		1F27073F2C86069C00DC9247 /* TestThemeGray.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F27073E2C86069C00DC9247 /* TestThemeGray.m */; };
+		1F2707422C86096E00DC9247 /* UIButton+TestTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707412C86096E00DC9247 /* UIButton+TestTheme.m */; };
 		1F45B5DD2C70D7A9004839E2 /* LUIMainViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B5DC2C70D7A9004839E2 /* LUIMainViewTableViewCell.m */; };
 		1F4AA32E2C73882100CDC476 /* LUIThemeCenter+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4AA32A2C73882100CDC476 /* LUIThemeCenter+Test.m */; };
 		1F4AA32F2C73882100CDC476 /* LUIThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4AA32C2C73882100CDC476 /* LUIThemeViewController.m */; };
@@ -51,6 +56,17 @@
 		1F27070C2C82025200DC9247 /* baodi.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = baodi.gpx; sourceTree = "<group>"; };
 		1F2707102C83163E00DC9247 /* LUIAlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIAlertViewController.h; sourceTree = "<group>"; };
 		1F2707112C83163E00DC9247 /* LUIAlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIAlertViewController.m; sourceTree = "<group>"; };
+		1F2707332C85FF8F00DC9247 /* TestThemeBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestThemeBase.h; sourceTree = "<group>"; };
+		1F2707342C85FF8F00DC9247 /* TestThemeBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestThemeBase.m; sourceTree = "<group>"; };
+		1F2707362C85FFBB00DC9247 /* TestThemeProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestThemeProtocol.h; sourceTree = "<group>"; };
+		1F2707372C86055A00DC9247 /* TestThemeNormal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestThemeNormal.h; sourceTree = "<group>"; };
+		1F2707382C86055A00DC9247 /* TestThemeNormal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestThemeNormal.m; sourceTree = "<group>"; };
+		1F27073A2C86064E00DC9247 /* TestThemeVip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestThemeVip.h; sourceTree = "<group>"; };
+		1F27073B2C86064E00DC9247 /* TestThemeVip.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestThemeVip.m; sourceTree = "<group>"; };
+		1F27073D2C86069C00DC9247 /* TestThemeGray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestThemeGray.h; sourceTree = "<group>"; };
+		1F27073E2C86069C00DC9247 /* TestThemeGray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestThemeGray.m; sourceTree = "<group>"; };
+		1F2707402C86096E00DC9247 /* UIButton+TestTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+TestTheme.h"; sourceTree = "<group>"; };
+		1F2707412C86096E00DC9247 /* UIButton+TestTheme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TestTheme.m"; sourceTree = "<group>"; };
 		1F45B5DB2C70D7A9004839E2 /* LUIMainViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIMainViewTableViewCell.h; sourceTree = "<group>"; };
 		1F45B5DC2C70D7A9004839E2 /* LUIMainViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIMainViewTableViewCell.m; sourceTree = "<group>"; };
 		1F45B6352C721C34004839E2 /* LUIMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIMacro.h; sourceTree = "<group>"; };
@@ -149,8 +165,19 @@
 			children = (
 				1F4AA3292C73882100CDC476 /* LUIThemeCenter+Test.h */,
 				1F4AA32A2C73882100CDC476 /* LUIThemeCenter+Test.m */,
+				1F2707332C85FF8F00DC9247 /* TestThemeBase.h */,
+				1F2707342C85FF8F00DC9247 /* TestThemeBase.m */,
+				1F2707372C86055A00DC9247 /* TestThemeNormal.h */,
+				1F2707382C86055A00DC9247 /* TestThemeNormal.m */,
+				1F27073A2C86064E00DC9247 /* TestThemeVip.h */,
+				1F27073B2C86064E00DC9247 /* TestThemeVip.m */,
+				1F27073D2C86069C00DC9247 /* TestThemeGray.h */,
+				1F27073E2C86069C00DC9247 /* TestThemeGray.m */,
+				1F2707362C85FFBB00DC9247 /* TestThemeProtocol.h */,
 				1F4AA32B2C73882100CDC476 /* LUIThemeViewController.h */,
 				1F4AA32C2C73882100CDC476 /* LUIThemeViewController.m */,
+				1F2707402C86096E00DC9247 /* UIButton+TestTheme.h */,
+				1F2707412C86096E00DC9247 /* UIButton+TestTheme.m */,
 			);
 			path = "主题";
 			sourceTree = "<group>";
@@ -436,7 +463,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* LUIAppDelegate.m in Sources */,
+				1F2707422C86096E00DC9247 /* UIButton+TestTheme.m in Sources */,
 				1F2707122C83163E00DC9247 /* LUIAlertViewController.m in Sources */,
+				1F2707352C85FF8F00DC9247 /* TestThemeBase.m in Sources */,
+				1F27073C2C86064E00DC9247 /* TestThemeVip.m in Sources */,
+				1F27073F2C86069C00DC9247 /* TestThemeGray.m in Sources */,
+				1F2707392C86055A00DC9247 /* TestThemeNormal.m in Sources */,
 				1F4AA32E2C73882100CDC476 /* LUIThemeCenter+Test.m in Sources */,
 				1F45B5DD2C70D7A9004839E2 /* LUIMainViewTableViewCell.m in Sources */,
 				6003F5A7195388D20070C39A /* LUIViewController.m in Sources */,
