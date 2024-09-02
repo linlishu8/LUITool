@@ -2,7 +2,7 @@
 //  LUICollectionViewSupplementaryView.h
 //  LUITool
 //  集合分组的补充元素视图的基类
-//  Created by 六月 on 2024/8/16.
+//  Created by 六月 on 2023/8/16.
 //
 
 #import <UIKit/UIKit.h>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F2707012C7637C200DC9247 /* LUISafeKeyboardButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707002C7637C200DC9247 /* LUISafeKeyboardButtons.m */; };
 		1F27070D2C82025200DC9247 /* baodi.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1F27070C2C82025200DC9247 /* baodi.gpx */; };
+		1F2707122C83163E00DC9247 /* LUIAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2707112C83163E00DC9247 /* LUIAlertViewController.m */; };
 		1F45B5DD2C70D7A9004839E2 /* LUIMainViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F45B5DC2C70D7A9004839E2 /* LUIMainViewTableViewCell.m */; };
 		1F4AA32E2C73882100CDC476 /* LUIThemeCenter+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4AA32A2C73882100CDC476 /* LUIThemeCenter+Test.m */; };
 		1F4AA32F2C73882100CDC476 /* LUIThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4AA32C2C73882100CDC476 /* LUIThemeViewController.m */; };
@@ -48,6 +49,8 @@
 		1F2706FF2C7637C200DC9247 /* LUISafeKeyboardButtons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUISafeKeyboardButtons.h; sourceTree = "<group>"; };
 		1F2707002C7637C200DC9247 /* LUISafeKeyboardButtons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUISafeKeyboardButtons.m; sourceTree = "<group>"; };
 		1F27070C2C82025200DC9247 /* baodi.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = baodi.gpx; sourceTree = "<group>"; };
+		1F2707102C83163E00DC9247 /* LUIAlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIAlertViewController.h; sourceTree = "<group>"; };
+		1F2707112C83163E00DC9247 /* LUIAlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIAlertViewController.m; sourceTree = "<group>"; };
 		1F45B5DB2C70D7A9004839E2 /* LUIMainViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIMainViewTableViewCell.h; sourceTree = "<group>"; };
 		1F45B5DC2C70D7A9004839E2 /* LUIMainViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIMainViewTableViewCell.m; sourceTree = "<group>"; };
 		1F45B6352C721C34004839E2 /* LUIMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIMacro.h; sourceTree = "<group>"; };
@@ -124,6 +127,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		1F27070F2C8315FC00DC9247 /* 弹窗 */ = {
+			isa = PBXGroup;
+			children = (
+				1F2707102C83163E00DC9247 /* LUIAlertViewController.h */,
+				1F2707112C83163E00DC9247 /* LUIAlertViewController.m */,
+			);
+			path = "弹窗";
+			sourceTree = "<group>";
+		};
 		1F45B6342C721C26004839E2 /* LUIMacro */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +206,7 @@
 				1F45B6342C721C26004839E2 /* LUIMacro */,
 				1F4AA32D2C73882100CDC476 /* 主题 */,
 				1F4AA3302C73883B00CDC476 /* 安全键盘 */,
+				1F27070F2C8315FC00DC9247 /* 弹窗 */,
 				6003F59C195388D20070C39A /* LUIAppDelegate.h */,
 				6003F59D195388D20070C39A /* LUIAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -423,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* LUIAppDelegate.m in Sources */,
+				1F2707122C83163E00DC9247 /* LUIAlertViewController.m in Sources */,
 				1F4AA32E2C73882100CDC476 /* LUIThemeCenter+Test.m in Sources */,
 				1F45B5DD2C70D7A9004839E2 /* LUIMainViewTableViewCell.m in Sources */,
 				6003F5A7195388D20070C39A /* LUIViewController.m in Sources */,

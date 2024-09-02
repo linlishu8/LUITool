@@ -2,7 +2,7 @@
 //  LUIAlertView.h
 //  LUITool
 //
-//  Created by 六月 on 2024/8/18.
+//  Created by 六月 on 2023/8/18.
 //
 
 #import <UIKit/UIKit.h>
@@ -58,8 +58,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) Class actionCellClass;//action按钮的展示类，默认为LUIAlertActionView.class
 @property (nonatomic, readonly) CGFloat actionCellHeight;//按钮单元格的高度值。alert为44，actionSheet为57。如果要定制按钮高度，需要实现子类
 - (CGFloat)widthThatFits:(CGSize)size;//限定尺寸下，自身的width值，默认alert为270，actionSheet为275
-
-@property (nonatomic, strong, nullable) UIView *separatorViewBetweentTextAndActions;//bodyContent与actionContent按钮之间的分隔线视图。如果要取消分隔线，将该字段设置为nil即可。默认显示listview的分隔线视图效果
 
 #pragma mark - 响应键盘事件
 @property (nonatomic, assign) BOOL autoAdjustContentWhenKeyboardChange;//当有键盘时，是否自动调整弹窗位置。默认为YES

@@ -2,7 +2,7 @@
 //  LUISegmentFlowLayoutConstraint.h
 //  LUITool
 //  将bounds切分成两块,然后两块靠边各自进行流布局
-//  Created by 六月 on 2024/8/14.
+//  Created by 六月 on 2023/8/14.
 //
 
 #import "LUILayoutConstraint.h"

@@ -10,6 +10,7 @@
 #import "LUIMainViewTableViewCell.h"
 #import "LUIThemeViewController.h"
 #import "LUISafeKeyboardViewController.h"
+#import "LUIAlertViewController.h"
 
 @interface LUIViewController ()
 
@@ -32,6 +33,11 @@
 - (void)__reloadData {
     lui_weakify(self)
     LUITableViewCellModel *alertCellModel = [self addCellModelWithCellTitle:@"弹窗"];
+    alertCellModel.whenClick = ^(__kindof LUITableViewCellModel * _Nonnull cellModel) {
+        lui_strongify(self)
+        LUIAlertViewController *alertViewController = [[LUIAlertViewController alloc] init];
+        [self.navigationController pushViewController:alertViewController animated:YES];
+    };
     
     LUITableViewCellModel *themeCellModel = [self addCellModelWithCellTitle:@"主题化"];
     themeCellModel.whenClick = ^(__kindof LUITableViewCellModel * _Nonnull cellModel) {

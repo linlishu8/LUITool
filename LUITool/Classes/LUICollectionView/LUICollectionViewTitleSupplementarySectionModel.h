@@ -2,7 +2,7 @@
 //  LUICollectionViewTitleSupplementarySectionModel.h
 //  LUITool
 //  含有head与foot文字的补充元素
-//  Created by 六月 on 2024/8/16.
+//  Created by 六月 on 2023/8/16.
 //
 
 #import "LUICollectionViewSectionModel.h"

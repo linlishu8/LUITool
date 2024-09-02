@@ -3,7 +3,7 @@
 //  LUITool
 //  一个页面，容纳MxN的单元格，页面中每个单元格尺寸一致。每页左右滚动，以页进行paging，当前页面容纳不下元素时，将开启新的页面进行布局。开启新的section分组，将启用新的分页。每个section分组中，单元格大小、内边距、间隔都是一致了。不同section分组可以以不同的单元格大小、内边距、间隔。一个section分组，可能包含多个page页。
 //  每页的元素布局，从左到右流布局，每行从上到下布局。每个元素大小为分组的itemSize，每个元素左右间隔为分组的interitemSpacing，上下两行间隔为分组的lineSpacing
-//  Created by 六月 on 2024/8/18.
+//  Created by 六月 on 2023/8/18.
 //
 
 #import <UIKit/UIKit.h>

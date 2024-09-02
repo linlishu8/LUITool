@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LUIThemeElementProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

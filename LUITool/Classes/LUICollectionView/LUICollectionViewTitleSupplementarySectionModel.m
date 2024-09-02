@@ -2,7 +2,7 @@
 //  LUICollectionViewTitleSupplementarySectionModel.m
 //  LUITool
 //
-//  Created by 六月 on 2024/8/16.
+//  Created by 六月 on 2023/8/16.
 //
 
 #import "LUICollectionViewTitleSupplementarySectionModel.h"
