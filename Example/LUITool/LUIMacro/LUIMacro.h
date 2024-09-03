@@ -12,3 +12,7 @@
 
 #undef    lui_strongify
 #define lui_strongify( x )     __strong __typeof__(x) x = __weak_##x##__;
+
+#define WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define ODDingTalkScheme @"lark://"

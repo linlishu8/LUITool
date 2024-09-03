@@ -11,7 +11,7 @@
 
 @interface LUIThemeViewController ()
 
-@property (nonatomic, strong) MKUILedBannerVerticalView *bannerView;
+@property (nonatomic, strong) LUILedBannerVerticalView *bannerView;
 
 @end
 
