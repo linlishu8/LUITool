@@ -126,6 +126,15 @@ Pod::Spec.new do |s|
     ss.frameworks = 'UIKit'
   end
   
+  #LedBanner(垂直跑马灯)
+  s.subspec 'LUILedBannerVerticalView' do |ss|
+    ss.source_files = 'LUITool/Classes/LUILedBannerVerticalView/*.{h,m}'
+    ss.dependency 'LUITool/LUICollectionViewLayout'
+    ss.dependency 'LUITool/LUICore'
+    ss.dependency 'LUITool/LUICollectionView'
+    ss.frameworks = 'UIKit'
+  end
+  
   # s.resource_bundles = {
   #   'LUITool' => ['LUITool/Assets/*.png']
   # }

@@ -114,3 +114,6 @@ FOUNDATION_EXPORT const unsigned char LUIVersionString[];
 #pragma mark - keyboard(安全键盘)
 #import "LUIKeyboardButtonModel.h"
 #import "LUIKeyboardView.h"
+
+#pragma mark - ledBanner(垂直跑马灯)
+#import "LUILedBannerVerticalView.h"
