@@ -34,15 +34,15 @@
 @end
 
 #import "LUIThemeCenterElement.h"
-id<LUIThemeElementProtocol> mktheme_NSIntegerWithName(NSString * _Nonnull name){
+id<LUIThemeElementProtocol> ltheme_NSIntegerWithName(NSString * _Nonnull name){
     return [LUIThemeCenterElement themeElementForKey:name];
 }
-id<LUIThemeElementProtocol> mktheme_CGFloatWithName(NSString * _Nonnull name){
+id<LUIThemeElementProtocol> ltheme_CGFloatWithName(NSString * _Nonnull name){
     return [LUIThemeCenterElement themeElementForKey:name];
 }
-id<LUIThemeElementProtocol> mktheme_UIEdgeInsetsWithName(NSString * _Nonnull name){
+id<LUIThemeElementProtocol> ltheme_UIEdgeInsetsWithName(NSString * _Nonnull name){
     return [LUIThemeCenterElement themeElementForKey:name];
 }
-id<LUIThemeElementProtocol> mktheme_CGSizeWithName(NSString * _Nonnull name){
+id<LUIThemeElementProtocol> ltheme_CGSizeWithName(NSString * _Nonnull name){
     return [LUIThemeCenterElement themeElementForKey:name];
 }

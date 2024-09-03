@@ -64,41 +64,41 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)l_removeSortedObjectsWithComparator:(NS_NOESCAPE NSComparisonResult(^)(id arrayObj,NSInteger idx))cmptr;
 @end
 
-@protocol MKComparatorProtocol <NSObject>
-- (NSComparisonResult)l_compare:(__kindof id<MKComparatorProtocol>)other;
+@protocol LUIComparatorProtocol <NSObject>
+- (NSComparisonResult)l_compare:(__kindof id<LUIComparatorProtocol>)other;
 @end
 
-@interface NSArray<ObjectType> (MKComparatorProtocol)
+@interface NSArray<ObjectType> (LUIComparatorProtocol)
 /// 要求数组为有序数组，查找与object进行比较时，返回same的对象索引范围
 /// @param object 被搜索的元素
 /// @param asc 数组是否从小到大排序
-- (NSRange)l_rangeOfSortedObject:(ObjectType<MKComparatorProtocol>)object asc:(BOOL)asc;
-- (nullable NSArray *)l_subarrayOfSortedObject:(ObjectType<MKComparatorProtocol>)object asc:(BOOL)asc;
+- (NSRange)l_rangeOfSortedObject:(ObjectType<LUIComparatorProtocol>)object asc:(BOOL)asc;
+- (nullable NSArray *)l_subarrayOfSortedObject:(ObjectType<LUIComparatorProtocol>)object asc:(BOOL)asc;
 
 /// 要求数组为有序数组，查找要插入object的位置（插入之后，继续保持数组有序）
 /// @param object 将被插件入的元素
 /// @param asc 数组是否从小到大排序
-- (NSInteger)l_indexOfSortedObject:(ObjectType<MKComparatorProtocol>)object asc:(BOOL)asc;
+- (NSInteger)l_indexOfSortedObject:(ObjectType<LUIComparatorProtocol>)object asc:(BOOL)asc;
 
-- (NSArray<ObjectType> *)l_removeSortedObjectsInArray:(NSArray<ObjectType<MKComparatorProtocol>> *)otherArray asc:(BOOL)asc;
+- (NSArray<ObjectType> *)l_removeSortedObjectsInArray:(NSArray<ObjectType<LUIComparatorProtocol>> *)otherArray asc:(BOOL)asc;
 @end
 
-@interface NSMutableArray<ObjectType> (MKComparatorProtocol)
+@interface NSMutableArray<ObjectType> (LUIComparatorProtocol)
 
 /// 要求数组为有序数组，删除与object相等的元素（compare返回same的值）
 /// @param object 被删除的元素
 /// @param asc 数组是否从小到大排序
-- (void)l_removeSortedObject:(ObjectType<MKComparatorProtocol>)object asc:(BOOL)asc;
+- (void)l_removeSortedObject:(ObjectType<LUIComparatorProtocol>)object asc:(BOOL)asc;
 
 /// 要求数组为有序数组，插入元素，同时继续保存数组有序
 /// @param object 将被插件入的元素
 /// @param asc 数组是否从小到大排序
-- (void)l_insertSortdObject:(ObjectType<MKComparatorProtocol>)object asc:(BOOL)asc;
+- (void)l_insertSortdObject:(ObjectType<LUIComparatorProtocol>)object asc:(BOOL)asc;
 @end
 
-@interface NSNumber (MKComparatorProtocol)
+@interface NSNumber (LUIComparatorProtocol)
 @end
-@interface NSIndexPath (MKComparatorProtocol)
+@interface NSIndexPath (LUIComparatorProtocol)
 @end
 
 NS_ASSUME_NONNULL_END

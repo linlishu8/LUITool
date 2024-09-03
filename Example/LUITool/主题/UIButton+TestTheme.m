@@ -9,11 +9,11 @@
 #import "UIButton+TestTheme.h"
 
 @interface TestUIButtonPicker : LUIThemePickerBase
-@property(nonatomic,strong) id<LUIThemeElementProtocol> normalImageElement;
-@property(nonatomic,strong) id<LUIThemeElementProtocol> highlightImageElement;
+@property (nonatomic, strong) id<LUIThemeElementProtocol> normalImageElement;
+@property (nonatomic, strong) id<LUIThemeElementProtocol> highlightImageElement;
 @end
 @implementation TestUIButtonPicker
-- (void)applyThemeTo:(NSObject *)object{
+- (void)applyThemeTo:(NSObject *)object {
     UIImage *normalImage = [self.class themeUIImageWithElement:self.normalImageElement];
     UIImage *highlightImage = [self.class themeUIImageWithElement:self.highlightImageElement];
     void (*mp)(id, SEL,UIImage *,UIImage *) = (void (*)(id, SEL,UIImage *,UIImage *))[object methodForSelector:self.objSelector];
@@ -22,7 +22,7 @@
 @end
 
 @implementation UIButton (TestTheme)
-- (void)test_setNormalImage:(UIImage *)normalImage highlightImage:(UIImage *)highlightImage{
+- (void)test_setNormalImage:(UIImage *)normalImage highlightImage:(UIImage *)highlightImage {
     [self setImage:normalImage forState:UIControlStateNormal];
     [self setImage:highlightImage forState:UIControlStateHighlighted];
 }

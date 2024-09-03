@@ -255,7 +255,7 @@
 }
 @end
 
-@implementation NSMutableArray (MKUI_BinarySearch)
+@implementation NSMutableArray (LUI_BinarySearch)
 
 /// 要求数组为有序数组，删除cmptr为NSOrderedSame的值
 /// @param cmptr 比对block
@@ -267,9 +267,9 @@
 }
 @end
 
-@implementation NSArray (MKComparatorProtocol)
-- (NSRange)l_rangeOfSortedObject:(id<MKComparatorProtocol>)object asc:(BOOL)asc{
-    return [self l_rangeOfSortedObjectsWithComparator:^NSComparisonResult(id<MKComparatorProtocol>  _Nonnull arrayObj, NSInteger idx) {
+@implementation NSArray (LUIComparatorProtocol)
+- (NSRange)l_rangeOfSortedObject:(id<LUIComparatorProtocol>)object asc:(BOOL)asc{
+    return [self l_rangeOfSortedObjectsWithComparator:^NSComparisonResult(id<LUIComparatorProtocol>  _Nonnull arrayObj, NSInteger idx) {
         NSComparisonResult r = [arrayObj l_compare:object];
         if(!asc){
             r = -r;
@@ -277,13 +277,13 @@
         return r;
     }];
 }
-- (NSArray *)l_subarrayOfSortedObject:(id<MKComparatorProtocol>)object asc:(BOOL)asc{
+- (NSArray *)l_subarrayOfSortedObject:(id<LUIComparatorProtocol>)object asc:(BOOL)asc{
     NSRange range = [self l_rangeOfSortedObject:object asc:asc];
     if(range.length==0)return nil;
     return [self subarrayWithRange:range];
 }
-- (NSInteger)l_indexOfSortedObject:(id<MKComparatorProtocol>)object asc:(BOOL)asc{
-    return [self l_indexOfSortedObjectsWithComparator:^NSComparisonResult(id<MKComparatorProtocol>  _Nonnull arrayObj, NSInteger idx) {
+- (NSInteger)l_indexOfSortedObject:(id<LUIComparatorProtocol>)object asc:(BOOL)asc{
+    return [self l_indexOfSortedObjectsWithComparator:^NSComparisonResult(id<LUIComparatorProtocol>  _Nonnull arrayObj, NSInteger idx) {
         NSComparisonResult r = [object l_compare:arrayObj];
         if(!asc){
             r = -r;
@@ -291,7 +291,7 @@
         return r;
     }];
 }
-- (NSArray *)l_removeSortedObjectsInArray:(NSArray<id<MKComparatorProtocol>> *)otherArray asc:(BOOL)asc{
+- (NSArray *)l_removeSortedObjectsInArray:(NSArray<id<LUIComparatorProtocol>> *)otherArray asc:(BOOL)asc{
     NSMutableArray *result = [[NSMutableArray alloc] init];
     for (id obj in self) {
         NSRange range = [otherArray l_rangeOfSortedObject:obj asc:asc];
@@ -303,9 +303,9 @@
 }
 @end
 
-@implementation NSMutableArray (MKComparatorProtocol)
-- (void)l_removeSortedObject:(id<MKComparatorProtocol>)object asc:(BOOL)asc{
-    [self l_removeSortedObjectsWithComparator:^NSComparisonResult(id<MKComparatorProtocol>  _Nonnull arrayObj, NSInteger idx) {
+@implementation NSMutableArray (LUIComparatorProtocol)
+- (void)l_removeSortedObject:(id<LUIComparatorProtocol>)object asc:(BOOL)asc{
+    [self l_removeSortedObjectsWithComparator:^NSComparisonResult(id<LUIComparatorProtocol>  _Nonnull arrayObj, NSInteger idx) {
         NSComparisonResult r = [arrayObj l_compare:object];
         if(!asc){
             r = -r;
@@ -313,7 +313,7 @@
         return r;
     }];
 }
-- (void)l_insertSortdObject:(id<MKComparatorProtocol>)object asc:(BOOL)asc{
+- (void)l_insertSortdObject:(id<LUIComparatorProtocol>)object asc:(BOOL)asc{
     NSInteger index = [self l_indexOfSortedObject:object asc:asc];
     if(index!=NSNotFound){
         [self insertObject:object atIndex:index];
@@ -321,13 +321,13 @@
 }
 @end
 
-@implementation NSNumber (MKComparatorProtocol)
-- (NSComparisonResult)l_compare:(__kindof id<MKComparatorProtocol>)other{
+@implementation NSNumber (LUIComparatorProtocol)
+- (NSComparisonResult)l_compare:(__kindof id<LUIComparatorProtocol>)other{
     return [self compare:other];
 }
 @end
-@implementation NSIndexPath (MKComparatorProtocol)
-- (NSComparisonResult)l_compare:(__kindof id<MKComparatorProtocol>)other{
+@implementation NSIndexPath (LUIComparatorProtocol)
+- (NSComparisonResult)l_compare:(__kindof id<LUIComparatorProtocol>)other{
     return [self compare:other];
 }
 @end
