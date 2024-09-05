@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LUITool'
-  s.version          = '0.1.15'
+  s.version          = '0.1.16'
   s.summary          = '基础工具库'
   # 本地测试pod库：pod lib lint --allow-warnings --verbose --no-clean
   # 远程验证:pod spec lint --allow-warnings --verbose --no-clean
@@ -132,6 +132,16 @@ Pod::Spec.new do |s|
     ss.dependency 'LUITool/LUICollectionViewLayout'
     ss.dependency 'LUITool/LUICore'
     ss.dependency 'LUITool/LUICollectionView'
+    ss.frameworks = 'UIKit'
+  end
+  
+  #PageControl(页码指示器)
+  s.subspec 'LUIPageControl' do |ss|
+    ss.source_files = 'LUITool/Classes/LUIPageControl/*.{h,m}'
+    ss.dependency 'LUITool/LUICollectionView'
+    ss.dependency 'LUITool/LUICore'
+    ss.dependency 'LUITool/LUICategory'
+    ss.dependency 'LUITool/LUIConstraint'
     ss.frameworks = 'UIKit'
   end
   
