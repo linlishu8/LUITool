@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LUITool'
-  s.version          = '0.1.16'
+  s.version          = '0.1.17'
   s.summary          = '基础工具库'
   # 本地测试pod库：pod lib lint --allow-warnings --verbose --no-clean
   # 远程验证:pod spec lint --allow-warnings --verbose --no-clean
