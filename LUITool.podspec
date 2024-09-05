@@ -142,6 +142,7 @@ Pod::Spec.new do |s|
     ss.dependency 'LUITool/LUICore'
     ss.dependency 'LUITool/LUICategory'
     ss.dependency 'LUITool/LUIConstraint'
+    ss.dependency 'LUITool/LUICollectionViewLayout'
     ss.frameworks = 'UIKit'
   end
   
