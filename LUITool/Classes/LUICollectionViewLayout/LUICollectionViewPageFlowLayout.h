@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic) CGSize itemSize;
 @property(nonatomic) UICollectionViewScrollDirection scrollDirection; // default is UICollectionViewScrollDirectionHorizontal
 @property(nonatomic) LUICGRectAlignment itemAlignment;//元素在与滚动方向垂直方向上的布局对齐参数，默认为居中LUICGRectAlignmentMid
-@property(nonatomic,readonly) LUICGAxis scrollAxis;
+@property (nonatomic, readonly) LUICGAxis scrollAxis;
 @property(nonatomic) UIEdgeInsets sectionInset;//默认为zero
 
 @property(nonatomic) BOOL enableCycleScroll;//是否允许循环滚动，默认为NO
@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic) CGFloat pagingBoundsPosition;//百分比取值[0,1]
 @property(nonatomic) CGFloat pagingCellPosition;//百分比取值[0,1]
 @property(nonatomic) BOOL playPagingSound;//当滚动到paging位置时，是否播放3DTouch效果，默认为NO
-@property(nonatomic,readonly,nullable) NSIndexPath *indexPathAtPagingCell;//位于paging位置上的单元格，为nil时，代表没有单元格与paging位置相交。
+@property (nonatomic, readonly,nullable) NSIndexPath *indexPathAtPagingCell;//位于paging位置上的单元格，为nil时，代表没有单元格与paging位置相交。
 - (void)setIndexPathAtPagingCell:(NSIndexPath *)indexPathAtPagingCell animated:(BOOL)animated;
 - (nullable NSIndexPath *)indexPathForCellAtOffset:(CGFloat)position;
 
@@ -55,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGFloat)scrollProgressWithContentOffset:(CGPoint)offset toPagingCell:(NSIndexPath *_Nullable*_Nullable)toPadingCellIndexPathPoint;
 
 #pragma mark - 定时滚动
-@property(nonatomic,readonly) BOOL isAutoScrolling;
+@property (nonatomic, readonly) BOOL isAutoScrolling;
 
 /// 设置定时滚动。注意，如果collectionView没有被展示（比如viewcontroller被推到navigation的底部堆栈），定时滚动只会修改contentOffset，prepareLayout、shouldInvalidateLayoutForBoundsChange方法不会被调用，会导致循环滚动失效。如果开启了定时滚动功能，那么调用collectionView的reloadData方法时，也要同步调用本对象的reloadData方法，用来清除循环滚动中的中间状态。否则如果reloadData会修改cell数量，那么会出现contentSize计算错误的问题。
 /// - Parameters:
@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
 //由于highlightPagingCell，可能导致cell位置偏移，从而将bounds之外的元素，也移到了bounds内部，造成bounds里，实际显示元素大于bounds。该方法返回指定bounds时，其显示cell原本所占用的区域。目前用于循环滚动时，获取到当前视图内，真正的显示元素区域。默认直接返回bounds，子类可定制重载。
 - (CGRect)visibleRectForOriginBounds:(CGRect)bounds;
 
-@property(nonatomic,readonly) NSArray<UICollectionViewLayoutAttributes *> *cellAttributes;
+@property (nonatomic, readonly) NSArray<UICollectionViewLayoutAttributes *> *cellAttributes;
 //查找指定offset位置，距离它最近的单元格范围
 - (NSRange)pagableCellIndexRangeNearToOffset:(CGFloat)position;
 
@@ -84,7 +84,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface LUICollectionViewPageFlowLayout(LUICollectionViewDelegatePageFlowLayout)
-@property(nonatomic,readonly,nullable) id<LUICollectionViewDelegatePageFlowLayout> pageFlowDelegate;
+@property (nonatomic, readonly,nullable) id<LUICollectionViewDelegatePageFlowLayout> pageFlowDelegate;
 - (CGSize)itemSizeForSectionAtIndexPath:(NSIndexPath *)indexPath;
 - (UIEdgeInsets)insetForSectionAtIndex:(NSInteger)section;
 - (CGFloat)interitemSpacingForSectionAtIndex:(NSInteger)section;
@@ -92,7 +92,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface UICollectionView(LUICollectionViewPageFlowLayout)
-@property(nonatomic,readonly,nullable) LUICollectionViewPageFlowLayout *l_collectionViewPageFlowLayout;
+@property (nonatomic, readonly,nullable) LUICollectionViewPageFlowLayout *l_collectionViewPageFlowLayout;
 @end
 NS_ASSUME_NONNULL_END
 

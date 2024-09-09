@@ -31,19 +31,19 @@
     CGSize _contentSize;
     CGPoint _preContentOffset;
 }
-@property(nonatomic,strong) NSMutableArray<LUIGridPageCollectionViewLayoutPage *> *originPages;//按顺序保存的页面
-@property(nonatomic,strong) NSMutableArray<LUIGridPageCollectionViewLayoutPage *> *pages;//按照显示顺序存储的页面（循环滚动时，第0页并非位于第一项）
-@property(nonatomic,strong) NSMutableArray<LUIGridPageCollectionViewLayoutPage *> *cyclePages;//会保存三倍的pages,用于循环滚动
-@property(nonatomic,strong) NSMutableArray<LUIGridPageCollectionViewLayoutSection *> *sections;
-@property(nonatomic,strong) NSTimer *autoScrollingTimer;
-@property(nonatomic,assign) BOOL offsetChanging;
-@property(nonatomic,weak) id<UICollectionViewDelegate> originDelegate;
-@property(nonatomic,strong,nullable) LUIGridPageCollectionViewLayoutPage *currentPageObject;
+@property (nonatomic, strong) NSMutableArray<LUIGridPageCollectionViewLayoutPage *> *originPages;//按顺序保存的页面
+@property (nonatomic, strong) NSMutableArray<LUIGridPageCollectionViewLayoutPage *> *pages;//按照显示顺序存储的页面（循环滚动时，第0页并非位于第一项）
+@property (nonatomic, strong) NSMutableArray<LUIGridPageCollectionViewLayoutPage *> *cyclePages;//会保存三倍的pages,用于循环滚动
+@property (nonatomic, strong) NSMutableArray<LUIGridPageCollectionViewLayoutSection *> *sections;
+@property (nonatomic, strong) NSTimer *autoScrollingTimer;
+@property (nonatomic, assign) BOOL offsetChanging;
+@property (nonatomic, weak) id<UICollectionViewDelegate> originDelegate;
+@property (nonatomic, strong,nullable) LUIGridPageCollectionViewLayoutPage *currentPageObject;
 @end
 
 @interface LUIGridPageCollectionViewLayoutPage : NSObject<NSCopying>
-@property(nonatomic,weak) LUIGridPageCollectionViewLayout *layout;
-@property(nonatomic,weak) LUIGridPageCollectionViewLayoutSection *section;
+@property (nonatomic, weak) LUIGridPageCollectionViewLayout *layout;
+@property (nonatomic, weak) LUIGridPageCollectionViewLayoutSection *section;
 @property(nonatomic) NSInteger sectionIndex;//所属分组索引
 @property(nonatomic) NSInteger pageIndex;//在layout.originPages中的数组位置
 @property(nonatomic) NSInteger pagePositionForShow;//在layout.pages中的数组位置
@@ -54,12 +54,12 @@
 @property(nonatomic) NSInteger itemsPerRow;//每行最多的元素个数
 @property(nonatomic) NSInteger lines;//最多行数
 @property(nonatomic) NSRange itemRange;
-@property(nonatomic,strong) NSMutableArray<UICollectionViewLayoutAttributes *> *itemAttributes;
+@property (nonatomic, strong) NSMutableArray<UICollectionViewLayoutAttributes *> *itemAttributes;
 @property(nonatomic) BOOL invalidItemAttributes;
-@property(nonatomic,readonly) NSArray<UICollectionViewLayoutAttributes *> *layoutAttributesForElements;
-@property(nonatomic,assign) CGRect frame;
-//@property(nonatomic,assign) CGPoint contentOffset;
-@property(nonatomic,readonly) NSIndexPath *centerCellIndexPath;
+@property (nonatomic, readonly) NSArray<UICollectionViewLayoutAttributes *> *layoutAttributesForElements;
+@property (nonatomic, assign) CGRect frame;
+//@property (nonatomic, assign) CGPoint contentOffset;
+@property (nonatomic, readonly) NSIndexPath *centerCellIndexPath;
 - (void)adjustCellsContentOffset:(CGFloat)delta;
 @end
 @implementation LUIGridPageCollectionViewLayoutPage
@@ -135,8 +135,8 @@
 @end
 
 @interface LUIGridPageCollectionViewLayoutSection : NSObject
-@property(nonatomic,strong) NSArray<LUIGridPageCollectionViewLayoutPage *> *pages;
-@property(nonatomic,assign) NSRange pageRange;
+@property (nonatomic, strong) NSArray<LUIGridPageCollectionViewLayoutPage *> *pages;
+@property (nonatomic, assign) NSRange pageRange;
 @end
 @implementation LUIGridPageCollectionViewLayoutSection
 - (LUIGridPageCollectionViewLayoutPage *)pageAtCellIndex:(NSInteger)index{

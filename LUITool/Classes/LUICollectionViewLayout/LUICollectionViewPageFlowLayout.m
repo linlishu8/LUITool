@@ -73,11 +73,11 @@
 }
 
 - (LUICGAxis)scrollAxis {
-    LUICGAxis X = self.scrollDirection==UICollectionViewScrollDirectionHorizontal?LUICGAxisX:LUICGAxisY;
+    LUICGAxis X = self.scrollDirection == UICollectionViewScrollDirectionHorizontal ? LUICGAxisX:LUICGAxisY;
     return X;
 }
 - (CGFloat)_offsetUnit {
-    CGFloat unit = 1.0/[UIScreen mainScreen].scale;
+    CGFloat unit = 1.0 / [UIScreen mainScreen].scale;
     return unit;
 }
 - (NSArray<UICollectionViewLayoutAttributes *> *)cellAttributes {
@@ -100,14 +100,14 @@
 - (CGFloat)pagingPositionForCellFrame:(CGRect)frame {
     CGFloat x = 0;
     LUICGAxis X = self.scrollAxis;
-    x = LUICGRectGetMin(frame, X)+LUICGRectGetLength(frame, X)*self.pagingCellPosition;
+    x = LUICGRectGetMin(frame, X) + LUICGRectGetLength(frame, X) * self.pagingCellPosition;
     return x;
 }
 - (CGFloat)pagingOffsetForCellFrame:(CGRect)frame {
     CGFloat offset = 0;
     CGRect bounds = self.collectionView.bounds;
     LUICGAxis X = self.scrollAxis;
-    offset = LUICGRectGetMin(frame, X)+LUICGRectGetLength(frame, X)*self.pagingCellPosition-LUICGRectGetLength(bounds, X)*self.pagingBoundsPositionForCollectionView;
+    offset = LUICGRectGetMin(frame, X) + LUICGRectGetLength(frame, X) * self.pagingCellPosition - LUICGRectGetLength(bounds, X) * self.pagingBoundsPositionForCollectionView;
     return offset;
 }
 - (CGFloat)pagingOffsetForCellIndexPath:(NSIndexPath *)indexpath {
@@ -129,7 +129,7 @@
     //二分查找position相近及相交的单元格
     NSRange range = [self pagableCellIndexRangeNearToOffset:position];
     CGFloat unit = [self _offsetUnit];
-    if (range.location!=NSNotFound) {
+    if (range.location != NSNotFound) {
         if (LUICGPointGetValue(velocity, X)>0) {
             for (NSUInteger i=0; i<range.length; i++)  {
                 NSInteger index = i+range.location;
@@ -157,7 +157,7 @@
         } else {
         }
     }
-    if (result==NSNotFound) {
+    if (result == NSNotFound) {
         CGFloat min = CGFLOAT_MAX;
         for (NSUInteger i=0; i<range.length; i++)  {
             NSInteger index = i+range.location;

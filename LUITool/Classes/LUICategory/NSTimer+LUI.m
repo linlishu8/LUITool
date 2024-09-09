@@ -8,7 +8,7 @@
 #import "NSTimer+LUI.h"
 
 @interface __LUINSTimerHandler : NSObject
-@property(nonatomic,copy) void(^whenTimer)(NSTimer *timer);
+@property (nonatomic, copy) void(^whenTimer)(NSTimer *timer);
 - (void)onTimer:(NSTimer *)timer;
 @end
 @implementation __LUINSTimerHandler

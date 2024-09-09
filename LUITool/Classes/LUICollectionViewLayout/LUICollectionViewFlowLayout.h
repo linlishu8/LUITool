@@ -24,7 +24,7 @@ extern const NSInteger kLUICollectionViewFlowLayoutNoMaximumInteritemSpacing;//ä
 @end
 
 @interface LUICollectionViewFlowLayout (LUICollectionViewDelegateFlowLayout)
-@property(nonatomic,readonly,nullable)
+@property (nonatomic, readonly,nullable)
 id<LUICollectionViewDelegateFlowLayout> l_LUIFlowLayoutDelegate;
 - (CGFloat)l_maximumInteritemSpacingForSectionAtIndex:(NSInteger)index;
 @end

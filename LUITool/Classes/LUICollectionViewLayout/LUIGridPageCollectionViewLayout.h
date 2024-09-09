@@ -27,14 +27,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic) CGFloat lineSpacing;//元素之间默认的上下的间隔
 @property(nonatomic) CGSize itemSize;//默认每个元素的大小
 @property(nonatomic) UIEdgeInsets sectionInset;//每页的内边距
-@property(nonatomic,readonly) NSInteger numberOfPages;//总页数
+@property (nonatomic, readonly) NSInteger numberOfPages;//总页数
 @property(nonatomic) NSInteger currentPage;//当前显示的页索引
 @property(nonatomic) NSInteger currentSection;//当前显示的分组索引
 - (NSInteger)numberOfPagesInSection:(NSInteger)section;//指定分组包含的页数
 - (NSInteger)sectionOfPageIndex:(NSInteger)page;//返回指定页，它所属的分组索引
-@property(nonatomic,readonly) NSArray<NSNumber *> *visiblePages;//返回可见的页的索引范围
+@property (nonatomic, readonly) NSArray<NSNumber *> *visiblePages;//返回可见的页的索引范围
 
-@property(nonatomic,readonly) NSInteger visiblePage;//返回可见面积最大的页
+@property (nonatomic, readonly) NSInteger visiblePage;//返回可见面积最大的页
 //自动滚动到页边缘。如果想要滚动速度快，可以设置self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast
 //滚动到指定的页
 - (void)scrollToPage:(NSInteger)page animated:(BOOL)animated;
@@ -53,7 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 刷新数据，会全部重构cell
 - (void)reloadData;
 #pragma mark - 定时滚动
-@property(nonatomic,readonly) BOOL isAutoScrolling;
+@property (nonatomic, readonly) BOOL isAutoScrolling;
 
 /// 设置定时滚动。注意，如果collectionView没有被展示（比如viewcontroller被推到navigation的底部堆栈），定时滚动只会修改contentOffset，prepareLayout、shouldInvalidateLayoutForBoundsChange方法不会被调用，会导致循环滚动失效。如果开启了定时滚动功能，那么调用collectionView的reloadData方法时，也要同步调用本对象的reloadData方法，用来清除循环滚动中的中间状态。否则如果reloadData会修改cell数量，那么会出现contentSize计算错误的问题。
 /// - Parameters:
@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface LUIGridPageCollectionViewLayout(LUICollectionViewDelegateGridPageLayout)
-@property(nonatomic,readonly,nullable) id<LUICollectionViewDelegateGridPageLayout> gridPageDelegate;
+@property (nonatomic, readonly,nullable) id<LUICollectionViewDelegateGridPageLayout> gridPageDelegate;
 - (CGSize)itemSizeForSectionAtIndex:(NSInteger)section;
 - (UIEdgeInsets)insetForSectionAtIndex:(NSInteger)section;
 - (CGFloat)lineSpacingForSectionAtIndex:(NSInteger)section;
@@ -102,7 +102,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface UICollectionView(LUIGridPageCollectionViewLayout)
-@property(nonatomic,readonly,nullable) LUIGridPageCollectionViewLayout *l_collectionViewGridPageLayout;
+@property (nonatomic, readonly,nullable) LUIGridPageCollectionViewLayout *l_collectionViewGridPageLayout;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -66,3 +66,22 @@
 #define LUI_NORMALIZE( x )    try{} @finally{} __typeof__(x) x = __weak_##x##__;
 #undef    LUI_NORMALIZEANDNOTNIL
 #define LUI_NORMALIZEANDNOTNIL( x )    try{} @finally{} __typeof__(x) x = __weak_##x##__;if (x == nil) return;
+
+#define ScreenWidthLFL (CIBDeviceWIDTH)
+#define ScreenHeightLFL (CIBDeviceHEIGHT)
+
+#define CIBDeviceWIDTH (MIN([[UIScreen mainScreen] bounds].size.height, [[UIScreen mainScreen] bounds].size.width))
+#define CIBDeviceHEIGHT (MAX([[UIScreen mainScreen] bounds].size.height, [[UIScreen mainScreen] bounds].size.width))
+
+#define WIDTH_LFL(X_LFL) ScreenWidthLFL*(X_LFL)/RealUISrceenWidth
+
+#define HEIGHT_LFL(Y_LFL) ScreenHeightLFL*(Y_LFL)/RealUISrceenHeight
+
+#define WIDTH_LFL_FLOOR(X_LFL) floor(ScreenWidthLFL*(X_LFL)/RealUISrceenWidth)
+
+#define HEIGHT_LFL_FLLOR(Y_LFL) floor(ScreenHeightLFL*(Y_LFL)/RealUISrceenHeight)
+/**                       568       667
+ RealUISrceenW  4/4s 5/5s 320  6/6s 375  6p/6sp 414
+ */
+static const float RealUISrceenWidth = 375;
+static const float RealUISrceenHeight = 568;

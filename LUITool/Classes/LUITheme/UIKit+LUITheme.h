@@ -19,38 +19,38 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @interface UIView (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_alpha;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_backgroundColor;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_tintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_alpha;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_backgroundColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_tintColor;
 @end
 
 @interface UILabel (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_text;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_font;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_textColor;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_highlightedTextColor;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_shadowColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_text;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_font;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_textColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_highlightedTextColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_shadowColor;
 @end
 
 @interface UIImageView (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_image;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_image;
 @end
 
 @interface CALayer (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_backgroundColor;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_borderWidth;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_borderColor;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_shadowColor;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_strokeColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_backgroundColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_borderWidth;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_borderColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_shadowColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_strokeColor;
 @end
 
 @interface UIBarButtonItem (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_tintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_tintColor;
 @end
 
 @interface UINavigationBar (LUITheme_Color)
-@property(nonatomic,strong,nullable) UIColor *l_titleTextColor;//标题颜色
-@property(nonatomic,strong,nullable) UIFont *l_titleTextFont;//标题字体
+@property (nonatomic, strong,nullable) UIColor *l_titleTextColor;//标题颜色
+@property (nonatomic, strong,nullable) UIFont *l_titleTextFont;//标题字体
 /**
  *  设置导航条背景颜色
  *
@@ -60,77 +60,77 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface UINavigationBar (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_barStyle;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_barTintColor;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_titleTextAttributes;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_largeTitleTextAttributes;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_barStyle;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_barTintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_titleTextAttributes;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_largeTitleTextAttributes;
 
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_titleTextColor;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_titleTextFont;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_titleTextColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_titleTextFont;
 - (void)ltheme_setBackgroundColorOfBar:(id<LUIThemeElementProtocol>)value;
 @end
 
 @interface UITableView (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_separatorColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_separatorColor;
 @end
 
 @interface UITabBar (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_barStyle;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_barTintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_barStyle;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_barTintColor;
 @end
 
 @interface UITextField (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_font;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_keyboardAppearance;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_textColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_font;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_keyboardAppearance;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_textColor;
 @end
 
 @interface UITextView (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_font;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_keyboardAppearance;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_textColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_font;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_keyboardAppearance;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_textColor;
 @end
 
 @interface UISearchBar (LUITheme)
 //#if os(iOS)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_barStyle;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_barStyle;
 //#endif
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_keyboardAppearance;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_barTintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_keyboardAppearance;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_barTintColor;
 @end
 
 @interface UIProgressView (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_progressTintColor;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_trackTintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_progressTintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_trackTintColor;
 @end
 
 @interface UIPageControl (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_pageIndicatorTintColor;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_currentPageIndicatorTintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_pageIndicatorTintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_currentPageIndicatorTintColor;
 @end
 
 @interface UIActivityIndicatorView (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_activityIndicatorViewStyle;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_activityIndicatorViewStyle;
 @end
 
 @interface UIToolbar (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_barStyle;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_barTintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_barStyle;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_barTintColor;
 @end
 
 @interface UISwitch (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_onTintColor;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_thumbTintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_onTintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_thumbTintColor;
 @end
 
 @interface UISlider (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_thumbTintColor;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_minimumTrackTintColor;
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_maximumTrackTintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_thumbTintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_minimumTrackTintColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_maximumTrackTintColor;
 @end
 
 @interface UIPopoverPresentationController (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_backgroundColor;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_backgroundColor;
 @end
 
 @interface UIButton (LUITheme)
@@ -148,7 +148,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface UITableViewCell (LUITheme)
-@property(nonatomic,strong,nullable) id<LUIThemeElementProtocol> ltheme_selectionStyle;
+@property (nonatomic, strong,nullable) id<LUIThemeElementProtocol> ltheme_selectionStyle;
 @end
 
 NS_ASSUME_NONNULL_END

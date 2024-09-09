@@ -11,7 +11,7 @@
 
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic) NSInteger countDown;
-@property(nonatomic,strong) LUIFlowLayoutConstraint *flowlayout;
+@property (nonatomic, strong) LUIFlowLayoutConstraint *flowlayout;
 
 @end
 
@@ -23,7 +23,7 @@
     [UIApplication sharedApplication].idleTimerDisabled = YES;//屏幕常亮
     
     UIButton *testUrlButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    testUrlButton.frame = CGRectMake((WIDTH - 100) / 2, (HEIGHT / 4) - 30, 100, 30);
+    testUrlButton.frame = CGRectMake((ScreenWidthLFL - 100) / 2, (ScreenHeightLFL / 4) - 30, 100, 30);
     testUrlButton.layer.borderWidth = 1;
     testUrlButton.layer.borderColor = UIColor.whiteColor.CGColor;
     testUrlButton.layer.cornerRadius = 4;
@@ -79,7 +79,7 @@
         _timeLabel.font = [UIFont boldSystemFontOfSize:30];
         _timeLabel.textColor = UIColor.whiteColor;
         _timeLabel.textAlignment = NSTextAlignmentCenter;
-        _timeLabel.frame = CGRectMake((WIDTH - 100) / 2, (HEIGHT - 100) / 2, 100, 100);
+        _timeLabel.frame = CGRectMake((ScreenWidthLFL - 100) / 2, (ScreenHeightLFL - 100) / 2, 100, 100);
     }
     return _timeLabel;
 }
