@@ -117,3 +117,6 @@ FOUNDATION_EXPORT const unsigned char LUIVersionString[];
 
 #pragma mark - ledBanner(垂直跑马灯)
 #import "LUILedBannerVerticalView.h"
+
+#pragma mark - TarBarController(页签控制器)
+#import "LUItemFlowCollectionView.h"

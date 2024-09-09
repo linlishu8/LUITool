@@ -86,7 +86,7 @@
 		1F4AA2FE2C73870200CDC476 /* LUIKeyboardButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F4AA2FB2C73870200CDC476 /* LUIKeyboardButtonCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F7052F62C89F44500CE02D0 /* LUIPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7052F42C89F44500CE02D0 /* LUIPageControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F7052F72C89F44500CE02D0 /* LUIPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7052F52C89F44500CE02D0 /* LUIPageControl.m */; };
-		1F7502842C8E90200081F3FF /* LUItemFlowCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7502822C8E90200081F3FF /* LUItemFlowCollectionView.h */; };
+		1F7502842C8E90200081F3FF /* LUItemFlowCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7502822C8E90200081F3FF /* LUItemFlowCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F7502852C8E90200081F3FF /* LUItemFlowCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502832C8E90200081F3FF /* LUItemFlowCollectionView.m */; };
 		1FBE4C902C74DB6E0054F742 /* LUIKeyBoardSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FBE4C8E2C74DB6E0054F742 /* LUIKeyBoardSectionModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FBE4C912C74DB6E0054F742 /* LUIKeyBoardSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE4C8F2C74DB6E0054F742 /* LUIKeyBoardSectionModel.m */; };
@@ -898,7 +898,6 @@
 				1F45B66E2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.h in Headers */,
 				1F45B6562C7246E9004839E2 /* NSArray+LUI_BinarySearch.h in Headers */,
 				1F45B6622C73774C004839E2 /* LUICollectionViewPageFlowLayout.h in Headers */,
-				1F7502842C8E90200081F3FF /* LUItemFlowCollectionView.h in Headers */,
 				1F45B6522C7245D3004839E2 /* LUIGridPageCollectionViewLayout.h in Headers */,
 				1F45B6662C7378BB004839E2 /* NSValue+LUI.h in Headers */,
 				1F45B65A2C724769004839E2 /* UICollectionViewLayoutAttributes+LUI.h in Headers */,
@@ -922,6 +921,7 @@
 				1F27070A2C80B73000DC9247 /* LUIKeyboardButtonModel.h in Headers */,
 				1F2707462C860EE500DC9247 /* LUILedBannerVerticalView.h in Headers */,
 				1F4AA2FE2C73870200CDC476 /* LUIKeyboardButtonCell.h in Headers */,
+				1F7502842C8E90200081F3FF /* LUItemFlowCollectionView.h in Headers */,
 				3F05F689B03836519FDBF1140D1EBB6D /* LUITool.h in Headers */,
 				BD1D2051C902197C50C02F5502BBD729 /* LUITool-umbrella.h in Headers */,
 			);
