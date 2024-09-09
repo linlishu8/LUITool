@@ -86,6 +86,8 @@
 		1F4AA2FE2C73870200CDC476 /* LUIKeyboardButtonCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F4AA2FB2C73870200CDC476 /* LUIKeyboardButtonCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F7052F62C89F44500CE02D0 /* LUIPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7052F42C89F44500CE02D0 /* LUIPageControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F7052F72C89F44500CE02D0 /* LUIPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7052F52C89F44500CE02D0 /* LUIPageControl.m */; };
+		1F7502842C8E90200081F3FF /* LUItemFlowCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7502822C8E90200081F3FF /* LUItemFlowCollectionView.h */; };
+		1F7502852C8E90200081F3FF /* LUItemFlowCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502832C8E90200081F3FF /* LUItemFlowCollectionView.m */; };
 		1FBE4C902C74DB6E0054F742 /* LUIKeyBoardSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FBE4C8E2C74DB6E0054F742 /* LUIKeyBoardSectionModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FBE4C912C74DB6E0054F742 /* LUIKeyBoardSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE4C8F2C74DB6E0054F742 /* LUIKeyBoardSectionModel.m */; };
 		1FCBADCA2C685F6600170B35 /* LUICGRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADC92C685F6600170B35 /* LUICGRect.m */; };
@@ -278,6 +280,8 @@
 		1F4AA2FC2C73870200CDC476 /* LUIKeyboardButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIKeyboardButtonCell.m; sourceTree = "<group>"; };
 		1F7052F42C89F44500CE02D0 /* LUIPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIPageControl.h; sourceTree = "<group>"; };
 		1F7052F52C89F44500CE02D0 /* LUIPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIPageControl.m; sourceTree = "<group>"; };
+		1F7502822C8E90200081F3FF /* LUItemFlowCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUItemFlowCollectionView.h; sourceTree = "<group>"; };
+		1F7502832C8E90200081F3FF /* LUItemFlowCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUItemFlowCollectionView.m; sourceTree = "<group>"; };
 		1FBE4C8E2C74DB6E0054F742 /* LUIKeyBoardSectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIKeyBoardSectionModel.h; sourceTree = "<group>"; };
 		1FBE4C8F2C74DB6E0054F742 /* LUIKeyBoardSectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIKeyBoardSectionModel.m; sourceTree = "<group>"; };
 		1FCBADC82C685F6600170B35 /* LUICGRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUICGRect.h; sourceTree = "<group>"; };
@@ -565,6 +569,16 @@
 			path = LUITool/Classes/LUIPageControl;
 			sourceTree = "<group>";
 		};
+		1F7502812C8E8FAD0081F3FF /* LUITabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				1F7502822C8E90200081F3FF /* LUItemFlowCollectionView.h */,
+				1F7502832C8E90200081F3FF /* LUItemFlowCollectionView.m */,
+			);
+			name = LUITabBarController;
+			path = LUITool/Classes/LUITabBarController;
+			sourceTree = "<group>";
+		};
 		1FCBADC22C685EE300170B35 /* LUITableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -786,6 +800,7 @@
 			isa = PBXGroup;
 			children = (
 				0E3D36B1F54495A630B693164B709F8D /* LUITool.h */,
+				1F7502812C8E8FAD0081F3FF /* LUITabBarController */,
 				1F7052F32C89F42600CE02D0 /* LUIPageControl */,
 				1F2707432C860EC800DC9247 /* LUILedBannerVerticalView */,
 				1F45B62C2C71EF12004839E2 /* LUIAlertView */,
@@ -883,6 +898,7 @@
 				1F45B66E2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.h in Headers */,
 				1F45B6562C7246E9004839E2 /* NSArray+LUI_BinarySearch.h in Headers */,
 				1F45B6622C73774C004839E2 /* LUICollectionViewPageFlowLayout.h in Headers */,
+				1F7502842C8E90200081F3FF /* LUItemFlowCollectionView.h in Headers */,
 				1F45B6522C7245D3004839E2 /* LUIGridPageCollectionViewLayout.h in Headers */,
 				1F45B6662C7378BB004839E2 /* NSValue+LUI.h in Headers */,
 				1F45B65A2C724769004839E2 /* UICollectionViewLayoutAttributes+LUI.h in Headers */,
@@ -1092,6 +1108,7 @@
 				1F45B5EA2C71896A004839E2 /* LUIThemeCenter.m in Sources */,
 				1FCBAEFD2C7097AC00170B35 /* LUICollectionViewSupplementaryView.m in Sources */,
 				1FCBAEF12C7097AC00170B35 /* LUICollectionViewCellBase.m in Sources */,
+				1F7502852C8E90200081F3FF /* LUItemFlowCollectionView.m in Sources */,
 				1FCBAEFF2C7097AC00170B35 /* LUICollectionViewTitleSupplementarySectionModel.m in Sources */,
 				1FCBADE72C6897FD00170B35 /* UICollectionViewFlowLayout+LUI.m in Sources */,
 				1FCBAE3D2C6B86B300170B35 /* LUITableViewSectionView.m in Sources */,

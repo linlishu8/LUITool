@@ -49,6 +49,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable UIColor *)l_colorWithString:(NSString *)string;
 @end
 
+@interface UIColor (LUIListSelectionCellView)
+@property(nonatomic,readonly,class) UIColor *l_listViewBackgroundColor;//listView的默认背景色
+@property(nonatomic,readonly,class) UIColor *l_listViewGroupBackgroundColor;//listView分组的默认背景色
+@property(nonatomic,readonly,class) UIColor *l_listViewSeparatorColor;//listView分隔线的默认颜色
+@property(nonatomic,readonly,class) UIColor *l_listViewCellSelectedColor;//listViewCell选中的默认颜色
+@end
+
 @interface UIColor (LUIAlertView)
 
 @property (nonatomic, readonly, class) UIColor *l_alertBackgroundColor;
