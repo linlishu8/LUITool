@@ -13,7 +13,7 @@
 #import "UIScrollView+LUI.h"
 #import "LUICollectionViewPageFlowLayout.h"
 #import "UIColor+LUI.h"
-@interface LUItemFlowCollectionView()<LUICollectionViewDelegatePageFlowLayout>{
+@interface LUItemFlowCollectionView() <LUICollectionViewDelegatePageFlowLayout> {
     BOOL __needReloadData;
 }
 @property(nonatomic,strong) UICollectionView *collectionView;
@@ -23,12 +23,12 @@
 @end
 
 @implementation LUItemFlowCollectionView
-- (id)initWithFrame:(CGRect)frame{
-    if(self=[super initWithFrame:frame]){
+- (id)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
         self.collectionViewFlowLayout = [[LUICollectionViewPageFlowLayout alloc] init];
         self.collectionViewFlowLayout.interitemSpacing = 0;
         self.collectionViewFlowLayout.sectionInset = UIEdgeInsetsZero;
-        self.collectionViewFlowLayout.scrollDirection = self.scrollDirection==LUItemFlowCollectionViewScrollDirectionHorizontal?UICollectionViewScrollDirectionHorizontal:UICollectionViewScrollDirectionVertical;
+        self.collectionViewFlowLayout.scrollDirection = self.scrollDirection == LUItemFlowCollectionViewScrollDirectionHorizontal ? UICollectionViewScrollDirectionHorizontal : UICollectionViewScrollDirectionVertical;
         self.collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:self.collectionViewFlowLayout];
         self.collectionView.backgroundColor = UIColor.clearColor;
         self.collectionView.showsVerticalScrollIndicator = NO;
@@ -44,18 +44,18 @@
     }
     return self;
 }
-- (void)layoutSubviews{
+- (void)layoutSubviews {
     [super layoutSubviews];
     CGRect bounds = self.bounds;
     BOOL sizeChange = !CGSizeEqualToSize(self.collectionView.bounds.size, bounds.size);
     self.collectionView.frame = bounds;
-    if(__needReloadData||sizeChange){
+    if (__needReloadData || sizeChange) {
         [self __reloadData];
         [self __reloadIndicatorView:YES];
     }
 }
-- (CGSize)sizeThatFits:(CGSize)size{
-    if(__needReloadData){
+- (CGSize)sizeThatFits:(CGSize)size {
+    if (__needReloadData) {
         [self __reloadData];
     }
     LUICGAxis X = self.scrollAxis;
@@ -65,79 +65,79 @@
     LUICGSizeSetLength(&s, Y, LUICGSizeGetLength(s1, Y));
     return s;
 }
-- (void)setScrollDirection:(LUItemFlowCollectionViewScrollDirection)scrollDirection{
-    if(_scrollDirection==scrollDirection)return;
+- (void)setScrollDirection:(LUItemFlowCollectionViewScrollDirection)scrollDirection {
+    if (_scrollDirection == scrollDirection) return;
     _scrollDirection = scrollDirection;
-    self.collectionViewFlowLayout.scrollDirection = self.scrollDirection==LUItemFlowCollectionViewScrollDirectionHorizontal?UICollectionViewScrollDirectionHorizontal:UICollectionViewScrollDirectionVertical;
+    self.collectionViewFlowLayout.scrollDirection = self.scrollDirection == LUItemFlowCollectionViewScrollDirectionHorizontal ? UICollectionViewScrollDirectionHorizontal : UICollectionViewScrollDirectionVertical;
     [self setNeedReloadData];
 }
-- (LUICGAxis)scrollAxis{
-    LUICGAxis X = self.scrollDirection==LUItemFlowCollectionViewScrollDirectionHorizontal?LUICGAxisX:LUICGAxisY;
+- (LUICGAxis)scrollAxis {
+    LUICGAxis X = self.scrollDirection == LUItemFlowCollectionViewScrollDirectionHorizontal ? LUICGAxisX : LUICGAxisY;
     return X;
 }
-- (void)setItems:(NSArray *)items{
-    if(_items==items)return;
+- (void)setItems:(NSArray *)items {
+    if (_items == items) return;
     _items = items;
-    if(self.selectedIndex!=NSNotFound){
-        self.selectedIndex = MIN(self.selectedIndex,self.items.count-1);
+    if (self.selectedIndex != NSNotFound) {
+        self.selectedIndex = MIN(self.selectedIndex, self.items.count-1);
     }
     [self setNeedReloadData];
 }
-- (void)setItemCellClass:(Class)itemCellClass{
-    if(_itemCellClass==itemCellClass)return;
+- (void)setItemCellClass:(Class)itemCellClass {
+    if (_itemCellClass == itemCellClass) return;
     _itemCellClass = itemCellClass;
     [self setNeedReloadData];
 }
-- (void)setSelectedIndex:(NSInteger)selectedIndex{
-    if(selectedIndex<0||selectedIndex>=self.items.count)return;
-    if(_selectedIndex==selectedIndex)return;
+- (void)setSelectedIndex:(NSInteger)selectedIndex {
+    if (selectedIndex < 0 || selectedIndex >= self.items.count) return;
+    if (_selectedIndex == selectedIndex) return;
     _selectedIndex = selectedIndex;
     [self setNeedReloadData];
 }
-- (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated{
-    if(selectedIndex<0||selectedIndex>=self.items.count)return;
-    if(_selectedIndex==selectedIndex)return;
+- (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated {
+    if (selectedIndex < 0 || selectedIndex >= self.items.count) return;
+    if (_selectedIndex == selectedIndex) return;
     _selectedIndex = selectedIndex;
     [self __reloadData];
     [self.collectionView layoutIfNeeded];
-    if(animated){
+    if (animated) {
         [UIView animateWithDuration:0.25 animations:^{
             [self scrollItemIndicatorViewToIndex:selectedIndex animated:NO];
             [self collectionViewScrollToItemAtIndex:selectedIndex animated:NO];
         }];
-    }else{
+    } else {
         [self scrollItemIndicatorViewToIndex:selectedIndex animated:NO];
         [self collectionViewScrollToItemAtIndex:selectedIndex animated:NO];
     }
 }
-- (CGSize)itemSizeAtIndex:(NSInteger)index collectionCellModel:(LUICollectionViewCellModel *)cellModel{
+- (CGSize)itemSizeAtIndex:(NSInteger)index collectionCellModel:(LUICollectionViewCellModel *)cellModel {
     CGRect bounds = self.collectionView.bounds;
     CGSize size = CGSizeZero;
     LUICGAxis X = self.scrollAxis;
     LUICGAxis Y = LUICGAxisReverse(X);
     LUICGSizeSetLength(&size, Y, LUICGRectGetLength(bounds, Y));
-    if(self.delegate!=nil&&[self.delegate respondsToSelector:@selector(itemFlowCollectionView:itemSizeAtIndex:collectionCellModel:)]){
+    if (self.delegate != nil && [self.delegate respondsToSelector:@selector(itemFlowCollectionView:itemSizeAtIndex:collectionCellModel:)]) {
         size = [self.delegate itemFlowCollectionView:self itemSizeAtIndex:index collectionCellModel:cellModel];
     }
     return size;
 }
-- (Class)itemCellClassAtIndex:(NSInteger)index{
+- (Class)itemCellClassAtIndex:(NSInteger)index {
     Class c = nil;
-    if([self.delegate respondsToSelector:@selector(itemFlowCollectionView:itemCellClassAtIndex:)]){
+    if ([self.delegate respondsToSelector:@selector(itemFlowCollectionView:itemCellClassAtIndex:)]) {
         c = [self.delegate itemFlowCollectionView:self itemCellClassAtIndex:index];
-    }else{
+    } else {
         c = self.itemCellClass;
     }
-    if(!c){
+    if (!c) {
         c = LUItemFlowCellView.class;
     }
     return c;
 }
-- (void)setItemIndicatorViewClass:(Class)itemIndicatorViewClass{
-    if(_itemIndicatorViewClass==itemIndicatorViewClass)return;
+- (void)setItemIndicatorViewClass:(Class)itemIndicatorViewClass {
+    if (_itemIndicatorViewClass == itemIndicatorViewClass)return;
     [self.itemIndicatorView removeFromSuperview];
     _itemIndicatorViewClass = itemIndicatorViewClass;
-    if(self.itemIndicatorViewClass){
+    if (self.itemIndicatorViewClass) {
         self.itemIndicatorView = [[self.itemIndicatorViewClass alloc] init];
         self.itemIndicatorView.hidden = YES;
         [self.collectionView addSubview:self.itemIndicatorView];
@@ -145,16 +145,16 @@
         [self setNeedReloadData];
     }
 }
-- (void)scrollItemIndicatorViewFromIndex:(NSInteger)fromIndex to:(NSInteger)toIndex withProgress:(CGFloat)progress{
-    if(self.itemIndicatorViewClass==nil)return;
-    if(fromIndex<0||fromIndex>=self.items.count)return;
-    if(toIndex<0||toIndex>=self.items.count)return;
+- (void)scrollItemIndicatorViewFromIndex:(NSInteger)fromIndex to:(NSInteger)toIndex withProgress:(CGFloat)progress {
+    if (self.itemIndicatorViewClass == nil)return;
+    if (fromIndex < 0 || fromIndex >= self.items.count)return;
+    if (toIndex < 0 || toIndex >= self.items.count)return;
     self.itemIndicatorView.frame = [self itemIndicatorRectWithScrollFromIndex:fromIndex to:toIndex withProgress:progress];
     [self.itemIndicatorView layoutIfNeeded];
 }
-- (void)collectionViewScrollItemFromIndex:(NSInteger)fromIndex to:(NSInteger)toIndex withProgress:(CGFloat)progress{
-    if(fromIndex<0||fromIndex>=self.items.count)return;
-    if(toIndex<0||toIndex>=self.items.count)return;
+- (void)collectionViewScrollItemFromIndex:(NSInteger)fromIndex to:(NSInteger)toIndex withProgress:(CGFloat)progress {
+    if (fromIndex < 0 || fromIndex >= self.items.count)return;
+    if (toIndex < 0 || toIndex >= self.items.count)return;
     //
     CGPoint offset0 = [self __contentOffsetWithItemAtIndex:fromIndex];
     CGPoint offset1 = [self __contentOffsetWithItemAtIndex:toIndex];
@@ -162,80 +162,80 @@
     self.collectionView.contentOffset = offset;
     //
     UICollectionViewCell *cell0 = [self.collectionView cellForItemAtIndexPath:[self cellIndexPathForItemIndex:fromIndex]];
-    if([cell0 conformsToProtocol:@protocol(LUItemFlowCollectionCellViewDelegate)] && [cell0 respondsToSelector:@selector(itemFlowCollectionView:didScrollFromIndex:to:progress:)]){
-        [(UICollectionViewCell<LUItemFlowCollectionCellViewDelegate> *)cell0 itemFlowCollectionView:self didScrollFromIndex:fromIndex to:toIndex progress:progress];
+    if ([cell0 conformsToProtocol:@protocol(LUItemFlowCollectionCellViewDelegate)] && [cell0 respondsToSelector:@selector(itemFlowCollectionView:didScrollFromIndex:to:progress:)]) {
+        [(UICollectionViewCell < LUItemFlowCollectionCellViewDelegate> *)cell0 itemFlowCollectionView:self didScrollFromIndex:fromIndex to:toIndex progress:progress];
     }
     UICollectionViewCell *cell1 = [self.collectionView cellForItemAtIndexPath:[self cellIndexPathForItemIndex:toIndex]];
-    if([cell1 conformsToProtocol:@protocol(LUItemFlowCollectionCellViewDelegate)] && [cell1 respondsToSelector:@selector(itemFlowCollectionView:didScrollFromIndex:to:progress:)]){
-        [(UICollectionViewCell<LUItemFlowCollectionCellViewDelegate> *)cell1 itemFlowCollectionView:self didScrollFromIndex:fromIndex to:toIndex progress:progress];
+    if ([cell1 conformsToProtocol:@protocol(LUItemFlowCollectionCellViewDelegate)] && [cell1 respondsToSelector:@selector(itemFlowCollectionView:didScrollFromIndex:to:progress:)]) {
+        [(UICollectionViewCell < LUItemFlowCollectionCellViewDelegate> *)cell1 itemFlowCollectionView:self didScrollFromIndex:fromIndex to:toIndex progress:progress];
     }
     //处理中间的单元格状态
     NSInteger centerCount = ABS(toIndex-fromIndex);
-    if(centerCount>1) for(int i=1;i<centerCount;i++){
+    if (centerCount>1) for(int i=1;i < centerCount;i++) {
         NSInteger centerIndex = fromIndex+(toIndex>fromIndex?i:-i);
         UICollectionViewCell *cellCenter = [self.collectionView cellForItemAtIndexPath:[self cellIndexPathForItemIndex:centerIndex]];
-        if([cellCenter conformsToProtocol:@protocol(LUItemFlowCollectionCellViewDelegate)] && [cellCenter respondsToSelector:@selector(itemFlowCollectionView:didScrollFromIndex:to:progress:)]){
-            [(UICollectionViewCell<LUItemFlowCollectionCellViewDelegate> *)cellCenter itemFlowCollectionView:self didScrollFromIndex:fromIndex to:toIndex progress:progress];
+        if ([cellCenter conformsToProtocol:@protocol(LUItemFlowCollectionCellViewDelegate)] && [cellCenter respondsToSelector:@selector(itemFlowCollectionView:didScrollFromIndex:to:progress:)]) {
+            [(UICollectionViewCell < LUItemFlowCollectionCellViewDelegate> *)cellCenter itemFlowCollectionView:self didScrollFromIndex:fromIndex to:toIndex progress:progress];
         }
     }
 }
-- (nullable NSIndexPath *)cellIndexPathForItemIndex:(NSInteger)index{
-    if(index<0||index>=self.items.count)return nil;
+- (nullable NSIndexPath *)cellIndexPathForItemIndex:(NSInteger)index {
+    if (index < 0 || index >= self.items.count)return nil;
     BOOL needSeparatorView = [self needSeparatorView];
     NSIndexPath *indexpath = [NSIndexPath indexPathForItem:needSeparatorView?index*2:index inSection:0];
     return indexpath;
 }
-- (void)collectionViewScrollToItemAtIndex:(NSInteger)index animated:(BOOL)animated{
+- (void)collectionViewScrollToItemAtIndex:(NSInteger)index animated:(BOOL)animated {
     [self __collectionViewScrollToItemAtIndex:index animated:animated];
 }
-- (CGPoint)__contentOffsetWithItemAtIndex:(NSInteger)index{
-    if(index<0||index>=self.items.count)return CGPointZero;
+- (CGPoint)__contentOffsetWithItemAtIndex:(NSInteger)index {
+    if (index < 0 || index >= self.items.count)return CGPointZero;
     NSIndexPath *indexpath = [self cellIndexPathForItemIndex:index];
     UICollectionViewLayoutAttributes *attr = [self.collectionViewFlowLayout layoutAttributesForItemAtIndexPath:indexpath];
     CGRect cellFrame2 = attr.frame;
-    LUIScrollViewScrollDirection direction = self.scrollDirection==LUItemFlowCollectionViewScrollDirectionVertical?LUIScrollViewScrollDirectionVertical:LUIScrollViewScrollDirectionHorizontal;
+    LUIScrollViewScrollDirection direction = self.scrollDirection == LUItemFlowCollectionViewScrollDirectionVertical?LUIScrollViewScrollDirectionVertical:LUIScrollViewScrollDirectionHorizontal;
     CGPoint offset = [self.collectionView l_contentOffsetWithScrollTo:cellFrame2 direction:(direction) position:(LUIScrollViewScrollPositionMiddle)];
     return offset;
 }
-- (void)__collectionViewScrollToItemAtIndex:(NSInteger)index animated:(BOOL)animated{
-    if(index<0||index>=self.items.count)return;
+- (void)__collectionViewScrollToItemAtIndex:(NSInteger)index animated:(BOOL)animated {
+    if (index < 0 || index >= self.items.count)return;
     CGPoint offset = [self __contentOffsetWithItemAtIndex:index];
     [self.collectionView setContentOffset:offset animated:animated];
 }
-- (void)setNeedReloadData{
+- (void)setNeedReloadData {
     __needReloadData = YES;
     [self setNeedsLayout];
 }
-- (void)reloadDataWithAnimated:(BOOL)animated{
+- (void)reloadDataWithAnimated:(BOOL)animated {
     __needReloadData = NO;
     [self layoutIfNeeded];
     [self __reloadData];
-    if(animated){
+    if (animated) {
         [UIView animateWithDuration:0.25 animations:^{
             [self scrollItemIndicatorViewToIndex:self.selectedIndex animated:NO];
             [self collectionViewScrollToItemAtIndex:self.selectedIndex animated:NO];
         }];
-    }else{
+    } else {
         [self scrollItemIndicatorViewToIndex:self.selectedIndex animated:NO];
         [self collectionViewScrollToItemAtIndex:self.selectedIndex animated:NO];
     }
 }
-- (void)__reloadData{
+- (void)__reloadData {
     __needReloadData = NO;
     [self.model removeAllSectionModels];
     BOOL needSeparatorView = [self needSeparatorView];
     @LUI_WEAKIFY(self);
-    for(int i=0;i<self.items.count;i++){
+    for(int i=0;i < self.items.count;i++) {
         id item = self.items[i];
-        LUICollectionViewCellModel *cm = [LUICollectionViewCellModel modelWithValue:item cellClass:[self itemCellClassAtIndex:i] whenClick:^(__kindof LUICollectionViewCellModel * _Nonnull cellModel) {
+        LUICollectionViewCellModel *cm = [LUICollectionViewCellModel modelWithValue:item cellClass:[self itemCellClassAtIndex:i] whenClick:^(__kindof LUICollectionViewCellModel * _Nonnull cellModel)  {
             @LUI_NORMALIZE(self);
-            if(self.delegate && [self.delegate respondsToSelector:@selector(itemFlowCollectionView:didSelectIndex:)]){
+            if (self.delegate && [self.delegate respondsToSelector:@selector(itemFlowCollectionView:didSelectIndex:)]) {
                 [self.delegate itemFlowCollectionView:self didSelectIndex:i];
             }
         }];
-        cm.selected = i==self.selectedIndex;
+        cm.selected = i == self.selectedIndex;
         [self.model addCellModel:cm];
-        if(needSeparatorView && i!=self.items.count-1){
+        if (needSeparatorView && i != self.items.count-1) {
             LUICollectionViewCellModelItemFlowSeparator *separatorCM = [LUICollectionViewCellModelItemFlowSeparator modelWithValue:nil cellClass:self.separatorViewClass];
             separatorCM.separatorColor = self.separatorColor;
             separatorCM.separatorSize = self.separatorSize;
@@ -246,57 +246,57 @@
     [self.model reloadCollectionViewData];
     [self.collectionView layoutIfNeeded];
     CGPoint contentOffset = [self.collectionView l_adjustContentOffsetInRange:self.collectionView.contentOffset];
-    if(!CGPointEqualToPoint(contentOffset, self.collectionView.contentOffset)){
+    if (!CGPointEqualToPoint(contentOffset, self.collectionView.contentOffset)) {
         self.collectionView.contentOffset = contentOffset;
         [self.collectionView layoutIfNeeded];//contentOffset变更时，马上进行一次重绘
     }
     
-    if(self.items.count==0){
+    if (self.items.count == 0) {
         self.itemIndicatorView.hidden = YES;
-    }else if(self.itemIndicatorView!=nil && self.itemIndicatorView.hidden){
+    } else if (self.itemIndicatorView != nil && self.itemIndicatorView.hidden) {
     }
     [self __reloadIndicatorView:NO];
 }
-- (void)__reloadIndicatorView:(BOOL)force{
-    if(self.itemIndicatorView==nil)return;
-    if(self.items.count==0){
+- (void)__reloadIndicatorView:(BOOL)force {
+    if (self.itemIndicatorView == nil)return;
+    if (self.items.count == 0) {
         self.itemIndicatorView.hidden = YES;
         return;
     }
-    if(self.itemIndicatorView.hidden){
+    if (self.itemIndicatorView.hidden) {
         self.itemIndicatorView.hidden = NO;
         [self scrollItemIndicatorViewToIndex:self.selectedIndex animated:NO];
-    }else{
+    } else {
         CGRect f1 = self.itemIndicatorView.frame;
-        if(force||CGSizeEqualToSize(f1.size, CGSizeZero)){
+        if (force || CGSizeEqualToSize(f1.size, CGSizeZero)) {
             [self scrollItemIndicatorViewToIndex:self.selectedIndex animated:NO];
         }
     }
 }
-- (void)scrollItemIndicatorViewToIndex:(NSInteger)index animated:(BOOL)animated{
-    if(index<0||index>=self.items.count)return;
-    if(self.itemIndicatorViewClass==nil)return;
+- (void)scrollItemIndicatorViewToIndex:(NSInteger)index animated:(BOOL)animated {
+    if (index < 0 || index >= self.items.count)return;
+    if (self.itemIndicatorViewClass == nil)return;
     CGRect f = [self itemIndicatorRectWithScrollFromIndex:index to:index withProgress:0];
-    if(animated){
+    if (animated) {
         [UIView animateWithDuration:0.25 animations:^{
             self.itemIndicatorView.frame = f;
             [self.itemIndicatorView layoutIfNeeded];
         }];
-    }else{
+    } else {
         self.itemIndicatorView.frame = f;
         [self.itemIndicatorView layoutIfNeeded];
     }
 }
-- (__kindof UICollectionViewCell *)itemCollectionViewCellForIndex:(NSInteger)index{
-    if(!(index>=0&&index<self.items.count)){
+- (__kindof UICollectionViewCell *)itemCollectionViewCellForIndex:(NSInteger)index {
+    if (!(index >= 0 && index < self.items.count)) {
         return nil;
     }
     NSIndexPath *p = [self cellIndexPathForItemIndex:index];
-    if(p.item>=self.model.numberOfCells){//还未reload
+    if (p.item >= self.model.numberOfCells) {//还未reload
         return nil;
     }
     UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:p];
-    if(!cell){
+    if (!cell) {
         //cell还未显示出来
         CGPoint offset = self.collectionView.contentOffset;
         [self __collectionViewScrollToItemAtIndex:index animated:NO];
@@ -307,7 +307,7 @@
     }
     return cell;
 }
-- (CGRect)itemIndicatorRectWithScrollFromIndex:(NSInteger)fromIndex to:(NSInteger)toIndex withProgress:(CGFloat)progress{
+- (CGRect)itemIndicatorRectWithScrollFromIndex:(NSInteger)fromIndex to:(NSInteger)toIndex withProgress:(CGFloat)progress {
     LUICGAxis X = self.scrollAxis;
     LUICGAxis Y = LUICGAxisReverse(X);
     CGRect bounds = self.collectionView.bounds;
@@ -315,51 +315,51 @@
     LUICGRectSetLength(&f2, Y, LUICGRectGetLength(bounds, Y));
     
     CGRect r1 = [self itemContentRectForIndex:fromIndex];
-    CGRect r2 = fromIndex==toIndex?r1:[self itemContentRectForIndex:toIndex];
+    CGRect r2 = fromIndex == toIndex?r1:[self itemContentRectForIndex:toIndex];
     LUICGRectSetLength(&f2, X, LUICGFloatInterpolate(LUICGRectGetLength(r1, X), LUICGRectGetLength(r2, X), progress));
     LUICGRectSetMid(&f2, X, LUICGFloatInterpolate(LUICGRectGetMid(r1, X), LUICGRectGetMid(r2, X), progress));
     return f2;
 }
-- (CGRect)itemContentRectForIndex:(NSInteger)index{
+- (CGRect)itemContentRectForIndex:(NSInteger)index {
     UICollectionViewCell *cell = [self itemCollectionViewCellForIndex:index];
     CGRect r;
     CGRect itemIndicatorRect = CGRectZero;
-    if([cell conformsToProtocol:@protocol(LUItemFlowCollectionCellViewDelegate)]){
-        id<LUItemFlowCollectionCellViewDelegate> flowCell = (id<LUItemFlowCollectionCellViewDelegate>)cell;
-        if([flowCell respondsToSelector:@selector(itemIndicatorRect)]){
+    if ([cell conformsToProtocol:@protocol(LUItemFlowCollectionCellViewDelegate)]) {
+        id < LUItemFlowCollectionCellViewDelegate> flowCell = (id < LUItemFlowCollectionCellViewDelegate>)cell;
+        if ([flowCell respondsToSelector:@selector(itemIndicatorRect)]) {
             itemIndicatorRect = flowCell.itemIndicatorRect;
         }
     }
-    if(!CGRectEqualToRect(itemIndicatorRect, CGRectZero)){
+    if (!CGRectEqualToRect(itemIndicatorRect, CGRectZero)) {
         r = [self.collectionView convertRect:itemIndicatorRect fromView:cell];
-    }else{
+    } else {
         r = [self.collectionView convertRect:cell.l_frameSafety fromView:cell.superview];
     }
     return r;
 }
-- (void)setSeparatorViewClass:(Class)separatorViewClass{
-    if(_separatorViewClass==separatorViewClass)return;
+- (void)setSeparatorViewClass:(Class)separatorViewClass {
+    if (_separatorViewClass == separatorViewClass)return;
     _separatorViewClass = separatorViewClass;
     [self setNeedReloadData];
 }
-- (void)setSeparatorColor:(UIColor *)separatorColor{
-    if(_separatorColor==separatorColor||[_separatorColor isEqual:separatorColor])return;
+- (void)setSeparatorColor:(UIColor *)separatorColor {
+    if (_separatorColor == separatorColor || [_separatorColor isEqual:separatorColor])return;
     _separatorColor = separatorColor;
-    if(![self needSeparatorView]) return;
+    if (![self needSeparatorView]) return;
     [self setNeedReloadData];
 }
-- (void)setSeparatorSize:(CGSize)separatorSize{
-    if(CGSizeEqualToSize(_separatorSize, separatorSize))return;
+- (void)setSeparatorSize:(CGSize)separatorSize {
+    if (CGSizeEqualToSize(_separatorSize, separatorSize))return;
     _separatorSize = separatorSize;
-    if(![self needSeparatorView]) return;
+    if (![self needSeparatorView]) return;
     [self setNeedReloadData];
 }
-- (BOOL)needSeparatorView{
-    BOOL needSeparatorView = self.separatorViewClass!=nil&&[self.separatorViewClass isSubclassOfClass:LUICollectionViewCellBase.class];
+- (BOOL)needSeparatorView {
+    BOOL needSeparatorView = self.separatorViewClass != nil && [self.separatorViewClass isSubclassOfClass:LUICollectionViewCellBase.class];
     return needSeparatorView;
 }
 #pragma mark - delegate:UICollectionViewDelegateFlowLayout
-- (CGSize)collectionView:(UICollectionView *)collectionView pageFlowLayout:(LUICollectionViewPageFlowLayout *)collectionViewLayout itemSizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (CGSize)collectionView:(UICollectionView *)collectionView pageFlowLayout:(LUICollectionViewPageFlowLayout *)collectionViewLayout itemSizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGRect bounds = collectionView.bounds;
     CGSize size = CGSizeZero;
     LUICGAxis X = self.scrollAxis;
@@ -367,24 +367,24 @@
     LUICGSizeSetLength(&size, Y, LUICGRectGetLength(bounds, Y));
     BOOL needSeparatorView = [self needSeparatorView];
     NSInteger index = indexPath.item;
-    if(needSeparatorView && index%2==1){//分隔线
-        if(self.delegate!=nil&&[self.delegate respondsToSelector:@selector(separatorSizeOfItemFlowCollectionView:)]){
+    if (needSeparatorView && index%2 == 1) {//分隔线
+        if (self.delegate != nil && [self.delegate respondsToSelector:@selector(separatorSizeOfItemFlowCollectionView:)]) {
             size = [self.delegate separatorSizeOfItemFlowCollectionView:self];
-        }else{
+        } else {
             size = self.separatorSize;
         }
-    }else{//item
+    } else {//item
         NSInteger itemIndex = index/2;
         size = [self itemSizeAtIndex:itemIndex collectionCellModel:[self.model cellModelAtIndexPath:indexPath]];
     }
     return size;
 }
-- (void)dealloc{
+- (void)dealloc {
     //ios10时，会因为实现了scrollViewDidScroll：方法，导致闪退，需要手动清空delegate
     self.collectionView.delegate = nil;
 }
-- (void)doesNotRecognizeSelector:(SEL)aSelector{
-    if(self.collectionView.dataSource==nil){
+- (void)doesNotRecognizeSelector:(SEL)aSelector {
+    if (self.collectionView.dataSource == nil) {
         //ios内存释放机制，导致dataSource已经空了，但delegate还保持为自己。此时不应该响应任何方法了
         return;
     }
@@ -397,15 +397,15 @@
 @property(nonatomic,strong) UILabel *titleLabel;
 @end
 @implementation LUItemFlowCellView
-- (id)initWithFrame:(CGRect)frame{
-    if(self=[super initWithFrame:frame]){
+- (id)initWithFrame:(CGRect)frame {
+    if (self=[super initWithFrame:frame]) {
         self.titleLabel = [[UILabel alloc] init];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:self.titleLabel];
     }
     return self;
 }
-- (void)layoutSubviews{
+- (void)layoutSubviews {
     [super layoutSubviews];
     CGRect bounds = self.contentView.bounds;
     CGRect f1 = bounds;
@@ -414,48 +414,48 @@
     LUICGRectAlignMidYToRect(&f1, bounds);
     self.titleLabel.frame = bounds;
 }
-- (UIView *)itemIndicatorRectView{
+- (UIView *)itemIndicatorRectView {
     return self.titleLabel;
 }
-- (CGRect)itemIndicatorRect{
-    if(!self.itemIndicatorRectView)return CGRectZero;
+- (CGRect)itemIndicatorRect {
+    if (!self.itemIndicatorRectView)return CGRectZero;
     return [self.itemIndicatorRectView.superview convertRect:self.itemIndicatorRectView.l_frameSafety toView:self];
 }
-- (void)customReloadCellModel{
+- (void)customReloadCellModel {
     [super customReloadCellModel];
     BOOL selected = self.collectionCellModel.selected;
     UIColor *color = [self.class titleColorWithSelected:selected];
-    if(color){
+    if (color) {
         self.titleLabel.textColor = color;
     }
 }
-+ (UIColor *)titleColorWithSelected:(BOOL)selected{
++ (UIColor *)titleColorWithSelected:(BOOL)selected {
     return nil;
 }
 LUIDEF_SINGLETON(LUItemFlowCellView)
-- (void)changeColorForItemFlowCollectionView:(LUItemFlowCollectionView *)view didScrollFromIndex:(NSInteger)fromIndex to:(NSInteger)toIndex progress:(CGFloat)progress{
+- (void)changeColorForItemFlowCollectionView:(LUItemFlowCollectionView *)view didScrollFromIndex:(NSInteger)fromIndex to:(NSInteger)toIndex progress:(CGFloat)progress {
     NSIndexPath *fromIndexPath = [view cellIndexPathForItemIndex:fromIndex];
     NSIndexPath *toIndexPath = [view cellIndexPathForItemIndex:toIndex];
     NSIndexPath *myIndexPath = self.collectionCellModel.indexPathInModel;
-    if(![myIndexPath isEqual:fromIndexPath]&&![myIndexPath isEqual:toIndexPath]){//中间单元格
+    if (![myIndexPath isEqual:fromIndexPath] && ![myIndexPath isEqual:toIndexPath]) {//中间单元格
         self.titleLabel.textColor = [self.class titleColorWithSelected:NO];
         return;
     }
     //颜色渐变
     UIColor *color1;
     UIColor *color2;
-    if([myIndexPath isEqual:fromIndexPath]){//选中->未选中
+    if ([myIndexPath isEqual:fromIndexPath]) {//选中->未选中
         color1 = [self.class titleColorWithSelected:YES];
         color2 = [self.class titleColorWithSelected:NO];
-    }else{//未选中->选中
+    } else {//未选中->选中
         color1 = [self.class titleColorWithSelected:NO];
         color2 = [self.class titleColorWithSelected:YES];
     }
-    if(color1 && color2){
+    if (color1 && color2) {
         self.titleLabel.textColor = LUIColorInterpolate(color1, color2, progress);
     }
 }
-- (void)itemFlowCollectionView:(LUItemFlowCollectionView *)view didScrollFromIndex:(NSInteger)fromIndex to:(NSInteger)toIndex progress:(CGFloat)progress{
+- (void)itemFlowCollectionView:(LUItemFlowCollectionView *)view didScrollFromIndex:(NSInteger)fromIndex to:(NSInteger)toIndex progress:(CGFloat)progress {
     [self changeColorForItemFlowCollectionView:view didScrollFromIndex:fromIndex to:toIndex progress:progress];
 }
 @end
@@ -465,12 +465,12 @@ LUIDEF_SINGLETON(LUItemFlowCellView)
 @end
 @implementation LUItemFlowIndicatorLineView
 #ifdef DEBUG
-- (void)setFrame:(CGRect)frame{
+- (void)setFrame:(CGRect)frame {
     [super setFrame:frame];
 }
 #endif
-- (id)initWithFrame:(CGRect)frame{
-    if(self=[super initWithFrame:frame]){
+- (id)initWithFrame:(CGRect)frame {
+    if (self=[super initWithFrame:frame]) {
         self.indicatorLine = [[UIView alloc] init];
         self.indicatorLine.backgroundColor = UIColor.systemBlueColor;
         self.indicatorLineSize = 2;
@@ -480,7 +480,7 @@ LUIDEF_SINGLETON(LUItemFlowCellView)
     }
     return self;
 }
-- (void)layoutSubviews{
+- (void)layoutSubviews {
     [super layoutSubviews];
     CGRect bounds = self.bounds;
     LUItemFlowCollectionView *view = [self l_firstSuperViewWithClass:LUItemFlowCollectionView.class];
@@ -488,39 +488,39 @@ LUIDEF_SINGLETON(LUItemFlowCellView)
     LUICGAxis Y = LUICGAxisReverse(X);
     CGRect f1 = bounds;
     LUICGRectSetLength(&f1, Y, self.indicatorLineSize);
-    if(self.indicatorLinePosition==LUItemFlowIndicatorLinePositionMin){
+    if (self.indicatorLinePosition == LUItemFlowIndicatorLinePositionMin) {
         LUICGRectSetMinEdgeToRect(&f1, Y, bounds, self.indicatorLineMarggin);
-    }else{
+    } else {
         LUICGRectSetMaxEdgeToRect(&f1, Y, bounds, self.indicatorLineMarggin);
     }
     self.indicatorLine.frame = f1;
 }
-- (void)setIndicatorLineSize:(CGFloat)indicatorLineSize{
-    if(_indicatorLineSize==indicatorLineSize)return;
+- (void)setIndicatorLineSize:(CGFloat)indicatorLineSize {
+    if (_indicatorLineSize == indicatorLineSize)return;
     _indicatorLineSize = indicatorLineSize;
     [self setNeedsLayout];
 }
-- (void)setIndicatorLinePosition:(LUItemFlowIndicatorLinePosition)indicatorLinePosition{
-    if(_indicatorLinePosition==indicatorLinePosition)return;
+- (void)setIndicatorLinePosition:(LUItemFlowIndicatorLinePosition)indicatorLinePosition {
+    if (_indicatorLinePosition == indicatorLinePosition)return;
     _indicatorLinePosition = indicatorLinePosition;
     [self setNeedsLayout];
 }
-- (void)setIndicatorLineMarggin:(CGFloat)indicatorLineMarggin{
-    if(_indicatorLineMarggin==indicatorLineMarggin)return;
+- (void)setIndicatorLineMarggin:(CGFloat)indicatorLineMarggin {
+    if (_indicatorLineMarggin == indicatorLineMarggin)return;
     _indicatorLineMarggin = indicatorLineMarggin;
     [self setNeedsLayout];
 }
 @end
 @implementation LUItemFlowCollectionView(LUItemFlowIndicatorLineView)
-- (LUItemFlowIndicatorLineView *)itemIndicatorLineView{
-    return [self.itemIndicatorView isKindOfClass:LUItemFlowIndicatorLineView.class]?self.itemIndicatorView:nil;
+- (LUItemFlowIndicatorLineView *)itemIndicatorLineView {
+    return [self.itemIndicatorView isKindOfClass:LUItemFlowIndicatorLineView.class] ? self.itemIndicatorView : nil;
 }
 @end
 
 
 @implementation LUICollectionViewCellModelItemFlowSeparator
-- (LUICGAxis)scrollAxis{
-    LUICGAxis X = self.scrollDirection==LUItemFlowCollectionViewScrollDirectionHorizontal?LUICGAxisX:LUICGAxisY;
+- (LUICGAxis)scrollAxis {
+    LUICGAxis X = self.scrollDirection == LUItemFlowCollectionViewScrollDirectionHorizontal ? LUICGAxisX : LUICGAxisY;
     return X;
 }
 @end
@@ -529,15 +529,15 @@ LUIDEF_SINGLETON(LUItemFlowCellView)
 @property(nonatomic,strong) UIView *separatorLine;
 @end
 @implementation LUItemFlowSeparatorView
-- (id)initWithFrame:(CGRect)frame{
-    if(self=[super initWithFrame:frame]){
+- (id)initWithFrame:(CGRect)frame {
+    if (self=[super initWithFrame:frame]) {
         self.separatorLine = [[UIView alloc] init];
         self.separatorLine.backgroundColor = [UIColor l_colorWithLight:UIColor.blackColor];
         [self.contentView addSubview:self.separatorLine];
     }
     return self;
 }
-- (void)customLayoutSubviews{
+- (void)customLayoutSubviews {
     [super customLayoutSubviews];
     CGRect bounds = self.bounds;
     CGRect f1 = bounds;
@@ -546,15 +546,15 @@ LUIDEF_SINGLETON(LUItemFlowCellView)
     LUICGRectAlignMidYToRect(&f1, bounds);
     self.separatorLine.frame = f1;
 }
-- (void)customReloadCellModel{
+- (void)customReloadCellModel {
     [super customReloadCellModel];
     LUICollectionViewCellModelItemFlowSeparator *separatorCellModel = self.separatorCellModel;
-    if(separatorCellModel){
+    if (separatorCellModel) {
         self.separatorLine.backgroundColor = separatorCellModel.separatorColor;
         self.separatorSize = separatorCellModel.separatorSize;
     }
 }
-- (LUICollectionViewCellModelItemFlowSeparator *)separatorCellModel{
+- (LUICollectionViewCellModelItemFlowSeparator *)separatorCellModel {
     return [self.collectionCellModel isKindOfClass:LUICollectionViewCellModelItemFlowSeparator.class] ? self.collectionCellModel : nil;
 }
 @end
