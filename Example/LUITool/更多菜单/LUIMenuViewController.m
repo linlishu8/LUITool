@@ -17,7 +17,10 @@
 #import "LUIItemFlowCell.h"
 #import "LUIItemFlowCell_Vertical.h"
 
-@interface LUIMenuViewController () <LUItemFlowCollectionViewDelegate>
+@interface LUIMenuViewController () <UICollectionViewDelegate, LUItemFlowCollectionViewDelegate> {
+    CGPoint _preOffset;
+    NSInteger _scrollToIndex;
+}
 
 @property (nonatomic, strong) LUICollectionView *collectionView;
 
@@ -45,6 +48,7 @@
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.contentInset = UIEdgeInsetsZero;
     self.collectionView.backgroundColor = UIColor.whiteColor;
+    self.collectionView.model.forwardDelegate = self;
     [self.view addSubview:self.collectionView];
     
     self.directionVertical = [NSUserDefaults.standardUserDefaults boolForKey:@"TestItemFlowCollectionViewController_direction"];
@@ -117,6 +121,64 @@
         cinsets.bottom = safeAreaInsets.bottom;
     }
     self.tabItemFlowView.itemFlowView.collectionView.contentInset = cinsets;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplaySupplementaryView:(UICollectionReusableView *)view forElementKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath{
+    LUICollectionViewTitleSupplementarySectionModel *sm = [self.collectionView.model sectionModelAtIndex:indexPath.section];
+    if(sm==self.groupCategoryHeadSeciton){
+        CGRect f1 = view.frame;
+        [self _configCategoryFrameWithSMFrame:f1];
+    }
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGPoint offset = scrollView.contentOffset;
+    //    NSLog(@"offset:%@,_preOffset:%@",NSStringFromCGPoint(offset),NSStringFromCGPoint(_preOffset));
+    [self _adjustCategoryViewPositionWithScroll:scrollView];
+    [self _adjustCategoryViewSelectedWithScroll:scrollView];
+    _preOffset = offset;
+}
+- (void)_adjustCategoryViewPositionWithScroll:(UIScrollView *)scrollView {
+    CGPoint offset = scrollView.contentOffset;
+    CGRect f1 = self.tabItemFlowView.l_frameSafety;
+    CGAffineTransform m = CGAffineTransformIdentity;
+    UIEdgeInsets contentInsets = self.collectionView.l_adjustedContentInset;
+    CGFloat y0 = f1.origin.y;
+    CGFloat y1 = offset.y+contentInsets.top;
+    if(y1>y0){
+        CGFloat dy = y1-y0;
+        m = CGAffineTransformMakeTranslation(0, dy);
+    }
+    self.tabItemFlowView.transform = m;
+}
+- (void)_adjustCategoryViewSelectedWithScroll:(UIScrollView *)scrollView{
+    if(self.tabItemFlowView.itemFlowView.items.count==0)return;
+    CGPoint offset = scrollView.contentOffset;
+    NSInteger selectedIndex = self.tabItemFlowView.itemFlowView.selectedIndex;
+    if(selectedIndex==NSNotFound)return;
+    CGFloat dy = offset.y-_preOffset.y;
+    if(dy==0)return;
+    BOOL animated = YES;
+    if(_scrollToIndex==NSNotFound||_scrollToIndex==selectedIndex||_scrollToIndex<0||_scrollToIndex>=self.tabItemFlowView.itemFlowView.items.count){
+        _scrollToIndex = dy<0?MAX(0,selectedIndex-1):MIN(self.tabItemFlowView.itemFlowView.items.count-1,selectedIndex+1);
+    }
+    if(_scrollToIndex==selectedIndex)return;
+    NSInteger fromIndex = MIN(selectedIndex,_scrollToIndex);
+    NSInteger toIndex = MAX(selectedIndex,_scrollToIndex);
+    CGPoint offset0 = [self contentOffsetWithSelectedIndex:fromIndex];
+    CGPoint offset1 = [self contentOffsetWithSelectedIndex:toIndex];
+    if((dy<0&&offset.y<=offset0.y) || (dy>0&&offset.y>=offset1.y)){//滚动到_scrollToIndex
+        _scrollToIndex = NSNotFound;
+        NSInteger nextIndex = dy>0?toIndex:fromIndex;
+        if(selectedIndex==nextIndex) return;
+//        NSLog(@"scrollToIndex:%ld,from:%ld,dy:%f",nextIndex,selectedIndex,dy);
+        [self.tabItemFlowView.itemFlowView setSelectedIndex:nextIndex animated:animated];
+    }else{
+        CGFloat progress = (offset.y-offset0.y)/(offset1.y-offset0.y);
+        if(progress<0||progress>1)return;
+//        NSLog(@"scrollFrom:%ld,to:%ld,progress:%f,dy:%f",fromIndex,toIndex,progress,dy);
+        [self.tabItemFlowView.itemFlowView scrollItemIndicatorViewFromIndex:fromIndex to:toIndex withProgress:progress];
+        [self.tabItemFlowView.itemFlowView collectionViewScrollItemFromIndex:fromIndex to:toIndex withProgress:progress];
+    }
 }
 
 - (void)_adjustConlectionContentInsets{
