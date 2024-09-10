@@ -17,7 +17,7 @@
 #import "LUIItemFlowCell.h"
 #import "LUIItemFlowCell_Vertical.h"
 
-@interface LUIMenuViewController () <UICollectionViewDelegate, LUItemFlowCollectionViewDelegate> {
+@interface LUIMenuViewController () <UICollectionViewDelegateFlowLayout, LUItemFlowCollectionViewDelegate> {
     CGPoint _preOffset;
     NSInteger _scrollToIndex;
 }
@@ -370,10 +370,55 @@
     [self.collectionView setContentOffset:offset animated:YES];
 }
 
+#pragma mark - delegate:UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    LUICollectionViewTitleSupplementarySectionModel *sm = [self.collectionView.model sectionModelAtIndex:indexPath.section];
+    LUICollectionViewCellModel *cm = [self.collectionView.model cellModelAtIndexPath:indexPath];
+    CGRect bounds = collectionView.bounds;
+    if([sm l_boolForKeyPath:@"isMenuGroup"]){
+        if([cm l_boolForKeyPath:@"unExpandStyle"]){
+            UIEdgeInsets contentInsets = self.collectionView.l_adjustedContentInset;
+            UIEdgeInsets insets = [self.collectionViewFlowLayout l_insetForSectionAtIndex:indexPath.section];
+            CGSize s = bounds.size;
+            s.height = 30;
+            s.width = bounds.size.width-insets.left-insets.right-contentInsets.left-contentInsets.right;
+            return s;
+        }
+        return [self.class menuItemSize];
+    }
+    Class cellClass = cm.cellClass;
+    if([cellClass respondsToSelector:@selector(sizeWithCollectionView:collectionCellModel:)]){
+        return [cellClass sizeWithCollectionView:collectionView collectionCellModel:cm];
+    }
+    return self.collectionViewFlowLayout.itemSize;
+}
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    LUICollectionViewTitleSupplementarySectionModel *sm = [self.collectionView.model sectionModelAtIndex:section];
+    if([sm l_boolForKeyPath:@"isMenuGroup"]){
+        return [self menuGroupInsets];
+    }
+    return UIEdgeInsetsZero;
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+    LUICollectionViewTitleSupplementarySectionModel *sm = [self.collectionView.model sectionModelAtIndex:section];
+    if([sm l_boolForKeyPath:@"isMenuGroup"]){
+        return [self.class groupInteritem];
+    }
+    return 0;
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+    LUICollectionViewTitleSupplementarySectionModel *sm = [self.collectionView.model sectionModelAtIndex:section];
+    if([sm l_boolForKeyPath:@"isMenuGroup"]){
+        return [self.class groupInteritem];
+    }
+    return 0;
+}
+
 #pragma mark - getters/setters
 
-- (LUICollectionViewTitleSupplementarySectionModel *)firstSeciton{
-    if(_firstSeciton)return _firstSeciton;
+- (LUICollectionViewTitleSupplementarySectionModel *)firstSeciton {
+    if (_firstSeciton) return _firstSeciton;
     LUICollectionViewTitleSupplementarySectionModel *sm = [self createEmptySection];
     _firstSeciton = sm;
     [sm addCellModel:[LUICollectionViewCellModel modelWithValue:@"第一行" cellClass:LUITestItemFlow_Cell1.class]];

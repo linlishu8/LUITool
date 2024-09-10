@@ -74,6 +74,7 @@
         [_directionButton setTitleColor:[UIColor l_colorWithLight:UIColor.blackColor] forState:(UIControlStateNormal)];
         [_directionButton setTitle:@"横向" forState:(UIControlStateNormal)];
         [_directionButton setTitle:@"纵向" forState:(UIControlStateSelected)];
+        _directionButton.backgroundColor = UIColor.whiteColor;
     }
     return _directionButton;
 }

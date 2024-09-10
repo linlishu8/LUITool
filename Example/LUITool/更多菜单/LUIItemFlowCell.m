@@ -35,7 +35,6 @@
     [super customReloadCellModel];
     LUIMenuGroup *modelValue = self.collectionCellModel.modelValue;
     self.titleLabel.text = modelValue.title;
-//    self.titleLabel.font = self.collectionCellModel.selected?[UIFont systemFontOfSize:20 weight:UIFontWeightBold]:[UIFont systemFontOfSize:14];
     BOOL selected = self.collectionCellModel.selected;
     self.titleLabel.font = [UIFont systemFontOfSize:[self.class fontSizeForSelected:selected] weight:[self.class fontWeightForSelected:selected]];
 }
@@ -75,6 +74,15 @@
     self.titleLabel.font = [UIFont systemFontOfSize:fontSize weight:fontWeight];
     [self setNeedsLayout];
     [self layoutIfNeeded];
+}
+LUIDEF_SINGLETON(LUIItemFlowCell)
++ (CGSize)sizeWithCollectionView:(UICollectionView *)collectionView collectionCellModel:(__kindof LUICollectionViewCellModel *)collectionCellModel{
+    CGRect bounds = collectionView.bounds;
+    return [self dynamicSizeWithCollectionView:collectionView collectionCellModel:collectionCellModel cellShareInstance:[self sharedInstance] calBlock:^CGSize(UICollectionView * _Nonnull collectionView, LUICollectionViewCellModel * _Nonnull cellModel, LUIItemFlowCell * cell) {
+        BOOL selected = YES;
+        cell.titleLabel.font = [UIFont systemFontOfSize:[self.class fontSizeForSelected:selected] weight:[self.class fontWeightForSelected:selected]];//尺寸固定为选中的值
+        return [cell sizeThatFits:bounds.size];
+    }];
 }
 
 @end
