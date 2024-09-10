@@ -922,7 +922,7 @@
 }
 
 + (UIImage *)l_radialGradientImageWithSize:(CGSize)size startColor:(UIColor *)startColor startCenter:(CGPoint)startCenter startRadius:(CGFloat)startRadius endColor:(UIColor *)endColor endCenter:(CGPoint)endCenter endRadius:(CGFloat)endRadius {
-    if (size.width <= 0  ||  size.height <= 0) return nil;
+    if (size.width <= 0 || size.height <= 0) return nil;
     CGRect rect = CGRectZero;
     rect.size = size;
     CGFloat scale = [UIScreen mainScreen].scale;

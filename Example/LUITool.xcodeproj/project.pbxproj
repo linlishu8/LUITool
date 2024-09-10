@@ -23,9 +23,12 @@
 		1F7502892C8EC4210081F3FF /* LUIMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502882C8EC4210081F3FF /* LUIMenuViewController.m */; };
 		1F75028C2C8EC4790081F3FF /* LUIItemFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F75028B2C8EC4790081F3FF /* LUIItemFlowView.m */; };
 		1F75028F2C8ED7840081F3FF /* LUItemVerticalLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F75028E2C8ED7840081F3FF /* LUItemVerticalLineView.m */; };
-		1F7502922C8EDE5F0081F3FF /* LUIMenuItemFlowSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502912C8EDE5F0081F3FF /* LUIMenuItemFlowSectionView.m */; };
-		1F7502952C8EDE970081F3FF /* LUIMenuItemFlowSectionView_Vertical.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502942C8EDE970081F3FF /* LUIMenuItemFlowSectionView_Vertical.m */; };
+		1F7502922C8EDE5F0081F3FF /* LUIItemFlowSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502912C8EDE5F0081F3FF /* LUIItemFlowSectionView.m */; };
+		1F7502952C8EDE970081F3FF /* LUIItemFlowSectionView_Vertical.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502942C8EDE970081F3FF /* LUIItemFlowSectionView_Vertical.m */; };
 		1F7502982C8EE4A40081F3FF /* LUIMenuGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502972C8EE4A40081F3FF /* LUIMenuGroup.m */; };
+		1F75029B2C8FE1A70081F3FF /* LUITestItemFlow_Cell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F75029A2C8FE1A70081F3FF /* LUITestItemFlow_Cell1.m */; };
+		1F75029E2C8FE37D0081F3FF /* LUITestItemHead_Vertical.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F75029D2C8FE37D0081F3FF /* LUITestItemHead_Vertical.m */; };
+		1F7502A12C8FEB220081F3FF /* LUIMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502A02C8FEB220081F3FF /* LUIMenuCollectionViewCell.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -91,12 +94,18 @@
 		1F75028B2C8EC4790081F3FF /* LUIItemFlowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIItemFlowView.m; sourceTree = "<group>"; };
 		1F75028D2C8ED7840081F3FF /* LUItemVerticalLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUItemVerticalLineView.h; sourceTree = "<group>"; };
 		1F75028E2C8ED7840081F3FF /* LUItemVerticalLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUItemVerticalLineView.m; sourceTree = "<group>"; };
-		1F7502902C8EDE5F0081F3FF /* LUIMenuItemFlowSectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIMenuItemFlowSectionView.h; sourceTree = "<group>"; };
-		1F7502912C8EDE5F0081F3FF /* LUIMenuItemFlowSectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIMenuItemFlowSectionView.m; sourceTree = "<group>"; };
-		1F7502932C8EDE970081F3FF /* LUIMenuItemFlowSectionView_Vertical.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIMenuItemFlowSectionView_Vertical.h; sourceTree = "<group>"; };
-		1F7502942C8EDE970081F3FF /* LUIMenuItemFlowSectionView_Vertical.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIMenuItemFlowSectionView_Vertical.m; sourceTree = "<group>"; };
+		1F7502902C8EDE5F0081F3FF /* LUIItemFlowSectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIItemFlowSectionView.h; sourceTree = "<group>"; };
+		1F7502912C8EDE5F0081F3FF /* LUIItemFlowSectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIItemFlowSectionView.m; sourceTree = "<group>"; };
+		1F7502932C8EDE970081F3FF /* LUIItemFlowSectionView_Vertical.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIItemFlowSectionView_Vertical.h; sourceTree = "<group>"; };
+		1F7502942C8EDE970081F3FF /* LUIItemFlowSectionView_Vertical.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIItemFlowSectionView_Vertical.m; sourceTree = "<group>"; };
 		1F7502962C8EE4A40081F3FF /* LUIMenuGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIMenuGroup.h; sourceTree = "<group>"; };
 		1F7502972C8EE4A40081F3FF /* LUIMenuGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIMenuGroup.m; sourceTree = "<group>"; };
+		1F7502992C8FE1A70081F3FF /* LUITestItemFlow_Cell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITestItemFlow_Cell1.h; sourceTree = "<group>"; };
+		1F75029A2C8FE1A70081F3FF /* LUITestItemFlow_Cell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITestItemFlow_Cell1.m; sourceTree = "<group>"; };
+		1F75029C2C8FE37D0081F3FF /* LUITestItemHead_Vertical.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITestItemHead_Vertical.h; sourceTree = "<group>"; };
+		1F75029D2C8FE37D0081F3FF /* LUITestItemHead_Vertical.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITestItemHead_Vertical.m; sourceTree = "<group>"; };
+		1F75029F2C8FEB220081F3FF /* LUIMenuCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIMenuCollectionViewCell.h; sourceTree = "<group>"; };
+		1F7502A02C8FEB220081F3FF /* LUIMenuCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIMenuCollectionViewCell.m; sourceTree = "<group>"; };
 		47AE684EB1BF9722DA67E971 /* Pods-LUITool_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LUITool_Tests.debug.xcconfig"; path = "Target Support Files/Pods-LUITool_Tests/Pods-LUITool_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* LUITool_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LUITool_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -228,14 +237,20 @@
 			children = (
 				1F7502872C8EC4210081F3FF /* LUIMenuViewController.h */,
 				1F7502882C8EC4210081F3FF /* LUIMenuViewController.m */,
+				1F75029F2C8FEB220081F3FF /* LUIMenuCollectionViewCell.h */,
+				1F7502A02C8FEB220081F3FF /* LUIMenuCollectionViewCell.m */,
 				1F75028D2C8ED7840081F3FF /* LUItemVerticalLineView.h */,
 				1F75028E2C8ED7840081F3FF /* LUItemVerticalLineView.m */,
 				1F75028A2C8EC4790081F3FF /* LUIItemFlowView.h */,
 				1F75028B2C8EC4790081F3FF /* LUIItemFlowView.m */,
-				1F7502902C8EDE5F0081F3FF /* LUIMenuItemFlowSectionView.h */,
-				1F7502912C8EDE5F0081F3FF /* LUIMenuItemFlowSectionView.m */,
-				1F7502932C8EDE970081F3FF /* LUIMenuItemFlowSectionView_Vertical.h */,
-				1F7502942C8EDE970081F3FF /* LUIMenuItemFlowSectionView_Vertical.m */,
+				1F7502902C8EDE5F0081F3FF /* LUIItemFlowSectionView.h */,
+				1F7502912C8EDE5F0081F3FF /* LUIItemFlowSectionView.m */,
+				1F7502932C8EDE970081F3FF /* LUIItemFlowSectionView_Vertical.h */,
+				1F7502942C8EDE970081F3FF /* LUIItemFlowSectionView_Vertical.m */,
+				1F75029C2C8FE37D0081F3FF /* LUITestItemHead_Vertical.h */,
+				1F75029D2C8FE37D0081F3FF /* LUITestItemHead_Vertical.m */,
+				1F7502992C8FE1A70081F3FF /* LUITestItemFlow_Cell1.h */,
+				1F75029A2C8FE1A70081F3FF /* LUITestItemFlow_Cell1.m */,
 				1F7502962C8EE4A40081F3FF /* LUIMenuGroup.h */,
 				1F7502972C8EE4A40081F3FF /* LUIMenuGroup.m */,
 			);
@@ -514,17 +529,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F7502892C8EC4210081F3FF /* LUIMenuViewController.m in Sources */,
-				1F7502922C8EDE5F0081F3FF /* LUIMenuItemFlowSectionView.m in Sources */,
+				1F7502922C8EDE5F0081F3FF /* LUIItemFlowSectionView.m in Sources */,
 				1F75028C2C8EC4790081F3FF /* LUIItemFlowView.m in Sources */,
 				1F75028F2C8ED7840081F3FF /* LUItemVerticalLineView.m in Sources */,
+				1F7502A12C8FEB220081F3FF /* LUIMenuCollectionViewCell.m in Sources */,
 				6003F59E195388D20070C39A /* LUIAppDelegate.m in Sources */,
 				1F2707422C86096E00DC9247 /* UIButton+TestTheme.m in Sources */,
 				1F2707122C83163E00DC9247 /* LUIAlertViewController.m in Sources */,
 				1F2707352C85FF8F00DC9247 /* TestThemeBase.m in Sources */,
 				1F27073C2C86064E00DC9247 /* TestThemeVip.m in Sources */,
+				1F75029B2C8FE1A70081F3FF /* LUITestItemFlow_Cell1.m in Sources */,
 				1F27073F2C86069C00DC9247 /* TestThemeGray.m in Sources */,
 				1F2707392C86055A00DC9247 /* TestThemeNormal.m in Sources */,
-				1F7502952C8EDE970081F3FF /* LUIMenuItemFlowSectionView_Vertical.m in Sources */,
+				1F75029E2C8FE37D0081F3FF /* LUITestItemHead_Vertical.m in Sources */,
+				1F7502952C8EDE970081F3FF /* LUIItemFlowSectionView_Vertical.m in Sources */,
 				1F4AA32E2C73882100CDC476 /* LUIThemeCenter+Test.m in Sources */,
 				1F7502982C8EE4A40081F3FF /* LUIMenuGroup.m in Sources */,
 				1F45B5DD2C70D7A9004839E2 /* LUIMainViewTableViewCell.m in Sources */,

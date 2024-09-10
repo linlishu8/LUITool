@@ -6,11 +6,11 @@
 //  Copyright © 2024 Your Name. All rights reserved.
 //
 
-#import "LUIMenuItemFlowSectionView.h"
+#import "LUIItemFlowSectionView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LUIMenuItemFlowSectionView_Vertical : LUIMenuItemFlowSectionView
+@interface LUIItemFlowSectionView_Vertical : LUIItemFlowSectionView
 
 @end
 

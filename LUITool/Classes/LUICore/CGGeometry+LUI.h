@@ -260,8 +260,8 @@ UIKIT_STATIC_INLINE BOOL LUICGRangeIsEmpty(LUICGRange r) {//是否是空区间
     return r.end == r.begin;
 }
 UIKIT_STATIC_INLINE BOOL LUICGRangeIntersectsRange(LUICGRange r1, LUICGRange r2) {//两个区间是否相交
-    return LUICGRangeContainsValue(r1, r2.end)  ||  LUICGRangeContainsValue(r1, r2.begin)
-     || LUICGRangeContainsValue(r2, r1.end)  ||  LUICGRangeContainsValue(r2, r1.begin)
+    return LUICGRangeContainsValue(r1, r2.end) || LUICGRangeContainsValue(r1, r2.begin)
+     || LUICGRangeContainsValue(r2, r1.end) || LUICGRangeContainsValue(r2, r1.begin)
     ;
 }
 UIKIT_STATIC_INLINE LUICGRange LUICGRangeUnion(LUICGRange r1, LUICGRange r2) {//返回两个区间的并

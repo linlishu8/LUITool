@@ -6,9 +6,9 @@
 //  Copyright © 2024 Your Name. All rights reserved.
 //
 
-#import "LUIMenuItemFlowSectionView_Vertical.h"
+#import "LUIItemFlowSectionView_Vertical.h"
 
-@implementation LUIMenuItemFlowSectionView_Vertical
+@implementation LUIItemFlowSectionView_Vertical
 
 + (CGFloat)sectionViewSize {
     return 1;

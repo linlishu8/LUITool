@@ -21,7 +21,7 @@
     return X;
 }
 - (CGSize)itemSizeForItem:(id<LUILayoutConstraintItemProtocol>)item thatFits:(CGSize)size resizeItems:(BOOL)resizeItems {
-    if (size.width<=0  ||  size.height<=0) {
+    if (size.width<=0 || size.height<=0) {
         return CGSizeZero;
     }
     CGSize itemSize = CGSizeZero;
@@ -134,7 +134,7 @@
         itemAttr.size = f1.size;
         [line addItemAttribute:itemAttr];
         
-        if (limitWidth<=0  ||  isLast) {//容器剩余尺寸为0时换行，或者到最后一个元素
+        if (limitWidth<=0 || isLast) {//容器剩余尺寸为0时换行，或者到最后一个元素
             line.size = [line sizeThatFlowLayoutItemsWithSpacing:xSpacing axis:X];
             CGFloat maxRowHeight = LUICGRectGetLength(line.layoutFrame, Y);
             [allLines addItemAttribute:line];
@@ -157,7 +157,7 @@
     
     LUILayoutConstraintItemAttributeSection *lastLine = allLines.itemAttributs.lastObject;
     if (lastLine && hadLastLineItem) {
-        BOOL needAddLastItem = maxLines>0 && ( overLine.itemAttributs.count>0   ||   self.showLastLineItemWithinMaxLine);
+        BOOL needAddLastItem = maxLines>0 && ( overLine.itemAttributs.count>0  ||  self.showLastLineItemWithinMaxLine);
         
         if (needAddLastItem) {
             LUILayoutConstraintItemAttribute *lastLineItemAttr = [[LUILayoutConstraintItemAttribute alloc] initWithItem:self.lastLineItem];
@@ -231,7 +231,7 @@
 - (void)layoutItemsWithResizeItems:(BOOL)resizeItems {
     CGSize size = self.bounds.size;
     BOOL needRevert = (self.layoutDirection == LUILayoutConstraintDirectionHorizontal && self.layoutHorizontalAlignment == LUILayoutConstraintHorizontalAlignmentRight)
-      ||  (self.layoutDirection == LUILayoutConstraintDirectionVertical && self.layoutVerticalAlignment == LUILayoutConstraintVerticalAlignmentBottom)
+     || (self.layoutDirection == LUILayoutConstraintDirectionVertical && self.layoutVerticalAlignment == LUILayoutConstraintVerticalAlignmentBottom)
     ;
     
     LUILayoutConstraintItemAttributeSection *allLines = [self itemAttributeSectionThatFits:size resizeItems:resizeItems];

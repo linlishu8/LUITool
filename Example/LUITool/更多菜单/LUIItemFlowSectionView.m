@@ -6,10 +6,10 @@
 //  Copyright © 2024 Your Name. All rights reserved.
 //
 
-#import "LUIMenuItemFlowSectionView.h"
+#import "LUIItemFlowSectionView.h"
 #import "LUIItemFlowView.h"
 
-@implementation LUIMenuItemFlowSectionView
+@implementation LUIItemFlowSectionView
 
 + (CGFloat)sectionViewSize {
     CGFloat height = [LUIItemFlowView sizeWithDirectionVertical:NO];
