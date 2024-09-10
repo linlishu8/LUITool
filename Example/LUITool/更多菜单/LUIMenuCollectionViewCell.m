@@ -7,10 +7,11 @@
 //
 
 #import "LUIMenuCollectionViewCell.h"
+#import "LUIMenuGroup.h"
 
 @interface LUIMenuCollectionViewCell ()
 
-@property (nonatomic,strong) UILabel *titleLabel;
+@property (nonatomic, strong) LUILayoutButton *menuButton;
 
 @end
 
@@ -18,22 +19,45 @@
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = UIColor.l_listViewGroupBackgroundColor;
-        self.titleLabel = [[UILabel alloc] init];
-        self.titleLabel.textColor = [UIColor l_colorWithLight:UIColor.blackColor];
-        [self.contentView addSubview:self.titleLabel];
+        self.menuButton = [[LUILayoutButton alloc] initWithContentStyle:(LUILayoutButtonContentStyleVertical)];
+        self.menuButton.imageSize = CGSizeMake(30, 30);
+        self.menuButton.interitemSpacing = 10;
+        [self.menuButton setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
+        [self.menuButton setTitleColor:[UIColor systemGrayColor] forState:UIControlStateHighlighted];
+        self.menuButton.titleLabel.font = [UIFont systemFontOfSize:12];
+        self.menuButton.titleLabel.numberOfLines = 2;
+        self.menuButton.contentInsets = UIEdgeInsetsMake(5, 5, 5, 5);
+        [self.menuButton addTarget:self action:@selector(__buttonDidTap:) forControlEvents:UIControlEventTouchUpInside];
+        [self.contentView addSubview:self.menuButton];
+        self.contentView.clipsToBounds = YES;
+        self.layer.borderColor = [UIColor grayColor].CGColor;
+        self.layer.borderWidth = 1;
     }
     return self;
 }
+
+- (void)__buttonDidTap:(id)sender{
+    [self.collectionCellModel didClickSelf];
+}
+
 - (void)customLayoutSubviews {
     [super customLayoutSubviews];
     CGRect bounds = self.contentView.bounds;
-    self.titleLabel.frame = bounds;
+    self.menuButton.frame = bounds;
 }
+
+- (CGSize)customSizeThatFits:(CGSize)size {
+    [super customSizeThatFits:size];
+    CGSize s = [self.menuButton sizeThatFits:size];
+    CGSize sizeFits = [LUICGRect scaleSize:s aspectFitToMaxSize:CGSizeMake(100, 100)];
+    return sizeFits;
+}
+
 - (void)customReloadCellModel {
     [super customReloadCellModel];
-    NSString *text = self.collectionCellModel.modelValue;
-    self.titleLabel.text = text;
+    LUIMenu *modelObject = self.collectionCellModel.modelValue;
+    [self.menuButton setTitle:modelObject.title forState:UIControlStateNormal];
+    [self.menuButton setImage:modelObject.icon forState:UIControlStateNormal];
 }
 
 @end

@@ -303,7 +303,7 @@
     if(_secorndSeciton)return _secorndSeciton;
     LUICollectionViewTitleSupplementarySectionModel *sm = [self createSectionWithTitle:@"左右滑动菜单"];
     _secorndSeciton = sm;
-    [sm addCellModel:[LUICollectionViewCellModel modelWithValue:[LUIMenu sharedMenus] cellClass:LUITestItemFlow_Cell1.class]];
+    [sm addCellModel:[LUICollectionViewCellModel modelWithValue:@"第二行" cellClass:LUITestItemFlow_Cell1.class]];
     return _secorndSeciton;
 }
 

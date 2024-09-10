@@ -11,6 +11,7 @@
 #import "LUIThemeViewController.h"
 #import "LUISafeKeyboardViewController.h"
 #import "LUIAlertViewController.h"
+#import "LUIMenuViewController.h"
 
 @interface LUIViewController ()
 
@@ -49,12 +50,17 @@
     LUITableViewCellModel *keyBoardCellModel = [self addCellModelWithCellTitle:@"自定义键盘"];
     keyBoardCellModel.whenClick = ^(__kindof LUITableViewCellModel * _Nonnull cellModel) {
         lui_strongify(self)
-        LUISafeKeyboardViewController *themeViewController = [[LUISafeKeyboardViewController alloc] init];
-        [self.navigationController pushViewController:themeViewController animated:YES];
+        LUISafeKeyboardViewController *keyboardViewController = [[LUISafeKeyboardViewController alloc] init];
+        [self.navigationController pushViewController:keyboardViewController animated:YES];
     };
     LUITableViewCellModel *chatCellModel = [self addCellModelWithCellTitle:@"聊天"];
     LUITableViewCellModel *ledVerticalCellModel = [self addCellModelWithCellTitle:@"垂直跑马灯"];
     LUITableViewCellModel *menuCellModel = [self addCellModelWithCellTitle:@"菜单"];
+    menuCellModel.whenClick = ^(__kindof LUITableViewCellModel * _Nonnull cellModel) {
+        lui_strongify(self)
+        LUIMenuViewController *menuViewController = [[LUIMenuViewController alloc] init];
+        [self.navigationController pushViewController:menuViewController animated:YES];
+    };
     [self.tableView.model reloadTableViewData];
 }
 
