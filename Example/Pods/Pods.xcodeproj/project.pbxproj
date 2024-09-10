@@ -88,6 +88,10 @@
 		1F7052F72C89F44500CE02D0 /* LUIPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7052F52C89F44500CE02D0 /* LUIPageControl.m */; };
 		1F7502842C8E90200081F3FF /* LUItemFlowCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7502822C8E90200081F3FF /* LUItemFlowCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F7502852C8E90200081F3FF /* LUItemFlowCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502832C8E90200081F3FF /* LUItemFlowCollectionView.m */; };
+		1F7502B02C902E700081F3FF /* LUIExtendTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7502AE2C902E700081F3FF /* LUIExtendTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F7502B12C902E700081F3FF /* LUIExtendTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502AF2C902E700081F3FF /* LUIExtendTabBarController.m */; };
+		1F7502B42C90309D0081F3FF /* LUICustomTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7502B22C90309D0081F3FF /* LUICustomTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F7502B52C90309D0081F3FF /* LUICustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502B32C90309D0081F3FF /* LUICustomTabBar.m */; };
 		1FBE4C902C74DB6E0054F742 /* LUIKeyBoardSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FBE4C8E2C74DB6E0054F742 /* LUIKeyBoardSectionModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FBE4C912C74DB6E0054F742 /* LUIKeyBoardSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE4C8F2C74DB6E0054F742 /* LUIKeyBoardSectionModel.m */; };
 		1FCBADCA2C685F6600170B35 /* LUICGRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCBADC92C685F6600170B35 /* LUICGRect.m */; };
@@ -282,6 +286,10 @@
 		1F7052F52C89F44500CE02D0 /* LUIPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIPageControl.m; sourceTree = "<group>"; };
 		1F7502822C8E90200081F3FF /* LUItemFlowCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUItemFlowCollectionView.h; sourceTree = "<group>"; };
 		1F7502832C8E90200081F3FF /* LUItemFlowCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUItemFlowCollectionView.m; sourceTree = "<group>"; };
+		1F7502AE2C902E700081F3FF /* LUIExtendTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIExtendTabBarController.h; sourceTree = "<group>"; };
+		1F7502AF2C902E700081F3FF /* LUIExtendTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIExtendTabBarController.m; sourceTree = "<group>"; };
+		1F7502B22C90309D0081F3FF /* LUICustomTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUICustomTabBar.h; sourceTree = "<group>"; };
+		1F7502B32C90309D0081F3FF /* LUICustomTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUICustomTabBar.m; sourceTree = "<group>"; };
 		1FBE4C8E2C74DB6E0054F742 /* LUIKeyBoardSectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIKeyBoardSectionModel.h; sourceTree = "<group>"; };
 		1FBE4C8F2C74DB6E0054F742 /* LUIKeyBoardSectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIKeyBoardSectionModel.m; sourceTree = "<group>"; };
 		1FCBADC82C685F6600170B35 /* LUICGRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUICGRect.h; sourceTree = "<group>"; };
@@ -572,8 +580,12 @@
 		1F7502812C8E8FAD0081F3FF /* LUITabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				1F7502AE2C902E700081F3FF /* LUIExtendTabBarController.h */,
+				1F7502AF2C902E700081F3FF /* LUIExtendTabBarController.m */,
 				1F7502822C8E90200081F3FF /* LUItemFlowCollectionView.h */,
 				1F7502832C8E90200081F3FF /* LUItemFlowCollectionView.m */,
+				1F7502B22C90309D0081F3FF /* LUICustomTabBar.h */,
+				1F7502B32C90309D0081F3FF /* LUICustomTabBar.m */,
 			);
 			name = LUITabBarController;
 			path = LUITool/Classes/LUITabBarController;
@@ -920,6 +932,8 @@
 				1F7052F62C89F44500CE02D0 /* LUIPageControl.h in Headers */,
 				1F27070A2C80B73000DC9247 /* LUIKeyboardButtonModel.h in Headers */,
 				1F2707462C860EE500DC9247 /* LUILedBannerVerticalView.h in Headers */,
+				1F7502B42C90309D0081F3FF /* LUICustomTabBar.h in Headers */,
+				1F7502B02C902E700081F3FF /* LUIExtendTabBarController.h in Headers */,
 				1F4AA2FE2C73870200CDC476 /* LUIKeyboardButtonCell.h in Headers */,
 				1F7502842C8E90200081F3FF /* LUItemFlowCollectionView.h in Headers */,
 				3F05F689B03836519FDBF1140D1EBB6D /* LUITool.h in Headers */,
@@ -1099,6 +1113,7 @@
 				1F45B5E02C70F9E4004839E2 /* LUICollectionViewModel+UICollectionViewDelegateFlowLayout.m in Sources */,
 				1F45B66D2C737B6F004839E2 /* LUICollectionViewWaterFlowLayout.m in Sources */,
 				1F45B6692C737A62004839E2 /* LUICollectionViewFlowLayout.m in Sources */,
+				1F7502B52C90309D0081F3FF /* LUICustomTabBar.m in Sources */,
 				1F45B60B2C718978004839E2 /* LUILayoutConstraintItemWrapper.m in Sources */,
 				1FCBADFB2C68E6BB00170B35 /* NSString+LUI.m in Sources */,
 				1F27072A2C85FAA500DC9247 /* NSString+LUITheme.m in Sources */,
@@ -1117,6 +1132,7 @@
 				1F45B6202C71D059004839E2 /* LUICollectionCellModel.m in Sources */,
 				1FCBAE212C68EFF200170B35 /* LUITableViewModel.m in Sources */,
 				1FCBAE392C6A487400170B35 /* UITableViewCell+LUITableViewCell.m in Sources */,
+				1F7502B12C902E700081F3FF /* LUIExtendTabBarController.m in Sources */,
 				1FCBAF032C7097AC00170B35 /* UICollectionReusableView+LUICollectionViewSupplementaryElementProtocol.m in Sources */,
 				1F45B6512C7245D3004839E2 /* LUIGridPageCollectionViewLayout.m in Sources */,
 				1FCBAE352C6A46F000170B35 /* LUITableViewCellSwipeAction.m in Sources */,

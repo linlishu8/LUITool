@@ -119,6 +119,7 @@ FOUNDATION_EXPORT const unsigned char LUIVersionString[];
 #import "LUILedBannerVerticalView.h"
 
 #pragma mark - TarBarController(页签控制器)
+#import "LUIExtendTabBarController.h"
 #import "LUItemFlowCollectionView.h"
 
 #pragma mark - PageControl(页码指示器)

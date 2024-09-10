@@ -146,6 +146,17 @@ Pod::Spec.new do |s|
     ss.frameworks = 'UIKit'
   end
   
+  #提供一套TabBar页签控制器机制
+  s.subspec 'LUITabBarController' do |ss|
+    ss.source_files = 'LUITool/Classes/LUITabBarController/*.{h,m}'
+    ss.dependency 'LUITool/LUICategory'
+    ss.dependency 'LUITool/LUICollectionView'
+    ss.dependency 'LUITool/LUICore'
+    ss.dependency 'LUITool/LUICollectionViewLayout'
+    ss.dependency 'LUITool/LUILayoutButton'
+    ss.frameworks = 'UIKit'
+  end
+  
   # s.resource_bundles = {
   #   'LUITool' => ['LUITool/Assets/*.png']
   # }
