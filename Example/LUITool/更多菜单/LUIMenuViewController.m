@@ -12,6 +12,7 @@
 #import "LUIItemFlowSectionView_Vertical.h"
 #import "LUIMenuGroup.h"
 #import "LUITestItemFlow_Cell1.h"
+#import "LUITestItemFlow_Cell2.h"
 #import "LUITestItemHead_Vertical.h"
 #import "LUIMenuCollectionViewCell.h"
 #import "LUIItemFlowCell.h"
@@ -429,7 +430,7 @@
     if (_secorndSeciton)return _secorndSeciton;
     LUICollectionViewTitleSupplementarySectionModel *sm = [self createSectionWithTitle:@"左右滑动菜单"];
     _secorndSeciton = sm;
-    [sm addCellModel:[LUICollectionViewCellModel modelWithValue:@"第二行" cellClass:LUITestItemFlow_Cell1.class]];
+    [sm addCellModel:[LUICollectionViewCellModel modelWithValue:[LUIMenu sharedMenus] cellClass:LUITestItemFlow_Cell2.class]];
     return _secorndSeciton;
 }
 

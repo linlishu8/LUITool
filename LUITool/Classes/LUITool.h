@@ -120,3 +120,6 @@ FOUNDATION_EXPORT const unsigned char LUIVersionString[];
 
 #pragma mark - TarBarController(页签控制器)
 #import "LUItemFlowCollectionView.h"
+
+#pragma mark - PageControl(页码指示器)
+#import "LUIPageControl.h"

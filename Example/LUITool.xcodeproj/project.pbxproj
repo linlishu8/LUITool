@@ -32,6 +32,7 @@
 		1F7502A42C9019700081F3FF /* LUIItemFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502A32C9019700081F3FF /* LUIItemFlowCell.m */; };
 		1F7502A72C901B4E0081F3FF /* LUIItemFlowCell_Vertical.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502A62C901B4E0081F3FF /* LUIItemFlowCell_Vertical.m */; };
 		1F7502AA2C90254C0081F3FF /* LUIItemFlowSectionFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502A92C90254C0081F3FF /* LUIItemFlowSectionFootView.m */; };
+		1F7502AD2C9026600081F3FF /* LUITestItemFlow_Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502AC2C9026600081F3FF /* LUITestItemFlow_Cell2.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -115,6 +116,8 @@
 		1F7502A62C901B4E0081F3FF /* LUIItemFlowCell_Vertical.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIItemFlowCell_Vertical.m; sourceTree = "<group>"; };
 		1F7502A82C90254C0081F3FF /* LUIItemFlowSectionFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIItemFlowSectionFootView.h; sourceTree = "<group>"; };
 		1F7502A92C90254C0081F3FF /* LUIItemFlowSectionFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIItemFlowSectionFootView.m; sourceTree = "<group>"; };
+		1F7502AB2C9026600081F3FF /* LUITestItemFlow_Cell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITestItemFlow_Cell2.h; sourceTree = "<group>"; };
+		1F7502AC2C9026600081F3FF /* LUITestItemFlow_Cell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITestItemFlow_Cell2.m; sourceTree = "<group>"; };
 		47AE684EB1BF9722DA67E971 /* Pods-LUITool_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LUITool_Tests.debug.xcconfig"; path = "Target Support Files/Pods-LUITool_Tests/Pods-LUITool_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* LUITool_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LUITool_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -260,6 +263,8 @@
 				1F75029D2C8FE37D0081F3FF /* LUITestItemHead_Vertical.m */,
 				1F7502992C8FE1A70081F3FF /* LUITestItemFlow_Cell1.h */,
 				1F75029A2C8FE1A70081F3FF /* LUITestItemFlow_Cell1.m */,
+				1F7502AB2C9026600081F3FF /* LUITestItemFlow_Cell2.h */,
+				1F7502AC2C9026600081F3FF /* LUITestItemFlow_Cell2.m */,
 				1F7502A22C9019700081F3FF /* LUIItemFlowCell.h */,
 				1F7502A32C9019700081F3FF /* LUIItemFlowCell.m */,
 				1F7502A52C901B4E0081F3FF /* LUIItemFlowCell_Vertical.h */,
@@ -543,6 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F7502AD2C9026600081F3FF /* LUITestItemFlow_Cell2.m in Sources */,
 				1F7502892C8EC4210081F3FF /* LUIMenuViewController.m in Sources */,
 				1F7502922C8EDE5F0081F3FF /* LUIItemFlowSectionView.m in Sources */,
 				1F75028C2C8EC4790081F3FF /* LUIItemFlowView.m in Sources */,
