@@ -16,6 +16,7 @@
 #import "LUIMenuCollectionViewCell.h"
 #import "LUIItemFlowCell.h"
 #import "LUIItemFlowCell_Vertical.h"
+#import "LUIItemFlowSectionFootView.h"
 
 @interface LUIMenuViewController () <UICollectionViewDelegateFlowLayout, LUItemFlowCollectionViewDelegate> {
     CGPoint _preOffset;
@@ -93,19 +94,19 @@
     [self _adjustConlectionContentInsets];
 }
 
-- (void)_configCategoryFrame{
+- (void)_configCategoryFrame {
     UICollectionViewLayoutAttributes *attr = [self.collectionViewFlowLayout layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathWithIndex:self.groupCategoryHeadSeciton.indexInModel]];
     CGRect f1 = attr.frame;
     [self _configCategoryFrameWithSMFrame:f1];
 }
-- (void)_configCategoryFrameWithSMFrame:(CGRect)frame{
+- (void)_configCategoryFrameWithSMFrame:(CGRect)frame {
     CGRect bounds = self.collectionView.bounds;
     UIEdgeInsets insets = self.collectionView.l_adjustedContentInset;
     CGRect f1 = frame;
-    if(self.directionVertical) {
+    if (self.directionVertical) {
         f1.size.width = [LUIItemFlowView sizeWithDirectionVertical:self.directionVertical];
         f1.size.height = bounds.size.height-insets.top;
-    }else{
+    }else {
         f1.size.height = [LUIItemFlowView sizeWithDirectionVertical:self.directionVertical];;
         f1.size.width = bounds.size.width;
     }
@@ -117,20 +118,20 @@
         safeAreaInsets = self.view.safeAreaInsets;
     }
     UIEdgeInsets cinsets = UIEdgeInsetsZero;
-    if(self.directionVertical){
+    if (self.directionVertical) {
         cinsets.bottom = safeAreaInsets.bottom;
     }
     self.tabItemFlowView.itemFlowView.collectionView.contentInset = cinsets;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView willDisplaySupplementaryView:(UICollectionReusableView *)view forElementKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath{
+- (void)collectionView:(UICollectionView *)collectionView willDisplaySupplementaryView:(UICollectionReusableView *)view forElementKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath {
     LUICollectionViewTitleSupplementarySectionModel *sm = [self.collectionView.model sectionModelAtIndex:indexPath.section];
-    if(sm==self.groupCategoryHeadSeciton){
+    if (sm==self.groupCategoryHeadSeciton) {
         CGRect f1 = view.frame;
         [self _configCategoryFrameWithSMFrame:f1];
     }
 }
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGPoint offset = scrollView.contentOffset;
     //    NSLog(@"offset:%@,_preOffset:%@",NSStringFromCGPoint(offset),NSStringFromCGPoint(_preOffset));
     [self _adjustCategoryViewPositionWithScroll:scrollView];
@@ -144,45 +145,45 @@
     UIEdgeInsets contentInsets = self.collectionView.l_adjustedContentInset;
     CGFloat y0 = f1.origin.y;
     CGFloat y1 = offset.y+contentInsets.top;
-    if(y1>y0){
+    if (y1>y0) {
         CGFloat dy = y1-y0;
         m = CGAffineTransformMakeTranslation(0, dy);
     }
     self.tabItemFlowView.transform = m;
 }
-- (void)_adjustCategoryViewSelectedWithScroll:(UIScrollView *)scrollView{
-    if(self.tabItemFlowView.itemFlowView.items.count==0)return;
+- (void)_adjustCategoryViewSelectedWithScroll:(UIScrollView *)scrollView {
+    if (self.tabItemFlowView.itemFlowView.items.count==0)return;
     CGPoint offset = scrollView.contentOffset;
     NSInteger selectedIndex = self.tabItemFlowView.itemFlowView.selectedIndex;
-    if(selectedIndex==NSNotFound)return;
+    if (selectedIndex==NSNotFound)return;
     CGFloat dy = offset.y-_preOffset.y;
-    if(dy==0)return;
+    if (dy==0)return;
     BOOL animated = YES;
-    if(_scrollToIndex==NSNotFound||_scrollToIndex==selectedIndex||_scrollToIndex<0||_scrollToIndex>=self.tabItemFlowView.itemFlowView.items.count){
+    if (_scrollToIndex==NSNotFound||_scrollToIndex==selectedIndex||_scrollToIndex<0||_scrollToIndex>=self.tabItemFlowView.itemFlowView.items.count) {
         _scrollToIndex = dy<0?MAX(0,selectedIndex-1):MIN(self.tabItemFlowView.itemFlowView.items.count-1,selectedIndex+1);
     }
-    if(_scrollToIndex==selectedIndex)return;
+    if (_scrollToIndex==selectedIndex)return;
     NSInteger fromIndex = MIN(selectedIndex,_scrollToIndex);
     NSInteger toIndex = MAX(selectedIndex,_scrollToIndex);
     CGPoint offset0 = [self contentOffsetWithSelectedIndex:fromIndex];
     CGPoint offset1 = [self contentOffsetWithSelectedIndex:toIndex];
-    if((dy<0&&offset.y<=offset0.y) || (dy>0&&offset.y>=offset1.y)){//滚动到_scrollToIndex
+    if ((dy<0&&offset.y<=offset0.y) || (dy>0&&offset.y>=offset1.y)) {//滚动到_scrollToIndex
         _scrollToIndex = NSNotFound;
         NSInteger nextIndex = dy>0?toIndex:fromIndex;
-        if(selectedIndex==nextIndex) return;
+        if (selectedIndex==nextIndex) return;
 //        NSLog(@"scrollToIndex:%ld,from:%ld,dy:%f",nextIndex,selectedIndex,dy);
         [self.tabItemFlowView.itemFlowView setSelectedIndex:nextIndex animated:animated];
-    }else{
+    }else {
         CGFloat progress = (offset.y-offset0.y)/(offset1.y-offset0.y);
-        if(progress<0||progress>1)return;
+        if (progress<0||progress>1)return;
 //        NSLog(@"scrollFrom:%ld,to:%ld,progress:%f,dy:%f",fromIndex,toIndex,progress,dy);
         [self.tabItemFlowView.itemFlowView scrollItemIndicatorViewFromIndex:fromIndex to:toIndex withProgress:progress];
         [self.tabItemFlowView.itemFlowView collectionViewScrollItemFromIndex:fromIndex to:toIndex withProgress:progress];
     }
 }
 
-- (void)_adjustConlectionContentInsets{
-    if(self.menuGroups.count==0)return;
+- (void)_adjustConlectionContentInsets {
+    if (self.menuGroups.count==0)return;
     CGPoint offset = [self contentOffsetWithSelectedIndex:self.menuGroups.count-1 limitInRange:NO];
     
     CGRect bounds = self.collectionView.bounds;
@@ -194,25 +195,25 @@
     CGFloat maxY = contentSize.height-bounds.size.height+contentInset.bottom;
     
     UIEdgeInsets insets = self.collectionView.contentInset;
-    if(offset.y>maxY){
+    if (offset.y>maxY) {
         insets.bottom = offset.y-maxY;
-    }else{
+    }else {
         insets.bottom = 0;
     }
     self.collectionView.contentInset = insets;
 }
 
-+ (CGSize)menuItemSize{
++ (CGSize)menuItemSize {
     return CGSizeMake(80, 80);
 }
-- (UIEdgeInsets)menuGroupInsets{
+- (UIEdgeInsets)menuGroupInsets {
     UIEdgeInsets insets = UIEdgeInsetsMake(10, 10, 10, 10);
-    if(self.directionVertical){
+    if (self.directionVertical) {
         insets.left += [LUIItemFlowView sizeWithDirectionVertical:YES];
     }
     return insets;
 }
-+ (CGFloat)groupInteritem{
++ (CGFloat)groupInteritem {
     return 10;
 }
 
@@ -227,19 +228,19 @@
     CGFloat space = [self.class groupInteritem];
     NSInteger lineCount = 2;
     NSInteger countPerRow = 0;
-    if(bounds.size.width>0){
+    if (bounds.size.width>0) {
         countPerRow = (bounds.size.width-insets.left-insets.right+space)/(space+itemSize.width);
     }
     NSInteger expandCount = countPerRow*lineCount;
     
     BOOL needExpand = NO;
     NSInteger numberOfCells = menuGroup.menus.count;
-    if(countPerRow>0){
+    if (countPerRow>0) {
         needExpand = numberOfCells>expandCount;
     }
     BOOL expandAll = [sectionModel l_boolForKeyPath:@"expandAll"];
-    for(int i=0;i<numberOfCells;i++){
-        if(!expandAll && needExpand && i>=expandCount-1) break;
+    for (int i=0;i<numberOfCells;i++) {
+        if (!expandAll && needExpand && i>=expandCount-1) break;
         LUICollectionViewCellModel *cm = [[LUICollectionViewCellModel alloc] init];
         cm.modelValue = menuGroup.menus[i];
         cm.cellClass = LUIMenuCollectionViewCell.class;
@@ -248,15 +249,15 @@
         cm.whenClick = ^(LUICollectionViewCellModel *cm) {
             @LUI_NORMALIZE(self);
             @LUI_NORMALIZE(sectionModel);
-            if(i!=0){
+            if (i!=0) {
                 [menuGroup removeMenu:cm.modelValue];
                 [self configSectionModel:sectionModel];
-                [self.collectionView performBatchUpdates:^{
+                [self.collectionView performBatchUpdates:^ {
                     [sectionModel refresh];
                 } completion:^(BOOL finished) {
                     [self _adjustConlectionContentInsets];
                 }];
-            }else{
+            }else {
                 NSMutableArray *menuGroups = [self.menuGroups mutableCopy];
                 [menuGroups removeObject:menuGroup];
                 self.menuGroups = menuGroups;
@@ -269,7 +270,7 @@
         };
         [sectionModel addCellModel:cm];
     }
-    if(needExpand){
+    if (needExpand) {
         //添加空白
         NSInteger lastLineItemCount = numberOfCells%countPerRow;
         if (expandAll) {
@@ -296,25 +297,25 @@
             expand = !expand;
             sm[@"expandAll"] = @(expand);
             [self configSectionModel:sm];
-            [self.collectionView performBatchUpdates:^{
+            [self.collectionView performBatchUpdates:^ {
                 [sm refresh];
             } completion:^(BOOL finished) {
                 [self _adjustConlectionContentInsets];
             }];
         };
         cm.cellClass = LUIMenuCollectionViewCell.class;
-        if(expandAll && lastLineItemCount==0){
+        if (expandAll && lastLineItemCount==0) {
             cm[@"unExpandStyle"] = @(YES);//占用一整行的收起按钮
         }
         [sectionModel addCellModel:cm];
     }
 }
 
-- (CGPoint)contentOffsetWithSelectedIndex:(NSInteger)selectedIndex{
+- (CGPoint)contentOffsetWithSelectedIndex:(NSInteger)selectedIndex {
     return [self contentOffsetWithSelectedIndex:selectedIndex limitInRange:YES];
 }
-- (CGPoint)contentOffsetWithSelectedIndex:(NSInteger)selectedIndex limitInRange:(BOOL)limitInRange{
-    if(selectedIndex<0||selectedIndex>=self.tabItemFlowView.itemFlowView.items.count)return CGPointZero;
+- (CGPoint)contentOffsetWithSelectedIndex:(NSInteger)selectedIndex limitInRange:(BOOL)limitInRange {
+    if (selectedIndex<0||selectedIndex>=self.tabItemFlowView.itemFlowView.items.count)return CGPointZero;
     LUICollectionViewTitleSupplementarySectionModel *sm = self.menuGroupSecitons[selectedIndex];
     UIEdgeInsets contentInsets = self.collectionView.l_adjustedContentInset;
     CGPoint offset = self.collectionView.contentOffset;
@@ -323,13 +324,13 @@
     CGRect f1 = attr.frame;
     
     offset.y = f1.origin.y+contentInsets.top;
-    if(self.directionVertical){
+    if (self.directionVertical) {
         offset.y = f1.origin.y-contentInsets.top;
-    }else{
+    }else {
         CGRect f2 = self.tabItemFlowView.l_frameSafety;
         offset.y = f1.origin.y-f2.size.height-contentInsets.top;
     }
-    if(limitInRange){
+    if (limitInRange) {
         offset.y = MIN(self.collectionView.l_contentOffsetOfMaxY,offset.y);
     }
 //    NSLog(@"contentOffsetWithSelectedIndex:%@,offset:%@",@(selectedIndex).stringValue,NSStringFromCGPoint(offset));
@@ -337,34 +338,34 @@
     
 }
 
-- (LUICollectionViewTitleSupplementarySectionModel *)createEmptySection{
+- (LUICollectionViewTitleSupplementarySectionModel *)createEmptySection {
     LUICollectionViewTitleSupplementarySectionModel *sm = [[LUICollectionViewTitleSupplementarySectionModel alloc] init];
-    sm.footClass = LUIItemFlowSectionView.class;
+    sm.footClass = LUIItemFlowSectionFootView.class;
     sm.showFoot = YES;
     return sm;
 }
 
-- (LUICollectionViewTitleSupplementarySectionModel *)createSectionWithTitle:(NSString *)title{
+- (LUICollectionViewTitleSupplementarySectionModel *)createSectionWithTitle:(NSString *)title {
     LUICollectionViewTitleSupplementarySectionModel *sm = [[LUICollectionViewTitleSupplementarySectionModel alloc] init];
     sm.showHead = YES;
     sm.headTitle = title;
     sm.headClass = LUICollectionViewTitleSupplementaryView.class;
-    sm.footClass = LUIItemFlowSectionView.class;
+    sm.footClass = LUIItemFlowSectionFootView.class;
     sm.showFoot = YES;
     return sm;
 }
 
 #pragma mark - delegate:LUItemFlowCollectionViewDelegate
 
-- (CGSize)itemFlowCollectionView:(LUItemFlowCollectionView *)view itemSizeAtIndex:(NSInteger)index collectionCellModel:(LUICollectionViewCellModel *)cellModel{
+- (CGSize)itemFlowCollectionView:(LUItemFlowCollectionView *)view itemSizeAtIndex:(NSInteger)index collectionCellModel:(LUICollectionViewCellModel *)cellModel {
     Class cls = self.directionVertical?LUIItemFlowCell_Vertical.class: LUIItemFlowCell.class;
     CGSize size = [cls sizeWithCollectionView:view.collectionView collectionCellModel:cellModel];
     return size;
 }
-- (Class)itemFlowCollectionView:(LUItemFlowCollectionView *)view itemCellClassAtIndex:(NSInteger)index{
+- (Class)itemFlowCollectionView:(LUItemFlowCollectionView *)view itemCellClassAtIndex:(NSInteger)index {
     return self.directionVertical?LUIItemFlowCell_Vertical.class:LUIItemFlowCell.class;
 }
-- (void)itemFlowCollectionView:(LUItemFlowCollectionView *)view didSelectIndex:(NSInteger)selectedIndex{
+- (void)itemFlowCollectionView:(LUItemFlowCollectionView *)view didSelectIndex:(NSInteger)selectedIndex {
     [view setSelectedIndex:selectedIndex animated:YES];
     CGPoint offset = [self contentOffsetWithSelectedIndex:selectedIndex];
     [self.collectionView setContentOffset:offset animated:YES];
@@ -372,12 +373,12 @@
 
 #pragma mark - delegate:UICollectionViewDelegateFlowLayout
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     LUICollectionViewTitleSupplementarySectionModel *sm = [self.collectionView.model sectionModelAtIndex:indexPath.section];
     LUICollectionViewCellModel *cm = [self.collectionView.model cellModelAtIndexPath:indexPath];
     CGRect bounds = collectionView.bounds;
-    if([sm l_boolForKeyPath:@"isMenuGroup"]){
-        if([cm l_boolForKeyPath:@"unExpandStyle"]){
+    if ([sm l_boolForKeyPath:@"isMenuGroup"]) {
+        if ([cm l_boolForKeyPath:@"unExpandStyle"]) {
             UIEdgeInsets contentInsets = self.collectionView.l_adjustedContentInset;
             UIEdgeInsets insets = [self.collectionViewFlowLayout l_insetForSectionAtIndex:indexPath.section];
             CGSize s = bounds.size;
@@ -388,28 +389,28 @@
         return [self.class menuItemSize];
     }
     Class cellClass = cm.cellClass;
-    if([cellClass respondsToSelector:@selector(sizeWithCollectionView:collectionCellModel:)]){
+    if ([cellClass respondsToSelector:@selector(sizeWithCollectionView:collectionCellModel:)]) {
         return [cellClass sizeWithCollectionView:collectionView collectionCellModel:cm];
     }
     return self.collectionViewFlowLayout.itemSize;
 }
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     LUICollectionViewTitleSupplementarySectionModel *sm = [self.collectionView.model sectionModelAtIndex:section];
-    if([sm l_boolForKeyPath:@"isMenuGroup"]){
+    if ([sm l_boolForKeyPath:@"isMenuGroup"]) {
         return [self menuGroupInsets];
     }
     return UIEdgeInsetsZero;
 }
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
     LUICollectionViewTitleSupplementarySectionModel *sm = [self.collectionView.model sectionModelAtIndex:section];
-    if([sm l_boolForKeyPath:@"isMenuGroup"]){
+    if ([sm l_boolForKeyPath:@"isMenuGroup"]) {
         return [self.class groupInteritem];
     }
     return 0;
 }
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     LUICollectionViewTitleSupplementarySectionModel *sm = [self.collectionView.model sectionModelAtIndex:section];
-    if([sm l_boolForKeyPath:@"isMenuGroup"]){
+    if ([sm l_boolForKeyPath:@"isMenuGroup"]) {
         return [self.class groupInteritem];
     }
     return 0;
@@ -424,8 +425,8 @@
     [sm addCellModel:[LUICollectionViewCellModel modelWithValue:@"第一行" cellClass:LUITestItemFlow_Cell1.class]];
     return _firstSeciton;
 }
-- (LUICollectionViewTitleSupplementarySectionModel *)secorndSeciton{
-    if(_secorndSeciton)return _secorndSeciton;
+- (LUICollectionViewTitleSupplementarySectionModel *)secorndSeciton {
+    if (_secorndSeciton)return _secorndSeciton;
     LUICollectionViewTitleSupplementarySectionModel *sm = [self createSectionWithTitle:@"左右滑动菜单"];
     _secorndSeciton = sm;
     [sm addCellModel:[LUICollectionViewCellModel modelWithValue:@"第二行" cellClass:LUITestItemFlow_Cell1.class]];
@@ -442,14 +443,14 @@
 }
 
 - (NSArray<LUICollectionViewTitleSupplementarySectionModel *> *)menuGroupSecitons {
-    if(_menuGroupSecitons)return _menuGroupSecitons;
+    if (_menuGroupSecitons)return _menuGroupSecitons;
     NSMutableArray *sections = [[NSMutableArray alloc] init];
     for (LUIMenuGroup *group in self.menuGroups) {
         LUICollectionViewTitleSupplementarySectionModel *sm = [self createSectionWithTitle:group.title];
         sm[@"isMenuGroup"] = @(YES);
         sm[@"menuGroup"] = group;
         sm[@"expandAll"] = @(NO);
-        sm.headClass = self.directionVertical?LUITestItemHead_Vertical.class:LUICollectionViewTitleSupplementaryView.class;
+        sm.headClass = self.directionVertical ? LUITestItemHead_Vertical.class : LUICollectionViewTitleSupplementaryView.class;
         [sections addObject:sm];
     }
     _menuGroupSecitons = sections;
@@ -457,9 +458,9 @@
 }
 
 - (NSArray<LUIMenuGroup *> *)menuGroups {
-    if(_menuGroups)return _menuGroups;
+    if (_menuGroups)return _menuGroups;
     NSMutableArray<LUIMenuGroup *> *groups = [[NSMutableArray alloc] init];
-    for(int i=0;i<=30;i++){
+    for (int i=0;i<=30;i++) {
         NSString *title = i%2==0?[NSString stringWithFormat:@"菜单(%@)",@(i).stringValue]:[NSString stringWithFormat:@"长长菜单(%@)",@(i).stringValue];
         NSArray<LUIMenu *> *menus = [LUIMenu sharedMenusWithCount:i+1];
         LUIMenuGroup *group = [LUIMenuGroup menuGroupWithTitle:title menus:menus];

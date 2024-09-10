@@ -19,6 +19,7 @@
 {
     self = [super init];
     if (self) {
+        self.backgroundColor = UIColor.whiteColor;
         [self addSubview:self.directionButton];
         //
         [self addSubview:self.itemFlowView];
