@@ -9,6 +9,7 @@
 #import "LUIAppDelegate.h"
 #import "LUIViewController.h"
 #import "LUIThemeCenter+Test.h"
+#import "LUITestTabBarController.h"
 
 @implementation LUIAppDelegate
 

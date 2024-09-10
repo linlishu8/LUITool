@@ -36,7 +36,7 @@
     if (self.tabBar.class == UITabBar.class) {
         object_setClass(self.tabBar, LUIExtendTabBarController_UITabBar.class);//将tabBar高度参数化
     } else {
-        NSLog(@"UITabBarController.tabBar.class为%@,不为UITabBar,需要更新MKUIExtendTabBarController.m的代码实现",NSStringFromClass(self.tabBar.class));
+        NSLog(@"UITabBarController.tabBar.class为%@,不为UITabBar,需要更新LUIExtendTabBarController.m的代码实现",NSStringFromClass(self.tabBar.class));
     }
     [self.tabBar addSubview:self.customTabBar];
     self.tabBar.translucent = self.customTabBar.translucent;
@@ -87,7 +87,7 @@
     };
     return _customTabBar;
 }
-#pragma mark - delegate:MKUItemFlowCollectionViewDelegate
+#pragma mark - delegate:LUItemFlowCollectionViewDelegate
 - (void)itemFlowCollectionView:(LUItemFlowCollectionView *)view didSelectIndex:(NSInteger)selectedIndex {
     UIViewController *viewController = self.viewControllers[selectedIndex];
     if (self.delegate && [self.delegate respondsToSelector:@selector(tabBarController:shouldSelectViewController:)]) {

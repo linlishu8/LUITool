@@ -155,7 +155,7 @@
             if(icon){
                 self.icon = icon;
             }else{
-                error = [NSError errorWithDomain:@"MKUITestApp" code:-1 userInfo:nil];
+                error = [NSError errorWithDomain:@"LUITestApp" code:-1 userInfo:nil];
             }
             if(completion){
                 completion(icon,error);

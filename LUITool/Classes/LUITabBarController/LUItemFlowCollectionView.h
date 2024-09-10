@@ -48,7 +48,7 @@ typedef NS_ENUM(NSInteger, LUItemFlowCollectionViewScrollDirection) {
 
 //分隔线
 @property (nonatomic, assign, nullable) Class separatorViewClass;//分隔线的显示类，nil代表不要显示分隔线。可选值为LUItemFlowSeparatorView，默认为nil，代表不显示
-@property (nonatomic, strong, nullable) UIColor *separatorColor;//当separatorViewClass为LUItemFlowSeparatorView时，指定分隔线颜色,默认为UIColor.mk_listViewSeparatorColor
+@property (nonatomic, strong, nullable) UIColor *separatorColor;//当separatorViewClass为LUItemFlowSeparatorView时，指定分隔线颜色,默认为UIColor.l_listViewSeparatorColor
 @property (nonatomic, assign) CGSize separatorSize;//当separatorViewClass为LUItemFlowSeparatorView时，指定分隔线尺寸值,默认为(0,0)，代表不显示
 
 @property (nonatomic, assign) LUItemFlowCollectionViewScrollDirection scrollDirection;//滚动方向，默认为水平滚动：LUItemFlowCollectionViewScrollDirectionHorizontal

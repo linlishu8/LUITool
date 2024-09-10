@@ -33,6 +33,7 @@
 		1F7502A72C901B4E0081F3FF /* LUIItemFlowCell_Vertical.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502A62C901B4E0081F3FF /* LUIItemFlowCell_Vertical.m */; };
 		1F7502AA2C90254C0081F3FF /* LUIItemFlowSectionFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502A92C90254C0081F3FF /* LUIItemFlowSectionFootView.m */; };
 		1F7502AD2C9026600081F3FF /* LUITestItemFlow_Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502AC2C9026600081F3FF /* LUITestItemFlow_Cell2.m */; };
+		1F7502B92C903DB40081F3FF /* LUITestTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502B82C903DB40081F3FF /* LUITestTabBarController.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -118,6 +119,8 @@
 		1F7502A92C90254C0081F3FF /* LUIItemFlowSectionFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIItemFlowSectionFootView.m; sourceTree = "<group>"; };
 		1F7502AB2C9026600081F3FF /* LUITestItemFlow_Cell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITestItemFlow_Cell2.h; sourceTree = "<group>"; };
 		1F7502AC2C9026600081F3FF /* LUITestItemFlow_Cell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITestItemFlow_Cell2.m; sourceTree = "<group>"; };
+		1F7502B72C903DB40081F3FF /* LUITestTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITestTabBarController.h; sourceTree = "<group>"; };
+		1F7502B82C903DB40081F3FF /* LUITestTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITestTabBarController.m; sourceTree = "<group>"; };
 		47AE684EB1BF9722DA67E971 /* Pods-LUITool_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LUITool_Tests.debug.xcconfig"; path = "Target Support Files/Pods-LUITool_Tests/Pods-LUITool_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* LUITool_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LUITool_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -277,6 +280,15 @@
 			path = "更多菜单";
 			sourceTree = "<group>";
 		};
+		1F7502B62C903D970081F3FF /* 自定义tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				1F7502B72C903DB40081F3FF /* LUITestTabBarController.h */,
+				1F7502B82C903DB40081F3FF /* LUITestTabBarController.m */,
+			);
+			path = "自定义tabbar";
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +326,7 @@
 		6003F593195388D20070C39A /* Example for LUITool */ = {
 			isa = PBXGroup;
 			children = (
+				1F7502B62C903D970081F3FF /* 自定义tabbar */,
 				1F7502862C8EC4080081F3FF /* 更多菜单 */,
 				1F2707482C87540900DC9247 /* 倒计时跳转 */,
 				1F45B6342C721C26004839E2 /* LUIMacro */,
@@ -574,6 +587,7 @@
 				1F7502A42C9019700081F3FF /* LUIItemFlowCell.m in Sources */,
 				1F2707012C7637C200DC9247 /* LUISafeKeyboardButtons.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				1F7502B92C903DB40081F3FF /* LUITestTabBarController.m in Sources */,
 				1F4AA3332C73885800CDC476 /* LUISafeKeyboardViewController.m in Sources */,
 				1F4AA32F2C73882100CDC476 /* LUIThemeViewController.m in Sources */,
 			);

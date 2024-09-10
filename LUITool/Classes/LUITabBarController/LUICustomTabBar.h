@@ -69,7 +69,7 @@ typedef enum : NSUInteger {
 @end
 
 @interface UIViewController (LUICustomTabBar)
-@property (null_resettable, nonatomic, strong) __kindof LUICustomTabBarItem *mk_customTabBarItem;
+@property (null_resettable, nonatomic, strong) __kindof LUICustomTabBarItem *l_customTabBarItem;
 @end
 
 NS_ASSUME_NONNULL_END

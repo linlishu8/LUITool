@@ -130,7 +130,7 @@
         return [self.delegate itemFlowCollectionView:self itemCellClassAtIndex:index];
     }
     UIViewController *vc = self.items[index];
-    LUICustomTabBarItem *tabBarItem = vc.mk_customTabBarItem;
+    LUICustomTabBarItem *tabBarItem = vc.l_customTabBarItem;
     if (tabBarItem.itemCellClass) return tabBarItem.itemCellClass;
     return self.itemCellClass;
 }
@@ -178,7 +178,7 @@
     LUICollectionViewCellModel *cellModel = self.itemCell.collectionCellModel;
     if ([cellModel.modelValue isKindOfClass:UIViewController.class]) {
         UIViewController *vc = cellModel.modelValue;
-        if (vc.mk_customTabBarItem!=self) {//cell被复用了，此时它对应的item并非自己
+        if (vc.l_customTabBarItem!=self) {//cell被复用了，此时它对应的item并非自己
             return;
         }
     }else if ([cellModel.modelValue isKindOfClass:self.class]) {
@@ -392,7 +392,7 @@
 - (LUICustomTabBarItem *)customTabBarItem {
     if ([self.collectionCellModel.modelValue isKindOfClass:LUICustomTabBarItem.class]) return self.collectionCellModel.modelValue;
     UIViewController *vc = self.customItemViewController;
-    LUICustomTabBarItem *item = vc.mk_customTabBarItem;
+    LUICustomTabBarItem *item = vc.l_customTabBarItem;
     return item;
 }
 - (UIViewController *)customItemViewController {
@@ -406,7 +406,7 @@
 
 #import <objc/runtime.h>
 @implementation UIViewController (LUICustomTabBar)
-- (LUICustomTabBarItem *)mk_customTabBarItem {
+- (LUICustomTabBarItem *)l_customTabBarItem {
     const void * key = "mk_customTabBarItem";
     LUICustomTabBarItem *obj = objc_getAssociatedObject(self, key);
     if (!obj) {
@@ -419,12 +419,13 @@
         if (@available(iOS 10.0, *)) {
             obj.badgeColor = item.badgeColor;
         }
-        self.mk_customTabBarItem = obj;
+        self.l_customTabBarItem = obj;
     }
     return obj;
 }
-- (void)setMk_customTabBarItem:(LUICustomTabBarItem *)mk_customTabBarItem {
+
+- (void)setL_customTabBarItem:(LUICustomTabBarItem *)l_customTabBarItem {
     const void * key = "mk_customTabBarItem";
-    objc_setAssociatedObject(self, key, mk_customTabBarItem, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, key, l_customTabBarItem, OBJC_ASSOCIATION_RETAIN);
 }
 @end
