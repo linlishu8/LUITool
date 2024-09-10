@@ -2,7 +2,7 @@
 //  LUItemFlowCollectionView.h
 //  LUITool
 //  对一系列item进行流布局的collectionView容器，包含选中效果、当前选中item的指示器、item之间的分隔线。支持横向、竖向布局。可用在TabBar的标签容器
-//  Created by 六月 on 2024/9/9.
+//  Created by 六月 on 2023/9/9.
 //
 
 #import <UIKit/UIKit.h>

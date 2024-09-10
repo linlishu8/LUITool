@@ -2,7 +2,7 @@
 //  LUIPageControl.h
 //  LUITool
 //
-//  Created by 六月 on 2024/9/5.
+//  Created by 六月 on 2023/9/5.
 //
 
 #import <UIKit/UIKit.h>

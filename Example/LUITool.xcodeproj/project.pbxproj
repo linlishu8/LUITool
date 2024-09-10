@@ -29,6 +29,8 @@
 		1F75029B2C8FE1A70081F3FF /* LUITestItemFlow_Cell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F75029A2C8FE1A70081F3FF /* LUITestItemFlow_Cell1.m */; };
 		1F75029E2C8FE37D0081F3FF /* LUITestItemHead_Vertical.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F75029D2C8FE37D0081F3FF /* LUITestItemHead_Vertical.m */; };
 		1F7502A12C8FEB220081F3FF /* LUIMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502A02C8FEB220081F3FF /* LUIMenuCollectionViewCell.m */; };
+		1F7502A42C9019700081F3FF /* LUIItemFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502A32C9019700081F3FF /* LUIItemFlowCell.m */; };
+		1F7502A72C901B4E0081F3FF /* LUIItemFlowCell_Vertical.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502A62C901B4E0081F3FF /* LUIItemFlowCell_Vertical.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -106,6 +108,10 @@
 		1F75029D2C8FE37D0081F3FF /* LUITestItemHead_Vertical.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITestItemHead_Vertical.m; sourceTree = "<group>"; };
 		1F75029F2C8FEB220081F3FF /* LUIMenuCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIMenuCollectionViewCell.h; sourceTree = "<group>"; };
 		1F7502A02C8FEB220081F3FF /* LUIMenuCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIMenuCollectionViewCell.m; sourceTree = "<group>"; };
+		1F7502A22C9019700081F3FF /* LUIItemFlowCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIItemFlowCell.h; sourceTree = "<group>"; };
+		1F7502A32C9019700081F3FF /* LUIItemFlowCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIItemFlowCell.m; sourceTree = "<group>"; };
+		1F7502A52C901B4E0081F3FF /* LUIItemFlowCell_Vertical.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIItemFlowCell_Vertical.h; sourceTree = "<group>"; };
+		1F7502A62C901B4E0081F3FF /* LUIItemFlowCell_Vertical.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIItemFlowCell_Vertical.m; sourceTree = "<group>"; };
 		47AE684EB1BF9722DA67E971 /* Pods-LUITool_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LUITool_Tests.debug.xcconfig"; path = "Target Support Files/Pods-LUITool_Tests/Pods-LUITool_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* LUITool_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LUITool_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -251,6 +257,10 @@
 				1F75029D2C8FE37D0081F3FF /* LUITestItemHead_Vertical.m */,
 				1F7502992C8FE1A70081F3FF /* LUITestItemFlow_Cell1.h */,
 				1F75029A2C8FE1A70081F3FF /* LUITestItemFlow_Cell1.m */,
+				1F7502A22C9019700081F3FF /* LUIItemFlowCell.h */,
+				1F7502A32C9019700081F3FF /* LUIItemFlowCell.m */,
+				1F7502A52C901B4E0081F3FF /* LUIItemFlowCell_Vertical.h */,
+				1F7502A62C901B4E0081F3FF /* LUIItemFlowCell_Vertical.m */,
 				1F7502962C8EE4A40081F3FF /* LUIMenuGroup.h */,
 				1F7502972C8EE4A40081F3FF /* LUIMenuGroup.m */,
 			);
@@ -539,6 +549,7 @@
 				1F2707352C85FF8F00DC9247 /* TestThemeBase.m in Sources */,
 				1F27073C2C86064E00DC9247 /* TestThemeVip.m in Sources */,
 				1F75029B2C8FE1A70081F3FF /* LUITestItemFlow_Cell1.m in Sources */,
+				1F7502A72C901B4E0081F3FF /* LUIItemFlowCell_Vertical.m in Sources */,
 				1F27073F2C86069C00DC9247 /* TestThemeGray.m in Sources */,
 				1F2707392C86055A00DC9247 /* TestThemeNormal.m in Sources */,
 				1F75029E2C8FE37D0081F3FF /* LUITestItemHead_Vertical.m in Sources */,
@@ -548,6 +559,7 @@
 				1F45B5DD2C70D7A9004839E2 /* LUIMainViewTableViewCell.m in Sources */,
 				6003F5A7195388D20070C39A /* LUIViewController.m in Sources */,
 				1F27074B2C87544500DC9247 /* LUICountDownViewController.m in Sources */,
+				1F7502A42C9019700081F3FF /* LUIItemFlowCell.m in Sources */,
 				1F2707012C7637C200DC9247 /* LUISafeKeyboardButtons.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				1F4AA3332C73885800CDC476 /* LUISafeKeyboardViewController.m in Sources */,

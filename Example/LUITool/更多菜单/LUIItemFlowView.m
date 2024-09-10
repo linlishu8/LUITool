@@ -2,7 +2,7 @@
 //  LUIItemFlowView.m
 //  LUITool_Example
 //
-//  Created by 六月 on 2024/9/9.
+//  Created by 六月 on 2023/9/9.
 //  Copyright © 2024 Your Name. All rights reserved.
 //
 
@@ -10,11 +10,7 @@
 #import "LUItemVerticalLineView.h"
 
 @interface LUIItemFlowView ()
-
-@property (nonatomic, strong) LUILayoutButton *directionButton;//横向、竖向按钮
 @property (nonatomic, strong) LUIFlowLayoutConstraint *flowlayout;
-
-
 @end
 
 @implementation LUIItemFlowView

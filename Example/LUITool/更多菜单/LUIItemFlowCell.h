@@ -1,5 +1,5 @@
 //
-//  LUITestItemFlow_Cell1.h
+//  LUIItemFlowCell.h
 //  LUITool_Example
 //
 //  Created by 六月 on 2023/9/10.
@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LUITestItemFlow_Cell1 : LUICollectionViewCellBase
+@interface LUIItemFlowCell : LUItemFlowCellView
+
+@property (nonatomic,strong) LUIFlowLayoutConstraint *flowlayout;
 
 @end
 

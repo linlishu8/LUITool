@@ -2,7 +2,7 @@
 //  LUIMenuViewController.m
 //  LUITool_Example
 //
-//  Created by 六月 on 2024/9/9.
+//  Created by 六月 on 2023/9/9.
 //  Copyright © 2024 Your Name. All rights reserved.
 //
 
@@ -14,8 +14,10 @@
 #import "LUITestItemFlow_Cell1.h"
 #import "LUITestItemHead_Vertical.h"
 #import "LUIMenuCollectionViewCell.h"
+#import "LUIItemFlowCell.h"
+#import "LUIItemFlowCell_Vertical.h"
 
-@interface LUIMenuViewController ()
+@interface LUIMenuViewController () <LUItemFlowCollectionViewDelegate>
 
 @property (nonatomic, strong) LUICollectionView *collectionView;
 
@@ -290,6 +292,22 @@
     return sm;
 }
 
+#pragma mark - delegate:LUItemFlowCollectionViewDelegate
+
+- (CGSize)itemFlowCollectionView:(LUItemFlowCollectionView *)view itemSizeAtIndex:(NSInteger)index collectionCellModel:(LUICollectionViewCellModel *)cellModel{
+    Class cls = self.directionVertical?LUIItemFlowCell_Vertical.class: LUIItemFlowCell.class;
+    CGSize size = [cls sizeWithCollectionView:view.collectionView collectionCellModel:cellModel];
+    return size;
+}
+- (Class)itemFlowCollectionView:(LUItemFlowCollectionView *)view itemCellClassAtIndex:(NSInteger)index{
+    return self.directionVertical?LUIItemFlowCell_Vertical.class:LUIItemFlowCell.class;
+}
+- (void)itemFlowCollectionView:(LUItemFlowCollectionView *)view didSelectIndex:(NSInteger)selectedIndex{
+    [view setSelectedIndex:selectedIndex animated:YES];
+    CGPoint offset = [self contentOffsetWithSelectedIndex:selectedIndex];
+    [self.collectionView setContentOffset:offset animated:YES];
+}
+
 #pragma mark - getters/setters
 
 - (LUICollectionViewTitleSupplementarySectionModel *)firstSeciton{
@@ -342,6 +360,22 @@
     }
     _menuGroups = groups;
     return _menuGroups;
+}
+
+- (LUIItemFlowView *)tabItemFlowView {
+    if (!_tabItemFlowView) {
+        _tabItemFlowView = [[LUIItemFlowView alloc] init];
+        [_tabItemFlowView.directionButton l_addClickActionBlock:^(id  _Nullable conext) {
+            self.directionVertical = !self.directionVertical;
+            [NSUserDefaults.standardUserDefaults setBool:self.directionVertical forKey:@"TestItemFlowCollectionViewController_direction"];
+            _tabItemFlowView.directionVertical = self.directionVertical;
+            [self reloadData];
+        } context:self];
+        _tabItemFlowView.itemFlowView.delegate = self;
+        _tabItemFlowView.itemFlowView.items = self.menuGroups;
+        _tabItemFlowView.itemFlowView.selectedIndex = 0;
+    }
+    return _tabItemFlowView;
 }
 
 @end

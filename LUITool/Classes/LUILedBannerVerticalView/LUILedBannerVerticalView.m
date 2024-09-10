@@ -2,7 +2,7 @@
 //  LUILedBannerVerticalView.m
 //  LUITool
 //
-//  Created by 六月 on 2024/9/2.
+//  Created by 六月 on 2023/9/2.
 //
 
 #import "LUICollectionViewPageFlowLayout.h"

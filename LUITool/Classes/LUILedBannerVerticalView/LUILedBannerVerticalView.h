@@ -2,7 +2,7 @@
 //  LUILedBannerVerticalView.h
 //  LUITool
 //  垂直方向滚动的跑马灯控件
-//  Created by 六月 on 2024/9/2.
+//  Created by 六月 on 2023/9/2.
 //
 
 #import <UIKit/UIKit.h>
