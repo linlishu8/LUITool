@@ -19,32 +19,22 @@
     self.customTabBar.collectionView.clipsToBounds = NO;
     NSMutableArray<UIViewController *> *viewControllers = [[NSMutableArray alloc] init];
     {
-        UIViewController *vc = [[MKUICustomTabBarControllerParamListViewController alloc] init];
+        UIViewController *vc = [[UIViewController alloc] init];
         [viewControllers addObject:vc];
     }
     {
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[MKUICustomTabBarControllerParamListViewController new]];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[UINavigationController new]];
         nav.l_customTabBarItem.title = @"嵌套Nav";
-        nav.mk_customTabBarItem.badgeValue = @"1";
-        nav.mk_customTabBarItem.image = Menu.randomImage;
-        nav.mk_customTabBarItem.badgeStyle = MKUICustomTabBarItemBadgeStyleDot;
+        nav.l_customTabBarItem.badgeValue = @"1";
+        nav.l_customTabBarItem.badgeStyle = LUICustomTabBarItemBadgeStyleDot;
         [viewControllers addObject:nav];
     }
     {
         UIViewController *vc = [[UIViewController alloc] init];
-        vc.mk_customTabBarItem.itemCellClass = MKUICustomTabBarItemCellViewTestBigIcon.class;
-        vc.mk_customTabBarItem.image = Menu.randomImage;
-        [viewControllers addObject:vc];
-        self.blankViewController = vc;
-    }
-    {
-        UIViewController *vc = [[FunTableViewController alloc] init];
-        vc.mk_customTabBarItem.itemCellClass = MKUICustomTabBarItemCellViewTestBigIcon.class;
-        vc.mk_customTabBarItem.image = Menu.randomImage;
         [viewControllers addObject:vc];
     }
     {
-        UIViewController *vc = [[TestUITabBarController alloc] init];
+        UIViewController *vc = [[UIViewController alloc] init];
         [viewControllers addObject:vc];
     }
     {
@@ -54,7 +44,6 @@
     }
     self.viewControllers = viewControllers;
     self.selectedIndex = 1;
-    self.delegate = self;
     [self _configNavigationForViewController:self.selectedViewController];
 
 }
@@ -69,27 +58,6 @@
     self.title = viewController.title;
     self.navigationItem.rightBarButtonItems = viewController.navigationItem.rightBarButtonItems;
     self.navigationItem.leftBarButtonItems = viewController.navigationItem.leftBarButtonItems;
-}
-#pragma mark -delegate:MKUICustomTabBarControllerDelegate
-- (void)customTabBarController:(MKUICustomTabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-    [self _configNavigationForViewController:viewController];
-}
-- (BOOL)customTabBarController:(MKUICustomTabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
-    if(viewController==self.blankViewController){//点击了特殊的空白名称，此时不进行选中，弹一个提示窗
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"点击空白视图" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
-        }]];
-        [self presentViewController:alert animated:YES completion:nil];
-        return NO;
-    }
-    if(tabBarController.selectedViewController==viewController){//再次点击选中的vc
-        NSArray<UIScrollView *> *scrollViews = [viewController.view mk_subviewsWithClass:UIScrollView.class resursion:YES];
-        for(UIScrollView *scrollView in scrollViews){
-            [scrollView mk_scrollToTopWithAnimated:YES];
-        }
-    }
-    return YES;
-}
 }
 
 /*
