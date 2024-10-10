@@ -34,6 +34,9 @@
 		1F7502AA2C90254C0081F3FF /* LUIItemFlowSectionFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502A92C90254C0081F3FF /* LUIItemFlowSectionFootView.m */; };
 		1F7502AD2C9026600081F3FF /* LUITestItemFlow_Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502AC2C9026600081F3FF /* LUITestItemFlow_Cell2.m */; };
 		1F7502B92C903DB40081F3FF /* LUITestTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7502B82C903DB40081F3FF /* LUITestTabBarController.m */; };
+		1FD18A1B2CB7B7B5004577C3 /* LUIChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD18A1A2CB7B7B5004577C3 /* LUIChatViewController.m */; };
+		1FD18A1E2CB7C688004577C3 /* LUIChatHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD18A1D2CB7C688004577C3 /* LUIChatHeadTableViewCell.m */; };
+		1FD18A212CB7C7FA004577C3 /* LUIChatHeadContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD18A202CB7C7FA004577C3 /* LUIChatHeadContentTableViewCell.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -121,6 +124,12 @@
 		1F7502AC2C9026600081F3FF /* LUITestItemFlow_Cell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITestItemFlow_Cell2.m; sourceTree = "<group>"; };
 		1F7502B72C903DB40081F3FF /* LUITestTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUITestTabBarController.h; sourceTree = "<group>"; };
 		1F7502B82C903DB40081F3FF /* LUITestTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUITestTabBarController.m; sourceTree = "<group>"; };
+		1FD18A192CB7B7B5004577C3 /* LUIChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIChatViewController.h; sourceTree = "<group>"; };
+		1FD18A1A2CB7B7B5004577C3 /* LUIChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIChatViewController.m; sourceTree = "<group>"; };
+		1FD18A1C2CB7C688004577C3 /* LUIChatHeadTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIChatHeadTableViewCell.h; sourceTree = "<group>"; };
+		1FD18A1D2CB7C688004577C3 /* LUIChatHeadTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIChatHeadTableViewCell.m; sourceTree = "<group>"; };
+		1FD18A1F2CB7C7FA004577C3 /* LUIChatHeadContentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUIChatHeadContentTableViewCell.h; sourceTree = "<group>"; };
+		1FD18A202CB7C7FA004577C3 /* LUIChatHeadContentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUIChatHeadContentTableViewCell.m; sourceTree = "<group>"; };
 		47AE684EB1BF9722DA67E971 /* Pods-LUITool_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LUITool_Tests.debug.xcconfig"; path = "Target Support Files/Pods-LUITool_Tests/Pods-LUITool_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* LUITool_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LUITool_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -289,6 +298,19 @@
 			path = "自定义tabbar";
 			sourceTree = "<group>";
 		};
+		1FD18A182CB7B7A9004577C3 /* 智能客服 */ = {
+			isa = PBXGroup;
+			children = (
+				1FD18A192CB7B7B5004577C3 /* LUIChatViewController.h */,
+				1FD18A1A2CB7B7B5004577C3 /* LUIChatViewController.m */,
+				1FD18A1C2CB7C688004577C3 /* LUIChatHeadTableViewCell.h */,
+				1FD18A1D2CB7C688004577C3 /* LUIChatHeadTableViewCell.m */,
+				1FD18A1F2CB7C7FA004577C3 /* LUIChatHeadContentTableViewCell.h */,
+				1FD18A202CB7C7FA004577C3 /* LUIChatHeadContentTableViewCell.m */,
+			);
+			path = "智能客服";
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +348,7 @@
 		6003F593195388D20070C39A /* Example for LUITool */ = {
 			isa = PBXGroup;
 			children = (
+				1FD18A182CB7B7A9004577C3 /* 智能客服 */,
 				1F7502B62C903D970081F3FF /* 自定义tabbar */,
 				1F7502862C8EC4080081F3FF /* 更多菜单 */,
 				1F2707482C87540900DC9247 /* 倒计时跳转 */,
@@ -562,6 +585,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F7502AD2C9026600081F3FF /* LUITestItemFlow_Cell2.m in Sources */,
+				1FD18A1E2CB7C688004577C3 /* LUIChatHeadTableViewCell.m in Sources */,
+				1FD18A212CB7C7FA004577C3 /* LUIChatHeadContentTableViewCell.m in Sources */,
 				1F7502892C8EC4210081F3FF /* LUIMenuViewController.m in Sources */,
 				1F7502922C8EDE5F0081F3FF /* LUIItemFlowSectionView.m in Sources */,
 				1F75028C2C8EC4790081F3FF /* LUIItemFlowView.m in Sources */,
@@ -582,6 +607,7 @@
 				1F4AA32E2C73882100CDC476 /* LUIThemeCenter+Test.m in Sources */,
 				1F7502982C8EE4A40081F3FF /* LUIMenuGroup.m in Sources */,
 				1F45B5DD2C70D7A9004839E2 /* LUIMainViewTableViewCell.m in Sources */,
+				1FD18A1B2CB7B7B5004577C3 /* LUIChatViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* LUIViewController.m in Sources */,
 				1F27074B2C87544500DC9247 /* LUICountDownViewController.m in Sources */,
 				1F7502A42C9019700081F3FF /* LUIItemFlowCell.m in Sources */,

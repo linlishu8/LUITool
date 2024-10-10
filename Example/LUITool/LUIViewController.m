@@ -12,6 +12,7 @@
 #import "LUISafeKeyboardViewController.h"
 #import "LUIAlertViewController.h"
 #import "LUIMenuViewController.h"
+#import "LUIChatViewController.h"
 
 @interface LUIViewController ()
 
@@ -54,6 +55,10 @@
         [self.navigationController pushViewController:keyboardViewController animated:YES];
     };
     LUITableViewCellModel *chatCellModel = [self addCellModelWithCellTitle:@"聊天"];
+    chatCellModel.whenClick = ^(__kindof LUITableViewCellModel * _Nonnull cellModel) {
+        LUIChatViewController *chatViewController = [[LUIChatViewController alloc] init];
+        [self.navigationController pushViewController:chatViewController animated:YES];
+    };
     LUITableViewCellModel *ledVerticalCellModel = [self addCellModelWithCellTitle:@"垂直跑马灯"];
     LUITableViewCellModel *menuCellModel = [self addCellModelWithCellTitle:@"菜单"];
     menuCellModel.whenClick = ^(__kindof LUITableViewCellModel * _Nonnull cellModel) {
